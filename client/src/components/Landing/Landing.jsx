@@ -7,44 +7,44 @@ import Hlearning from "../../images/Hlearning.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    fontFamily: 'Nunito',
-    background: 'black'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    fontFamily: "Nunito",
+    background: "black",
   },
   appbar: {
-    background: 'none',
+    background: "none",
   },
   appbarWrapper: {
-    width: '100%',
-    margin: '0 auto',
+    width: "100%",
+    margin: "0 auto",
   },
   appbarTitle: {
-    flexGrow: '1',
+    flexGrow: "1",
   },
   icon: {
-    color: '#fff',
-    fontSize: '2rem',
+    color: "#fff",
+    fontSize: "2rem",
   },
   colorText: {
-    color: '#38b6ff',
+    color: "#38b6ff",
   },
   colorText2: {
-    color: '#38b6ff',
-    fontSize: '2rem'
+    color: "#38b6ff",
+    fontSize: "2rem",
   },
   container: {
-    textAlign: 'center',
+    textAlign: "center",
   },
   title: {
     color: '#fff',
     fontSize: '4rem',
   },
   goDown: {
-    color: '#38b6ff',
-    fontSize: '4rem',
+    color: "#38b6ff",
+    fontSize: "4rem",
   },
 }));
 export default function Header() {
