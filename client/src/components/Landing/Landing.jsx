@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Collapse} from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Collapse, Link} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Hlearning from "../../images/Hlearning.png";
-import { Link as Scroll } from 'react-scroll';
+//import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: '#fff',
-    fontSize: '4.5rem',
+    fontSize: '4rem',
   },
   goDown: {
     color: '#38b6ff',
@@ -58,8 +58,8 @@ export default function Header() {
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
             <img
-            height="80"
-            width="80" 
+            height="60"
+            width="60" 
             src={Hlearning} 
             alt="HLearning" />
             <span className={classes.colorText2}>HLearning</span>
@@ -73,14 +73,14 @@ export default function Header() {
       >
         <div className={classes.container}>
           <h1 className={classes.title}>
-            Welcome<br />
-            Start <span className={classes.colorText}> Learning.</span>
+            Bienvenido a<br />
+            H<span className={classes.colorText}>Learning.</span>
           </h1>
-          <Scroll href="/home" smooth={true}>
+          <Link href="/home" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>
-          </Scroll>
+          </Link>
         </div>
       </Collapse>
     </div>
