@@ -19,18 +19,14 @@ function rootReducer(state = initialState, action){
                 ...state,
                 getAllCurses: action.payload,
                 setAllCurses: action.payload
-            }
-        }
+            }}
         case GET_ALL_CATEGORIES: {
             return{
                 ...state, 
                 getAllCategories: action.payload
-            }
-        }
-
+            }}
         default: return state 
     }
-
 }
 
 export default rootReducer;
