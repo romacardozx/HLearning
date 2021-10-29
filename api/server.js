@@ -8,7 +8,7 @@ require('dotenv').config({
 const app = express();
 
 // DB Config
-const db = process.env.MONGO_URI;
+const db = "mongodb+srv://admin:admin12345@cluster0.hbndf.mongodb.net/hLearning?retryWrites=true&w=majority";
 const port = process.env.PORT || 7070;
 
 // Connect to MongoDB
