@@ -1,16 +1,22 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const api = require('./api/index')
+const routers = require('./src/routes/index');
 
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV || 'development'}`
   });
 
+//Crea el servidor
 const app = express();
+//Habilitar el parseo de los datos
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+//Rutas de la server
+app.use('/', routers)
 
 // DB Config
-const db = process.env.MONGO_URI;
-const port = 7070;
+const db = "mongodb+srv://admin:admin12345@cluster0.hbndf.mongodb.net/hLearning?retryWrites=true&w=majority";
+const port = process.env.PORT || 7070;
 
 // Connect to MongoDB
 mongoose
@@ -18,7 +24,5 @@ mongoose
     .then(() => console.log("Mongo DB connected!"))
     .catch(error => console.log(error))
 
-// Use Routes
-app.use('/api', api);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`) )
