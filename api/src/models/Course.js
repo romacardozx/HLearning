@@ -3,10 +3,12 @@ const Schema = mongoose.Schema;
 
 const CourseSchema = new Schema({
     title: {
-        type: String
+        type: String,
+        required: true
     },
     description: {
-        type: String
+        type: String,
+        required: true
     },
     img: {
         type: String
@@ -28,9 +30,9 @@ const CourseSchema = new Schema({
     videos: {
         type: Array,
         default: [{
-            title,
-            link,
-            duration
+            name: String,
+            link: String,
+            duration: Number
         }]
     },
     students: {
@@ -38,4 +40,4 @@ const CourseSchema = new Schema({
     }
 })
 
-module.exports = courseModel = mongoose.model('Course', CourseSchema)
+module.exports = CourseModel = mongoose.model('Course', CourseSchema) 
