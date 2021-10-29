@@ -7,10 +7,10 @@ const CategorySchema = new Schema({
         type: String,
         required: true
     },
-    course: {
-        type: Schema.Types.Mixed,
-        ref: 'Course'
-    },
+    // course: {
+    //     type: Schema.Types.Mixed,
+    //     ref: 'Course'
+    // },
     status: {
         type: String,
         default: 'confirmed'
