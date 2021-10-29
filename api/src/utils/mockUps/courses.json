@@ -1,0 +1,154 @@
+[{
+    "title": "Tailwind Just in Time",
+    "description": "In this Tailwind JIT tutorial series you'll learn how to use the Just in Time compiler for better performance during development.",
+    "img": "https://cdn.fs.teachablecdn.com/6iMO3BaS9GF42GIAlWPQ",
+    "score": "5",
+    "duration": "38",
+    "categories": ["FrontEnd", "Css", "UI"],
+    "price": "500",
+    "videos": [
+      {
+        "name": "#1 - Introduction",
+        "link": "https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "11"
+      },
+      {
+        "name": "#2 - Using the Just in Time Compiler",
+        "link": "https://youtu.be/mP2TPWZRSmk?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "9"
+      },
+      {
+        "name": "#3 - Extra Variants",
+        "link": "https://youtu.be/DduPHtznQ2o?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "5"
+      },
+      {
+        "name": "#4 - Arbitrary Values",
+        "link": "https://youtu.be/4gEH1h5C-Tc?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "5"
+      },
+      {
+        "name": "#5 - Tailwind JIT with Next.js",
+        "link": "https://youtu.be/D3Kz2bOQR5E?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "8"
+      }
+   ],
+    "students": "100"
+  },
+  {
+    "title": "Vue 3 with TypeScript Jump Start",
+    "description": "Hey gang, in this Vue 3 & TypeScript jump start tutorial I'll show you how to get up and running with Vue 3 using TypeScript. In this lesson we'll discuss the benefits of TS & set the initial project up.",
+    "img": "https://cdn.fs.teachablecdn.com/1M8MbfrSQme0aCzmJFmQ",
+    "score": "5",
+    "duration": "60",
+    "categories": [""],
+    "price": "900",
+    "videos": [
+      {
+        "name": "Vue 3 with TypeScript Tutorial #1 - Intro & Setup",
+        "link": "https://youtu.be/JfI5PISLr9w?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "9"
+      },
+      {
+        "name": "Vue 3 with TypeScript Tutorial #2 - Vue Components using TypeScript",
+        "link": "https://youtu.be/UDAVj_vlAr8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "10"
+      },
+      {
+        "name": "Vue 3 with TypeScript Tutorial #3 - Composition API & TypeScript",
+        "link": "https://youtu.be/H-hXNym2CK8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "12"
+      },
+      {
+        "name": "Vue 3 with TypeScript Tutorial #4 - Types & Props",
+        "link": "https://youtu.be/GdWrYfDfqRE?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "9"
+      },
+      {
+        "name": "Vue 3 with TypeScript Tutorial #5 - Functions",
+        "link": "https://youtu.be/usSBsgWNUZk?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "8"
+      },
+      {
+        "name": "Vue 3 with TypeScript Tutorial #6 - Computed Values",
+        "link": "https://youtu.be/TwN36HU-NQM?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "6"
+      },
+      {
+        "name": "Vue 3 with TypeScript Tutorial #7 - Hylia Font & Final Styles",
+        "link": "https://youtu.be/6n4myAZwdxg?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "6"
+      }
+    ],
+    "students": "400"
+  },
+  {
+    "title": "Como hacer un sitio web con Bootstrap",
+    "description": "Aprende como hacer un sitio web con bootstrap",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7W1KDUdra9jgXWtf-NYIIqWbXj23rvtvr7A&usqp=CAU",
+    "score": "5",
+    "duration": "62",
+    "categories": ["FrontEnd"],
+    "price": 5.000,
+    "videos": [
+      {
+        "name": "Como hacer un sitio web con Bootstrap 1.- Introducción y Header",
+        "link": "https://www.youtube.com/watch?v=xSTwyYDT-A8&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_",
+        "duration": "28:58"
+      },
+      {
+        "name": "Como hacer un sitio web con Bootstrap 2.- Contenido Principal y Paginación",
+        "link": "https://www.youtube.com/watch?v=HsftXewWmfs&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_&index=2",
+        "duration": "22:37"
+      },
+      {
+        "name": "Como hacer un sitio web con Bootstrap 3.- Sidebar, Footer y Artículos Adaptables",
+        "link": "https://www.youtube.com/watch?v=W3Jd0k7gv9c&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_&index=3",
+        "duration": "12:46"
+      }
+    ],
+    "students": "468"
+  },
+  {
+    "title": "Curso de JAVASCRIPT",
+    "description": "¿Queres aprender a programar en Javascript desde cero? Este es el curso de javascript desde cero a experto que vas a terminar, te prometo que no te vas a aburrir durante el aprendizaje de este curso de javascript, vas a aprender javascript fácil",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhJlTMKGEP32O9dXs3Laz-XYbL5gynMI08A&usqp=CAU",
+    "score": "4",
+    "duration": "26",
+    "categories": ["LenguajeDeProgramacion"],
+    "price": 25.000,
+    "videos": [
+      {
+        "name": "Curso de JAVASCRIPT desde CERO (Completo) - Nivel JUNIOR",
+        "link": "https://www.youtube.com/watch?v=z95mZVUcJ-E&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=3",
+        "duration": "10:00"
+      },
+      {
+        "name": "Curso de JAVASCRIPT desde CERO (Completo) - Nivel MID LEVEL",
+        "link": "https://www.youtube.com/watch?v=xOinGb2MZSk&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=4",
+        "duration": "7:56"
+      },
+      {
+        "name": "Curso de JAVASCRIPT desde CERO (Completo) - Nivel Master",
+        "link": "https://www.youtube.com/watch?v=EbMi1Qj4rVE&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=5",
+        "duration": "9:23"
+      }
+    ],
+    "students": "14"
+  }, {
+    "title": "Aprende CSS ahora! curso completo desde cero",
+    "description": "Aprende CSS con el youtuber de Hola Mundo",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ahxxcR2SA-SW1rMpjQzHj5cTwx06LooCGw&usqp=CAU",
+    "score": "5",
+    "duration": "2",
+    "categories": ["FrontEnd"],
+    "price": 1.000,
+    "videos": [
+      {
+        "name": "Aprende CSS ahora! curso completo desde cero",
+        "link": "https://www.youtube.com/watch?v=wZniZEbPAzk",
+        "duration": "2:05"
+      }
+    ],
+    "students": "5446"
+  }]
