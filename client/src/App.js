@@ -4,6 +4,7 @@ import Landing from "./components/Landing/Landing";
 import Card from "./components/Card/Card";
 //import Courses from "./components/Courses/Courses";
 import Privacy from "./components/Privacy/Privacy"
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/card" component={Card} />
       {/* <Route exact path="/card" component={Courses} /> */}
       <Route exact path="/privacy" component={Privacy} />
+      <Route exact path="/contact" component={Contact} />
     </div>
   );
 }
