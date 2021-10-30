@@ -8,7 +8,7 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
 import Paginate from "../Paginate/Paginate";
-import { Container, Grid } from "@material-ui/core";
+import { /* Container, */ Grid } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
 
 export default function Courses() {
@@ -22,12 +22,13 @@ export default function Courses() {
   } */
 
   return (
-    <div className={styles.page}>
-      <div className={styles.container}>
-        <div>
-          <NavBar />
-        </div>
-        <div>
+    <div>
+      <header>
+        <NavBar />
+      </header>
+      <div className={styles.page}>
+        <div className={styles.containerLat}>
+          <SearchBar />
           <div>
             <span className="span">Ordenar por</span>
             <select /* onChange={(n) => handleSelectByName(n)} */>
@@ -57,33 +58,41 @@ export default function Courses() {
               <option value="cat C">Categoria C</option>
               <option value="cat D">Categoria D</option>
             </select>
+            <span className="span">Filtrar por</span>
+            <select /* onChange={(e) => handleSelectTypeOfDiet(e)} */>
+              <option value="default">Duración</option>
+              <option value="low">1-5 horas</option>
+              <option value="medium">5-20 horas</option>
+              <option value="high">+20 horas</option>
+            </select>
           </div>
-          <div className="paginate">
+        </div>
+        <div className={styles.containerGrid}>
+          <div className={styles.paginate}>
             <Paginate
             /* coursesPerPage={coursesPerPage}
               allCourses={allCourses.length}
               paginate={paginate} */
             />
           </div>
-          <SearchBar />
           <div>
-            <Container>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6} lg={4}>
-                  <Card />
-                </Grid>
-                <Grid item xs={12} md={6} lg={4}>
-                  <Card />
-                </Grid>
-                <Grid item xs={12} md={6} lg={4}>
-                  <Card />
-                </Grid>
+            {/*  <Container> */}
+            <Grid container spacing={3}>
+              <Grid item xs={4} md={6} lg={4}>
+                <Card />
               </Grid>
-            </Container>
+              <Grid item xs={4} md={6} lg={4}>
+                <Card />
+              </Grid>
+              <Grid item xs={4} md={6} lg={4}>
+                <Card />
+              </Grid>
+            </Grid>
+            {/*  </Container> */}
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

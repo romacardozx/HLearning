@@ -12,12 +12,15 @@ import Stack from "@mui/material/Stack";
 import StarIcon from "@mui/icons-material/Star";
 import Button from "@mui/material/Button";
 import { yellow } from "@material-ui/core/colors";
+import AddIcon from "@mui/icons-material/Add";
 /* import style from "./Card.module.css"; */
 /* import CardProv from "../../images/CardProv.png"; */
 
-export default function CourseCard(/* title, description, score, img */) {
+export default function CourseCard(
+  /* title, description, score, img, id */ id
+) {
   return (
-    <Card sx={{ maxWidth: 355 }} elevation={9}>
+    <Card sx={{ maxWidth: 355 }} elevation={6}>
       {/* <div className={style.container}> */}
       <CardHeader
         textAlign="center"
@@ -38,11 +41,11 @@ export default function CourseCard(/* title, description, score, img */) {
         </Typography>
       </CardContent>
       <Stack direction="row">
-        <StarIcon sx={{ color: yellow[800] }} />
-        <StarIcon sx={{ color: yellow[800] }} />
-        <StarIcon sx={{ color: yellow[800] }} />
-        <StarIcon sx={{ color: yellow[800] }} />
-        <StarIcon sx={{ color: yellow[800] }} />
+        <StarIcon sx={{ color: yellow["A200"] }} />
+        <StarIcon sx={{ color: yellow["A200"] }} />
+        <StarIcon sx={{ color: yellow["A200"] }} />
+        <StarIcon sx={{ color: yellow["A200"] }} />
+        <StarIcon sx={{ color: yellow["A200"] }} />
       </Stack>
       <Typography
         textAlign="center"
@@ -59,8 +62,14 @@ export default function CourseCard(/* title, description, score, img */) {
           <Typography> Agregar al carrito</Typography>
         </IconButton>
       </CardActions>
-      <Button component={Link} to="/details" size="small">
-        VER DETALLES
+      <Button
+        variant="outlined"
+        component={Link}
+        to={`/courses/${id}`}
+        size="small"
+        endIcon={<AddIcon size="large" />}
+      >
+        VER
       </Button>
     </Card>
   );
