@@ -17,10 +17,10 @@ const CourseSchema = new Schema({
         type: Number
     },
     duration: {
-        type: Number
+        type: Schema.Types.Mixed,  
     },
     categories: [{
-        type: Schema.Types.String,
+        type: Schema.Types.ObjectId,
         ref: 'Category',
         required: true
     }],
