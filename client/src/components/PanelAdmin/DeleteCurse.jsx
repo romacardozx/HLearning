@@ -6,7 +6,6 @@ import { getAllCourses, deleteCurse } from "../../actions"
 function DeleteCurse(){
     
     const dispatch = useDispatch();
-
     const course = useSelector(state => state.getAllCourses)
 
     function handleDelete(id){
