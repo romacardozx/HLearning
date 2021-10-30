@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,500,600,700|Poppins:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
+
+.body {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  font-family: "Josefin Sans", sans-serif;
+
+}
+
+
+.container {
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rows {
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/*---------------------------------------------------------*/
+/* CONTACT ME                               */
+/*---------------------------------------------------------*/
+.contactme {
+  background-color: rgb(255, 255, 255);
+}
+
+.contactOverlay {
+  width: 100%;
+  padding-top: 5vh;
+  padding-bottom: 10%;
+  background-color: rgba(230, 230, 230, 0.921);
+}
+
+.form {
+  /* background-color: greenyellow; */
+  width: 100%;
+  /* display: -webkit-box;
+  display: -ms-flexbox; */
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+
+.form button {
+  width: 190px;
+  height: 55px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #002427;
+  -webkit-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+  transition: 0.5s linear;
+  color: white;
+  font-weight: bold;
+  margin-top: 20%;
+  cursor: pointer;
+  font-size: calc(1em + .4vw);
+}
+
+.form button:hover {
+  background-color: unset;
+  border: 2px solid #e49504;
+  -webkit-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+  transition: 0.5s linear;
+  color: black;
+
+
+}
+
+.contForm {
+
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+
+.formWord {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 4%;
+}
+
+.formWords {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 4%;
+  font-size: calc(1em + .4vw);
+}
+
+@media (max-width: 1000px) {
+  .contForm {
+    flex-direction: column;
+  }
+
+  .formWord,
+  .formWords {
+    width: 80%;
+    margin: auto;
+
+  }
+}
+
+.formWord h2 {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 5%;
+}
+
+.formWord span {
+  font-size: calc(1em + 0.3vw);
+}
+
+.formWord input {
+  width: 100%;
+  min-height: 55px;
+  font-size: 20px;
+
+  margin-bottom: 5%;
+  border: 0;
+  margin-top: 2%;
+  padding-left: 3%;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  border: 2px solid #cccccc;
+}
+
+.formWord .textarea {
+  min-height: 55px;
+  font-size: 20px;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10%;
+  border: 0;
+  margin-top: 5%;
+  color: black;
+  -webkit-box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  box-shadow: 0px 0px 48px 0px rgb(218, 218, 218);
+  padding-left: 3%;
+  border: 2px solid #cccccc;
+  overflow: clip;
+}
+
+.parrafito {
+  margin-top: 5%;
+}
+
+/*---------------------------------------------------------*/
+/* CONTACT ME END                                */
+/*---------------------------------------------------------*/
