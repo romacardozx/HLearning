@@ -1,0 +1,25 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 6em;
+  margin-left: 1em;
+}
+.text {
+  margin: 0 1em 2em 1em;
+  padding-bottom: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* .navBarContainer { */
+/* border: 3px solid rgb(38, 63, 207); */
+
+/* min-width: 160px; */
+/*   line-height: 160px;
+} */
