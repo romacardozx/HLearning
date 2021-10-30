@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const routers = require('./src/routes/index');
 
 require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV || 'development'}`
+    path: `.env.${process.env.NODE_ENV || 'production'}`
   });
 
 //Crea el servidor
