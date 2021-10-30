@@ -253,7 +253,132 @@
       }
     ],
     "students": "100"
+  },
+  {
+    "title": "Complete React Material UI",
+    "description": " Material UI es un framework creado por Google para aplicar elementos más visuales y modernos, haciendo que tu diseño sea más profesional. Se combina a la perfeccion con tus proyectos en React. En este curso aprenderas a dominarlo para incluirlo en tus proximos proyectos",
+    "img": "https://img-c.udemycdn.com/course/480x270/4331564_0297_5.jpg",
+    "score": "3",
+    "duration": "8:42:06",
+    "categories": ["UI","FrontEnd"],
+    "price": 1800,
+    "videos": [
+      {
+        "name": "Introduction",
+        "link": "https://youtu.be/bL-ZwwF6wTc?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "31:10"
+      },
+      {
+        "name": "Customization of MUI Components and Theme",
+        "link": "https://youtu.be/W-QasNYJ-3Y?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "36:42"
+      },
+      {
+        "name": "How to Design a Perfect Form",
+        "link": "https://youtu.be/-XKaSCU0ZLM?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "1:00:33"
+      },
+      {
+        "name": "Form Validation",
+        "link": "https://youtu.be/4YLa9iuN43c?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "34:18"
+      },
+      {
+        "name": "Table with Paging Sorting and Filtering",
+        "link": "https://youtu.be/jnQ1-XW7KNY?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "44:04"
+      },
+      {
+        "name": "React Material UI Popup Dialog",
+        "link": "https://youtu.be/5akdtwtmjZM?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "33:34"
+      },
+      {
+        "name": "Confirm Dialog & Notification",
+        "link": "https://youtu.be/KOryCvYE4_s?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "25:18"
+      },
+      {
+        "name": "React Material UI Advance",
+        "link": "https://youtu.be/m-2_gb_3L7Q?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "4:16:27"
+      }
+    ],
+    "students": "200"
+  },
+  {
+    "title": "Node.js para principiantes",
+    "description": "Aprender Node.js es una gran manera de adentrarse en el desarrollo web de backend o de ampliar tu práctica en desarrollo de fullstack. Con este curso práctico de HLearning sobre Node.js podrás aprender los conceptos y las aplicaciones de este sistema en tiempo de ejecución de JavaScript tremendamente útil.",
+    "img": "https://img-c.udemycdn.com/course/480x270/2306018_7bc8_4.jpg",
+    "score": "5",
+    "duration": "3:43:53",
+    "categories": ["BackEnd"],
+    "price": 2500,
+    "videos": [
+      {
+        "name": "GET,POST,PUT and DELETE",
+        "link": "https://youtu.be/4fWWn2Pe2Mk?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "08:24"
+      },
+      {
+        "name": " MERN Jwt Authentication",
+        "link": "https://youtu.be/T8qepiTbJi4?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "40:50"
+      },
+      {
+        "name": "Express MongoDB CRUD",
+        "link": "https://youtu.be/voDummz1gO0?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "50:49"
+      },
+      {
+        "name": "Complete React + Node js - CRUD Operations",
+        "link": "https://youtu.be/HuXBuXf52vA?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "2:03:50"
+      }
+    ],
+    "students": "250"
+  },
+  {
+    "title": "CURSO DE PYTHON",
+    "description": "Este es el curso en español más completo y exhaustivo que encontrarás sobre Python 3 en HLearning. Perfectamente estructurado y balanceado, introduce todos los temas de forma sencilla, gradual y 100% práctica. Todos los temas han sido cuidadosamente preparados para presentarse de forma gradual, de manera que el alumno nunca se sienta perdido durante su aprendizaje.",
+    "img": "https://i.ytimg.com/vi/GuIQHhxeARI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBHQv7CABKYev2WNvygB6D2yTgUXA",
+    "score": "5",
+    "duration": "3:48:36",
+    "categories": ["LenguajeDeProgramacion"],
+    "price": 2800,
+    "videos": [
+      {
+        "name": "PARTE 1",
+        "link": "https://youtu.be/GuIQHhxeARI?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "34:04"
+      },
+      {
+        "name": "PARTE 2",
+        "link": "https://youtu.be/CVVWXNKlkhU?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "33:08"
+      },
+      {
+        "name": "PARTE 3",
+        "link": "https://youtu.be/Zs253mrx0JI?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "31:25"
+      },
+      {
+        "name": "PARTE 4",
+        "link": "https://youtu.be/EOQ3N5YLNEQ?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "1:17:16"
+      },
+      {
+        "name": "PARTE 5",
+        "link": "https://youtu.be/-w36jxHXfYc?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "52:43"
+      }
+    ],
+    "students": "120"
   }
+
+
+
+
 
 
 ]
