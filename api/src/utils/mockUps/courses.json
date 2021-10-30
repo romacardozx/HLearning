@@ -9,27 +9,27 @@
     "price": "500",
     "videos": [
       {
-        "name": "#1 - Introduction",
+        "name": "Introduction",
         "link": "https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
         "duration": "11"
       },
       {
-        "name": "#2 - Using the Just in Time Compiler",
+        "name": "Using the Just in Time Compiler",
         "link": "https://youtu.be/mP2TPWZRSmk?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
         "duration": "9"
       },
       {
-        "name": "#3 - Extra Variants",
+        "name": "Extra Variants",
         "link": "https://youtu.be/DduPHtznQ2o?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
         "duration": "5"
       },
       {
-        "name": "#4 - Arbitrary Values",
+        "name": "Arbitrary Values",
         "link": "https://youtu.be/4gEH1h5C-Tc?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
         "duration": "5"
       },
       {
-        "name": "#5 - Tailwind JIT with Next.js",
+        "name": "Tailwind JIT with Next.js",
         "link": "https://youtu.be/D3Kz2bOQR5E?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
         "duration": "8"
       }
@@ -46,37 +46,37 @@
     "price": "900",
     "videos": [
       {
-        "name": "Vue 3 with TypeScript Tutorial #1 - Intro & Setup",
+        "name": "Intro & Setup",
         "link": "https://youtu.be/JfI5PISLr9w?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
         "duration": "9"
       },
       {
-        "name": "Vue 3 with TypeScript Tutorial #2 - Vue Components using TypeScript",
+        "name": "Vue Components using TypeScript",
         "link": "https://youtu.be/UDAVj_vlAr8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
         "duration": "10"
       },
       {
-        "name": "Vue 3 with TypeScript Tutorial #3 - Composition API & TypeScript",
+        "name": "Composition API & TypeScript",
         "link": "https://youtu.be/H-hXNym2CK8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
         "duration": "12"
       },
       {
-        "name": "Vue 3 with TypeScript Tutorial #4 - Types & Props",
+        "name": "Types & Props",
         "link": "https://youtu.be/GdWrYfDfqRE?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
         "duration": "9"
       },
       {
-        "name": "Vue 3 with TypeScript Tutorial #5 - Functions",
+        "name": "Functions",
         "link": "https://youtu.be/usSBsgWNUZk?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
         "duration": "8"
       },
       {
-        "name": "Vue 3 with TypeScript Tutorial #6 - Computed Values",
+        "name": "Computed Values",
         "link": "https://youtu.be/TwN36HU-NQM?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
         "duration": "6"
       },
       {
-        "name": "Vue 3 with TypeScript Tutorial #7 - Hylia Font & Final Styles",
+        "name": "Hylia Font & Final Styles",
         "link": "https://youtu.be/6n4myAZwdxg?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
         "duration": "6"
       }
@@ -93,17 +93,17 @@
     "price": 5.0,
     "videos": [
       {
-        "name": "Como hacer un sitio web con Bootstrap 1.- Introducción y Header",
+        "name": "Introducción y Header",
         "link": "https://www.youtube.com/watch?v=xSTwyYDT-A8&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_",
         "duration": "28:58"
       },
       {
-        "name": "Como hacer un sitio web con Bootstrap 2.- Contenido Principal y Paginación",
+        "name": "Contenido Principal y Paginación",
         "link": "https://www.youtube.com/watch?v=HsftXewWmfs&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_&index=2",
         "duration": "22:37"
       },
       {
-        "name": "Como hacer un sitio web con Bootstrap 3.- Sidebar, Footer y Artículos Adaptables",
+        "name": "Sidebar, Footer y Artículos Adaptables",
         "link": "https://www.youtube.com/watch?v=W3Jd0k7gv9c&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_&index=3",
         "duration": "12:46"
       }
@@ -120,17 +120,17 @@
     "price": 25.0,
     "videos": [
       {
-        "name": "Curso de JAVASCRIPT desde CERO (Completo) - Nivel JUNIOR",
+        "name": "Nivel JUNIOR",
         "link": "https://www.youtube.com/watch?v=z95mZVUcJ-E&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=3",
         "duration": "10:00"
       },
       {
-        "name": "Curso de JAVASCRIPT desde CERO (Completo) - Nivel MID LEVEL",
+        "name": "Nivel MID LEVEL",
         "link": "https://www.youtube.com/watch?v=xOinGb2MZSk&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=4",
         "duration": "7:56"
       },
       {
-        "name": "Curso de JAVASCRIPT desde CERO (Completo) - Nivel Master",
+        "name": "Nivel Master",
         "link": "https://www.youtube.com/watch?v=EbMi1Qj4rVE&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=5",
         "duration": "9:23"
       }
@@ -143,7 +143,7 @@
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ahxxcR2SA-SW1rMpjQzHj5cTwx06LooCGw&usqp=CAU",
     "score": "5",
     "duration": "2",
-    "categories": ["FrontEnd"],
+    "categories": ["FrontEnd","Css"],
     "price": 1.0,
     "videos": [
       {
@@ -153,5 +153,107 @@
       }
     ],
     "students": "5446"
+  },
+  {
+    "title": "Curso Básico de HTML desde 0",
+    "description": "",
+    "img": "https://img-c.udemycdn.com/course/480x270/3462566_1a6b_2.jpg",
+    "score": "4",
+    "duration": "1:26:39",
+    "categories": ["FrontEnd", "HTML"],
+    "price": 1200,
+    "videos": [
+      {
+        "name": "Introducción",
+        "link": "https://youtu.be/cqMfPS8jPys?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "15:23"
+      },
+      {
+        "name": "Etiquetas para Textos",
+        "link": "https://youtu.be/TNQleomUw6U?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "9:01"
+      },
+      {
+        "name": "Enlaces",
+        "link": "https://youtu.be/RdnS55MbdY4?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "11:06"
+      },
+      {
+        "name": "Listas",
+        "link": "https://youtu.be/IRbEXqBBOCo?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "5:18"
+      },
+      {
+        "name": "Imágenes",
+        "link": "https://youtu.be/lAoeALwWKo0?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "7:15"
+      },
+      {
+        "name": "Tablas",
+        "link": "https://youtu.be/LmSUS6MuSzk?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "4:51"
+      },
+      {
+        "name": "Formularios",
+        "link": "https://youtu.be/QDOfODwsfuQ?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "12:50"
+      },
+      {
+        "name": "Creando una Estructura de Contenido / Layout",
+        "link": "https://youtu.be/yyYPFHAddvs?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "12:53"
+      },
+      {
+        "name": "Metadatos y otras etiquetas",
+        "link": "https://youtu.be/eCV_-IHs5xQ?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "8:02"
+      }
+
+    ],
+    "students": "400"
+  },
+  {
+    "title": "Figma para principiantes",
+    "description": "Aprende Figma desde cero y empieza hoy a crear tus propios diseños, no limites tu creatividad y ejecuta cada idea.Figma es la mayor revolución en el diseño porque permite trabajar en equipo, en tiempo real y sobre un mismo producto",
+    "img": "https://img-c.udemycdn.com/course/480x270/3294068_93e5_2.jpg",
+    "score": "5",
+    "duration": "4:53:27",
+    "categories": ["Diseño Web","FrontEnd"],
+    "price": 2300,
+    "videos": [
+      {
+        "name": "Figma por primera vez",
+        "link": "https://youtu.be/xXF7Qmxp1BA?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "1:09:34"
+      },
+      {
+        "name": "Diseña una Página de Bienes Raíces",
+        "link": "https://youtu.be/8Zb1dFtQEXU?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "1:09:08"
+      },
+      {
+        "name": "Los mejores plugins de Figma",
+        "link": "https://youtu.be/pLcWLSHa00Y?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "19:05"
+      },
+      {
+        "name": "Como diseñar una página web bonita y sin saber de diseño",
+        "link": "https://youtu.be/Mx8h0SRu-Iw?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "29:44"
+      },
+      {
+        "name": "Como Diseñar una App de Gastos",
+        "link": "https://youtu.be/fl9lZ0Ggb14?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "44:09"
+      },
+      {
+        "name": " Creando un Portafolio",
+        "link": "https://youtu.be/XIt1SNcuJ9g?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "1:01:47"
+      }
+    ],
+    "students": "100"
   }
+
+
 ]
