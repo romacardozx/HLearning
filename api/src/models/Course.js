@@ -20,7 +20,7 @@ const CourseSchema = new Schema({
         type: Number
     },
     categories: [{
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.String,
         ref: 'Category',
         required: true
     }],
