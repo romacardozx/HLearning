@@ -4,6 +4,8 @@ import Landing from "./components/Landing/Landing";
 import Courses from "./components/Courses/Courses";
 import Privacy from "./components/Privacy/Privacy"
 import Contact from "./components/Contact/Contact";
+import Detail from './components/Detail/Detail';
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <Route exact path="/courses" component={Courses} />
       <Route exact path="/privacy" component={Privacy} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/courses/:id" component={Detail} />
     </div>
   );
 }
