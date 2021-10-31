@@ -58,7 +58,10 @@ module.exports = async ( req, res, next) => {
     return res.send(orderPrice);
     }
     }else res.json(courses);
+<<<<<<< HEAD
       
+=======
+>>>>>>> 6479f8d4ac31f091a00d97711a47706ad729abac
   } catch (err) {
     console.log(err);
     next(err);
