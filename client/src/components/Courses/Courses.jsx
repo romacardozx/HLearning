@@ -18,6 +18,8 @@ import { /* Container, */ Grid } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Courses.module.css";
 
+var chechu = 'hola'
+
 export default function Courses() {
   /* const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.setAllCourses);
