@@ -5,7 +5,8 @@ module.exports = async (req, res, next) => {
   try {
     const course = await Course.findById({_id:id});
     res.json(course);
-  } catch (error) {    
-    next(error)
+  } catch (err) {    
+    console.log(err);
+    next(err)
   }
 };

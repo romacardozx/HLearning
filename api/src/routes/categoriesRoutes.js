@@ -5,6 +5,7 @@ const getAllCategories = require('../controllers/category/getAllCategories');
 
 const router = Router();
 router.use(express.json());
+
 router.get('/', getAllCategories);
 router.post('/createCategory', createCategory);
 
