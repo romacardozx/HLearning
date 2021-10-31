@@ -10,12 +10,16 @@ const updateCourse = require('../controllers/courses/updateCourse');
 
 const deleteCourse = require('../controllers/courses/deleteCourse');
 
+const getCoursesByName = require('../controllers/courses/getCoursesByName');
+
 const router = Router();
 router.use(express.json());
 
 // ----> GET <----
 router.get('/', getAllCourses);
+router.get('/search', getCoursesByName);
 router.get('/:id', getCourseById);
+
 
 // ----> POST <----
 router.post('/createCourse', createCourse);
