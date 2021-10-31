@@ -5,6 +5,7 @@ const { BASE_URL } = process.env
 
 
 export function getAllCourses(){
+    
     return async function(dispatch){
         try {
             var json = await axios(`${BASE_URL}/courses`);
@@ -17,4 +18,5 @@ export function getAllCourses(){
             console.log("error", error)
         }
     }
+    
 }
