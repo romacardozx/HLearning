@@ -1,0 +1,11 @@
+const Course = require("../../models/Course");
+
+module.exports = async (req, res, next) => {
+  const {id} = req.params; 
+  try {
+    const course = await Course.findById({_id:id});
+    res.json(course);
+  } catch (error) {    
+    next(error)
+  }
+};
