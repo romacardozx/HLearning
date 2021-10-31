@@ -1,28 +1,42 @@
-import * as React from "react";
+import React from "react";
+/* import { useDispatch } from "react-redux";
+import { orderByName } from "../../actions/orderByName";
+import { orderByScore } from "../../actions/orderByScore";
+import { orderByPrice } from "../../actions/orderByPrice"; */
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function Orders() {
-  const [name, setName] = React.useState("");
+export default function Orders({
+  setCurrentPage,
+  setOrderName,
+  setOrderScore,
+  setOrderPrice,
+}) {
+  /*  const dispatch = useDispatch();
 
-  const handleChangeName = (e) => {
-    setName(e.target.value);
-  };
-
-  const [score, setScore] = React.useState("");
+  function handleChangeName(e) {
+    e.preventDefault();
+    dispatch(orderByName(e.target.value));
+    setCurrentPage(1);
+    setOrderName("Order" + e.target.value);
+  }
 
   const handleChangeScore = (e) => {
-    setScore(e.target.value);
+    e.preventDefault();
+    dispatch(orderByScore(e.target.value));
+    setCurrentPage(1);
+    setOrderScore("Order" + e.target.value);
   };
-
-  const [price, setPrice] = React.useState("");
 
   const handleChangePrice = (e) => {
-    setPrice(e.target.value);
-  };
+    e.preventDefault();
+    dispatch(orderByPrice(e.target.value));
+    setCurrentPage(1);
+    setOrderPrice("Order" + e.target.value);
+  }; */
 
   return (
     <div>
@@ -32,9 +46,8 @@ export default function Orders() {
           <Select
             labelId="select-name"
             id="select-name"
-            value={name}
             label="Name"
-            onChange={handleChangeName}
+            /* onChange={(e) => handleChangeName(e)} */
           >
             <MenuItem value="A-Z">A-Z</MenuItem>
             <MenuItem value="Z-A">Z-A</MenuItem>
@@ -48,9 +61,8 @@ export default function Orders() {
           <Select
             labelId="select-score"
             id="select-score"
-            value={score}
             label="Score"
-            onChange={handleChangeScore}
+            /* onChange={(e) => handleChangeScore(e)} */
           >
             <MenuItem value="Asc">Mayor popularidad</MenuItem>
             <MenuItem value="Desc">Menor popularidad</MenuItem>
@@ -64,9 +76,8 @@ export default function Orders() {
           <Select
             labelId="select-price"
             id="select-price"
-            value={price}
             label="Price"
-            onChange={handleChangePrice}
+            /* onChange={(e) => handleChangePrice(e)} */
           >
             <MenuItem value="Asc">Mayor precio</MenuItem>
             <MenuItem value="Desc">Menor precio</MenuItem>
