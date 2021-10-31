@@ -7,6 +7,7 @@ const deleteCategoryById = require('../controllers/category/deleteCategory')
 
 const router = Router();
 router.use(express.json());
+
 router.get('/', getAllCategories);
 router.post('/createCategory', createCategory);
 router.put('/:id', updateCategoryById);

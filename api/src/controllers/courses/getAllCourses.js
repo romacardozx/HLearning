@@ -7,6 +7,7 @@ module.exports = async (_req, res, next) => {
       .populate("categories", "name"); //saque el -id
     res.json(courses);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 };
