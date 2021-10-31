@@ -17,7 +17,7 @@ const CourseSchema = new Schema({
         type: Number
     },
     duration: {
-        type: Number
+        type: Schema.Types.Mixed,  
     },
     categories: [{
         type: Schema.Types.ObjectId,

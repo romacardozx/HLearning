@@ -58,8 +58,8 @@ module.exports = async ( req, res, next) => {
     return res.send(orderPrice);
     }
     }else res.json(courses);
-      
   } catch (err) {
+    console.log(err);
     next(err);
   }
 };
