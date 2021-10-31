@@ -2,7 +2,8 @@ import {
   
   GET_ALL_COURSES, 
   GET_ALL_CATEGORIES, 
-  GET_DETAIL_COURSES, 
+  GET_DETAIL_COURSES,
+  GET_COURSE_BY_NAME, 
   ORDER_BY_NAME,
   ORDER_BY_SCORE,
   ORDER_BY_PRICE,
@@ -43,6 +44,13 @@ function rootReducer(state = initialState, action) {
       return {
         ...state, 
         getCourseDetail: action.payload
+      }
+    }
+
+    case GET_COURSE_BY_NAME: {
+      return {
+        ...state, 
+        getAllCourses: action.payload
       }
     }
 

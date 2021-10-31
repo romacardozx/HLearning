@@ -7,13 +7,10 @@ export function orderByPrice(price){
     
     return async function(dispatch){
         try {
-            let json = await axios(``)
-            
+            let json = await axios(`${BASE_URL}/courses?price=${price?price:""}`)
             return dispatch({
-
                 type: 'ORDER_BY_PRICE',
                 payload: json.data
-
             })
             
         } catch(error){
