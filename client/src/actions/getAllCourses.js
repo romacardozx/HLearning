@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-export function getAllCurses(){
+export function getAllCourses(){
     return async function(dispatch){
         try {
             var json = await axios(' ');

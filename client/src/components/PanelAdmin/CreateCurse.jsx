@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect }  from "react";
-import { Formik } from 'Formik'
-// import { useHistory } from "react-router-dom";
+import React, { useEffect, useState }  from "react";
+import { Formik, Form, FieldArray, Field, ErrorMenssage } from 'Formik'
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from '../../actions/getAllCategories.js'
 import * as Yup from 'yup';
@@ -10,10 +9,13 @@ import * as Yup from 'yup';
 
 function CreateCurse (){
 
-    // const history = useHistory();
+
     const dispatch = useDispatch();
     const getAllCategory = useSelector(state => state.getAllCategories);
-    
+
+    const [formSent, setFormSent] = useState(false)
+    console.log(formSent);
+
     useEffect(() => {
         dispatch(getAllCategories());
       },[dispatch]);
@@ -32,8 +34,9 @@ function CreateCurse (){
                     img:'', 
                     students: '', //CONSULTAR
                     category: [],
-                    video: [],
+                    videos: [], 
                 }}
+
                 validationSchema = {
                     Yup.object().shape({
                         title: Yup.string()
@@ -58,80 +61,87 @@ function CreateCurse (){
                         category: Yup.array()
                             .min(1, "at least one category is needed")
                             .max(2, "Max two categories"),
-                        video: Yup.array()
+                        videos: Yup.array()
                             .min(1, "at least one video is needed")        
                     })
                 }
-                onSubmit={(value) => {
-                    console.log("send... test...")
+                onSubmit={(value, {resetForm}) => {
+                    resetForm();
+                    console.log("send...")
+                    setFormSent(true);
+                    setTimeout(() => setFormSent(false), 3000)
                 }}
             >
-                {({
-                    value,
-                    errors,
-                    touched,
-                    handleSubmit, 
-                    handleChange,
-                    handleBlur
-                }) => (
-                    <form onSubmit={handleSubmit}>
-                        <input 
+                {({errors, videos}) => (
+                    <Form>
+                        <Field 
                             type="text"
                             name="title"
-                            onChange = {handleChange}
-                            onBlur = {handleBlur}
-                            value =  {value.title}
                         />
-                        {errors.title && touched.title && <div>{errors.title}</div>}
-                        <input 
+                        <ErrorMenssage name="title" component={<div>{errors.title}</div>}/>
+                        <Field 
                             type="text"
                             name="description"
-                            onChange = {handleChange}
-                            onBlur = {handleBlur}
-                            value =  {value.description}
                         />
-                        {errors.description && touched.description && <div>{errors.description}</div>}
-                        <input 
+                        <ErrorMenssage name="description" component={<div>{errors.description}</div>}/>
+                        <Field 
                             type="text"
                             name="score"
-                            onChange = {handleChange}
-                            onBlur = {handleBlur}
-                            value =  {value.score}
                         />
-                        {errors.score && touched.score && <div>{errors.score}</div>}
-                        <input 
+                        <ErrorMenssage name="score" component={<div>{errors.score}</div>}/>
+                        <Field 
                             type="text"
                             name="duration"
-                            onChange = {handleChange}
-                            onBlur = {handleBlur}
-                            value =  {value.duration}
                         />
-                        {errors.duration && touched.duration && <div>{errors.duration}</div>}
-                        <input 
+                        <ErrorMenssage name="duration" component={<div>{errors.duration}</div>}/>
+                        <Field 
                             type="text"
                             name="price"
-                            onChange = {handleChange}
-                            onBlur = {handleBlur}
-                            value =  {value.duration}
                         />
-                        {errors.price && touched.price && <div>{errors.price}</div>}
-                        <input 
+                        <ErrorMenssage name="price" component={<div>{errors.price}</div>}/>
+                        <Field 
                             type="text"
                             name="students"
-                            onChange = {handleChange}
-                            onBlur = {handleBlur}
-                            value =  {value.duration}
                         />
-                        {errors.students && touched.students && <div>{errors.students}</div>}
-                        <input 
+                        <ErrorMenssage name="students" component={<div>{errors.students}</div>}/>
+                        <Field 
                             type=" "
                             name="img"
-                            onChange = {handleChange}
-                            onBlur = {handleBlur}
-                            value =  {value.img}
                         />
-                        {errors.price && touched.price && <div>{errors.price}</div>}
-                        <select multiple >
+                        <ErrorMenssage name="img" component={<div>{errors.img}</div>}/>
+                        <FieldArray>
+                        {({push, remove}) => (
+                            <div>
+                                {
+                                    videos.length > 0 && videos.map((video, index) =>(
+                                        <div key={index}>
+                                            
+                                            <label>Insert Url</label>
+                                            
+                                            <Field
+                                            name={index}
+                                            placeholder = "Insert url"
+                                            type="text"
+                                            />
+
+                                            <button
+                                            type="button"
+                                            onClick={()=> push(index)}
+                                            > Add video</button>
+                                            
+                                            <button
+                                            type="button"
+                                            onClick={() => remove(index)}
+                                            > Delete Link</button>
+
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        )}
+                        <ErrorMenssage name="videos" component={<div>{errors.videos}</div>}/>
+                        </FieldArray>
+                        {/* <select multiple >
                         {
                             getAllCategory.map((c) => (
                                 <option key={c.id} value={c.name}>
@@ -139,9 +149,23 @@ function CreateCurse (){
                                 </option>
                             ))
                         } 
-                        </select>
-                        {errors.category && touched.category && <div>{errors.category}</div>}
-                    </form>
+                        </select> */}
+
+                        {/* {linea 157 invento Gudy!, no test} */}
+                        {/* key={c.id} value={c.name} */}
+                        {
+                            getAllCategory.map((c) => (
+                                <Field as="select" multiple>
+                                    <option>
+                                        {c.name}
+                                    </option>
+                                </Field>
+                            ))
+                        } 
+                        <ErrorMenssage name="category" component={<div>{errors.category}</div>}/>
+                        <button type="submit">Enviar Curso</button>
+                        {setFormSent && <p> Curso enviado con exito!</p>}
+                    </Form>
                 )}
 
             </Formik>

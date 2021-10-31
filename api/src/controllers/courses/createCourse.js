@@ -9,6 +9,5 @@ module.exports = async (req, res, next) => {
       res.json({ msg: "Course created", course });
     } catch (error) {
       console.log(error);
-      
     }
   };
