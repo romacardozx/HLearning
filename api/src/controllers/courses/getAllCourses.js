@@ -5,7 +5,7 @@ module.exports = async ( req, res, next) => {
     .find()
     .populate("categories", "name -_id");
   try {
-    let { abc } = req.query; 
+    let { abc, score, price } = req.query; 
     
     if(abc){
       if(order === "A-Z" || !order || order === ""){
@@ -58,6 +58,7 @@ module.exports = async ( req, res, next) => {
     return res.send(orderPrice);
     }
     }else res.json(courses);
+      
   } catch (err) {
     console.log(err);
     next(err);
