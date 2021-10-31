@@ -1,13 +1,14 @@
-const Course = require('../../models/Course');
+const Course = require("../../models/Course");
 
 //Crear un nuevo curso
 module.exports = async (req, res, next) => {
-    const course = new Course(req.body);
-    console.log('estoy aca')
-    try {
-      await course.save();
-      res.json({ msg: "Course created", course });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const data = req.body;
+  try {
+    const course = new Course(data);
+    await course.save();
+    res.json({ msg: "Course created", course });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
