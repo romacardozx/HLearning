@@ -7,7 +7,8 @@ module.exports = async (req, res, next) => {
     const course = new Course(data);
     await course.save();
     res.json({ msg: "Course created", course });
-  } catch (error) {
-    next(error)
+  } catch (err) {
+    console.log(err);
+    next(err);
   }
 };
