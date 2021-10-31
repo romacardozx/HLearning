@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+require('dotenv').config();
+const { BASE_URL } = process.env
+
 export function deleteCurse(id){
     return async function(){
         try {
