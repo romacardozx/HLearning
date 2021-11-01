@@ -2,14 +2,14 @@
 import axios from 'axios';
 
 require('dotenv').config();
-const { BASE_URL } = process.env
+const { REACT_APP_BASE_URL } = process.env
 
 export function getDetailCourses(id){
     
     return async function(dispatch){
         try {
-            // var json = await axios(`${BASE_URL}/courses` + id);
-            var json = await axios(`http://localhost:7070/courses/${id}`);
+            var json = await axios(`http://${REACT_APP_BASE_URL}/courses` + id);
+
             return dispatch({
                 type: "GET_DETAIL_COURSES",
                 payload: json.data
