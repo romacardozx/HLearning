@@ -4,9 +4,14 @@
   align-items: center;
 }
 
-.containerLat {
+/* .selects {
+  display: flex;
+  display: table-column;
+} */
+
+/* .containerLat {
   float: left;
-}
+} */
 /* .containerGrid {
   float: left;
 } */
