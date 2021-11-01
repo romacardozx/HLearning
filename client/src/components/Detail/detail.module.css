@@ -6,9 +6,11 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
   border-radius: 12px;
+  font-size: 20px;
+  margin-left: 20px;
 }
+
 
 .btn{
     transition-duration: 0.4s;
@@ -18,6 +20,7 @@
     background-color: #7766c2;
     color: white;
   }
+
 
 .links{
     display: inline-block;

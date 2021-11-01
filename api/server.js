@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const routers = require('./src/routes/index');
 
 require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV || 'development'}`
+    path: `.env.${process.env.NODE_ENV || 'production'}`
   });
 
 //Crea el servidor
@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:true}));
 app.use('/', routers)
 
 // DB Config
-const db = "mongodb+srv://admin:admin12345@cluster0.hbndf.mongodb.net/hLearning?retryWrites=true&w=majority";
+const db = process.env.MONGO_URI;
 const port = process.env.PORT || 7070;
 
 // Connect to MongoDB

@@ -12,6 +12,9 @@ import Rating from "@mui/material/Rating";
 import { style } from '@mui/system';
 import { Component } from 'react'
 import ReactPlayer from 'react-player'
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getDetail } from '../../actions';
+// import { useEffect} from 'react';
 
 
 const Img = styled('img')({
@@ -22,6 +25,14 @@ const Img = styled('img')({
 });
 
 export default function CourseDetail() {
+
+  // const dispatch = useDispatch();
+
+  //   useEffect(() => { 
+  //       dispatch(getDetail(props.match.params.id))
+  //   });
+
+  //   const courseSelected = useSelector((state) => state.detail)
 
     return (
         <div>
@@ -63,16 +74,19 @@ export default function CourseDetail() {
                   <Link className={styles.links} to='/courses'>UI</Link> 
                 </Typography>
               </Grid>
-              <Grid item align="center">
-                <Typography sx={{ cursor: 'pointer' }} variant="body2">
+              <Grid item align="right" container spacing={2}>
+                <Typography sx={{ cursor: 'pointer' }}>
                  <button className={styles.btn}><span className={styles.parpadea}>Buy now!</span></button>
                 </Typography>
-              </Grid>
-              <Grid item align="center">
-                <Typography sx={{ cursor: 'pointer' }} variant="body2">
+                <Typography sx={{ cursor: 'pointer' }}>
                   <button className={styles.btn}>Add to cart</button>
                 </Typography>
               </Grid>
+              {/* <Grid item align="center">
+                <Typography sx={{ cursor: 'pointer' }} variant="body2">
+                  <button className={styles.btn}>Add to cart</button>
+                </Typography>
+              </Grid> */}
             </Grid>
             <Grid item>
               <Typography variant="h5" component="div">
