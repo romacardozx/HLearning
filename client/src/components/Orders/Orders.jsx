@@ -10,12 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function Orders({
-  setCurrentPage,
-  /* setOrderName,
-  setOrderScore,
-  setOrderPrice, */
-}) {
+export default function Orders({ setCurrentPage }) {
   const dispatch = useDispatch();
 
   const [orderName, setOrderName] = useState("");
