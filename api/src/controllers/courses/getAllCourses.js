@@ -10,15 +10,15 @@ module.exports = async ( req, res, next) => {
     if(abc){
       if(abc === "A-Z" || !abc || abc === ""){
         coursesOrder = courses.sort((a,b) =>{
-            if(a.name > b.name) return 1;
-            if(b.name > a.name) return -1; 
+            if(a.title > b.title) return 1;
+            if(b.title > a.title) return -1; 
             return 0; 
         })
         return res.send(coursesOrder)
       } if(abc === "Z-A" || !abc || abc === ""){
       coursesOrder = courses.sort((a,b) =>{
-          if(a.name > b.name) return -1;
-          if(b.name > a.name) return 1; 
+          if(a.title > b.title) return -1;
+          if(b.title > a.title) return 1; 
           return 0;
       })
       return res.send(coursesOrder)
