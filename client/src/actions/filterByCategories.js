@@ -7,7 +7,7 @@ function filterByCategories(category) {
   return async function (dispatch) {
     try {
       var json = await axios(
-        `${REACT_APP_BASE_URL}/?category=${category ? category : ""}`
+        `http://${REACT_APP_BASE_URL}/?category=${category ? category : ""}`
       );
       return dispatch({
         type: "FILTER_BY_CATEGORIES",

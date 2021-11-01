@@ -7,7 +7,7 @@ export function getCourseByName(name){
     
     return async function(dispatch){
         try {
-            var json = await axios(`${REACT_APP_BASE_URL}/?name=${name?name:""}`);
+            var json = await axios(`http://${REACT_APP_BASE_URL}/?name=${name?name:""}`);
             return dispatch({
                 type: "GET_COURSE_BY_NAME",
                 payload: json.data

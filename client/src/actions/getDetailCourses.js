@@ -7,7 +7,7 @@ export function getDetailCourses(id){
     
     return async function(dispatch){
         try {
-            var json = await axios(`${REACT_APP_BASE_URL}/courses` + id);
+            var json = await axios(`http://${REACT_APP_BASE_URL}/courses` + id);
             return dispatch({
                 type: "GET_DETAIL_COURSES",
                 payload: json.data

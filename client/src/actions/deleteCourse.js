@@ -7,7 +7,7 @@ export function deleteCurse(id){
     
     return async function(){
         try {
-            const json = await axios.delete(`${REACT_APP_BASE_URL}/courses` + id) //acordate que va (link, id)
+            const json = await axios.delete(`http://${REACT_APP_BASE_URL}/courses` + id) //acordate que va (link, id)
             return json;
         } catch (error) {
             console.log("deleteActivity", error)

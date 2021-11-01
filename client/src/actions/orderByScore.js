@@ -7,7 +7,7 @@ export function orderByScore(score){
     
     return async function(dispatch){
         try {
-            let json = await axios(`${REACT_APP_BASE_URL}/courses?score=${score?score:""}`)
+            let json = await axios(`http://${REACT_APP_BASE_URL}/courses?score=${score?score:""}`)
             return dispatch({
                 type: 'ORDER_BY_SCORE',
                 payload: json.data
