@@ -1,7 +1,7 @@
 import React from "react";
-/* import { useDispatch } from "react-redux";
-import { filterByCategories } from "../../actions/filterByCategories";
-import { filterByDuration } from "../../actions/filterByDuration"; */
+import { useDispatch } from "react-redux";
+import filterByCategories from "../../actions/filterByCategories";
+import filterByDuration from "../../actions/filterByDuration";
 /* import { Checkbox, Collapse } from "antd"; */
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
@@ -14,16 +14,16 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
 /* const { Panel } = Collapse; */
 
 export default function Filters(params) {
-  /*  const dispatch = useDispatch();
-    function handleSelectCategories(e) {
-        e.preventDefault();
-        dispatch(filterByCategories(e.target.value));
+  const dispatch = useDispatch();
+  function handleSelectCategories(e) {
+    e.preventDefault();
+    dispatch(filterByCategories(e.target.value));
   }
 
   function handleSelectDuration(e) {
     e.preventDefault();
     dispatch(filterByDuration(e.target.value));
-  } */
+  }
   /* return (
     <div>
       <Collapse defaultActiveKey={["0"]}>
@@ -38,7 +38,7 @@ export default function Filters(params) {
   ); */
 
   // Our sample dropdown options
-  const options = [
+  const optionsCat = [
     "FrontEnd",
     "Css",
     "UI",
@@ -48,13 +48,15 @@ export default function Filters(params) {
     "BackEnd",
   ];
 
+  const optionsDur = ["1-5 horas", "5-10 horas", "+10 horas"];
+
   return (
     <div style={{ marginLeft: "0", marginTop: "0" }}>
-      <h3>Filtrar por:</h3>
+      {/* <h3>Filtrar por:</h3> */}
       <Autocomplete
         multiple
         id="checkboxes-tags"
-        options={options}
+        options={optionsCat}
         renderOption={(option, { selected }) => (
           <React.Fragment>
             <Checkbox
@@ -71,8 +73,34 @@ export default function Filters(params) {
           <TextField
             {...params}
             variant="outlined"
-            label="Categoría"
+            label="Categorías"
             placeholder="Favorites"
+          />
+        )}
+      />
+      <br />
+      <Autocomplete
+        multiple
+        id="checkboxes-tags"
+        options={optionsDur}
+        renderOption={(option, { selected }) => (
+          <React.Fragment>
+            <Checkbox
+              icon={icon}
+              checkedIcon={checkedIcon}
+              style={{ marginRight: 8 }}
+              checked={selected}
+            />
+            {option}
+          </React.Fragment>
+        )}
+        style={{ width: 500 }}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            variant="outlined"
+            label="Duración"
+            placeholder="Duración"
           />
         )}
       />
