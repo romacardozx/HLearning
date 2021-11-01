@@ -1,5 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllCategories } from "../../actions/getAllCategories";
 import filterByCategories from "../../actions/filterByCategories";
 import filterByDuration from "../../actions/filterByDuration";
 /* import { Checkbox, Collapse } from "antd"; */
@@ -13,8 +14,10 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 /* const { Panel } = Collapse; */
 
-export default function Filters(params) {
+export default function Filters() {
   const dispatch = useDispatch();
+  const categories = useSelector((state) => state.getAllCategories);
+
   function handleSelectCategories(e) {
     e.preventDefault();
     dispatch(filterByCategories(e.target.value));
@@ -24,31 +27,14 @@ export default function Filters(params) {
     e.preventDefault();
     dispatch(filterByDuration(e.target.value));
   }
-  /* return (
-    <div>
-      <Collapse defaultActiveKey={["0"]}>
-        <Panel header key="1">
-          <React.Fragment>
-            <Checkbox onChange type="checkbox" checked />
-            <span>Categoria A</span>
-          </React.Fragment>
-        </Panel>
-      </Collapse>
-    </div>
-  ); */
 
   // Our sample dropdown options
-  const optionsCat = [
-    "FrontEnd",
-    "Css",
-    "UI",
-    "LenguajeDeProgramacion",
-    "HTML",
-    "Diseño Web",
-    "BackEnd",
-  ];
+  const optionsCat = categories.map((c) => c.name);
+  /* ["FrontEnd", "Css", "UI", "LenguajeDeProgramacion", "HTML", "Diseño Web", "BackEnd",] */
+  console.log("CATEGORIAS:", optionsCat);
 
   const optionsDur = ["1-5 horas", "5-10 horas", "+10 horas"];
+  const handleClickCheckbox = function name(e) {};
 
   return (
     <div style={{ marginLeft: "0", marginTop: "0" }}>
@@ -64,6 +50,7 @@ export default function Filters(params) {
               checkedIcon={checkedIcon}
               style={{ marginRight: 8 }}
               checked={selected}
+              onChange={(e) => handleClickCheckbox(e)}
             />
             {option}
           </React.Fragment>
