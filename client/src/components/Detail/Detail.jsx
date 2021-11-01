@@ -9,9 +9,9 @@ import Footer from "../Footer/Footer";
 import styles from "./detail.module.css";
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
-import { style } from "@mui/system";
-import { Component } from "react";
-import ReactPlayer from "react-player";
+//import { style } from "@mui/system";
+//import { Component } from "react";
+//import ReactPlayer from "react-player";
 
 const Img = styled("img")({
   margin: "auto",

@@ -1,5 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import s from "./register.module.css";
 import { useState } from "react";
 
