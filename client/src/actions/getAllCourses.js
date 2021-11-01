@@ -6,7 +6,7 @@ export function getAllCourses() {
   return async function (dispatch) {
     try {
       var json = await axios(`http://${REACT_APP_BASE_URL}/courses`);
-      console.log("JEYSON", json);
+      
       return dispatch({
         type: "GET_ALL_COURSES",
         payload: json.data,

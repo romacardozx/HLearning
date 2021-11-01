@@ -1,4 +1,4 @@
-const axios = require('axios')
+const axios = require("axios");
 
 require('dotenv').config();
 const { REACT_APP_BASE_URL } = process.env
@@ -17,4 +17,5 @@ export function getCourseByName(name){
            console.log("error", error)
         }
     }
+  };
 }
