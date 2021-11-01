@@ -7,7 +7,7 @@ function filterByCategory(category){
 
     return async function(dispatch){
         try {
-            var json = await axios(' ');
+            var json = await axios(`${BASE_URL}/?category=${category?category:""}`);
             return dispatch({
                 type: "FILTER_BY_CATEGORIES",
                 payload: json.data

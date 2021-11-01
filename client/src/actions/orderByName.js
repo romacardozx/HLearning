@@ -8,7 +8,7 @@ export function orderByName(name){
     
     return async function(dispatch){
         try {
-            let json = await axios(``)
+            let json = await axios(`${BASE_URL}/courses?name=${name?name:""}`)
             
             return dispatch({
 

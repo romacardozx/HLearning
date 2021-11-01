@@ -7,7 +7,7 @@ function filterByDuration(category){
 
     return async function(dispatch){
         try {
-            var json = await axios(' ');
+            var json = await axios(`${BASE_URL}/courses?category=${category?category:""}`);
             return dispatch({
                 type: "FILTER_BY_DURATION",
                 payload: json.data

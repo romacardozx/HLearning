@@ -7,13 +7,10 @@ export function orderByScore(score){
     
     return async function(dispatch){
         try {
-            let json = await axios(``)
-            
+            let json = await axios(`${BASE_URL}/courses?score=${score?score:""}`)
             return dispatch({
-
                 type: 'ORDER_BY_SCORE',
                 payload: json.data
-
             })
             
         } catch(error){
