@@ -18,7 +18,7 @@ export default function CourseCard({
   image,
   description,
   score,
-  price,
+  price
 }) {
   return (
     <Card sx={{ maxWidth: 355 }} elevation={6}>

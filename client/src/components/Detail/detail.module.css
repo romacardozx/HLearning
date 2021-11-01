@@ -1,23 +1,26 @@
 .btn{ 
-  background-color: #4c3c90;
+  background-color: black;
   border: none;
   color: white;
   padding: 7.5px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
   border-radius: 12px;
+  font-size: 20px;
+  margin-left: 20px;
 }
+
 
 .btn{
     transition-duration: 0.4s;
   }
   
 .btn:hover{
-    background-color: #7766c2;
+    background-color: rgb(27, 27, 136);
     color: white;
   }
+
 
 .links{
     display: inline-block;
