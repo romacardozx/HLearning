@@ -1,5 +1,5 @@
 import React from "react";
-/* import { getCourseByName } from "../../actions/getCourseByName"; */
+import { getCourseByName } from "../../actions/getCourseByName";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
