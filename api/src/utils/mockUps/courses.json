@@ -1,0 +1,384 @@
+[
+  {
+    "title": "Tailwind Just in Time",
+    "description": "In this Tailwind JIT tutorial series you'll learn how to use the Just in Time compiler for better performance during development.",
+    "img": "https://cdn.fs.teachablecdn.com/6iMO3BaS9GF42GIAlWPQ",
+    "score": "5",
+    "duration": "38",
+    "categories": ["FrontEnd", "Css", "UI"],
+    "price": "500",
+    "videos": [
+      {
+        "name": "Introduction",
+        "link": "https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "11"
+      },
+      {
+        "name": "Using the Just in Time Compiler",
+        "link": "https://youtu.be/mP2TPWZRSmk?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "9"
+      },
+      {
+        "name": "Extra Variants",
+        "link": "https://youtu.be/DduPHtznQ2o?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "5"
+      },
+      {
+        "name": "Arbitrary Values",
+        "link": "https://youtu.be/4gEH1h5C-Tc?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "5"
+      },
+      {
+        "name": "Tailwind JIT with Next.js",
+        "link": "https://youtu.be/D3Kz2bOQR5E?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
+        "duration": "8"
+      }
+    ],
+    "students": "100"
+  },
+  {
+    "title": "Vue 3 with TypeScript Jump Start",
+    "description": "Hey gang, in this Vue 3 & TypeScript jump start tutorial I'll show you how to get up and running with Vue 3 using TypeScript. In this lesson we'll discuss the benefits of TS & set the initial project up.",
+    "img": "https://cdn.fs.teachablecdn.com/1M8MbfrSQme0aCzmJFmQ",
+    "score": "5",
+    "duration": "60",
+    "categories": ["FrontEnd"],
+    "price": "900",
+    "videos": [
+      {
+        "name": "Intro & Setup",
+        "link": "https://youtu.be/JfI5PISLr9w?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "9"
+      },
+      {
+        "name": "Vue Components using TypeScript",
+        "link": "https://youtu.be/UDAVj_vlAr8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "10"
+      },
+      {
+        "name": "Composition API & TypeScript",
+        "link": "https://youtu.be/H-hXNym2CK8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "12"
+      },
+      {
+        "name": "Types & Props",
+        "link": "https://youtu.be/GdWrYfDfqRE?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "9"
+      },
+      {
+        "name": "Functions",
+        "link": "https://youtu.be/usSBsgWNUZk?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "8"
+      },
+      {
+        "name": "Computed Values",
+        "link": "https://youtu.be/TwN36HU-NQM?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "6"
+      },
+      {
+        "name": "Hylia Font & Final Styles",
+        "link": "https://youtu.be/6n4myAZwdxg?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
+        "duration": "6"
+      }
+    ],
+    "students": "400"
+  },
+  {
+    "title": "Como hacer un sitio web con Bootstrap",
+    "description": "Aprende como hacer un sitio web con bootstrap",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7W1KDUdra9jgXWtf-NYIIqWbXj23rvtvr7A&usqp=CAU",
+    "score": "5",
+    "duration": "62",
+    "categories": ["FrontEnd"],
+    "price": 5.0,
+    "videos": [
+      {
+        "name": "Introducción y Header",
+        "link": "https://www.youtube.com/watch?v=xSTwyYDT-A8&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_",
+        "duration": "28:58"
+      },
+      {
+        "name": "Contenido Principal y Paginación",
+        "link": "https://www.youtube.com/watch?v=HsftXewWmfs&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_&index=2",
+        "duration": "22:37"
+      },
+      {
+        "name": "Sidebar, Footer y Artículos Adaptables",
+        "link": "https://www.youtube.com/watch?v=W3Jd0k7gv9c&list=PLhSj3UTs2_yUrzFL3f2zDwBCKMpAVBBz_&index=3",
+        "duration": "12:46"
+      }
+    ],
+    "students": "468"
+  },
+  {
+    "title": "Curso de JAVASCRIPT",
+    "description": "¿Queres aprender a programar en Javascript desde cero? Este es el curso de javascript desde cero a experto que vas a terminar, te prometo que no te vas a aburrir durante el aprendizaje de este curso de javascript, vas a aprender javascript fácil",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhJlTMKGEP32O9dXs3Laz-XYbL5gynMI08A&usqp=CAU",
+    "score": "4",
+    "duration": "26",
+    "categories": ["LenguajeDeProgramacion"],
+    "price": 25.0,
+    "videos": [
+      {
+        "name": "Nivel JUNIOR",
+        "link": "https://www.youtube.com/watch?v=z95mZVUcJ-E&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=3",
+        "duration": "10:00"
+      },
+      {
+        "name": "Nivel MID LEVEL",
+        "link": "https://www.youtube.com/watch?v=xOinGb2MZSk&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=4",
+        "duration": "7:56"
+      },
+      {
+        "name": "Nivel Master",
+        "link": "https://www.youtube.com/watch?v=EbMi1Qj4rVE&list=PLE8uP447fYpgOwKgbypiCGSz7veY2MLGb&index=5",
+        "duration": "9:23"
+      }
+    ],
+    "students": "14"
+  },
+  {
+    "title": "Aprende CSS ahora! curso completo desde cero",
+    "description": "Aprende CSS con el youtuber de Hola Mundo",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ahxxcR2SA-SW1rMpjQzHj5cTwx06LooCGw&usqp=CAU",
+    "score": "5",
+    "duration": "2",
+    "categories": ["FrontEnd","Css"],
+    "price": 1.0,
+    "videos": [
+      {
+        "name": "Aprende CSS ahora! curso completo desde cero",
+        "link": "https://www.youtube.com/watch?v=wZniZEbPAzk",
+        "duration": "2:05"
+      }
+    ],
+    "students": "5446"
+  },
+  {
+    "title": "Curso Básico de HTML desde 0",
+    "description": "",
+    "img": "https://img-c.udemycdn.com/course/480x270/3462566_1a6b_2.jpg",
+    "score": "4",
+    "duration": "1:26:39",
+    "categories": ["FrontEnd", "HTML"],
+    "price": 1200,
+    "videos": [
+      {
+        "name": "Introducción",
+        "link": "https://youtu.be/cqMfPS8jPys?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "15:23"
+      },
+      {
+        "name": "Etiquetas para Textos",
+        "link": "https://youtu.be/TNQleomUw6U?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "9:01"
+      },
+      {
+        "name": "Enlaces",
+        "link": "https://youtu.be/RdnS55MbdY4?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "11:06"
+      },
+      {
+        "name": "Listas",
+        "link": "https://youtu.be/IRbEXqBBOCo?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "5:18"
+      },
+      {
+        "name": "Imágenes",
+        "link": "https://youtu.be/lAoeALwWKo0?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "7:15"
+      },
+      {
+        "name": "Tablas",
+        "link": "https://youtu.be/LmSUS6MuSzk?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "4:51"
+      },
+      {
+        "name": "Formularios",
+        "link": "https://youtu.be/QDOfODwsfuQ?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "12:50"
+      },
+      {
+        "name": "Creando una Estructura de Contenido / Layout",
+        "link": "https://youtu.be/yyYPFHAddvs?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "12:53"
+      },
+      {
+        "name": "Metadatos y otras etiquetas",
+        "link": "https://youtu.be/eCV_-IHs5xQ?list=PLhSj3UTs2_yVHt2DgHky_MzzRC58UHE4z",
+        "duration": "8:02"
+      }
+
+    ],
+    "students": "400"
+  },
+  {
+    "title": "Figma para principiantes",
+    "description": "Aprende Figma desde cero y empieza hoy a crear tus propios diseños, no limites tu creatividad y ejecuta cada idea.Figma es la mayor revolución en el diseño porque permite trabajar en equipo, en tiempo real y sobre un mismo producto",
+    "img": "https://img-c.udemycdn.com/course/480x270/3294068_93e5_2.jpg",
+    "score": "5",
+    "duration": "4:53:27",
+    "categories": ["Diseño Web","FrontEnd"],
+    "price": 2300,
+    "videos": [
+      {
+        "name": "Figma por primera vez",
+        "link": "https://youtu.be/xXF7Qmxp1BA?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "1:09:34"
+      },
+      {
+        "name": "Diseña una Página de Bienes Raíces",
+        "link": "https://youtu.be/8Zb1dFtQEXU?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "1:09:08"
+      },
+      {
+        "name": "Los mejores plugins de Figma",
+        "link": "https://youtu.be/pLcWLSHa00Y?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "19:05"
+      },
+      {
+        "name": "Como diseñar una página web bonita y sin saber de diseño",
+        "link": "https://youtu.be/Mx8h0SRu-Iw?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "29:44"
+      },
+      {
+        "name": "Como Diseñar una App de Gastos",
+        "link": "https://youtu.be/fl9lZ0Ggb14?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "44:09"
+      },
+      {
+        "name": " Creando un Portafolio",
+        "link": "https://youtu.be/XIt1SNcuJ9g?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
+        "duration": "1:01:47"
+      }
+    ],
+    "students": "100"
+  },
+  {
+    "title": "Complete React Material UI",
+    "description": " Material UI es un framework creado por Google para aplicar elementos más visuales y modernos, haciendo que tu diseño sea más profesional. Se combina a la perfeccion con tus proyectos en React. En este curso aprenderas a dominarlo para incluirlo en tus proximos proyectos",
+    "img": "https://img-c.udemycdn.com/course/480x270/4331564_0297_5.jpg",
+    "score": "3",
+    "duration": "8:42:06",
+    "categories": ["UI","FrontEnd"],
+    "price": 1800,
+    "videos": [
+      {
+        "name": "Introduction",
+        "link": "https://youtu.be/bL-ZwwF6wTc?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "31:10"
+      },
+      {
+        "name": "Customization of MUI Components and Theme",
+        "link": "https://youtu.be/W-QasNYJ-3Y?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "36:42"
+      },
+      {
+        "name": "How to Design a Perfect Form",
+        "link": "https://youtu.be/-XKaSCU0ZLM?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "1:00:33"
+      },
+      {
+        "name": "Form Validation",
+        "link": "https://youtu.be/4YLa9iuN43c?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "34:18"
+      },
+      {
+        "name": "Table with Paging Sorting and Filtering",
+        "link": "https://youtu.be/jnQ1-XW7KNY?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "44:04"
+      },
+      {
+        "name": "React Material UI Popup Dialog",
+        "link": "https://youtu.be/5akdtwtmjZM?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "33:34"
+      },
+      {
+        "name": "Confirm Dialog & Notification",
+        "link": "https://youtu.be/KOryCvYE4_s?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "25:18"
+      },
+      {
+        "name": "React Material UI Advance",
+        "link": "https://youtu.be/m-2_gb_3L7Q?list=PLjC4UKOOcfDQtvkTBfjqeWP8EJKi_WaUn",
+        "duration": "4:16:27"
+      }
+    ],
+    "students": "200"
+  },
+  {
+    "title": "Node.js para principiantes",
+    "description": "Aprender Node.js es una gran manera de adentrarse en el desarrollo web de backend o de ampliar tu práctica en desarrollo de fullstack. Con este curso práctico de HLearning sobre Node.js podrás aprender los conceptos y las aplicaciones de este sistema en tiempo de ejecución de JavaScript tremendamente útil.",
+    "img": "https://img-c.udemycdn.com/course/480x270/2306018_7bc8_4.jpg",
+    "score": "5",
+    "duration": "3:43:53",
+    "categories": ["BackEnd"],
+    "price": 2500,
+    "videos": [
+      {
+        "name": "GET,POST,PUT and DELETE",
+        "link": "https://youtu.be/4fWWn2Pe2Mk?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "08:24"
+      },
+      {
+        "name": " MERN Jwt Authentication",
+        "link": "https://youtu.be/T8qepiTbJi4?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "40:50"
+      },
+      {
+        "name": "Express MongoDB CRUD",
+        "link": "https://youtu.be/voDummz1gO0?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "50:49"
+      },
+      {
+        "name": "Complete React + Node js - CRUD Operations",
+        "link": "https://youtu.be/HuXBuXf52vA?list=PLjC4UKOOcfDSu4lH0nLLr3sLhzuNZFHng",
+        "duration": "2:03:50"
+      }
+    ],
+    "students": "250"
+  },
+  {
+    "title": "CURSO DE PYTHON",
+    "description": "Este es el curso en español más completo y exhaustivo que encontrarás sobre Python 3 en HLearning. Perfectamente estructurado y balanceado, introduce todos los temas de forma sencilla, gradual y 100% práctica. Todos los temas han sido cuidadosamente preparados para presentarse de forma gradual, de manera que el alumno nunca se sienta perdido durante su aprendizaje.",
+    "img": "https://i.ytimg.com/vi/GuIQHhxeARI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBHQv7CABKYev2WNvygB6D2yTgUXA",
+    "score": "5",
+    "duration": "3:48:36",
+    "categories": ["LenguajeDeProgramacion"],
+    "price": 2800,
+    "videos": [
+      {
+        "name": "PARTE 1",
+        "link": "https://youtu.be/GuIQHhxeARI?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "34:04"
+      },
+      {
+        "name": "PARTE 2",
+        "link": "https://youtu.be/CVVWXNKlkhU?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "33:08"
+      },
+      {
+        "name": "PARTE 3",
+        "link": "https://youtu.be/Zs253mrx0JI?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "31:25"
+      },
+      {
+        "name": "PARTE 4",
+        "link": "https://youtu.be/EOQ3N5YLNEQ?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "1:17:16"
+      },
+      {
+        "name": "PARTE 5",
+        "link": "https://youtu.be/-w36jxHXfYc?list=PLyBd7TyyK5mq1IQ_5CaM1EdKTFc3grvym",
+        "duration": "52:43"
+      }
+    ],
+    "students": "120"
+  }
+
+
+
+
+
+
+]

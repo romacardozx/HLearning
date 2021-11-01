@@ -1,0 +1,24 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerLat {
+  float: left;
+}
+/* .containerGrid {
+  float: left;
+} */
+.paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .navBarContainer { */
+/* border: 3px solid rgb(38, 63, 207); */
+
+/* min-width: 160px; */
+/*   line-height: 160px;
+} */
