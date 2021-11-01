@@ -9,22 +9,17 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
-/* import Stack from "@mui/material/Stack";
-import StarIcon from "@mui/icons-material/Star"; */
 import Button from "@mui/material/Button";
-/* import { yellow } from "@material-ui/core/colors"; */
 import AddIcon from "@mui/icons-material/Add";
-/* import style from "./Card.module.css"; */
-/* import CardProv from "../../images/CardProv.png"; */
 
-export default function CourseCard(
-  { id,
+export default function CourseCard({
+  id,
   title,
   image,
   description,
   score,
-  price}
-) {
+  price
+}) {
   return (
     <Card sx={{ maxWidth: 355 }} elevation={6}>
       <CardHeader textAlign="center" title={title} />

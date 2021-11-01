@@ -1,0 +1,12 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;    
+    border-radius: 15px;
+    font-family: 'Sigmar One', cursive;
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 0 8px 10px #081AAD, 1px -2px 1px #081AAD;
+    margin-top: 0;
+}
