@@ -1,90 +1,43 @@
-import React, { Fragment, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import logo from "../../images/Logo.png";
-import style from "./NavBar.module.css";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import { SideBarData } from "./SliderData";
-import { useState } from "react";
+import React from 'react';
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink
+} from './NavbarElements';
+import Logo from "../../images/Hlearning.png";
 
-export default function NavBar() {
-  const [SideBar, SetSideBar] = useState(true);
-
-  const [size, setSize] = useState({
-    widthWindow: window.innerWidth,
-  });
-  const updateSize = () =>
-    setSize({
-      widthWindow: window.innerWidth,
-    });
-  useEffect(() => (window.onresize = updateSize), []);
-  const showSidebar = () => SetSideBar(!SideBar);
-
-  return size.widthWindow > 1000 ? (
-    <div className={style.navBarContainer}>
-      <div className={style.logo}>
-        <NavLink to="/home">
-          <img className={style.centerImg} src={logo} alt="logo" />
+const Navbar = () => {
+  return (
+    <>
+      <Nav>
+        <NavLink to='/'>
+          <img src={Logo} alt='logo'
+          height="60"
+          width="60"  />
         </NavLink>
-      </div>
-      <div>
-        <div className={style.links}>
-          <NavLink
-            className={style.texto}
-            activeClassName={style.selected}
-            exact
-            to="/"
-          >
+        <Bars />
+        <NavMenu>
+          <NavLink to='/home' activeStyle>
             Inicio
           </NavLink>
-          <NavLink
-            className={style.texto}
-            activeClassName={style.selected}
-            to="/courses"
-          >
+          <NavLink to='/courses' activeStyle>
             Cursos
           </NavLink>
-          <NavLink
-            className={style.texto}
-            activeClassName={style.selected}
-            to="/login"
-          >
-            Ingresar
+          <NavLink to='/contact' activeStyle>
+            Contacto
           </NavLink>
-          <NavLink
-            className={style.texto}
-            activeClassName={style.selected}
-            to="/register"
-          >
-            Registrate
-          </NavLink>
-        </div>
-      </div>
-    </div>
-  ) : (
-    <Fragment>
-      <div className={style.navbar}>
-        <Link to="#" className={style.menu_bars}>
-          {SideBar ? (
-            <FaIcons.FaBars onClick={showSidebar} />
-          ) : (
-            <AiIcons.AiOutlineClose onClick={showSidebar} />
-          )}
-        </Link>
-      </div>
-      <nav className={SideBar ? style.nav_menu : style["nav_menu active"]}>
-        <ul className={style.nav_menu_item}>
-          {SideBarData.map((item, index) => {
-            return (
-              <li key={index} className={style.nav_text}>
-                <Link to={item.path} className={style.text}>
-                  {item.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-    </Fragment>
+          {/* Second Nav */}
+          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+        </NavMenu>
+        <NavBtn>
+          <NavBtnLink to='/login'>iniciar Sesion</NavBtnLink>
+        </NavBtn>
+      </Nav>
+    </>
   );
-}
+};
+
+export default Navbar;

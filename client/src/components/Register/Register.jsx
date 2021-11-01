@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./register.module.css";
 import { useState } from "react";
+import Navbar from "../NavBar/NavBar";
 
 
 function validate(state) {
@@ -41,6 +42,8 @@ function Register() {
     );
   }
   return (
+  <div>
+   <Navbar/>
     <div className={s.cont}>
       <form className={s.formulario} onSubmit>
         <h1>Registrate</h1>
@@ -125,6 +128,7 @@ function Register() {
         </div>
       </form>
     </div>
+  </div>
   );
 }
 
