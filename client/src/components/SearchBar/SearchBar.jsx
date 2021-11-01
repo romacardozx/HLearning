@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { getCourseByName } from "../../actions/getCourseByName";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -7,19 +9,23 @@ import SearchIcon from "@mui/icons-material/Search";
 /* import style from "./SearchBar.module.css"; */
 
 export default function SearchBar() {
-  /* const [input, setInput] = useState(""); */
+  const dispatch = useDispatch();
+  const [name, setName] = useState("");
 
-  /* const handleInputChange = (e) => {
-    setInput(e.target.value);
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    setName(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  }; */
+    dispatch(getCourseByName(name));
+    setName("");
+  };
 
   return (
     <div>
-      <form /* onSubmit={handleSubmit} */>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <Stack direction="row" spacing={0.5}>
           <TextField
             id="outlined-basic"
@@ -28,8 +34,8 @@ export default function SearchBar() {
             name="curso"
             type="text"
             placeholder="Curso..."
-            /* onChange={handleInputChange}
-            value={input} */
+            onChange={(e) => handleInputChange(e)}
+            value={name}
           />
           <Button variant="contained" type="submit">
             <SearchIcon />
