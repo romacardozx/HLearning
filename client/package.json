@@ -12,8 +12,8 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
-    "axios": "^0.24.0",
     "antd": "^4.16.13",
+    "axios": "^0.24.0",
     "emailjs": "^3.6.0",
     "emailjs-com": "^3.2.0",
     "formik": "^2.2.9",
@@ -28,6 +28,7 @@
     "react-scroll": "^1.8.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.3",
     "web-vitals": "^0.2.4",
     "yup": "^0.32.11"
   },

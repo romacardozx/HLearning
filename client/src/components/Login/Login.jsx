@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import s from './login.module.css';
+import Navbar from '../NavBar/NavBar';
 
 
 function validate(state) {
@@ -34,6 +35,8 @@ function Login() {
     )
   }
   return (
+    <div>
+      <Navbar/>
     <div className={s.body}>
       <div className={s.formulario} >
 
@@ -61,6 +64,7 @@ function Login() {
           <p>¿Olvidaste tu contraseña? <span className={s.link}>Recuperarla</span></p>
         </div>
       </div>
+    </div>
     </div>
   )
 }
