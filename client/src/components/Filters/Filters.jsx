@@ -1,9 +1,9 @@
 import React from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../actions/getAllCategories";
 import filterByCategories from "../../actions/filterByCategories";
 import filterByDuration from "../../actions/filterByDuration";
-/* import { Checkbox, Collapse } from "antd"; */
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -12,11 +12,14 @@ import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
-/* const { Panel } = Collapse; */
 
 export default function Filters() {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.getAllCategories);
+
+  useEffect(() => {
+    dispatch(getAllCategories());
+  }, [dispatch]);
 
   function handleSelectCategories(e) {
     e.preventDefault();
@@ -38,7 +41,6 @@ export default function Filters() {
 
   return (
     <div style={{ marginLeft: "0", marginTop: "0" }}>
-      {/* <h3>Filtrar por:</h3> */}
       <Autocomplete
         multiple
         id="checkboxes-tags"
