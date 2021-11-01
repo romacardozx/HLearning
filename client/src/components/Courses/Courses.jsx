@@ -38,9 +38,9 @@ export default function Courses() {
   const [orderScore, setOrderScore] = useState("");
   const [orderPrice, setOrderPrice] = useState(""); */
 
-  // useEffect(() => {
-  //   dispatch(getAllCourses());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getAllCourses());
+  }, [dispatch]);
 
   /* useEffect(() => {
     dispatch(getAllCategories());
@@ -52,14 +52,12 @@ export default function Courses() {
     setCurrentPage(1);
     setOrderName("Order" + e.target.value);
   }
-
   function handleSelectByScore(e) {
     e.preventDefault();
     dispatch(orderByScore(e.target.value));
     setCurrentPage(1);
     setOrderScore("Order" + e.target.value);
   }
-
   function handleSelectByPrice(e) {
     e.preventDefault();
     dispatch(orderByPrice(e.target.value));
@@ -71,7 +69,6 @@ export default function Courses() {
     e.preventDefault();
     dispatch(filterByCategories(e.target.value));
   }
-
   function handleSelectDuration(e) {
     e.preventDefault();
     dispatch(filterByDuration(e.target.value));

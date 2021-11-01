@@ -18,12 +18,12 @@ import AddIcon from "@mui/icons-material/Add";
 /* import CardProv from "../../images/CardProv.png"; */
 
 export default function CourseCard(
-  id,
+  { id,
   title,
   image,
   description,
   score,
-  price
+  price}
 ) {
   return (
     <Card sx={{ maxWidth: 355 }} elevation={6}>
