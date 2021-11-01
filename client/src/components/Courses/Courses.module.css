@@ -4,23 +4,12 @@
   align-items: center;
 }
 
-/*.title {
-  display: flex;
-  justify-content: center;
-  margin-top: 6em;
-  margin-left: 1em;
-}
-.text {
-  margin: 0 1em 2em 1em;
-  padding-bottom: 5px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}*/
 .containerLat {
   float: left;
 }
-.containerGrid {
+/* .containerGrid {
   float: left;
-}
+} */
 .paginate {
   display: flex;
   justify-content: center;
