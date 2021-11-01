@@ -38,9 +38,9 @@ export default function Courses() {
   const [orderScore, setOrderScore] = useState("");
   const [orderPrice, setOrderPrice] = useState(""); */
 
-  useEffect(() => {
-    dispatch(getAllCourses());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllCourses());
+  // }, [dispatch]);
 
   /* useEffect(() => {
     dispatch(getAllCategories());
