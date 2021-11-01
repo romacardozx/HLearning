@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import getAllCourses from "../../actions/getAllCourses";
+import { getAllCourses } from "../../actions/getAllCourses";
 /* import { getAllCategories } from "../../actions/getAllCategories"; */
 /* import { orderByName } from "../../actions/orderByName";
 import { orderByScore } from "../../actions/orderByScore";
