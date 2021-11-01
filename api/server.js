@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routers = require("./src/routes/index");
+const cors = require('cors');
 
 
 require("dotenv").config({
@@ -9,11 +10,19 @@ require("dotenv").config({
 
 //Crea el servidor
 const app = express();
+
+// Cors
+app.use(cors({
+  origin: "http://localhost:3000"
+}));
+
 //Habilitar el parseo de los datos
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //Rutas de la server
 app.use("/", routers);
+
+
 
 // DB Config
 const db = process.env.MONGO_URI;
