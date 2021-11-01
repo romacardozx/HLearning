@@ -47,6 +47,7 @@ export default function Orders({
             labelId="select-name"
             id="select-name"
             label="Name"
+            placeholder="Nombre"
             /* onChange={(e) => handleChangeName(e)} */
           >
             <MenuItem value="A-Z">A-Z</MenuItem>

@@ -128,8 +128,10 @@ export default function Courses() {
               <option value="Desc">Menor precio</option>
             </select>} */}
           </div>
+          <br />
           <div>
             <Filters />
+            <br />
             <span className="span">Filtrar por</span>
             <select
               defaultValue="default" /* onChange={(c) => handleSelectCategorie(c)} */
