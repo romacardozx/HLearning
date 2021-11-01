@@ -17,14 +17,14 @@ import AddIcon from "@mui/icons-material/Add";
 /* import style from "./Card.module.css"; */
 /* import CardProv from "../../images/CardProv.png"; */
 
-export default function CourseCard(
+export default function CourseCard({
   id,
   title,
   image,
   description,
   score,
   price
-) {
+}) {
   return (
     <Card sx={{ maxWidth: 355 }} elevation={6}>
       <CardHeader textAlign="center" title={title} />

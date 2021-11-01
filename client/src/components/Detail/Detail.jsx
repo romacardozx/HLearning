@@ -45,21 +45,15 @@ export default function CourseDetail(props) {
     <div>
       <div>
         <div>
-        <NavBar /></div> 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <NavBar/> <br/>
+        </div> 
         {Object.keys(courseDetailed).length ? (
         <div>
           <Paper
             sx={{
               p: 2,
               margin: "auto",
-              maxWidth: 1200,
+              maxWidth: 600,
               elevation: 24,
               flexGrow: 50,
               bottom: 0,
@@ -71,8 +65,8 @@ export default function CourseDetail(props) {
                   <Img
                     alt="complex"
                     src={courseDetailed.img}
-                    width="550px"
-                    height="350px"
+                    width="450px"
+                    height="250px"
                   />
                   {/* <ReactPlayer
               url='https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ'
@@ -87,19 +81,19 @@ export default function CourseDetail(props) {
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
                     <Rating name="read-only" readOnly value={courseDetailed.score} />
-                    <Typography gutterBottom variant="h3" component="div">
+                    <Typography gutterBottom variant="h4" component="div">
                       {/* Tailwind Just in Time */}
                       {courseDetailed.title}
                     </Typography>
-                    <Typography variant="h5" gutterBottom>
+                    <Typography variant="h6" gutterBottom>
                       {/* In this Tailwind JIT tutorial series you'll learn how to
                       use the Just in Time compiler for better performance
                       during development. */}
                       {courseDetailed.description}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" align='left' color="text.secondary">
                       {/* Duration: 38min */}
-                      {courseDetailed.duration}
+                      Duration:{courseDetailed.duration}min
                     </Typography>
                     <br />
                     <Typography
@@ -109,7 +103,7 @@ export default function CourseDetail(props) {
                     >
                       <Link className={styles.links} to="/courses">
                         {/* FrontEnd */}
-                        {courseDetailed.categories[0]}
+                        {courseDetailed.categories[0].name}
                       </Link>
                       <Link className={styles.links} to="/courses">
                         {/* Css */}
@@ -145,7 +139,7 @@ export default function CourseDetail(props) {
                 <Grid item>
                   <Typography variant="h5" component="div">
                     {/* $500.00 */}
-                    {courseDetailed.price}
+                    ${courseDetailed.price}
                   </Typography>
                 </Grid>
               </Grid>

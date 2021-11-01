@@ -1,5 +1,5 @@
 .btn{ 
-  background-color: #4c3c90;
+  background-color: black;
   border: none;
   color: white;
   padding: 7.5px 16px;
@@ -17,7 +17,7 @@
   }
   
 .btn:hover{
-    background-color: #7766c2;
+    background-color: rgb(27, 27, 136);
     color: white;
   }
 
