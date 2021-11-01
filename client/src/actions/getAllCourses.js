@@ -6,8 +6,7 @@ const { BASE_URL } = process.env;
 export function getAllCourses() {
   return async function (dispatch) {
     try {
-      var json = await axios(`http://localhost:7070/courses`);
-      console.log("JEYSON", json);
+      var json = await axios("http://localhost:8000/courses");
       return dispatch({
         type: "GET_ALL_COURSES",
         payload: json.data,
