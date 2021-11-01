@@ -7,7 +7,6 @@ export function getAllCourses() {
   return async function (dispatch) {
     try {
       var json = await axios("http://localhost:8000/courses");
-      console.log("JEYSON", json);
       return dispatch({
         type: "GET_ALL_COURSES",
         payload: json.data,
