@@ -53,7 +53,7 @@ export default function CourseDetail(props) {
             sx={{
               p: 2,
               margin: "auto",
-              maxWidth: 600,
+              maxWidth: 500,
               elevation: 24,
               flexGrow: 50,
               bottom: 0,
