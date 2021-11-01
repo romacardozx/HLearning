@@ -8,45 +8,33 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import Stack from "@mui/material/Stack";
-import StarIcon from "@mui/icons-material/Star";
+import Rating from "@mui/material/Rating";
+/* import Stack from "@mui/material/Stack";
+import StarIcon from "@mui/icons-material/Star"; */
 import Button from "@mui/material/Button";
-import { yellow } from "@material-ui/core/colors";
+/* import { yellow } from "@material-ui/core/colors"; */
 import AddIcon from "@mui/icons-material/Add";
 /* import style from "./Card.module.css"; */
 /* import CardProv from "../../images/CardProv.png"; */
 
 export default function CourseCard(
-  /* title, description, score, img, id */ id
+  id,
+  title,
+  image,
+  description,
+  score,
+  price
 ) {
   return (
     <Card sx={{ maxWidth: 355 }} elevation={6}>
-      {/* <div className={style.container}> */}
-      <CardHeader
-        textAlign="center"
-        title="Aprende CSS ahora! curso completo desde cero"
-      />
-      <CardMedia
-        component="img"
-        height="250"
-        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ahxxcR2SA-SW1rMpjQzHj5cTwx06LooCGw&usqp=CAU"
-        alt="img video"
-      />
+      <CardHeader textAlign="center" title={title} />
+      <CardMedia component="img" height="250" image={image} alt="img video" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          ¿Queres aprender a programar en Javascript desde cero? Este es el
-          curso de javascript desde cero a experto que vas a terminar, te
-          prometo que no te vas a aburrir durante el aprendizaje de este curso
-          de javascript, vas a aprender javascript fácil
+          {description}
         </Typography>
       </CardContent>
-      <Stack direction="row">
-        <StarIcon sx={{ color: yellow["A200"] }} />
-        <StarIcon sx={{ color: yellow["A200"] }} />
-        <StarIcon sx={{ color: yellow["A200"] }} />
-        <StarIcon sx={{ color: yellow["A200"] }} />
-        <StarIcon sx={{ color: yellow["A200"] }} />
-      </Stack>
+      <Rating name="read-only" readOnly value={score} />
       <Typography
         textAlign="center"
         gutterBottom
@@ -54,7 +42,7 @@ export default function CourseCard(
         component="div"
         noWrap={true}
       >
-        $500
+        ${price}
       </Typography>
       <CardActions disableSpacing>
         <IconButton>

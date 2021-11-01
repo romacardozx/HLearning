@@ -1,14 +1,16 @@
-const axios = require("axios");
+import axios from "axios";
 
 require("dotenv").config();
 const { BASE_URL } = process.env;
 
-export function getAllCourses() {
+function filterByCategories(category) {
   return async function (dispatch) {
     try {
-      var json = await axios(`${BASE_URL}/courses`);
+      var json = await axios(
+        `${BASE_URL}/?category=${category ? category : ""}`
+      );
       return dispatch({
-        type: "GET_ALL_COURSES",
+        type: "FILTER_BY_CATEGORIES",
         payload: json.data,
       });
     } catch (error) {
@@ -16,3 +18,5 @@ export function getAllCourses() {
     }
   };
 }
+
+export default filterByCategories;
