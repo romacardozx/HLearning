@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 require('dotenv').config();
-const { BASE_URL } = process.env
+const { REACT_APP_BASE_URL } = process.env
 
 
 export function orderByName(name){
     
     return async function(dispatch){
         try {
-            let json = await axios(`${BASE_URL}/courses?name=${name?name:""}`)
+            let json = await axios(`${REACT_APP_BASE_URL}/courses?name=${name?name:""}`)
             
             return dispatch({
 
