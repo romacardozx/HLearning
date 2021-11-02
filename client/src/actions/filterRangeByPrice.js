@@ -7,7 +7,7 @@ export function filterRangeByPrice(priceToFilter){
     
     return async function(dispatch){
         try {
-            let json = await axios(`http://localhost:7070/courses?priceToFilter=${priceToFilter?priceToFilter:""}`)
+            let json = await axios(`http://${REACT_APP_BASE_URL}/courses?priceToFilter=${priceToFilter?priceToFilter:""}`)
             return dispatch({
                 type: 'FILTER_BY_RANGE_PRICE',
                 payload: json.data

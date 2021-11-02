@@ -1,7 +1,9 @@
 const Course = require("../../models/Course");
 
 module.exports = async (req, res, next) => {
-  const courses = await Course.find().populate("categories", "name -_id");
+  const courses = await Course
+  .find()
+  .populate("categories", "name -_id");
   try {
     let { name, score, price, priceToFilter, categories } = req.query;
 
