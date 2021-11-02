@@ -6,7 +6,9 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchIcon from "@mui/icons-material/Search";
-/* import style from "./SearchBar.module.css"; */
+import { StylesProvider } from "@material-ui/core";
+import { style } from "@mui/system";
+import styles from "./SearchBar.css"; 
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -24,7 +26,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div>
+    <div className={styles.srb}>
       <form onSubmit={(e) => handleSubmit(e)}>
         <Stack direction="row" spacing={0.5}>
           <TextField

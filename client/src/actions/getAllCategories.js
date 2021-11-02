@@ -13,5 +13,5 @@ export function getAllCategories() {
     } catch (error) {
       console.log("error", error);
     }
-  };
+  }
 }
