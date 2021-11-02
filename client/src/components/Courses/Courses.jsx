@@ -30,6 +30,7 @@ export default function Courses() {
   useEffect(() => {
     dispatch(getAllCourses());
   }, [dispatch]);
+
   useEffect(() => {
     dispatch(getAllCourses());
   }, [dispatch]);
