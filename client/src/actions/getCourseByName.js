@@ -1,13 +1,11 @@
-const axios = require("axios");
+import axios from 'axios';
 
-require('dotenv').config();
-const { REACT_APP_BASE_URL } = process.env
 
 export function getCourseByName(name){
     
     return async function(dispatch){
         try {
-            var json = await axios(`http://${REACT_APP_BASE_URL}/courses/search?name=${name?name:""}`);
+            var json = await axios(`/courses/search?name=${name?name:""}`);
             return dispatch({
                 type: "GET_COURSE_BY_NAME",
                 payload: json.data
@@ -17,4 +15,5 @@ export function getCourseByName(name){
            console.log("error", error)
         }
     }
-  };
+  }
+

@@ -1,14 +1,10 @@
 import axios from "axios";
 
-require("dotenv").config();
-const { REACT_APP_BASE_URL } = process.env;
 
-function filterByCategories(categories) {
+function filterByCategories(category) {
   return async function (dispatch) {
     try {
-      var json = await axios(
-        `http://${REACT_APP_BASE_URL}/courses?categories=${categories ? categories : ""}`
-      );
+      var json = await axios(`/?category=${category ? category : ""}`);
       return dispatch({
         type: "FILTER_BY_CATEGORIES",
         payload: json.data,
