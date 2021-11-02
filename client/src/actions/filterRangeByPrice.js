@@ -3,22 +3,18 @@ import axios from 'axios';
 require('dotenv').config();
 const { REACT_APP_BASE_URL } = process.env
 
-
-export function orderByName(name){
+export function filterRangeByPrice(priceToFilter){
     
     return async function(dispatch){
         try {
-            let json = await axios(`http://localhost:7070/courses?name=${name?name:""}`)
-            
+            let json = await axios(`http://localhost:7070/courses?priceToFilter=${priceToFilter?priceToFilter:""}`)
             return dispatch({
-
-                type: 'ORDER_BY_NAME',
+                type: 'FILTER_BY_RANGE_PRICE',
                 payload: json.data
-
             })
             
         } catch(error){
-            console.log("error order by name", error)
+            console.log("error order price", error)
         }
     }
 }

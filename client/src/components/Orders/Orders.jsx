@@ -16,6 +16,10 @@ export default function Orders({ setCurrentPage }) {
   const [orderName, setOrderName] = useState("");
   const [orderScore, setOrderScore] = useState("");
   const [orderPrice, setOrderPrice] = useState("");
+  console.log(orderName);
+  console.log(orderScore);
+  console.log(orderPrice);
+
 
   function handleChangeName(e) {
     e.preventDefault();
@@ -37,6 +41,8 @@ export default function Orders({ setCurrentPage }) {
     setCurrentPage(1);
     setOrderPrice("Order" + e.target.value);
   };
+
+
 
   return (
     <div>
