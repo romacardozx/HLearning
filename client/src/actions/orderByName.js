@@ -8,7 +8,7 @@ export function orderByName(name){
     
     return async function(dispatch){
         try {
-            let json = await axios(`http://localhost:7070/courses?name=${name?name:""}`)
+            let json = await axios(`http://${REACT_APP_BASE_URL}/courses?name=${name?name:""}`)
             
             return dispatch({
 
