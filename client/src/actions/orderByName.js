@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-
-
 export function orderByName(name){
     
     return async function(dispatch){

@@ -3,8 +3,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../actions/getAllCategories";
 import filterByCategories from "../../actions/filterByCategories";
-import { orderByPrice } from "../../actions/orderByPrice";
 import { filterRangeByPrice } from "../../actions/filterRangeByPrice";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Stack from "@mui/material/Stack";
 
 export default function Filters() {
   const dispatch = useDispatch();
@@ -19,11 +24,6 @@ export default function Filters() {
     dispatch(filterByCategories(e.target.value));
   }
 
-  function handleSelectPrice(e) {
-    e.preventDefault();
-    dispatch(orderByPrice(e.target.value));
-  }
-
   function handlePriceByRange(e) {
     e.preventDefault();
     dispatch(filterRangeByPrice(e.target.value));
@@ -31,7 +31,42 @@ export default function Filters() {
 
   return (
     <div>
-      <span className="span">Filtro por Categoría</span>
+      <Stack direction="row" spacing={2}>
+        <Box sx={{ minWidth: 130 }}>
+          <FormControl fullWidth>
+            <InputLabel id="simple-select-name">Categorías</InputLabel>
+            <Select
+              labelId="simple-select-name"
+              id="select"
+              label="Categories"
+              onChange={(e) => handleSelectCategories(e)}
+            >
+              {categories.map((c) => (
+                <MenuItem value={c._id} key={c._id}>
+                  {c.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box sx={{ minWidth: 100 }}>
+          <FormControl fullWidth>
+            <InputLabel id="simple-select-price">Precio</InputLabel>
+            <Select
+              labelId="simple-select-price"
+              id="select"
+              label="Price"
+              onChange={(e) => handlePriceByRange(e)}
+            >
+              <MenuItem value={300}>$1 - $500</MenuItem>
+              <MenuItem value={900}>$500 - $1500</MenuItem>
+              <MenuItem value={1800}>$1500 - $2500</MenuItem>
+              <MenuItem value={2550}>+ $2500</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+      </Stack>
+      {/* <span className="span">Filtro por Categoría</span>
       <select
         defaultValue="default"
         onChange={(e) => handleSelectCategories(e)}
@@ -61,7 +96,7 @@ export default function Filters() {
         </option>
         <option value="Asc">+ $</option>
         <option value="Desc">- $</option>
-      </select>
+      </select> */}
     </div>
   );
 }

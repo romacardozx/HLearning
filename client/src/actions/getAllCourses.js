@@ -1,5 +1,4 @@
-const axios = require("axios");
-
+import axios from 'axios';
 
 export function getAllCourses() {
   return async function (dispatch) {

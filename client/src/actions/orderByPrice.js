@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-
-
 export function orderByPrice(price){
     
     return async function(dispatch){

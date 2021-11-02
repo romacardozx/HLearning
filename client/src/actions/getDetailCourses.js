@@ -1,5 +1,4 @@
-// const axios = require('axios')
-import axios from 'axios';
+import axios from "axios";
 
 
 export function getDetailCourses(id){
@@ -15,4 +14,5 @@ export function getDetailCourses(id){
             console.log("error", error)
         }
     }
-}
+  };
+

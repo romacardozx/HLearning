@@ -8,6 +8,7 @@ import Card from "../Card/Card";
 import Paginate from "../Paginate/Paginate";
 import Orders from "../Orders/Orders";
 import Filters from "../Filters/Filters";
+import Stack from "@mui/material/Stack";
 import { Grid } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Courses.module.css";
@@ -30,48 +31,53 @@ export default function Courses() {
   useEffect(() => {
     dispatch(getAllCourses());
   }, [dispatch]);
-  
+
   return (
     <div>
-      <NavBar />
-      <br />
-      <br />
-      <div className={styles.page}>
-        <SearchBar />
-        <div className={styles.selects}>
-          <br />
-          <Orders setCurrentPage={setCurrentPage} />
-          <br />
-          <Filters />
-        </div>
-        <br />
-        <div>
-          <Paginate
-            coursesPerPage={coursesPerPage}
-            allCourses={allCourses.length}
-            paginate={paginate}
-          />
-        </div>
-        <br />
-        <div>
-          <Grid item xs={12} sm container>
-            {currentCourses?.map((c, i) => (
-              <div key={i}>
-                <Grid item xs={12} md={18} lg={12}>
-                  <Card
-                    id={c._id}
-                    title={c.title}
-                    image={c.img}
-                    description={c.description}
-                    score={c.score}
-                    price={c.price}
-                  />
-                </Grid>
-              </div>
-            ))}
-          </Grid>
-        </div>
+      <div>
+        <NavBar /> <br />
       </div>
+      <div className={styles.page}>
+        <Stack spacing={2}>
+          <SearchBar />
+          <br />
+          <div>
+            <Stack direction="row" spacing={2}>
+              <Orders setCurrentPage={setCurrentPage} />
+
+              <Filters />
+            </Stack>
+          </div>
+          <br />
+          <div>
+            <Paginate
+              coursesPerPage={coursesPerPage}
+              allCourses={allCourses.length}
+              paginate={paginate}
+            />
+          </div>
+          <br />
+          <div>
+            <Grid item xs={12} sm container>
+              {currentCourses?.map((c, i) => (
+                <div key={i}>
+                  <Grid item xs={12} md={18} lg={12}>
+                    <Card
+                      id={c._id}
+                      title={c.title}
+                      image={c.img}
+                      description={c.description}
+                      score={c.score}
+                      price={c.price}
+                    />
+                  </Grid>
+                </div>
+              ))}
+            </Grid>
+          </div>
+        </Stack>
+      </div>
+      <br />
       <br />
       <br />
       <Footer />

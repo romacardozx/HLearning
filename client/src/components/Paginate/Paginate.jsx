@@ -1,9 +1,5 @@
 import React from "react";
-
-/* import { StylesContext } from "@material-ui/styles";
-import { style } from "@mui/system"; */
-
-/* import styles from "./Paginate.module.css"; */
+import styles from "./Paginate.module.css";
 
 export default function Paginate({ coursesPerPage, allCourses, paginate }) {
   const pageNumbers = [];
@@ -13,10 +9,14 @@ export default function Paginate({ coursesPerPage, allCourses, paginate }) {
   }
 
   return (
-    <nav className="btnPag">
+    <nav className={styles.pagination}>
       {pageNumbers &&
         pageNumbers.map((number) => (
-          <button key={number} onClick={() => paginate(number)}>
+          <button
+            className={styles.btn}
+            key={number}
+            onClick={() => paginate(number)}
+          >
             {number}
           </button>
         ))}

@@ -1,4 +1,4 @@
-.srb{
-    display:inline-block;
-    align-content: center;
+.srb {
+  display: flex;
+  justify-content: center;
 }
