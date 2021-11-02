@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export function getAllCategories() {
   return async function (dispatch) {
@@ -11,5 +11,5 @@ export function getAllCategories() {
     } catch (error) {
       console.log("error", error);
     }
-  }
+  };
 }

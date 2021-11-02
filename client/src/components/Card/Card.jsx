@@ -18,21 +18,29 @@ export default function CourseCard({
   image,
   description,
   score,
-  price
+  price,
 }) {
   return (
-    <Card sx={{ maxWidth: 355 }} elevation={6}>
+    <Card sx={{ maxWidth: 370 }} elevation={6}>
       <CardHeader textAlign="center" title={title} />
-      <CardMedia component="img" height="250" image={image} alt="img video" />
+      <CardMedia
+        title={title}
+        component="img"
+        height="200"
+        image={image}
+        alt="img video"
+      />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
       </CardContent>
-      <Rating name="read-only" readOnly value={score}/>
+      <CardContent>
+        <Rating name="read-only" readOnly value={score} />
+      </CardContent>
       <Typography
         textAlign="center"
-        gutterBottom
+        /* gutterBottom */
         variant="h4"
         component="div"
         noWrap={true}

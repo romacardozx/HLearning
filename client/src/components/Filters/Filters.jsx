@@ -31,7 +31,7 @@ export default function Filters() {
 
   return (
     <div>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={3}>
         <Box sx={{ minWidth: 130 }}>
           <FormControl fullWidth>
             <InputLabel id="simple-select-name">Categorías</InputLabel>

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-//import WhatsAppIcon from "@material-ui/icons/WhatsApp";
-import EmailIcon from "@material-ui/icons/Email";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+//import EmailIcon from "@material-ui/icons/Email";
 import WorkIcon from "@material-ui/icons/Work"
 //import Facebook from "@material-ui/icons/Facebook";
 import Instagram from "@material-ui/icons/Instagram";
@@ -28,8 +28,8 @@ export default function Footer() {
                 alignItems: "center",
               }}
             >
-              <EmailIcon style={{ margin: "7px" }} onClick={()=>window.open('/contact', '_blank')}/>
-              Frecuentes
+              <WhatsAppIcon style={{ margin: "7px" }} onClick={()=>window.open('/contact', '_blank')}/>
+              +5491155668877
             </div>
           </div>
 
