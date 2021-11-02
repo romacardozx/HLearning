@@ -1,6 +1,4 @@
 const axios = require("axios");
-require("dotenv").config();
-const {  } = process.env;
 
 export function getAllCategories() {
   return async function (dispatch) {

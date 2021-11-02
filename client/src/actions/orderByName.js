@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-require('dotenv').config();
-const {  } = process.env
-
-
 export function orderByName(name){
     
     return async function(dispatch){

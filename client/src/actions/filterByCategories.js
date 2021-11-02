@@ -1,14 +1,9 @@
 import axios from "axios";
 
-require("dotenv").config();
-const {  } = process.env;
-
 function filterByCategories(category) {
   return async function (dispatch) {
     try {
-      var json = await axios(
-        `/?category=${category ? category : ""}`
-      );
+      var json = await axios(`/?category=${category ? category : ""}`);
       return dispatch({
         type: "FILTER_BY_CATEGORIES",
         payload: json.data,
