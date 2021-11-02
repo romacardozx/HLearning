@@ -35,10 +35,12 @@ export default function CourseDetail(props) {
   const history = useHistory();
 
   const courseDetailed = useSelector((state) => state.getCourseDetail)
+  console.log(courseDetailed)
+
 
     useEffect(() => { 
         dispatch(getDetailCourses(props.match.params.id))
-    });
+    },[dispatch]);
 
   const handleBuy = () => history.push("/payment");
 

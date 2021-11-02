@@ -142,15 +142,6 @@ module.exports = async (req, res, next) => {
          .populate()
          return res.send(videoFiltercategory)
      } else { res.json(courses) }
-      
-    if (categories) {
-      const videoFiltercategory = await Course.find({
-        categories: { $all: [`${categories}`] },
-      }).populate();
-      return res.send(videoFiltercategory);
-    } else {
-      res.json(courses);
-    }
   } catch (err) {
     console.log(err);
     next(err);
