@@ -17,4 +17,4 @@ export function getCourseByName(name){
            console.log("error", error)
         }
     }
-};
+  };

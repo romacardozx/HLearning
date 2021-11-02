@@ -54,10 +54,10 @@ export default function Courses() {
         </div>
         <br />
         <div>
-          <Grid container spacing={3}>
+          <Grid item xs={12} sm container>
             {currentCourses?.map((c, i) => (
               <div key={i}>
-                <Grid item xs={4} md={6} lg={4}>
+                <Grid item xs={12} md={18} lg={12}>
                   <Card
                     id={c._id}
                     title={c.title}
