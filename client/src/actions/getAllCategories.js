@@ -5,7 +5,7 @@ const { REACT_APP_BASE_URL } = process.env;
 export function getAllCategories() {
   return async function (dispatch) {
     try {
-      var json = await axios(`http://${REACT_APP_BASE_URL}/categories`);
+      var json = await axios(`http://localhost:7070/categories`);
       return dispatch({
         type: "GET_ALL_CATEGORIES",
         payload: json.data,
