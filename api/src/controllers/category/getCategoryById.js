@@ -1,10 +1,10 @@
-const Course = require("../../models/Course");
+const Category = require("../../models/Category");
 
 module.exports = async (req, res, next) => {
   const {id} = req.params; 
   try {
-    const course = await Course.findById({_id:id})
-    res.json(course);
+    const categoryName = await Category.findById({_id:id});
+    res.json(categoryName);
   } catch (err) {    
     console.log(err);
     next(err)
