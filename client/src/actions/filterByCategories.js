@@ -1,9 +1,11 @@
 import axios from "axios";
 
-function filterByCategories(category) {
+function filterByCategories(categories) {
   return async function (dispatch) {
     try {
-      var json = await axios(`/?category=${category ? category : ""}`);
+      var json = await axios(
+        `/courses/?categories=${categories ? categories : ""}`
+      );
       return dispatch({
         type: "FILTER_BY_CATEGORIES",
         payload: json.data,

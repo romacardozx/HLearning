@@ -13,7 +13,8 @@ import { Grid } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Courses.module.css";
 
-export default function Courses() {
+export default function Courses(/* props */) {
+  /* const { sx, ...other } = props; */
   const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.getAllCourses);
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,16 +36,18 @@ export default function Courses() {
   return (
     <div>
       <div>
-        <NavBar /> <br />
+        <NavBar />
       </div>
+      <br />
+      <br />
+      <br />
       <div className={styles.page}>
         <Stack spacing={2}>
           <SearchBar />
           <br />
           <div>
-            <Stack direction="row" spacing={2}>
+            <Stack direction="row" spacing={3}>
               <Orders setCurrentPage={setCurrentPage} />
-
               <Filters />
             </Stack>
           </div>
@@ -58,7 +61,7 @@ export default function Courses() {
           </div>
           <br />
           <div>
-            <Grid item xs={12} sm container>
+            <Grid container spacing={2}>
               {currentCourses?.map((c, i) => (
                 <div key={i}>
                   <Grid item xs={12} md={18} lg={12}>
