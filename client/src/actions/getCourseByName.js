@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from 'axios';
 
 export function getCourseByName(name) {
   return async function (dispatch) {
@@ -11,5 +11,5 @@ export function getCourseByName(name) {
     } catch (error) {
       console.log("error", error);
     }
-  };
+  }
 }

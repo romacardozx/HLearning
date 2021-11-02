@@ -3,15 +3,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../actions/getAllCategories";
 import filterByCategories from "../../actions/filterByCategories";
-import filterByDuration from "../../actions/filterByDuration";
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import Checkbox from "@material-ui/core/Checkbox";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
-
-const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-const checkedIcon = <CheckBoxIcon fontSize="small" />;
+import { filterRangeByPrice } from "../../actions/filterRangeByPrice";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Stack from "@mui/material/Stack";
 
 export default function Filters() {
   const dispatch = useDispatch();
@@ -26,73 +24,81 @@ export default function Filters() {
     dispatch(filterByCategories(e.target.value));
   }
 
-  function handleSelectDuration(e) {
+  function handlePriceByRange(e) {
     e.preventDefault();
-    dispatch(filterByDuration(e.target.value));
+    dispatch(filterRangeByPrice(e.target.value));
   }
 
-  // Our sample dropdown options
-  const optionsCat = categories.map((c) => c.name);
-  /* ["FrontEnd", "Css", "UI", "LenguajeDeProgramacion", "HTML", "Diseño Web", "BackEnd",] */
-  console.log("CATEGORIAS:", optionsCat);
-
-  const optionsDur = ["1-5 horas", "5-10 horas", "+10 horas"];
-  const handleClickCheckbox = function name(e) {};
-
   return (
-    <div style={{ marginLeft: "0", marginTop: "0" }}>
-      <Autocomplete
-        multiple
-        id="checkboxes-tags"
-        options={optionsCat}
-        renderOption={(option, { selected }) => (
-          <React.Fragment>
-            <Checkbox
-              icon={icon}
-              checkedIcon={checkedIcon}
-              style={{ marginRight: 8 }}
-              checked={selected}
-              onChange={(e) => handleClickCheckbox(e)}
-            />
-            {option}
-          </React.Fragment>
-        )}
-        style={{ width: 500 }}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            variant="outlined"
-            label="Categorías"
-            placeholder="Favorites"
-          />
-        )}
-      />
-      <br />
-      <Autocomplete
-        multiple
-        id="checkboxes-tags"
-        options={optionsDur}
-        renderOption={(option, { selected }) => (
-          <React.Fragment>
-            <Checkbox
-              icon={icon}
-              checkedIcon={checkedIcon}
-              style={{ marginRight: 8 }}
-              checked={selected}
-            />
-            {option}
-          </React.Fragment>
-        )}
-        style={{ width: 500 }}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            variant="outlined"
-            label="Duración"
-            placeholder="Duración"
-          />
-        )}
-      />
+    <div>
+      <Stack direction="row" spacing={2}>
+        <Box sx={{ minWidth: 130 }}>
+          <FormControl fullWidth>
+            <InputLabel id="simple-select-name">Categorías</InputLabel>
+            <Select
+              labelId="simple-select-name"
+              id="select"
+              label="Categories"
+              onChange={(e) => handleSelectCategories(e)}
+            >
+              {categories.map((c) => (
+                <MenuItem value={c._id} key={c._id}>
+                  {c.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+        <Box sx={{ minWidth: 100 }}>
+          <FormControl fullWidth>
+            <InputLabel id="simple-select-price">Precio</InputLabel>
+            <Select
+              labelId="simple-select-price"
+              id="select"
+              label="Price"
+              onChange={(e) => handlePriceByRange(e)}
+            >
+              <MenuItem value={300}>$1 - $500</MenuItem>
+              <MenuItem value={900}>$500 - $1500</MenuItem>
+              <MenuItem value={1800}>$1500 - $2500</MenuItem>
+              <MenuItem value={2550}>+ $2500</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+      </Stack>
+      {/* <span className="span">Filtro por Categoría</span>
+      <select
+        defaultValue="default"
+        onChange={(e) => handleSelectCategories(e)}
+      >
+        <option value="default" disabled="disabled">
+          Categorías
+        </option>
+        {categories.map((c) => (
+          <option value={c._id} key={c._id}>
+            {c.name}
+          </option>
+        ))}
+      </select>
+      <span className="span">Filtro por Precio</span>
+      <select defaultValue="default" onChange={(e) => handlePriceByRange(e)}>
+        <option value="default" disabled="disabled">
+          Precio
+        </option>
+        <option value="300">$1 - $500</option>
+        <option value="900">$500 - $1500</option>
+        <option value="1800">$1500 - $2500</option>
+        <option value="2550">+ $2500</option>
+      </select>
+      <select defaultValue="default" onChange={(e) => handleSelectPrice(e)}>
+        <option value="default" disabled="disabled">
+          Rango de precio
+        </option>
+        <option value="Asc">+ $</option>
+        <option value="Desc">- $</option>
+      </select> */}
     </div>
   );
 }
+
+// 1 - 500 / 500 - 1500 / 1500 - 2500 / +2500

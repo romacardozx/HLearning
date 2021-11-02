@@ -8,7 +8,8 @@ import {
   ORDER_BY_SCORE,
   ORDER_BY_PRICE,
   FILTER_BY_CATEGORIES,
-  FILTER_BY_DURATION
+  FILTER_BY_DURATION,
+  FILTER_BY_RANGE_PRICE
 
 } from "../actions/constants.js";
 
@@ -73,7 +74,14 @@ function rootReducer(state = initialState, action) {
         ...state, 
         getAllCourses: action.payload
       }
-    } 
+    }
+    
+    case   FILTER_BY_RANGE_PRICE: {
+      return {
+        ...state, 
+        getAllCourses: action.payload
+      }
+    }
     
     case FILTER_BY_CATEGORIES:{
       return{
