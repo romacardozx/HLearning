@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 function filterByCategories(category) {
   return async function (dispatch) {
     try {
