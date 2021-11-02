@@ -44,7 +44,7 @@ export default function Orders({ setCurrentPage }) {
 
   return (
     <div>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={3}>
         <Box sx={{ minWidth: 110 }}>
           <FormControl fullWidth>
             <InputLabel id="select-name">Nombre</InputLabel>
