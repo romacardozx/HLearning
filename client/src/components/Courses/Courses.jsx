@@ -79,6 +79,7 @@ export default function Courses() {
       </div>
       <br />
       <br />
+      <br />
       <Footer />
     </div>
   );
