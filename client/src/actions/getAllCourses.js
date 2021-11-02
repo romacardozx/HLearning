@@ -1,8 +1,7 @@
 const axios = require("axios");
 
 require("dotenv").config();
-const { BASE_URL } = process.env;
-
+const { REACT_APP_BASE_URL } = process.env;
 export function getAllCourses() {
   return async function (dispatch) {
     try {

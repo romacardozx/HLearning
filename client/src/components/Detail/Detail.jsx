@@ -17,8 +17,9 @@ import IconButton from "@mui/material/IconButton";
 import { getDetailCourses } from '../../actions/getDetailCourses';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
+
 
 const Img = styled("img")({
   margin: "auto",
@@ -43,7 +44,7 @@ export default function CourseDetail(props) {
 
   return (
     <div>
-      <div>
+      <div className={styles.bkg}>
         <div>
         <NavBar/> <br/>
         </div> 
@@ -53,7 +54,7 @@ export default function CourseDetail(props) {
             sx={{
               p: 2,
               margin: "auto",
-              maxWidth: 500,
+              maxWidth: 450,
               elevation: 24,
               flexGrow: 50,
               bottom: 0,
@@ -103,15 +104,15 @@ export default function CourseDetail(props) {
                     >
                       <Link className={styles.links} to="/courses">
                         {/* FrontEnd */}
-                        {courseDetailed.categories[0].name}
+                        {courseDetailed.categories[0]}
                       </Link>
                       <Link className={styles.links} to="/courses">
                         {/* Css */}
-                        {courseDetailed.categories[1]}
+                        {/* {courseDetailed.categories[1]} */}
                       </Link>
                       <Link className={styles.links} to="/courses">
                         {/* UI */}
-                        {courseDetailed.categories[2]}
+                        {/* {courseDetailed.categories[2]} */}
                       </Link>
                     </Typography>
                   </Grid>
@@ -145,9 +146,6 @@ export default function CourseDetail(props) {
               </Grid>
             </Grid>
           </Paper>
-          <br />
-          <br />
-          <br />
           <br />
           <br />
         </div>) : <Loading />

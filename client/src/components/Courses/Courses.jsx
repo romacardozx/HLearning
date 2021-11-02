@@ -30,8 +30,7 @@ export default function Courses() {
   useEffect(() => {
     dispatch(getAllCourses());
   }, [dispatch]);
-
-
+  
   return (
     <div>
       <NavBar />
