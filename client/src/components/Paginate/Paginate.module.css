@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.btn {
+  color: black;
+  float: left;
+  padding: 4px 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: 2px solid #4669df;
+  margin: 0 4px;
+  font-size: 20px;
+}
+
+.btn.active {
+  color: #529ee1;
+  border-radius: 10px;
+}
+
+.btn:hover:not(.active) {
+  background-color: #5286e1;
+  border-radius: 10px;
+}

@@ -58,4 +58,7 @@
     100% { opacity: 1.0; }
   }
 
-  
+  .bkg{
+    background-image: url('../../images/bk4.jpg');
+    background-size: cover;
+  }

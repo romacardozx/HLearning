@@ -29,7 +29,7 @@ export default function CourseCard({
           {description}
         </Typography>
       </CardContent>
-      <Rating name="read-only" readOnly value={score} />
+      <Rating name="read-only" readOnly value={score}/>
       <Typography
         textAlign="center"
         gutterBottom
