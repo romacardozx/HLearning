@@ -8,7 +8,6 @@ import Card from "../Card/Card";
 import Paginate from "../Paginate/Paginate";
 import Orders from "../Orders/Orders";
 import Filters from "../Filters/Filters";
-import Stack from "@mui/material/Stack";
 import { Grid } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
 /* import styles from "./Courses.module.css"; */
@@ -36,9 +35,7 @@ export default function Courses() {
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
-    padding: theme.spacing(2),
-    /* textAlign: "center",
-    color: theme.palette.text.secondary, */
+    padding: theme.spacing(0.5),
   }));
 
   return (
@@ -62,7 +59,7 @@ export default function Courses() {
               </Grid>
             </Grid>
           </div>
-          <br />
+          {/* <br /> */}
           <div>
             <Paginate
               coursesPerPage={coursesPerPage}
@@ -77,13 +74,13 @@ export default function Courses() {
                 <div key={i}>
                   <Grid
                     item
-                    sx={{ minWidth: 300 }}
+                    /*  sx={{ minWidth: 285 }} */
                     xs={2}
                     sm={4}
                     md={4}
                     spacing={1}
                   >
-                    <Item sx={{ minWidth: 285 }} spacing={1}>
+                    <Item sx={{ minWidth: 270 }} spacing={1}>
                       <Card
                         spacing={1}
                         id={c._id}

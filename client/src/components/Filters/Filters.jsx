@@ -33,7 +33,7 @@ export default function Filters() {
     <div>
       <Stack direction="row" spacing={3}>
         <Box sx={{ minWidth: 130 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="simple-select-name">Categorías</InputLabel>
             <Select
               labelId="simple-select-name"
@@ -50,7 +50,7 @@ export default function Filters() {
           </FormControl>
         </Box>
         <Box sx={{ minWidth: 100 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="simple-select-price">Precio</InputLabel>
             <Select
               labelId="simple-select-price"

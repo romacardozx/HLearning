@@ -6,9 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchIcon from "@mui/icons-material/Search";
-/* import { StylesProvider } from "@material-ui/core"; */
 import { Box } from "@mui/system";
-/* import styles from "./SearchBar.css"; */
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -31,6 +29,7 @@ export default function SearchBar() {
         <form onSubmit={(e) => handleSubmit(e)}>
           <Stack direction="row" spacing={0.5}>
             <TextField
+              size="small"
               id="outlined-basic"
               label="Buscar"
               variant="outlined"
