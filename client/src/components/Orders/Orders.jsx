@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { orderByName } from "../../actions/orderByName";
-import { orderByScore } from "../../actions/orderByScore";
-import { orderByPrice } from "../../actions/orderByPrice";
+import { orderByName } from "../../redux/actions/orderByName";
+import { orderByScore } from "../../redux/actions/orderByScore";
+import { orderByPrice } from "../../redux/actions/orderByPrice";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";

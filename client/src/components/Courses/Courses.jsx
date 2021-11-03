@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCourses } from "../../actions/getAllCourses";
+import { getAllCourses } from "../../redux/actions/getAllCourses";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
