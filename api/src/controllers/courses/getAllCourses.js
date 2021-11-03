@@ -5,7 +5,7 @@ module.exports = async (req, res, next) => {
   .find()
   .populate("categories", "name -_id");
   try {
-    let { name, score, price, priceToFilter, categories } = req.query;
+    let { name, score, price, priceToFilter, categories} = req.query;
 
     if (name) {
       if (name === "A-Z" || !name || name === "") {
