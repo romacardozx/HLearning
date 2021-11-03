@@ -91,30 +91,6 @@ export default function Orders({ setCurrentPage }) {
           </FormControl>
         </Box>
       </Stack>
-      {/* <span>Ordenar por Nombre</span>
-      <select defaultValue="default" onChange={(e) => handleChangeName(e)}>
-        <option value="default" disabled="disabled">
-          Todos
-        </option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
-      </select>
-      <span className="span">Ordenar por Popularidad</span>
-      <select defaultValue="default" onChange={(s) => handleChangeScore(s)}>
-        <option value="All" disabled="disabled">
-          Todos
-        </option>
-        <option value="Asc">Mayor popularidad</option>
-        <option value="Desc">Menor popularidad</option>
-      </select>
-      <span className="span">Ordenar por Precio</span>
-      <select defaultValue="default" onChange={(s) => handleChangePrice(s)}>
-        <option value="All" disabled="disabled">
-          Todos
-        </option>
-        <option value="Asc">Mayor precio</option>
-        <option value="Desc">Menor precio</option>
-      </select> */}
     </div>
   );
 }
