@@ -46,7 +46,7 @@ export default function Orders({ setCurrentPage }) {
     <div>
       <Stack direction="row" spacing={3}>
         <Box sx={{ minWidth: 110 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-name">Nombre</InputLabel>
             <Select
               labelId="select-name"
@@ -62,7 +62,7 @@ export default function Orders({ setCurrentPage }) {
         </Box>
         <br />
         <Box sx={{ minWidth: 160 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-score">Popularidad</InputLabel>
             <Select
               labelId="select-score"
@@ -77,7 +77,7 @@ export default function Orders({ setCurrentPage }) {
         </Box>
         <br />
         <Box sx={{ minWidth: 100 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-price">Precio</InputLabel>
             <Select
               labelId="select-price"
