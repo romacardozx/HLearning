@@ -1,7 +1,14 @@
 import {  
   
   GET_ALL_COURSES, 
-  GET_COURSE_BY_NAME, 
+  GET_COURSE_BY_NAME,
+  FILTER_BY_RANGE_PRICE,
+  FILTER_BY_CATEGORIES,
+  FILTER_BY_DURATION,
+  ORDER_BY_NAME,
+  ORDER_BY_SCORE,
+  ORDER_BY_PRICE,
+
 
 } from "../actions/constants.js";
 
@@ -29,6 +36,48 @@ const getCourses = (state = initialState, action) => {
         ...state, 
         getAllCourses: action.payload
       }
+    }
+    
+    case FILTER_BY_RANGE_PRICE: {
+      return {
+          ...state, 
+          getAllCourses: action.payload
+      }
+    }
+      
+    case FILTER_BY_CATEGORIES:{
+        return{
+            ...state,
+            getAllCourses: action.payload
+        }
+    }
+    
+    case FILTER_BY_DURATION:{
+        return{
+            ...state,
+            getAllCourses: action.payload
+        }
+    }
+
+    case ORDER_BY_NAME : {
+      return {
+          ...state,
+          getAllCourses: action.payload
+      }
+    }
+
+    case ORDER_BY_SCORE: {
+        return {
+            ...state, 
+            getAllCourses: action.payload
+        }
+    }
+
+    case ORDER_BY_PRICE: {
+        return {
+            ...state, 
+            getAllCourses: action.payload
+        }
     } 
     default: return state
   }
