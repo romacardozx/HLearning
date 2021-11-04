@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCourses } from "../../actions/getAllCourses";
+import { getAllCourses } from "../../redux/actions/getAllCourses";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
@@ -15,7 +15,8 @@ import Paper from "@mui/material/Paper";
 
 export default function Courses() {
   const dispatch = useDispatch();
-  const allCourses = useSelector((state) => state.getAllCourses);
+  const allCourses = useSelector((state) => state.getCourses.getAllCourses);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage, setCoursesPerPage] = useState(4);
   const indexOfLastCourse = currentPage * coursesPerPage;
