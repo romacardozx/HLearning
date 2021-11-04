@@ -1,9 +1,11 @@
 const Course = require("../../models/Course");
+const Category = require("../../models/Category")
 
 module.exports = async (req, res, next) => {
-  const courses = await Course
-  .find()
-  .populate("categories", "name -_id");
+  let courses = await Course.find({status: "Confirmed"});
+  if(courses.length >= 0) {
+    courses = await Category.populate(courses, {path: "categories"})
+  }
   try {
     let { name, score, price, priceToFilter, categories, scoreToFilter } = req.query;
 
