@@ -37,6 +37,11 @@ const CourseSchema = new Schema({
     },
     students: {
         type: Number
+    },
+    status: {
+        type: String,
+        enum: ["Confirmed", "In course", "Deleted"],
+        default: "Confirmed"
     }
 })
 
