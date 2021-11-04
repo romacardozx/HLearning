@@ -10,7 +10,7 @@ const initialState = {
 
 };
 
-const getCourseDetailReducer = (state = initialState, action) => {
+const getDetails = (state = initialState, action) => {
     
     switch(action.type){
         
@@ -25,4 +25,4 @@ const getCourseDetailReducer = (state = initialState, action) => {
     }
 }
 
-export default getCourseDetailReducer;
+export default getDetails;

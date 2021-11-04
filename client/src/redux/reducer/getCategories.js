@@ -10,7 +10,7 @@ const initialState = {
 
 };
 
-const getCategoriesReducer = (state = initialState, action) => {
+const getCategories = (state = initialState, action) => {
 
     switch(action.type){
         case GET_ALL_CATEGORIES: {
@@ -25,4 +25,4 @@ const getCategoriesReducer = (state = initialState, action) => {
     
 }
 
-export default getCategoriesReducer;
+export default getCategories;

@@ -11,7 +11,7 @@ function CreateCurse (){
 
 
     const dispatch = useDispatch();
-    const getAllCategory = useSelector(state => state.getAllCategories);
+    const getAllCategory = useSelector(state => state.getCategories.getAllCategories);
 
     const [formSent, setFormSent] = useState(false)
     console.log(formSent);

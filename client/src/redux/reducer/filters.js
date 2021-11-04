@@ -12,7 +12,7 @@ const initialState = {
 
 };
 
-const filtersReducer = (state = initialState, action) =>{
+const filters = (state = initialState, action) =>{
 
     switch(action.type){
 
@@ -41,4 +41,4 @@ const filtersReducer = (state = initialState, action) =>{
     }
 }
 
-export default filtersReducer;
+export default filters;

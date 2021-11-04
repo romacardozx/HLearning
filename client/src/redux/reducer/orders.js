@@ -12,7 +12,7 @@ const initialState = {
 
 };
 
-const ordersReducer = (state = initialState, action) => {
+const orders = (state = initialState, action) => {
 
     switch(action.type){
         case ORDER_BY_NAME : {
@@ -35,7 +35,8 @@ const ordersReducer = (state = initialState, action) => {
                 setAllCourses: action.payload
             }
         }
+        default: return state;
     }
 }
 
-export default ordersReducer;
+export default orders;

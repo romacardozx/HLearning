@@ -34,7 +34,7 @@ export default function CourseDetail(props) {
   // const { id } = useParams();
   const history = useHistory();
 
-  const courseDetailed = useSelector((state) => state.getCourseDetail)
+  const courseDetailed = useSelector((state) => state.getDetails.getCourseDetail)
   console.log(courseDetailed)
 
 

@@ -13,7 +13,7 @@ import Stack from "@mui/material/Stack";
 
 export default function Filters() {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.getAllCategories);
+  const categories = useSelector((state) => state.getCategories.getAllCategories);
 
   useEffect(() => {
     dispatch(getAllCategories());

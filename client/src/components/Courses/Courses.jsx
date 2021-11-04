@@ -16,7 +16,8 @@ import styles from "./Courses.module.css";
 export default function Courses(/* props */) {
   /* const { sx, ...other } = props; */
   const dispatch = useDispatch();
-  const allCourses = useSelector((state) => state.getAllCourses);
+  const allCourses = useSelector((state) => state.getCourses.getAllCourses);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage, setCoursesPerPage] = useState(3);
   const indexOfLastCourse = currentPage * coursesPerPage;
