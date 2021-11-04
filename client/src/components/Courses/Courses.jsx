@@ -66,13 +66,12 @@ export default function Courses() {
             />
           </div>
           <div>
-            <Grid container direction="row" spacing={1}>
+            <Grid container sx={3} /* direction="row" */>
               {currentCourses?.map((c, i) => (
                 <div key={i}>
-                  <Grid item xs={2} sm={4} md={4} spacing={1}>
-                    <Item sx={{ minWidth: 270 }} spacing={1}>
+                  <Grid item xs={2} sm={4} md={4}>
+                    <Item sx={{ minWidth: 270 }}>
                       <Card
-                        spacing={1}
                         id={c._id}
                         title={c.title}
                         image={c.img}
