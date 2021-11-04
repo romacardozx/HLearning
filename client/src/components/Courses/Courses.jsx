@@ -8,17 +8,17 @@ import Card from "../Card/Card";
 import Paginate from "../Paginate/Paginate";
 import Orders from "../Orders/Orders";
 import Filters from "../Filters/Filters";
-import Stack from "@mui/material/Stack";
 import { Grid } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
-import styles from "./Courses.module.css";
+/* import styles from "./Courses.module.css"; */
+import { experimentalStyled as styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
-export default function Courses(/* props */) {
-  /* const { sx, ...other } = props; */
+export default function Courses() {
   const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.getAllCourses);
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage, setCoursesPerPage] = useState(3);
+  const [coursesPerPage, setCoursesPerPage] = useState(4);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
   const currentCourses = allCourses.slice(
@@ -33,6 +33,11 @@ export default function Courses(/* props */) {
     dispatch(getAllCourses());
   }, [dispatch]);
 
+  const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(0.5),
+  }));
+
   return (
     <div>
       <div>
@@ -40,18 +45,21 @@ export default function Courses(/* props */) {
       </div>
       <br />
       <br />
-      <br />
-      <div className={styles.page}>
-        <Stack spacing={2}>
+      <div>
+        <Grid container direction="column" alignItems="center" justify="center">
           <SearchBar />
           <br />
           <div>
-            <Stack direction="row" spacing={3}>
-              <Orders setCurrentPage={setCurrentPage} />
-              <Filters />
-            </Stack>
+            <Grid container direction="row" spacing={3}>
+              <Grid item>
+                <Orders setCurrentPage={setCurrentPage} />
+              </Grid>
+              <Grid item>
+                <Filters />
+              </Grid>
+            </Grid>
           </div>
-          <br />
+          {/* <br /> */}
           <div>
             <Paginate
               coursesPerPage={coursesPerPage}
@@ -59,26 +67,36 @@ export default function Courses(/* props */) {
               paginate={paginate}
             />
           </div>
-          <br />
+
           <div>
-            <Grid container spacing={2}>
+            <Grid container direction="row" spacing={1}>
               {currentCourses?.map((c, i) => (
                 <div key={i}>
-                  <Grid item xs={12} md={18} lg={12}>
-                    <Card
-                      id={c._id}
-                      title={c.title}
-                      image={c.img}
-                      description={c.description}
-                      score={c.score}
-                      price={c.price}
-                    />
+                  <Grid
+                    item
+                    /*  sx={{ minWidth: 285 }} */
+                    xs={2}
+                    sm={4}
+                    md={4}
+                    spacing={1}
+                  >
+                    <Item sx={{ minWidth: 270 }} spacing={1}>
+                      <Card
+                        spacing={1}
+                        id={c._id}
+                        title={c.title}
+                        image={c.img}
+                        description={c.description}
+                        score={c.score}
+                        price={c.price}
+                      />
+                    </Item>
                   </Grid>
                 </div>
               ))}
             </Grid>
           </div>
-        </Stack>
+        </Grid>
       </div>
       <br />
       <br />

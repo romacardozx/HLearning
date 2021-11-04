@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
@@ -11,6 +10,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
+import { Box } from "@mui/system";
 
 export default function CourseCard({
   id,
@@ -21,47 +21,47 @@ export default function CourseCard({
   price,
 }) {
   return (
-    <Card sx={{ maxWidth: 370 }} elevation={6}>
-      <CardHeader textAlign="center" title={title} />
-      <CardMedia
-        title={title}
-        component="img"
-        height="200"
-        image={image}
-        alt="img video"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {description}
+    <Box p={1}>
+      <Card sx={{ maxWidth: 260, minWidth: 100 }} elevation={6} spacing={1}>
+        {/* <CardHeader textAlign="center" title={title} /> */}
+        <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
+          {title}
         </Typography>
-      </CardContent>
-      <CardContent>
-        <Rating name="read-only" readOnly value={score} />
-      </CardContent>
-      <Typography
-        textAlign="center"
-        /* gutterBottom */
-        variant="h4"
-        component="div"
-        noWrap={true}
-      >
-        ${price}
-      </Typography>
-      <CardActions disableSpacing>
-        <IconButton>
-          <AddShoppingCartIcon />
-          <Typography> Agregar al carrito</Typography>
-        </IconButton>
-      </CardActions>
-      <Button
-        variant="outlined"
-        component={Link}
-        to={`/courses/${id}`}
-        size="small"
-        endIcon={<AddIcon size="large" />}
-      >
-        VER
-      </Button>
-    </Card>
+        <CardMedia
+          title={title}
+          component="img"
+          height="180"
+          image={image}
+          alt="img video"
+        />
+        <CardContent>
+          <Rating name="read-only" readOnly value={score} />
+        </CardContent>
+        <Typography
+          textAlign="center"
+          variant="h5"
+          component="div"
+          noWrap={true}
+        >
+          ${price}
+        </Typography>
+        <CardActions disableSpacing>
+          <IconButton>
+            <AddShoppingCartIcon />
+            <Typography> Agregar al carrito</Typography>
+          </IconButton>
+        </CardActions>
+        <Button
+          fullWidth
+          variant="outlined"
+          component={Link}
+          to={`/courses/${id}`}
+          size="small"
+          endIcon={<AddIcon size="large" />}
+        >
+          VER
+        </Button>
+      </Card>
+    </Box>
   );
 }

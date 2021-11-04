@@ -46,7 +46,7 @@ export default function Orders({ setCurrentPage }) {
     <div>
       <Stack direction="row" spacing={3}>
         <Box sx={{ minWidth: 110 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-name">Nombre</InputLabel>
             <Select
               labelId="select-name"
@@ -62,7 +62,7 @@ export default function Orders({ setCurrentPage }) {
         </Box>
         <br />
         <Box sx={{ minWidth: 160 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-score">Popularidad</InputLabel>
             <Select
               labelId="select-score"
@@ -77,7 +77,7 @@ export default function Orders({ setCurrentPage }) {
         </Box>
         <br />
         <Box sx={{ minWidth: 100 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-price">Precio</InputLabel>
             <Select
               labelId="select-price"
@@ -91,30 +91,6 @@ export default function Orders({ setCurrentPage }) {
           </FormControl>
         </Box>
       </Stack>
-      {/* <span>Ordenar por Nombre</span>
-      <select defaultValue="default" onChange={(e) => handleChangeName(e)}>
-        <option value="default" disabled="disabled">
-          Todos
-        </option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
-      </select>
-      <span className="span">Ordenar por Popularidad</span>
-      <select defaultValue="default" onChange={(s) => handleChangeScore(s)}>
-        <option value="All" disabled="disabled">
-          Todos
-        </option>
-        <option value="Asc">Mayor popularidad</option>
-        <option value="Desc">Menor popularidad</option>
-      </select>
-      <span className="span">Ordenar por Precio</span>
-      <select defaultValue="default" onChange={(s) => handleChangePrice(s)}>
-        <option value="All" disabled="disabled">
-          Todos
-        </option>
-        <option value="Asc">Mayor precio</option>
-        <option value="Desc">Menor precio</option>
-      </select> */}
     </div>
   );
 }
