@@ -9,7 +9,7 @@ import  store  from "./redux/store/index"
 import axios from "axios";
 const { REACT_APP_BASE_URL } = process.env;
 
-axios.defaults.baseURL = REACT_APP_BASE_URL || "http://localhost:9000";
+axios.defaults.baseURL = REACT_APP_BASE_URL;
 
 ReactDOM.render(
   <Provider store={store}>
