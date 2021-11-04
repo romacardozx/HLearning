@@ -14,7 +14,7 @@ export default function Carrusel() {
   }
 
   useEffect(() => {
-    setTimeout(nextSlide, 5000);// eslint-disable-next-line
+    setTimeout(nextSlide, 3000); // eslint-disable-next-line
   }, [slideIndex]);
 
   return (

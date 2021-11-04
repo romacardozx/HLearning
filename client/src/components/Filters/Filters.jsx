@@ -41,6 +41,7 @@ export default function Filters() {
               label="Categories"
               onChange={(e) => handleSelectCategories(e)}
             >
+              <MenuItem value="All">Todas</MenuItem>
               {categories.map((c) => (
                 <MenuItem value={c._id} key={c._id}>
                   {c.name}
