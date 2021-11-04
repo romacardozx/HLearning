@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function filterByCategories(categories) {
+export function filterByCategories(categories) {
   return async function (dispatch) {
     try {
       var json = await axios(
@@ -16,4 +16,4 @@ function filterByCategories(categories) {
   };
 }
 
-export default filterByCategories;
+

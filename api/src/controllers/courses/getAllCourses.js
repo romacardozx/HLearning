@@ -1,11 +1,13 @@
 const Course = require("../../models/Course");
+const Category = require("../../models/Category")
 
 module.exports = async (req, res, next) => {
-  const courses = await Course
-  .find()
-  .populate("categories", "name -_id");
+  let courses = await Course.find({status: "Confirmed"});
+  if(courses.length >= 0) {
+    courses = await Category.populate(courses, {path: "categories"})
+  }
   try {
-    let { name, score, price, priceToFilter, categories } = req.query;
+    let { name, score, price, priceToFilter, categories, scoreToFilter } = req.query;
 
     if (name) {
       if (name === "A-Z" || !name || name === "") {
@@ -141,7 +143,47 @@ module.exports = async (req, res, next) => {
          .find({categories: {$all: [`${categories}`]}})
          .populate()
          return res.send(videoFiltercategory)
-     } else { res.json(courses) }
+     } 
+     if (scoreToFilter) {
+      // ojo que se puede necesitar un parseInt
+     if(scoreToFilter <=  0.4 ){
+       const scoreToFilterLess = await Course
+       .find({score: {$lte: 0.4}})
+       .populate('categories', 'name -_id')
+        return res.send(scoreToFilterLess)
+      }
+      if(scoreToFilter > 0.4 && scoreToFilter <= 1.4){
+       const scoreToFilterBetween = await Course
+       .find({score: {$gt: 0.4, $lte: 1.4}})
+       .populate('categories', 'name -_id')
+       return res.send(scoreToFilterBetween)
+     } 
+      if(scoreToFilter > 1.4 && scoreToFilter <= 2.4){
+       const scoreToFilterBetween2 = await Course
+       .find({score: {$gt: 1.4, $lte: 2.4}})
+       .populate('categories', 'name -_id')
+       return res.send(scoreToFilterBetween2)
+     } 
+      if(scoreToFilter > 2.4 && scoreToFilter <= 3.4){
+       const scoreToFilterBetween3 = await Course
+       .find({score: {$gt: 2.4, $lte: 3.4}})
+       .populate('categories', 'name -_id')
+       return res.send(scoreToFilterBetween3)
+     } 
+      if(scoreToFilter > 3.4 && scoreToFilter <= 4.4){
+       const scoreToFilterBetween4 = await Course
+       .find({score: {$gt: 3.4, $lte: 4.4}})
+       .populate('categories', 'name -_id')
+       return res.send(scoreToFilterBetween4)
+     } 
+      if(scoreToFilter > 4.4 ){
+       const scoreToFilterBetween5 = await Course
+       .find({score: {$gt: 4.4}})
+       .populate('categories', 'name -_id')
+       return res.send(scoreToFilterBetween5)
+     } 
+    }
+    else { res.json(courses) }
   } catch (err) {
     console.log(err);
     next(err);

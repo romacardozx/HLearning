@@ -1,14 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getCourseByName } from "../../actions/getCourseByName";
+import { getCourseByName } from "../../redux/actions/getCourseByName";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchIcon from "@mui/icons-material/Search";
-import { StylesProvider } from "@material-ui/core";
-import { Box, style } from "@mui/system";
-import styles from "./SearchBar.css";
+import { Box } from "@mui/system";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -26,11 +24,12 @@ export default function SearchBar() {
   };
 
   return (
-    <div className={styles.srb}>
+    <div /* className={styles.srb} */>
       <Box sx={{ alignContent: "center" }}>
         <form onSubmit={(e) => handleSubmit(e)}>
           <Stack direction="row" spacing={0.5}>
             <TextField
+              size="small"
               id="outlined-basic"
               label="Buscar"
               variant="outlined"

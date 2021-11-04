@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategories } from "../../actions/getAllCategories";
-import filterByCategories from "../../actions/filterByCategories";
-import { filterRangeByPrice } from "../../actions/filterRangeByPrice";
+import { getAllCategories } from "../../redux/actions/getAllCategories";
+import {filterByCategories} from "../../redux/actions/filterByCategories";
+import { filterRangeByPrice } from "../../redux/actions/filterRangeByPrice";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,7 +13,7 @@ import Stack from "@mui/material/Stack";
 
 export default function Filters() {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.getAllCategories);
+  const categories = useSelector((state) => state.getCategories.getAllCategories);
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -33,7 +33,7 @@ export default function Filters() {
     <div>
       <Stack direction="row" spacing={3}>
         <Box sx={{ minWidth: 130 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="simple-select-name">Categorías</InputLabel>
             <Select
               labelId="simple-select-name"
@@ -50,7 +50,7 @@ export default function Filters() {
           </FormControl>
         </Box>
         <Box sx={{ minWidth: 100 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="simple-select-price">Precio</InputLabel>
             <Select
               labelId="simple-select-price"
@@ -58,6 +58,7 @@ export default function Filters() {
               label="Price"
               onChange={(e) => handlePriceByRange(e)}
             >
+              {/* EL PRECIO MÍNIMO DE CURSOS ES $500, CAMBIAR FILTRO DE $1 A $500 */}
               <MenuItem value={300}>$1 - $500</MenuItem>
               <MenuItem value={900}>$500 - $1500</MenuItem>
               <MenuItem value={1800}>$1500 - $2500</MenuItem>
@@ -66,39 +67,6 @@ export default function Filters() {
           </FormControl>
         </Box>
       </Stack>
-      {/* <span className="span">Filtro por Categoría</span>
-      <select
-        defaultValue="default"
-        onChange={(e) => handleSelectCategories(e)}
-      >
-        <option value="default" disabled="disabled">
-          Categorías
-        </option>
-        {categories.map((c) => (
-          <option value={c._id} key={c._id}>
-            {c.name}
-          </option>
-        ))}
-      </select>
-      <span className="span">Filtro por Precio</span>
-      <select defaultValue="default" onChange={(e) => handlePriceByRange(e)}>
-        <option value="default" disabled="disabled">
-          Precio
-        </option>
-        <option value="300">$1 - $500</option>
-        <option value="900">$500 - $1500</option>
-        <option value="1800">$1500 - $2500</option>
-        <option value="2550">+ $2500</option>
-      </select>
-      <select defaultValue="default" onChange={(e) => handleSelectPrice(e)}>
-        <option value="default" disabled="disabled">
-          Rango de precio
-        </option>
-        <option value="Asc">+ $</option>
-        <option value="Desc">- $</option>
-      </select> */}
     </div>
   );
 }
-
-// 1 - 500 / 500 - 1500 / 1500 - 2500 / +2500

@@ -2,7 +2,7 @@
 import React, { useEffect, useState }  from "react";
 import { Formik, Form, FieldArray, Field, ErrorMenssage } from 'Formik'
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategories } from '../../actions/getAllCategories.js'
+import { getAllCategories } from '../../redux/actions/getAllCategories.js'
 import * as Yup from 'yup';
 
 
@@ -11,7 +11,7 @@ function CreateCurse (){
 
 
     const dispatch = useDispatch();
-    const getAllCategory = useSelector(state => state.getAllCategories);
+    const getAllCategory = useSelector(state => state.getCategories.getAllCategories);
 
     const [formSent, setFormSent] = useState(false)
     console.log(formSent);
