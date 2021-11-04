@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategories } from "../../actions/getAllCategories";
-import filterByCategories from "../../actions/filterByCategories";
-import { filterRangeByPrice } from "../../actions/filterRangeByPrice";
+import { getAllCategories } from "../../redux/actions/getAllCategories";
+import {filterByCategories} from "../../redux/actions/filterByCategories";
+import { filterRangeByPrice } from "../../redux/actions/filterRangeByPrice";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,7 +13,7 @@ import Stack from "@mui/material/Stack";
 
 export default function Filters() {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.getAllCategories);
+  const categories = useSelector((state) => state.getCategories.getAllCategories);
 
   useEffect(() => {
     dispatch(getAllCategories());

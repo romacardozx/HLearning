@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCourses, deleteCurse } from "../../actions"
+import { deleteCurse } from "../../redux/actions/deleteCourse"
+import { getAllCourses } from "../../redux/actions/getAllCourses"
 
 
 function DeleteCurse(){
@@ -13,7 +14,7 @@ function DeleteCurse(){
     }
 
     useEffect(() =>{
-        getAllCourses()
+        dispatch(getAllCourses())
     })
 
     return (

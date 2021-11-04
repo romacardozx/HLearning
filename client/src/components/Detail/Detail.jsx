@@ -14,7 +14,7 @@ import Rating from "@mui/material/Rating";
 // import ReactPlayer from "react-player";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import IconButton from "@mui/material/IconButton";
-import { getDetailCourses } from '../../actions/getDetailCourses';
+import { getDetailCourses } from '../../redux/actions/getDetailCourses';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
 import { useHistory } from "react-router-dom";
@@ -34,7 +34,7 @@ export default function CourseDetail(props) {
   // const { id } = useParams();
   const history = useHistory();
 
-  const courseDetailed = useSelector((state) => state.getCourseDetail)
+  const courseDetailed = useSelector((state) => state.getDetails.getCourseDetail)
   console.log(courseDetailed)
 
 
