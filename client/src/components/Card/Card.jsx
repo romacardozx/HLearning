@@ -23,7 +23,6 @@ export default function CourseCard({
   return (
     <Box p={1}>
       <Card sx={{ maxWidth: 260, minWidth: 100 }} elevation={6} spacing={1}>
-        {/* <CardHeader textAlign="center" title={title} /> */}
         <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
           {title}
         </Typography>
