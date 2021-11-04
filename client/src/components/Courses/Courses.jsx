@@ -10,7 +10,6 @@ import Orders from "../Orders/Orders";
 import Filters from "../Filters/Filters";
 import { Grid } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
-/* import styles from "./Courses.module.css"; */
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
@@ -60,7 +59,6 @@ export default function Courses() {
               </Grid>
             </Grid>
           </div>
-          {/* <br /> */}
           <div>
             <Paginate
               coursesPerPage={coursesPerPage}
@@ -68,22 +66,13 @@ export default function Courses() {
               paginate={paginate}
             />
           </div>
-
           <div>
-            <Grid container direction="row" spacing={1}>
+            <Grid container sx={3} /* direction="row" */>
               {currentCourses?.map((c, i) => (
                 <div key={i}>
-                  <Grid
-                    item
-                    /*  sx={{ minWidth: 285 }} */
-                    xs={2}
-                    sm={4}
-                    md={4}
-                    spacing={1}
-                  >
-                    <Item sx={{ minWidth: 270 }} spacing={1}>
+                  <Grid item xs={2} sm={4} md={4}>
+                    <Item sx={{ minWidth: 270 }}>
                       <Card
-                        spacing={1}
                         id={c._id}
                         title={c.title}
                         image={c.img}
