@@ -8,7 +8,7 @@ import {
   ORDER_BY_NAME,
   ORDER_BY_SCORE,
   ORDER_BY_PRICE,
-
+  GET_COURSES_SCORE
 
 } from "../actions/constants.js";
 
@@ -78,7 +78,14 @@ const getCourses = (state = initialState, action) => {
             ...state, 
             getAllCourses: action.payload
         }
-    } 
+    }
+    
+    case GET_COURSES_SCORE: {
+      return {
+        ...state,
+        getAllCourses: action.payload
+      }
+    }
     default: return state
   }
 }
