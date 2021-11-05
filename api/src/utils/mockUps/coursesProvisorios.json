@@ -612,14 +612,99 @@
     "description": "Learn about objects in PHP & how to program in an object oriented way - using classes, constructors, access modifiers, inheritance & more. You'll also put all these things together to build a form validation class you can reuse in your own projects.If you know the basics of PHP and want to take it further, this is the course.",
     "img": "https://cdn.fs.teachablecdn.com/VHPgkA3GTrGaRoPqZSAf",
     "score": "5",
-    "duration": "9:14:28",
+    "duration": "03:48:45",
     "categories": ["LenguajeDeProgramacion"],
     "price": 2100,
     "videos": [
       {
-        "name": "mockup tomado de pagina net ninja",
-        "link": "",
-        "duration": ""
+        "name": "1: Introduction To OOP PHP",
+        "link": "https://www.youtube.com/watch?v=Anz0ArcQ5kI&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=1",
+        "duration": "8:39"
+      },
+      {
+        "name": "2: What Is The MVC Model",
+        "link": "https://www.youtube.com/watch?v=3OKOe7CraGY&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=2",
+        "duration": "11:56"
+      },
+      {
+        "name": "3: Create Classes In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=iEGUOE9RKqM&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=3",
+        "duration": "6:25"
+      },
+      {
+        "name": "4: Visibility And Inheritance In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=X6xY4Ouydas&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=4",
+        "duration": "12:07"
+      },
+      {
+        "name": "5: Properties And Methods In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=U-SIguEOk0o&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=5",
+        "duration": "14:09"
+      },
+      {
+        "name": "6: Constructors and Destructors in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=ToomaGjgqBw&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=6",
+        "duration": "12:36"
+      },
+      {
+        "name": "7: Delete Objects In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=xeKc5VGUkPM&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=7",
+        "duration": "2:24"
+      },
+      {
+        "name": "8: Static Properties And Methods In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=L9jLxuLAAIY&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=8",
+        "duration": "10:23"
+      },
+      {
+        "name": "9: Load Classes Automatically In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=z3pZdmJ64jo&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=9",
+        "duration": "15:46"
+      },
+      {
+        "name": "10: Type Declarations In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=0MYqGSplVQs&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=10",
+        "duration": "7:35"
+      },
+      {
+        "name": "11: First exercise in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=zWOjI3HPHS8&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=11",
+        "duration": "24:01"
+      },
+      {
+        "name": "12: Scope Resolution Operators in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=rzew3ZgDMPA&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=12",
+        "duration": "8:35"
+      },
+      {
+        "name": "13: Interfaces in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=jHjjsgRNFVE&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=13",
+        "duration": "19:39"
+      },
+      {
+        "name": "14: Abstract Classes in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=Eu7l8utquGY&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=14",
+        "duration": "11:21"
+      },
+      {
+        "name": "15: Anonymous Classes In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=_PTTcxC25Lk&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=15",
+        "duration": "4:58"
+      },
+      {
+        "name": "16: Connect To A Database Using OOP PHP",
+        "link": "https://www.youtube.com/watch?v=rcNYXc-hG_I&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=16",
+        "duration": "13:57"
+      },
+      {
+        "name": "17: Query A Database Using OOP PHP",
+        "link": "https://www.youtube.com/watch?v=T41SMNgyRrc&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=17",
+        "duration": "19:58"
+      },
+      {
+        "name": "18: Apply The MVC Model Using OOP PHP",
+        "link": "https://www.youtube.com/watch?v=Fg0CP-ri87U&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=18",
+        "duration": "24:16"
       }
     ],
     "students": "356"
