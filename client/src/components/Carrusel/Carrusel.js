@@ -47,8 +47,7 @@ export default function Carrusel() {
             <CardActionArea
               component={Link}
               /* to={`/courses/${obj.id}`} */
-            /* > */}{" "}
-            */
+            /* > */}
             <Paper
               sx={{
                 p: 2,
@@ -117,7 +116,7 @@ export default function Carrusel() {
 
 /* 
 return (
-  <div className="container-slider">
+    <div className="container-slider">
     {images.map((obj, index) => {
       return (
         <div
