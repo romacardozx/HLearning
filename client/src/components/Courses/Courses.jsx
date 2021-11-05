@@ -8,7 +8,7 @@ import Card from "../Card/Card";
 import Paginate from "../Paginate/Paginate";
 import Orders from "../Orders/Orders";
 import Filters from "../Filters/Filters";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -21,10 +21,10 @@ export default function Courses() {
   const [coursesPerPage, setCoursesPerPage] = useState(4);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
-  const currentCourses = allCourses.slice(
+  const currentCourses =  allCourses.length>=0 ? (allCourses.slice(
     indexOfFirstCourse,
     indexOfLastCourse
-  );
+  )) : (allCourses)  
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -67,24 +67,33 @@ export default function Courses() {
             />
           </div>
           <div>
-            <Grid container sx={3} /* direction="row" */>
-              {currentCourses?.map((c, i) => (
-                <div key={i}>
-                  <Grid item xs={2} sm={4} md={4}>
-                    <Item sx={{ minWidth: 270 }}>
-                      <Card
-                        id={c._id}
-                        title={c.title}
-                        image={c.img}
-                        description={c.description}
-                        score={c.score}
-                        price={c.price}
-                      />
-                    </Item>
-                  </Grid>
-                </div>
-              ))}
-            </Grid>
+            
+              <Grid container sx={3} /* direction="row" */>
+                {currentCourses.length >= 0 ? (
+                  <>
+                {currentCourses?.map((c, i) => (
+                  <div key={i}>
+                    <Grid item xs={2} sm={4} md={4}>
+                      <Item sx={{ minWidth: 270 }}>
+                        <Card
+                          id={c._id}
+                          title={c.title}
+                          image={c.img}
+                          description={c.description}
+                          score={c.score}
+                          price={c.price}
+                        />
+                      </Item>
+                    </Grid>
+                  </div>
+                ))}
+                 </>) : (
+               <Grid>
+                 <Typography variant="h2" color="initial">No se encontraron cursos con esa busqueda</Typography> 
+               </Grid> 
+            )}
+              </Grid>
+           
           </div>
         </Grid>
       </div>
