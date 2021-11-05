@@ -6,7 +6,7 @@
     "score": "5",
     "duration": "38",
     "categories": ["FrontEnd", "Css", "UI"],
-    "price": "500",
+    "price": 500,
     "videos": [
       {
         "name": "Introduction",
@@ -43,7 +43,7 @@
     "score": "5",
     "duration": "60",
     "categories": ["FrontEnd"],
-    "price": "900",
+    "price": 900,
     "videos": [
       {
         "name": "Intro & Setup",
@@ -90,7 +90,7 @@
     "score": "5",
     "duration": "62",
     "categories": ["FrontEnd"],
-    "price": 5.0,
+    "price": 500,
     "videos": [
       {
         "name": "Introducción y Header",
@@ -117,7 +117,7 @@
     "score": "4",
     "duration": "26",
     "categories": ["LenguajeDeProgramacion"],
-    "price": 25.0,
+    "price": 1800,
     "videos": [
       {
         "name": "Nivel JUNIOR",
@@ -144,7 +144,7 @@
     "score": "5",
     "duration": "2",
     "categories": ["FrontEnd","Css"],
-    "price": 1.0,
+    "price": 750,
     "videos": [
       {
         "name": "Aprende CSS ahora! curso completo desde cero",
