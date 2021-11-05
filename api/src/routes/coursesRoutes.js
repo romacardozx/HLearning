@@ -2,6 +2,7 @@ const { Router } = require("express");
 const express = require("express");
 
 const getAllCourses = require("../controllers/courses/getAllCourses");
+const getCoursesByName = require("../controllers/courses/getCoursesByName");
 const getCourseById = require("../controllers/courses/getCourseById");
 
 const createCourse = require("../controllers/courses/createCourse");
@@ -10,7 +11,6 @@ const updateCourse = require("../controllers/courses/updateCourse");
 
 const deleteCourse = require("../controllers/courses/deleteCourse");
 
-const getCoursesByName = require("../controllers/courses/getCoursesByName");
 
 const router = Router();
 router.use(express.json());
