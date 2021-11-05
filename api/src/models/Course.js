@@ -13,11 +13,11 @@ const CourseSchema = new Schema({
     img: {
         type: String
     },
-    score: {
+    score: {                 //ref a review?
         type: Number
     },
     duration: {
-        type: Schema.Types.Mixed,  
+        type: String,  
     },
     categories: [{
         type: Schema.Types.ObjectId,
@@ -32,7 +32,7 @@ const CourseSchema = new Schema({
         default: [{
             name: String,
             link: String,
-            duration: Number
+            duration: String
         }]
     },
     students: {
