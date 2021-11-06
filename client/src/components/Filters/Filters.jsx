@@ -17,7 +17,6 @@ export default function Filters({ setCurrentPage }) {
   const categories = useSelector(
     (state) => state.getCategories.getAllCategories
   );
-  /* const allCourses = useSelector((state) => state.getCourses.getAllCourses); */
 
   useEffect(() => {
     dispatch(getAllCategories());
