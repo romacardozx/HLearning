@@ -77,7 +77,7 @@ const getCourses = (state = initialState, action) => {
     case GET_COURSES_SCORE: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        setAllCourses: action.payload,
       };
     }
     default:
