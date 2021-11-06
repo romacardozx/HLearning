@@ -9,8 +9,6 @@ import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 import Popover from "@mui/material/Popover";
-/* import Button from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/Add"; */
 import { Box } from "@mui/system";
 import { CardActionArea } from "@material-ui/core";
 
@@ -77,14 +75,14 @@ export default function CourseCard({
           anchorEl={anchorEl}
           anchorOrigin={{
             vertical: "top",
-            horizontal: "right", 
+            horizontal: "right",
           }}
           transformOrigin={{
             vertical: "top",
             horizontal: "left",
           }}
           onClose={handlePopoverClose}
-          disableRestoreFocus 
+          disableRestoreFocus
         >
           <Typography paragraph sx={{ p: 1 }}>
             {description}
