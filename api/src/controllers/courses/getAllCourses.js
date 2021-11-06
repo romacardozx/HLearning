@@ -6,6 +6,8 @@ module.exports = async (req, res, next) => {
     let courses = await Course.find({status: "Confirmed"});
     if(courses.length >= 0) {
       courses = await Category.populate(courses, {path: "categories"})
+    } else {
+      res.json({msg: "There're any course available"})
     }
 
     let { name, score, price, priceToFilter, categories, scoreToFilter } = req.query;
