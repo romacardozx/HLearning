@@ -7,12 +7,14 @@ import Contact from "./components/Contact/Contact";
 import Detail from "./components/Detail/Detail";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 function App() {
   return (
     <div className="App">
       <Route exact path="/" component={Landing} />
       <Route exact path="/home" component={Home} />
+      <Route exact path="/user" component={UserProfile} />
       <Route exact path="/courses" component={Courses} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
