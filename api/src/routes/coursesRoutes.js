@@ -11,7 +11,6 @@ const updateCourse = require("../controllers/courses/updateCourse");
 
 const deleteCourse = require("../controllers/courses/deleteCourse");
 
-
 const router = Router();
 router.use(express.json());
 

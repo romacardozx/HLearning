@@ -8,7 +8,13 @@ const categoriesRoutes = require('../routes/categoriesRoutes')
 router.use('/categories', categoriesRoutes);
 
 const usersRoutes = require('../routes/usersRoutes')
-router.use('/user', usersRoutes);
+router.use('/users', usersRoutes);
+
+const ordersRoutes = require('../routes/orderRoutes')
+router.use('/order', ordersRoutes);
+
+const reviewsRoutes = require('../routes/reviewsRoutes')
+router.use('/review', reviewsRoutes);
 
 
 
