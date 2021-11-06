@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { filterByCategories } from "../../redux/actions/filterByCategories";
 import { filterRangeByPrice } from "../../redux/actions/filterRangeByPrice";
+/* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -16,6 +17,7 @@ export default function Filters() {
   const categories = useSelector(
     (state) => state.getCategories.getAllCategories
   );
+  /* const allCourses = useSelector((state) => state.getCourses.getAllCourses); */
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -23,6 +25,7 @@ export default function Filters() {
 
   function handleSelectCategories(e) {
     e.preventDefault();
+
     dispatch(filterByCategories(e.target.value));
   }
 
@@ -43,7 +46,6 @@ export default function Filters() {
               label="Categories"
               onChange={(e) => handleSelectCategories(e)}
             >
-              <MenuItem value="All">Todas</MenuItem>
               {categories.map((c) => (
                 <MenuItem value={c._id} key={c._id}>
                   {c.name}
