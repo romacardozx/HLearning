@@ -12,7 +12,7 @@
  {
     "name": "Benito Luque",
     "courses": "Vue 3 with TypeScript Jump Start",
-    "reviewS":["Vue 3 with TypeScript Jump Start"],
+    "reviews":["Vue 3 with TypeScript Jump Start"],
     "picture": "https://pbs.twimg.com/media/BcINeMVCIAABeWd.jpg",
     "email": "luknito@gmail.com",
     "status":"",
@@ -22,7 +22,7 @@
  {
     "name": "Jacinta Duque",
     "courses": "Como hacer un sitio web con Bootstrap",
-    "reviewS":["Como hacer un sitio web con Bootstrap"],
+    "reviews":["Como hacer un sitio web con Bootstrap"],
     "picture": "https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg",
     "email": "jacinta1992@gmail.com",
     "status":"",
@@ -32,7 +32,7 @@
  {
     "name": "Bruno Escobar",
     "courses": "Curso de JAVASCRIPT",
-    "reviewS":["Curso de JAVASCRIPT"],
+    "reviews":["Curso de JAVASCRIPT"],
     "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     "email": "escobarnicbruno@gmail.com",
     "status":"",
@@ -42,7 +42,7 @@
  {
     "name": "Federico Florez",
     "courses": "Aprende CSS ahora! curso completo desde cero",
-    "reviewS":"Aprende CSS ahora! curso completo desde cero",
+    "reviews":"Aprende CSS ahora! curso completo desde cero",
     "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHjVVE2DLkOgki9Pp3Rq3XU6FdpibvKM3KwA&usqp=CAU",
     "email": "fedejustin@gmail.com",
     "status":"",
@@ -52,7 +52,7 @@
  {
     "name": "Luz Carro",
     "courses": "Curso Básico de HTML desde 0",
-    "reviewS":"Curso Básico de HTML desde 0",
+    "reviews":"Curso Básico de HTML desde 0",
     "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwAAgPvjuHXg_-rlVao0J8-v6ZA5gsIFryrg&usqp=CAU",
     "email": "luzlight@gmail.com",
     "status":"",
@@ -62,7 +62,7 @@
  {
     "name": "Gaizka Manzano",
     "courses": "Figma para principiantes",
-    "reviewS":"Figma para principiantes",
+    "reviews":"Figma para principiantes",
     "picture": "https://www.farjo.com/app/uploads/2016/04/1ae-1-1600596661-800x800.jpg",
     "email": "gaizfootball@gmail.com",
     "status":"",
@@ -72,7 +72,7 @@
  {
     "name": "Raul Casas",
     "courses": "Complete React Material UI",
-    "reviewS":"Complete React Material UI",
+    "reviews":"Complete React Material UI",
     "picture": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
     "email": "raulrap@gmail.com",
     "status":"",
@@ -82,7 +82,7 @@
  {
     "name": "Marino Rovira",
     "courses": "Node.js para principiantes",
-    "reviewS":"Node.js para principiantes",
+    "reviews":"Node.js para principiantes",
     "picture": "http://1.bp.blogspot.com/-kq-khZf2Njg/UP-TLgoBGtI/AAAAAAAAA-Q/Qvi0vTPSpuw/s1600/Standard2.jpg",
     "email": "marinodelmar@gmail.com",
     "status":"",
@@ -92,7 +92,7 @@
  {
     "name": "Evelyn Navarro",
     "courses": "CURSO DE PYTHON",
-    "reviewS":"CURSO DE PYTHON",
+    "reviews":"CURSO DE PYTHON",
     "picture": "https://pm1.narvii.com/6749/628c9d4908fdb2e86d673c65be06ef848b45d08ev2_hq.jpg",
     "email": "evenarro@outlook.com",
     "status":"",
@@ -102,7 +102,7 @@
  {
     "name": "Jennifer Molero",
     "courses": "Modern JavaScript",
-    "reviewS":"Modern JavaScript",
+    "reviews":"Modern JavaScript",
     "picture": "https://i.pinimg.com/originals/f5/87/34/f587347e06d6c3c9c0a3fc9675e6bdda.jpg",
     "email": "jennifergeminis@gmail.com",
     "status":"",
@@ -112,7 +112,7 @@
  {
     "name": "Izan Valle",
     "courses": "Flutter Course",
-    "reviewS":"Flutter Course",
+    "reviews":"Flutter Course",
     "picture": "",
     "email": "",
     "status":"",
@@ -122,7 +122,7 @@
  {
     "name": "Barbara Rio",
     "courses": "Strapi Crash Course (with React & GraphQL)",
-    "reviewS":"Strapi Crash Course (with React & GraphQL)",
+    "reviews":"Strapi Crash Course (with React & GraphQL)",
     "picture": "",
     "email": "",
     "status":"",
@@ -132,7 +132,7 @@
  {
     "name": "Mustapha Sacristan",
     "courses": "Learn Go (Golang)",
-    "reviewS":"Learn Go (Golang)",
+    "reviews":"Learn Go (Golang)",
     "picture": "",
     "email": "",
     "status":"",
@@ -142,7 +142,7 @@
  {
     "name": "Jairo Alvaro",
     "courses": "Mobile-First Responsive Build",
-    "reviewS":"Mobile-First Responsive Build",
+    "reviews":"Mobile-First Responsive Build",
     "picture": "",
     "email": "",
     "status":"",
@@ -152,7 +152,7 @@
  {
     "name": "Fernando Paredes",
     "courses": "Node.js Auth (using JWT)",
-    "reviewS":"Node.js Auth (using JWT)",
+    "reviews":"Node.js Auth (using JWT)",
     "picture": "",
     "email": "",
     "status":"",
@@ -162,7 +162,7 @@
  {
     "name": "Erika Sampedro",
     "courses": "Bulma CSS Page Build Tutorial",
-    "reviewS":"Bulma CSS Page Build Tutorial",
+    "reviews":"Bulma CSS Page Build Tutorial",
     "picture": "",
     "email": "",
     "status":"",
@@ -172,7 +172,7 @@
  {
     "name": "Maria Laura Luis",
     "courses": "Vue 3 Animations Tutorial",
-    "reviewS":"Vue 3 Animations Tutorial",
+    "reviews":"Vue 3 Animations Tutorial",
     "picture": "",
     "email": "",
     "status":"",
@@ -182,7 +182,7 @@
  {
     "name": "Hugo Arcos",
     "courses": "Object Oriented PHP Crash Course",
-    "reviewS":"Object Oriented PHP Crash Course",
+    "reviews":"Object Oriented PHP Crash Course",
     "picture": "",
     "email": "",
     "status":"",
@@ -192,7 +192,7 @@
  {
     "name": "Angela-Maria Catalan",
     "courses": "Data Visualization with D3, JavaScript, React",
-    "reviewS":"Data Visualization with D3, JavaScript, React",
+    "reviews":"Data Visualization with D3, JavaScript, React",
     "picture": "",
     "email": "",
     "status":"",
@@ -202,7 +202,7 @@
  {
     "name": "ESTE ES POR SI QUIEREN HACER MAS",
     "courses": "",
-    "reviewS":"",
+    "reviews":"",
     "picture": "",
     "email": "",
     "status":"",
