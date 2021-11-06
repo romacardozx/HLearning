@@ -13,7 +13,7 @@ router.use(express.json());
 
 // ----> GET <----
 router.get("/", getAllUsers);
-// router.get("/:id", getUserById);
+router.get("/:id", getUserById);
 
 // ----> POST <----
 // router.post('/createUser', createUser);
