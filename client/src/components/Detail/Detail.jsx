@@ -7,7 +7,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import styles from "./detail.module.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 // import { style } from "@mui/system";
 // import { Component } from "react";
@@ -56,7 +56,7 @@ export default function CourseDetail(props) {
             sx={{
               p: 2,
               margin: "auto",
-              maxWidth: 450,
+              maxWidth: 1200,
               elevation: 24,
               flexGrow: 50,
               bottom: 0,
@@ -69,7 +69,7 @@ export default function CourseDetail(props) {
                     alt="complex"
                     src={courseDetailed.img}
                     width="450px"
-                    height="250px"
+                    height="300px"
                   />
                   {/* <ReactPlayer
               url='https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ'
@@ -88,6 +88,9 @@ export default function CourseDetail(props) {
                       {/* Tailwind Just in Time */}
                       {courseDetailed.title}
                     </Typography>
+                    <Typography variant="body2" align='left' color="text.secondary">
+                    {courseDetailed.categories.map(el => el.name + (' '))}
+                    </Typography><br/>
                     <Typography variant="h6" gutterBottom>
                       {/* In this Tailwind JIT tutorial series you'll learn how to
                       use the Just in Time compiler for better performance
@@ -96,7 +99,7 @@ export default function CourseDetail(props) {
                     </Typography>
                     <Typography variant="body2" align='left' color="text.secondary">
                       {/* Duration: 38min */}
-                      Duration:{courseDetailed.duration}min
+                      Duration:{" "+courseDetailed.duration}min
                     </Typography>
                     <br />
                     <Typography
@@ -104,18 +107,6 @@ export default function CourseDetail(props) {
                       color="text.secondary"
                       align="left"
                     >
-                      <Link className={styles.links} to="/courses">
-                        {/* FrontEnd */}
-                        {courseDetailed.categories[0]}
-                      </Link>
-                      <Link className={styles.links} to="/courses">
-                        {/* Css */}
-                        {/* {courseDetailed.categories[1]} */}
-                      </Link>
-                      <Link className={styles.links} to="/courses">
-                        {/* UI */}
-                        {/* {courseDetailed.categories[2]} */}
-                      </Link>
                     </Typography>
                   </Grid>
                   <Grid item align="left">
