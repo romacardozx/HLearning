@@ -13,14 +13,14 @@ router.use(express.json());
 
 // ----> GET <----
 router.get("/", getAllUsers);
-// router.get("/:id", getUserById);
+router.get("/:id", getUserById);
 
 // ----> POST <----
-// router.post('/createUser', createUser);
+router.post('/createUser', createUser);
 
 // ----> PUT <----
 
 // ----> DELETE <----
-// router.delete("/deleteUser/:id", deleteUser); 
+router.delete("/deleteUser/:id", deleteUser); 
 
 module.exports = router
