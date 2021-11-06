@@ -41,7 +41,7 @@ export default function CourseDetail(props) {
 
 
     useEffect(() => { 
-        dispatch(getDetailCourses(id))
+        dispatch(getDetailCourses(id)) // eslint-disable-next-line
     },[dispatch]);
 
 
