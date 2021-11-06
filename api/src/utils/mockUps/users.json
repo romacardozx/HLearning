@@ -1,5 +1,5 @@
 [
- {
+  {
     "name": "Veronica Valle",
     "courses": ["Tailwind Just in Time"],
     "reviews": ["Tailwind Just in Time"],
@@ -8,8 +8,8 @@
     "status": "",
     "sub": "",
     "isGoogle": ""
- },
- {
+  },
+  {
     "name": "Benito Luque",
     "courses": ["Vue 3 with TypeScript Jump Start"],
     "reviews": ["Vue 3 with TypeScript Jump Start"],
@@ -191,8 +191,8 @@
  },
  {
     "name": "Angela-Maria Catalan",
-    "courses": ["Data Visualization with D3", "JavaScript", "React"],
-    "reviews": ["Data Visualization with D3", "JavaScript", "React"],
+    "courses": ["Data Visualization with D3 JavaScript React"],
+    "reviews": ["Data Visualization with D3 JavaScript React"],
     "picture": "",
     "email": "",
     "status": "",
@@ -202,7 +202,7 @@
  {
     "name": "ESTE ES POR SI QUIEREN HACER MAS",
     "courses": "",
-    "reviews":"",
+    "reviews": "",
     "picture": "",
     "email": "",
     "status": "",

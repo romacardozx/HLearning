@@ -19,7 +19,7 @@ export default function Courses() {
   const allCourses = useSelector((state) => state.getCourses.getAllCourses);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage, setCoursesPerPage] = useState(4);
+  const [coursesPerPage, /* setCoursesPerPage */] = useState(4);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
   const currentCourses =
@@ -49,7 +49,7 @@ export default function Courses() {
       <br />
       <br />
       <div>
-        <Grid container direction="column" alignItems="center" justify="center">
+        <Grid container direction="column" alignItems="center" >
           <SearchBar courses={allCourses} />
           <br />
           <div>

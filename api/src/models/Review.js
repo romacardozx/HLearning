@@ -9,8 +9,7 @@ const ReviewSchema = new Schema({
         required: true, 
       },
     description: {
-        type: String,
-        required: true
+        type: String        
     },
     course: {
         type: mongoose.Schema.Types.ObjectId,

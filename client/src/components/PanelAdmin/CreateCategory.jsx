@@ -4,11 +4,11 @@ import TextField from '@mui/material/TextField';
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { Grid } from '@mui/material';
-import Stack from '@mui/material/Stack';
+//import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
 
-function BasicButtons() {
+/* function BasicButtons() { 
   return (
     <Stack spacing={2} direction="row">
       <Button variant="text">Text</Button>
@@ -17,7 +17,7 @@ function BasicButtons() {
     </Stack>
   );
 }
-
+ */
 
 export default function CreateCategory() {
   return (

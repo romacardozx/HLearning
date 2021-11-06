@@ -7,5 +7,10 @@ router.use('/courses', coursesRoutes);
 const categoriesRoutes = require('../routes/categoriesRoutes')
 router.use('/categories', categoriesRoutes);
 
+const usersRoutes = require('../routes/usersRoutes')
+router.use('/user', usersRoutes);
+
+
+
 
 module.exports = router;
