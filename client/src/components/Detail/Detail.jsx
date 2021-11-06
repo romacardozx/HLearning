@@ -12,6 +12,7 @@ import Rating from "@mui/material/Rating";
 // import { style } from "@mui/system";
 // import { Component } from "react";
 // import ReactPlayer from "react-player";
+import { useParams } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import IconButton from "@mui/material/IconButton";
 import { getDetailCourses } from '../../redux/actions/getDetailCourses';
@@ -19,6 +20,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
 import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
+import Button from '@mui/material/Button';
 
 
 const Img = styled("img")({
@@ -31,7 +33,7 @@ const Img = styled("img")({
 export default function CourseDetail(props) {
 
   const dispatch = useDispatch();
-  // const { id } = useParams();
+  const { id } = useParams();
   const history = useHistory();
 
   const courseDetailed = useSelector((state) => state.getDetails.getCourseDetail)
@@ -39,8 +41,9 @@ export default function CourseDetail(props) {
 
 
     useEffect(() => { 
-        dispatch(getDetailCourses(props.match.params.id))
+        dispatch(getDetailCourses(id)) // eslint-disable-next-line
     },[dispatch]);
+
 
   const handleBuy = () => history.push("/payment");
 
@@ -110,13 +113,16 @@ export default function CourseDetail(props) {
                     </Typography>
                   </Grid>
                   <Grid item align="left">
-                    <Typography variant="body2">
-                      <button className={styles.btn} onClick={handleBuy}>
-                        <span className={styles.parpadea}>Buy now!</span>
-                      </button>
+                    <Typography sx={{ cursor: "pointer" }} variant="body2">
+                      {/* <button className={styles.btn} onClick={handleBuy}>
+                        <span>Buy now!</span>
+                      </button> */}
+                      <Button variant="contained" size="medium" onClick={handleBuy}>
+                      Comprar ahora!
+                      </Button>
                       <IconButton>
                         <AddShoppingCartIcon />
-                          <Typography> Agregar al carrito</Typography>
+                        <Typography>Agregar al carrito</Typography>
                     </IconButton>
                     </Typography>
                   </Grid>

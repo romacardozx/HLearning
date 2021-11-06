@@ -77,14 +77,14 @@ export default function CourseCard({
           anchorEl={anchorEl}
           anchorOrigin={{
             vertical: "top",
-            horizontal: "rigth",
+            horizontal: "right", 
           }}
           transformOrigin={{
             vertical: "top",
             horizontal: "left",
           }}
           onClose={handlePopoverClose}
-          disableRestoreFocus
+          disableRestoreFocus 
         >
           <Typography paragraph sx={{ p: 1 }}>
             {description}
