@@ -10,6 +10,7 @@ import {
 import Logo from "../../images/Hlearning.png";
 
 const Navbar = () => {
+  //Saque activeStyle que hacia warning rojo de los 3 NavLink
   return (
     <>
       <Nav>
@@ -20,13 +21,13 @@ const Navbar = () => {
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink to='/home' activeStyle>
+          <NavLink to='/home' > 
             Inicio
           </NavLink>
-          <NavLink to='/courses' activeStyle>
+          <NavLink to='/courses' >
             Cursos
           </NavLink>
-          <NavLink to='/contact' activeStyle>
+          <NavLink to='/contact' >
             Contacto
           </NavLink>
           {/* Second Nav */}

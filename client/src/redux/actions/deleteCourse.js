@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function deleteCurse(id) {
+export function deleteCourse(id) {
   return async function () {
     try {
       const json = await axios.delete(`/courses` + id); //acordate que va (link, id)
