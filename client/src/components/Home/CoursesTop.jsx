@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCoursesScore } from "../../redux/actions/getCoursesScore";
-import Card from "../Card/Card";
+import CardTops from "./CardTops";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { experimentalStyled as styled } from "@mui/material/styles";
@@ -31,7 +31,7 @@ export default function CoursesTop() {
               <div key={i}>
                 <Grid item xs={2} sm={4} md={4}>
                   <Item sx={{ minWidth: 270 }}>
-                    <Card
+                    <CardTops
                       id={c._id}
                       title={c.title}
                       image={c.img}
