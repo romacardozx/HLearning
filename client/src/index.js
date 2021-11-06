@@ -13,11 +13,11 @@ axios.defaults.baseURL = REACT_APP_BASE_URL;
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
+ {/*    <React.StrictMode> */}
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </React.StrictMode>
+  {/*   </React.StrictMode> */}
   </Provider>,
   document.getElementById("root")
 );

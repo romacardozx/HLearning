@@ -16,7 +16,6 @@ export default function CarruselPics() {
   useEffect(() => {
     setTimeout(nextSlide, 3000); // eslint-disable-next-line
   }, [slideIndex]);
-  console.log("ROMAN");
 
   return (
     <div className="container-slider">
