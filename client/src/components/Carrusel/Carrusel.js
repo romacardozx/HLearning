@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-/* import { useSelector } from "react-redux";
-import { getCourses5Stars } from "../../actions/getCourses5Stars"; */
+import { useDispatch, useSelector } from "react-redux";
+import { getCoursesScore } from "../../redux/actions/getCoursesScore";
 import "./Slider.css";
 import images from "./coursesProvisorios.json";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -22,7 +22,7 @@ const Img = styled("img")({
 });
 
 export default function Carrusel() {
-  /* const courses5Stars = useSelector((state) => state.getCourses5Stars); */
+  const dispatch = useDispatch();
   const [slideIndex, setSlideIndex] = useState(1);
   function nextSlide() {
     if (slideIndex !== images.length) {
@@ -31,10 +31,18 @@ export default function Carrusel() {
       setSlideIndex(1);
     }
   }
+  const coursesTop = useSelector((state) => state.getCourses.getAllCourses);
+  /* console.log("COURSES TOP"  coursesTop); */
+
+  /*  useEffect(() => {
+    dispatch(getCoursesScore(5));
+  }, [dispatch]); */
 
   useEffect(() => {
+    dispatch(getCoursesScore(5));
     setTimeout(nextSlide, 3000); // eslint-disable-next-line
-  }, [slideIndex]);
+  }, [slideIndex, dispatch]);
+
   return (
     <div className="container-slider">
       {images.map((obj, index) => {
@@ -43,12 +51,6 @@ export default function Carrusel() {
             key={index}
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
-            {/* 
-            <CardActionArea
-              component={Link}
-              /* to={`/courses/${obj.id}`} */
-            /* > */}{" "}
-            */
             <Paper
               sx={{
                 p: 2,
@@ -107,7 +109,6 @@ export default function Carrusel() {
                 </Grid>
               </Grid>
             </Paper>
-            {/*  </CardActionArea> */}
           </div>
         );
       })}
@@ -117,7 +118,7 @@ export default function Carrusel() {
 
 /* 
 return (
-  <div className="container-slider">
+    <div className="container-slider">
     {images.map((obj, index) => {
       return (
         <div
@@ -130,3 +131,9 @@ return (
     })}
   </div>
 ); */
+
+/* 
+            <CardActionArea
+              component={Link}
+              /* to={`/courses/${obj.id}`} */
+/* > */

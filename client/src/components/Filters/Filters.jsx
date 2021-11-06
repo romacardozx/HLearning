@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { filterByCategories } from "../../redux/actions/filterByCategories";
 import { filterRangeByPrice } from "../../redux/actions/filterRangeByPrice";
+/* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -16,6 +17,7 @@ export default function Filters() {
   const categories = useSelector(
     (state) => state.getCategories.getAllCategories
   );
+  /* const allCourses = useSelector((state) => state.getCourses.getAllCourses); */
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -23,6 +25,7 @@ export default function Filters() {
 
   function handleSelectCategories(e) {
     e.preventDefault();
+
     dispatch(filterByCategories(e.target.value));
   }
 
@@ -43,7 +46,6 @@ export default function Filters() {
               label="Categories"
               onChange={(e) => handleSelectCategories(e)}
             >
-              <MenuItem value="All">Todas</MenuItem>
               {categories.map((c) => (
                 <MenuItem value={c._id} key={c._id}>
                   {c.name}
@@ -61,10 +63,9 @@ export default function Filters() {
               label="Price"
               onChange={(e) => handlePriceByRange(e)}
             >
-              {/* EL PRECIO MÍNIMO DE CURSOS ES $500, CAMBIAR FILTRO DE $1 A $500 */}
-              <MenuItem value={300}>$1 - $500</MenuItem>
-              <MenuItem value={900}>$500 - $1500</MenuItem>
-              <MenuItem value={1800}>$1500 - $2500</MenuItem>
+              <MenuItem value={300}>$1000 - $1500</MenuItem>
+              <MenuItem value={900}>$1500 - $2000</MenuItem>
+              <MenuItem value={1800}>$2000 - $2500</MenuItem>
               <MenuItem value={2550}>+ $2500</MenuItem>
             </Select>
           </FormControl>

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCourses } from "../../redux/actions/getAllCourses";
+/* import { getAllCategories } from "../../redux/actions/getAllCategories"; */
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
@@ -32,6 +33,7 @@ export default function Courses() {
 
   useEffect(() => {
     dispatch(getAllCourses());
+    /*  dispatch(getAllCategories()); */
   }, [dispatch]);
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -48,15 +50,15 @@ export default function Courses() {
       <br />
       <div>
         <Grid container direction="column" alignItems="center" justify="center">
-          <SearchBar />
+          <SearchBar courses={allCourses} />
           <br />
           <div>
             <Grid container direction="row" spacing={3}>
               <Grid item>
-                <Orders setCurrentPage={setCurrentPage} />
+                <Orders setCurrentPage={setCurrentPage} courses={allCourses} />
               </Grid>
               <Grid item>
-                <Filters />
+                <Filters courses={allCourses} />
               </Grid>
             </Grid>
           </div>
@@ -68,7 +70,7 @@ export default function Courses() {
             />
           </div>
           <div>
-            <Grid container sx={3} /* direction="row" */>
+            <Grid container sx={3}>
               {currentCourses.length >= 0 ? (
                 <>
                   {currentCourses?.map((c, i) => (

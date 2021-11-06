@@ -76,7 +76,7 @@ export default function CourseCard({
           open={open}
           anchorEl={anchorEl}
           anchorOrigin={{
-            vertical: "center",
+            vertical: "top",
             horizontal: "rigth",
           }}
           transformOrigin={{
