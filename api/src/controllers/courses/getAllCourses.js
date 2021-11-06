@@ -2,11 +2,12 @@ const Course = require("../../models/Course");
 const Category = require("../../models/Category")
 
 module.exports = async (req, res, next) => {
-  let courses = await Course.find({status: "Confirmed"});
-  if(courses.length >= 0) {
-    courses = await Category.populate(courses, {path: "categories"})
-  }
   try {
+    let courses = await Course.find({status: "Confirmed"});
+    if(courses.length >= 0) {
+      courses = await Category.populate(courses, {path: "categories"})
+    }
+
     let { name, score, price, priceToFilter, categories, scoreToFilter } = req.query;
 
     if (name) {
@@ -63,33 +64,6 @@ module.exports = async (req, res, next) => {
         return res.send(orderPrice);
       }
     }
-    if (priceToFilter) {
-      priceToFilter = parseInt(priceToFilter);
-      if (priceToFilter <= 500) {
-        const priceToFilterLess = await Course.find({
-          price: { $lte: 500 },
-        }).populate("categories", "name -_id");
-        return res.send(priceToFilterLess);
-      }
-      if (priceToFilter > 500 && priceToFilter <= 1500) {
-        const priceToFilterBetween = await Course.find({
-          price: { $gt: 500, $lte: 1500 },
-        }).populate("categories", "name -_id");
-        return res.send(priceToFilterBetween);
-      }
-      if (priceToFilter > 1500 && priceToFilter <= 2500) {
-        const priceToFilterBetween2 = await Course.find({
-          price: { $gt: 1500, $lte: 2500 },
-        }).populate("categories", "name -_id");
-        return res.send(priceToFilterBetween2);
-      }
-      if (priceToFilter > 2500) {
-        const priceToFilterGrater = await Course.find({
-          price: { $gt: 2500 },
-        }).populate("categories", "name -_id");
-        return res.send(priceToFilterGrater);
-      }
-    }
     if(price){
       if(price === "Asc" || !price || price ===""){
         orderPrice = courses.sort((a,b) => {
@@ -107,33 +81,36 @@ module.exports = async (req, res, next) => {
     return res.send(orderPrice);
     
     }
-
     }
     if(priceToFilter){
-      
-      
       priceToFilter = parseInt(priceToFilter)
-      if(priceToFilter <=  500 ){
+      if(priceToFilter <  1000 ){
         const priceToFilterLess = await Course
-        .find({price: {$lte: 500}})
+        .find({price: {$lt: 1000}})
         .populate('categories', 'name -_id')
          return res.send(priceToFilterLess)
        } 
-      if(priceToFilter > 500 && priceToFilter <= 1500){
-         const priceToFilterBetween = await Course
-         .find({price: {$gt: 500, $lte: 1500}})
+      if(priceToFilter >= 1000 && priceToFilter < 1500){
+        const priceToFilterBetween = await Course
+         .find({price: {$gte: 1000, $lt: 1500}})
          .populate('categories', 'name -_id')
          return res.send(priceToFilterBetween)
        } 
-      if(priceToFilter > 1500 && priceToFilter <= 2500){
-         const priceToFilterBetween2 = await Course
-         .find({price: {$gt: 1500, $lte: 2500}})
+      if(priceToFilter >= 1500 && priceToFilter < 2000){
+        const priceToFilterBetween2 = await Course
+         .find({price: {$gte: 1500, $lt: 2000}})
          .populate('categories', 'name -_id')
          return res.send(priceToFilterBetween2)
        } 
-      if(priceToFilter >  2500){
+      if(priceToFilter >= 2000 && priceToFilter < 2500){
+         const priceToFilterBetween3 = await Course
+         .find({price: {$gte: 2000, $lt: 2500}})
+         .populate('categories', 'name -_id')
+         return res.send(priceToFilterBetween3)
+       } 
+      if(priceToFilter >=  2500){
          const priceToFilterGrater = await Course
-         .find({price: {$gt: 2500}})
+         .find({price: {$gte: 2500}})
          .populate('categories', 'name -_id')
          return res.send(priceToFilterGrater)
        } 

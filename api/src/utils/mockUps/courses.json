@@ -4,34 +4,34 @@
     "description": "In this Tailwind JIT tutorial series you'll learn how to use the Just in Time compiler for better performance during development.",
     "img": "https://cdn.fs.teachablecdn.com/6iMO3BaS9GF42GIAlWPQ",
     "score": "5",
-    "duration": "38",
+    "duration": "00:39:29",
     "categories": ["FrontEnd", "Css", "UI"],
     "price": 500,
     "videos": [
       {
         "name": "Introduction",
         "link": "https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
-        "duration": "11"
+        "duration": "11:00"
       },
       {
         "name": "Using the Just in Time Compiler",
         "link": "https://youtu.be/mP2TPWZRSmk?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
-        "duration": "9"
+        "duration": "8:59"
       },
       {
         "name": "Extra Variants",
         "link": "https://youtu.be/DduPHtznQ2o?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
-        "duration": "5"
+        "duration": "5:23"
       },
       {
         "name": "Arbitrary Values",
         "link": "https://youtu.be/4gEH1h5C-Tc?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
-        "duration": "5"
+        "duration": "5:30"
       },
       {
         "name": "Tailwind JIT with Next.js",
         "link": "https://youtu.be/D3Kz2bOQR5E?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ",
-        "duration": "8"
+        "duration": "8:37"
       }
     ],
     "students": "100"
@@ -41,44 +41,44 @@
     "description": "Hey gang, in this Vue 3 & TypeScript jump start tutorial I'll show you how to get up and running with Vue 3 using TypeScript. In this lesson we'll discuss the benefits of TS & set the initial project up.",
     "img": "https://cdn.fs.teachablecdn.com/1M8MbfrSQme0aCzmJFmQ",
     "score": "5",
-    "duration": "60",
+    "duration": "00:59:26",
     "categories": ["FrontEnd"],
     "price": 900,
     "videos": [
       {
         "name": "Intro & Setup",
         "link": "https://youtu.be/JfI5PISLr9w?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
-        "duration": "9"
+        "duration": "8:53"
       },
       {
         "name": "Vue Components using TypeScript",
         "link": "https://youtu.be/UDAVj_vlAr8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
-        "duration": "10"
+        "duration": "9:50"
       },
       {
         "name": "Composition API & TypeScript",
         "link": "https://youtu.be/H-hXNym2CK8?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
-        "duration": "12"
+        "duration": "11:54"
       },
       {
         "name": "Types & Props",
         "link": "https://youtu.be/GdWrYfDfqRE?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
-        "duration": "9"
+        "duration": "9:24"
       },
       {
         "name": "Functions",
         "link": "https://youtu.be/usSBsgWNUZk?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
-        "duration": "8"
+        "duration": "7:54"
       },
       {
         "name": "Computed Values",
         "link": "https://youtu.be/TwN36HU-NQM?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
-        "duration": "6"
+        "duration": "5:27"
       },
       {
         "name": "Hylia Font & Final Styles",
         "link": "https://youtu.be/6n4myAZwdxg?list=PL4cUxeGkcC9gCtAuEdXTjNVE5bbMFo5OD",
-        "duration": "6"
+        "duration": "6:04"
       }
     ],
     "students": "400"
@@ -88,7 +88,7 @@
     "description": "Aprende como hacer un sitio web con bootstrap",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7W1KDUdra9jgXWtf-NYIIqWbXj23rvtvr7A&usqp=CAU",
     "score": "5",
-    "duration": "62",
+    "duration": "01:04:21",
     "categories": ["FrontEnd"],
     "price": 500,
     "videos": [
@@ -115,7 +115,7 @@
     "description": "¿Queres aprender a programar en Javascript desde cero? Este es el curso de javascript desde cero a experto que vas a terminar, te prometo que no te vas a aburrir durante el aprendizaje de este curso de javascript, vas a aprender javascript fácil",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhJlTMKGEP32O9dXs3Laz-XYbL5gynMI08A&usqp=CAU",
     "score": "4",
-    "duration": "26",
+    "duration": "00:17:19",
     "categories": ["LenguajeDeProgramacion"],
     "price": 1800,
     "videos": [
@@ -135,14 +135,14 @@
         "duration": "9:23"
       }
     ],
-    "students": "14"
+    "students": "144"
   },
   {
     "title": "Aprende CSS ahora! curso completo desde cero",
     "description": "Aprende CSS con el youtuber de Hola Mundo",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ahxxcR2SA-SW1rMpjQzHj5cTwx06LooCGw&usqp=CAU",
     "score": "5",
-    "duration": "2",
+    "duration": "00:02:05",
     "categories": ["FrontEnd","Css"],
     "price": 750,
     "videos": [
@@ -247,7 +247,7 @@
         "duration": "44:09"
       },
       {
-        "name": " Creando un Portafolio",
+        "name": "Creando un Portafolio",
         "link": "https://youtu.be/XIt1SNcuJ9g?list=PLhSj3UTs2_yXhZi9D3cuVPntguAjA4-yw",
         "duration": "1:01:47"
       }
@@ -385,32 +385,32 @@
     "price": 3200,
     "videos": [
       {
-        "name": "Modern JavaScript Tutorial #1 - Intro & Setup",
+        "name": "#1 - Intro & Setup",
         "link": "https://www.youtube.com/watch?v=iWOYAxlnaww&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc",
         "duration": "12:25"
       },
       {
-        "name": "Modern JavaScript Tutorial #2 - Syntax Basics & Types",
+        "name": "#2 - Syntax Basics & Types",
         "link": "https://www.youtube.com/watch?v=FhguwBJeqWs&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc&index=2",
         "duration": "1:24:17"
       },
       {
-        "name": "Modern JavaScript Tutorial #3 - Control Flow",
+        "name": "#3 - Control Flow",
         "link": "https://www.youtube.com/watch?v=JloLGV9DmtQ&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc&index=3",
         "duration": "52:59"
       },
       {
-        "name": "Modern JavaScript Tutorial #4 - Functions",
+        "name": "#4 - Functions",
         "link": "https://www.youtube.com/watch?v=xUI5Tsl2JpY&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc&index=4",
         "duration": "43:33"
       },
       {
-        "name": "Modern JavaScript Tutorial #5 - Objects",
+        "name": "#5 - Objects",
         "link": "https://www.youtube.com/watch?v=X0ipw1k7ygU&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc&index=5",
         "duration": "37:35"
       },
       {
-        "name": "Modern JavaScript Tutorial #6 - The Document Object Model",
+        "name": "#6 - The Document Object Model",
         "link": "https://www.youtube.com/watch?v=wKBu_dEaF9E&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc&index=6",
         "duration": "53:38"
       }
@@ -445,72 +445,72 @@
     "price": 1600,
     "videos": [
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #1 - Intro & Setup",
+        "name": "#1 - Intro & Setup",
         "link": "https://www.youtube.com/watch?v=4Ntd414raYc&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn",
         "duration": "6:14"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #2 - Create a Strapi App",
+        "name": "#2 - Create a Strapi App",
         "link": "https://www.youtube.com/watch?v=vG4M5f2wKK0&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=2",
         "duration": "6:04"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #3 - Content Types & Endpoints",
+        "name": "#3 - Content Types & Endpoints",
         "link": "https://www.youtube.com/watch?v=TVwW01BqYQQ&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=3",
         "duration": "7:06"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #4 - Permissions & Auth Requests",
+        "name": "#4 - Permissions & Auth Requests",
         "link": "https://www.youtube.com/watch?v=N4JpylgjRK0&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=4",
         "duration": "11:12"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #5 - Creating a React App",
+        "name": "#5 - Creating a React App",
         "link": "https://www.youtube.com/watch?v=8IVQahYX-mc&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=5",
         "duration": "11:11"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #6 - Fetching Strapi Data",
+        "name": "#6 - Fetching Strapi Data",
         "link": "https://www.youtube.com/watch?v=cOE_hF2xjpM&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=6",
         "duration": "14:15"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #7 - Fetching a Single Record",
+        "name": "#7 - Fetching a Single Record",
         "link": "https://www.youtube.com/watch?v=9OwZHtH6Ppo&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=7",
         "duration": "4:38"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #8 - GraphQL Plugin & Overview",
+        "name": "#8 - GraphQL Plugin & Overview",
         "link": "https://www.youtube.com/watch?v=3x-DeIbuNLc&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=8",
         "duration": "5:54"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #9 - Apollo Client Setup",
+        "name": "#9 - Apollo Client Setup",
         "link": "https://www.youtube.com/watch?v=Y5iDq-suzCA&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=9",
         "duration": "3:58"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #10 - The useQuery Hook",
+        "name": "#10 - The useQuery Hook",
         "link": "https://www.youtube.com/watch?v=qUiox_rkdvw&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=10",
         "duration": "4:22"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #11 - Query Variables",
+        "name": "#11 - Query Variables",
         "link": "https://www.youtube.com/watch?v=94ygizaXG38&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=11",
         "duration": "5:29"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #12 - Relational Data",
+        "name": "#12 - Relational Data",
         "link": "https://www.youtube.com/watch?v=OF-GZ8j60cI&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=12",
         "duration": "9:31"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #13 - Fetching Related Data",
+        "name": "#13 - Fetching Related Data",
         "link": "https://www.youtube.com/watch?v=Ym-UBtxril4&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=13",
         "duration": "9:44"
       },
       {
-        "name": "Strapi Crash Course (with React & GraphQL) #14 - Rich Text Content",
+        "name": "#14 - Rich Text Content",
         "link": "https://www.youtube.com/watch?v=mHuUASWQij4&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=14",
         "duration": "3:08"
       }
@@ -522,118 +522,117 @@
     "description": "Go is a general purpose programming language which can be used for many things - to create REST API's, cloud services & build web apps. It's fast, it's fun & it's relatvely easy to pick up and run with.In this Go tutorial you'll learn how to install Go & use all the basic features & types. You'll also use your new found skills to reate a small command line application to create and save cafe bills",
     "img": "https://cdn.fs.teachablecdn.com/YaYU0l6vSpG1DBIrGEjs",
     "score": "5",
-    "duration": "14:06:10", 
-    "total": "4:47:45",
+    "duration": "4:47:45",
     "categories": ["LenguajeDeProgramacion"],
     "price": 1600,
     "videos": [
       {
-        "name": "Golang Tutorial #1 - An Introduction to Go Programming",
+        "name": "#1 - An Introduction to Go Programming",
         "link": "https://www.youtube.com/watch?v=75lJDVT1h0s&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q",
         "duration": "16:07"
       },
       {
-        "name": "Golang Tutorial #2 - Variables & Data Types",
+        "name": "#2 - Variables & Data Types",
         "link": "https://www.youtube.com/watch?v=pM0-CMysa_M&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=2",
         "duration": "14:46"
       },
       {
-        "name": "Golang Tutorial #3 - Assignment Expression & Implicit vs Explicit",
+        "name": "#3 - Assignment Expression & Implicit vs Explicit",
         "link": "https://www.youtube.com/watch?v=UVp7Cz1NMwA&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=3",
         "duration": "8:24"
       },
       {
-        "name": "Golang Tutorial #4 - Printing to Console & fmt",
+        "name": "#4 - Printing to Console & fmt",
         "link": "https://www.youtube.com/watch?v=GQ880MlHBBE&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=4",
         "duration": "14:03"
       },
       {
-        "name": "Golang Tutorial #5 - Console Input (Bufio Scanner) & Type Conversion",
+        "name": "#5 - Console Input (Bufio Scanner) & Type Conversion",
         "link": "https://www.youtube.com/watch?v=1-bM3lSBDaA&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=5",
         "duration": "10:46"
       },
       {
-        "name": "Golang Tutorial #6 - Arithmetic Operators & Math",
+        "name": "#6 - Arithmetic Operators & Math",
         "link": "https://www.youtube.com/watch?v=qCtgLbFWPI4&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=6",
         "duration": "9:05"
       },
       {
-        "name": "Golang Tutorial #7 - Conditions & Boolean Expressions",
+        "name": "#7 - Conditions & Boolean Expressions",
         "link": "https://www.youtube.com/watch?v=63au_xLLp0A&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=7",
         "duration": "8:15"
       },
       {
-        "name": "Golang Tutorial #8 - Chained Conditionals (AND, OR, NOT)",
+        "name": "#8 - Chained Conditionals (AND, OR, NOT)",
         "link": "https://www.youtube.com/watch?v=QvPa8C0y9yc&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=8",
         "duration": "7:30"
       },
       {
-        "name": "Golang Tutorial #9 - If, Else If, Else",
+        "name": "#9 - If, Else If, Else",
         "link": "https://www.youtube.com/watch?v=QgBYnz6I7p4&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=9",
         "duration": "13:52"
       },
       {
-        "name": "Golang Tutorial #10 - For Loops & While Loops",
+        "name": "#10 - For Loops & While Loops",
         "link": "https://www.youtube.com/watch?v=jZ-llP_yKNo&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=10",
         "duration": "12:39"
       },
       {
-        "name": "Golang Tutorial #11 - Switch Statement",
+        "name": "#11 - Switch Statement",
         "link": "https://www.youtube.com/watch?v=siOPdXdQImg&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=11",
         "duration": "5:35"
       },
       {
-        "name": "Golang Tutorial #12 - Arrays",
+        "name": "#12 - Arrays",
         "link": "https://www.youtube.com/watch?v=e-oBn806Pzc&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=12",
         "duration": "13:29"
       },
       {
-        "name": "Golang Tutorial #13 - Slices",
+        "name": "#13 - Slices",
         "link": "https://www.youtube.com/watch?v=KzKNGGoaT5U&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=13",
         "duration": "15:31"
       },
       {
-        "name": "Golang Tutorial #14 - Range & Slice/Array Examples",
+        "name": "#14 - Range & Slice/Array Examples",
         "link": "https://www.youtube.com/watch?v=DYqpu3jF2_4&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=14",
         "duration": "15:43"
       },
       {
-        "name": "Golang Tutorial #15 - Maps",
+        "name": "#15 - Maps",
         "link": "https://www.youtube.com/watch?v=yJE2RC37BF4&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=15",
         "duration": "9:56"
       },
       {
-        "name": "Golang Tutorial #16 - Functions",
+        "name": "#16 - Functions",
         "link": "https://www.youtube.com/watch?v=CrgD_otSzDI&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=16",
         "duration": "14:28"
       },
       {
-        "name": "Golang Tutorial #17 - Advanced Function Concepts & Function Closures",
+        "name": "#17 - Advanced Function Concepts & Function Closures",
         "link": "https://www.youtube.com/watch?v=vdm04bVzkLg&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=17",
         "duration": "14:32"
       },
       {
-        "name": "Golang Tutorial #18 - Mutable & Immutable Data Types",
+        "name": "#18 - Mutable & Immutable Data Types",
         "link": "https://www.youtube.com/watch?v=vtYTl4pNDSI&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=18",
         "duration": "17:44"
       },
       {
-        "name": "Golang Tutorial #19 - Pointers & Derefrence Operator (& and *)",
+        "name": "#19 - Pointers & Derefrence Operator (& and *)",
         "link": "https://www.youtube.com/watch?v=a4HcEsJ1hIE&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=19",
         "duration": "20:34"
       },
       {
-        "name": "Golang Tutorial #20 - Structs and Custom Types",
+        "name": "#20 - Structs and Custom Types",
         "link": "https://www.youtube.com/watch?v=dm9oXt6_YNA&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=20",
         "duration": "18:48"
       },
       {
-        "name": "Golang Tutorial #21 - Struct Methods",
+        "name": "#21 - Struct Methods",
         "link": "https://www.youtube.com/watch?v=5b8MMXgBnp0&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=21",
         "duration": "13:40"
       },
       {
-        "name": "Golang Tutorial #22 - Interfaces",
+        "name": "#22 - Interfaces",
         "link": "https://www.youtube.com/watch?v=lh_Uv2imp14&list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q&index=22",
         "duration": "12:18"
       }
@@ -650,72 +649,72 @@
     "price": 1250,
     "videos": [
       {
-        "name": "Mobile-First Responsive Build #1 - Introduction",
+        "name": "1 - Introduction",
         "link": "https://www.youtube.com/watch?v=PM3XW_1RAIs&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4",
         "duration": "6:23"
       },
       {
-        "name": "Mobile-First Responsive Build #2 - HTML Template",
+        "name": "2 - HTML Template",
         "link": "https://www.youtube.com/watch?v=YpNRnYAygDs&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=2",
         "duration": "17:00"
       },
       {
-        "name": "Mobile-First Responsive Build #3 - Mobile-First Approach",
+        "name": "3 - Mobile-First Approach",
         "link": "https://www.youtube.com/watch?v=VQqXOK1jny8&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=3",
         "duration": "8:28"
       },
       {
-        "name": "Mobile-First Responsive Build #4 - Base Styles",
+        "name": "4 - Base Styles",
         "link": "https://www.youtube.com/watch?v=w7WQ-P1P0L8&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=4",
         "duration": "9:27"
       },
       {
-        "name": "Mobile-First Responsive Build #5 - Fonts",
+        "name": "5 - Fonts",
         "link": "https://www.youtube.com/watch?v=k7mBXzv7trQ&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=5",
         "duration": "11:22"
       },
       {
-        "name": "Mobile-First Responsive Build #6 - Grid Basics",
+        "name": "6 - Grid Basics",
         "link": "https://www.youtube.com/watch?v=cLNkfWphGMk&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=6",
         "duration": "9:45"
       },
       {
-        "name": "Mobile-First Responsive Build #7 - Creating a 12-Column Grid",
+        "name": "7 - Creating a 12-Column Grid",
         "link": "https://www.youtube.com/watch?v=h-bUGxoSYco&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=7",
         "duration": "6:58"
       },
       {
-        "name": "Mobile-First Responsive Build #8 - Mobile Styles (part 1)",
+        "name": "8 - Mobile Styles (part 1)",
         "link": "https://www.youtube.com/watch?v=eQY6Kz_PQGY&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=8",
         "duration": "7:43"
       },
       {
-        "name": "Mobile-First Responsive Build #9 - Mobile Styles (part 2)",
+        "name": "9 - Mobile Styles (part 2)",
         "link": "https://www.youtube.com/watch?v=4pW8dICijLI&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=9",
         "duration": "9:14"
       },
       {
-        "name": "Mobile-First Responsive Build #10 - Mobile Styles (part 3)",
+        "name": "10 - Mobile Styles (part 3)",
         "link": "https://www.youtube.com/watch?v=pc6Tx9fAU9s&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=10",
         "duration": "8:45"
       },
       {
-        "name": "Mobile-First Responsive Build #11 - Tablet Styles",
+        "name": "11 - Tablet Styles",
         "link": "https://www.youtube.com/watch?v=stH1jgOBqRo&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=11",
         "duration": "8:28"
       },
       {
-        "name": "Mobile-First Responsive Build #12 - Laptop Styles (part 1)",
+        "name": "12 - Laptop Styles (part 1)",
         "link": "https://www.youtube.com/watch?v=s55iNOKf2bw&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=12",
         "duration": "8:53"
       },
       {
-        "name": "Mobile-First Responsive Build #13 - Laptop Styles (part 2)",
+        "name": "13 - Laptop Styles (part 2)",
         "link": "https://www.youtube.com/watch?v=DdKU101d0bs&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=13",
         "duration": "6:03"
       },
       {
-        "name": "Mobile-First Responsive Build #14 - Desktop Styles",
+        "name": "14 - Desktop Styles",
         "link": "https://www.youtube.com/watch?v=6UhuG5iVR90&list=PL4cUxeGkcC9hH1tAjyUPZPjbj-7s200a4&index=14",
         "duration": "6:50"
       }
@@ -732,92 +731,92 @@
     "price": 1680,
     "videos": [
       {
-        "name": "Node Auth Tutorial (JWT) #1 - Intro & Setup",
+        "name": " - Intro & Setup",
         "link": "https://www.youtube.com/watch?v=SnoAwLP1a-0&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp",
         "duration": "15:29"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #2 - Auth Routes & Controllers",
+        "name": " - Auth Routes & Controllers",
         "link": "https://www.youtube.com/watch?v=muhJTRQ7WMk&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=2",
         "duration": "11:47"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #3 - Testing Routes & Handling POST Requests",
+        "name": " - Testing Routes & Handling POST Requests",
         "link": "https://www.youtube.com/watch?v=uiKwHx2K1Fo&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=3",
         "duration": "7:47"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #4 - User Model",
+        "name": " - User Model",
         "link": "https://www.youtube.com/watch?v=mnJxyc0DGM8&list=PL4cUxeGkcC9iqqESP8335DA5cRFp8loyp&index=4",
         "duration": "12:46"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #5 - Mongoose Validation",
+        "name": " - Mongoose Validation",
         "link": "https://www.youtube.com/watch?v=nukNITdis9g",
         "duration": "23:14"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #6 - Mongoose Hooks",
+        "name": " - Mongoose Hooks",
         "link": "https://www.youtube.com/watch?v=teDkX-_Zkbw",
         "duration": "7:10"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #7 - Hashing Passwords",
+        "name": " - Hashing Passwords",
         "link": "https://www.youtube.com/watch?v=DmrjFKTLOYo",
         "duration": "6:22"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #8 - Auth Views",
+        "name": " - Auth Views",
         "link": "https://www.youtube.com/watch?v=8RiDRdHPcxA",
         "duration": "8:03"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #9 - Cookies Primer",
+        "name": " - Cookies Primer",
         "link": "https://www.youtube.com/watch?v=mevc_dl1i1I",
         "duration": "14:45"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #10 - JSON Web Tokens (theory)",
+        "name": "0 - JSON Web Tokens (theory)",
         "link": "https://www.youtube.com/watch?v=LZq0G8WUaII",
         "duration": "7:16"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #11 - New User Signup (part 1)",
+        "name": "1 - New User Signup (part 1)",
         "link": "https://www.youtube.com/watch?v=S-ZIfNuT5H8",
         "duration": "13:29"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #12 - New User Signup (part 2)",
+        "name": "2 - New User Signup (part 2)",
         "link": "https://www.youtube.com/watch?v=eWGwQ1__73E",
         "duration": "7:43"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #13 - Logging Users in (part 1)",
+        "name": "3 - Logging Users in (part 1)",
         "link": "https://www.youtube.com/watch?v=VliJT26LPFA",
         "duration": "16:21"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #14 - Logging Users in (part 2)",
+        "name": "4 - Logging Users in (part 2)",
         "link": "https://www.youtube.com/watch?v=f-2jDPgh_Ng",
         "duration": "7:15"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #15 - Protecting Routes",
+        "name": "5 - Protecting Routes",
         "link": "https://www.youtube.com/watch?v=9N7uqbuODqs",
         "duration": "11:09"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #16 - Logging Users Out",
+        "name": "6 - Logging Users Out",
         "link": "https://www.youtube.com/watch?v=jQn74jB5dg0",
         "duration": "4:13"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #17 - Checking the Current User",
+        "name": "7 - Checking the Current User",
         "link": "https://www.youtube.com/watch?v=JqF2BJBQI9Y",
         "duration": "7:41"
       },
       {
-        "name": "Node Auth Tutorial (JWT) #18 - Conditional Rendering",
+        "name": "8 - Conditional Rendering",
         "link": "https://www.youtube.com/watch?v=mqubRYtnPcs",
         "duration": "5:00"
       }
@@ -834,77 +833,77 @@
     "price": 2300,
     "videos": [
       {
-        "name": "Bulma CSS Tutorial (Product Page Build) #1 - Intro & Setup",
+        "name": "- Intro & Setup",
         "link": "https://www.youtube.com/watch?v=SCSAExGFK1E&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a",
         "duration": "7:06"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #2 - Fonts & Colours",
+        "name": "#2 - Fonts & Colours",
         "link": "https://www.youtube.com/watch?v=j9ijz7u_M_o&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=2",
         "duration": "9:51"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #3 - Spacing & Containers",
+        "name": "#3 - Spacing & Containers",
         "link": "https://www.youtube.com/watch?v=--gQv_IXcMw&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=3",
         "duration": "6:13"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #4 - Navbar (desktop)",
+        "name": "#4 - Navbar (desktop)",
         "link": "https://www.youtube.com/watch?v=HmfQq0suMSA&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=4",
         "duration": "6:39"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #5 - Navbar (for mobiles)",
+        "name": "#5 - Navbar (for mobiles)",
         "link": "https://www.youtube.com/watch?v=qvn2SxGvyPs&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=5",
         "duration": "4:58"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #6 - Breadcrumbs",
+        "name": "#6 - Breadcrumbs",
         "link": "https://www.youtube.com/watch?v=Kt8_Uu77_tg&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=6",
         "duration": "6:03"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #7 - Grid Columns",
+        "name": "#7 - Grid Columns",
         "link": "https://www.youtube.com/watch?v=feGMqVSRnmI&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=7",
         "duration": "8:23"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #8 - Responsive Classes",
+        "name": "#8 - Responsive Classes",
         "link": "https://www.youtube.com/watch?v=E3EELr-PJQ8&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=8",
         "duration": "8:39"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #9 - Tabbed Content",
+        "name": "#9 - Tabbed Content",
         "link": "https://www.youtube.com/watch?v=G_UcEYjib58&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=9",
         "duration": "11:39"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #10 - Message Boxes",
+        "name": "#10 - Message Boxes",
         "link": "https://www.youtube.com/watch?v=-Tf1NBpI1JQ&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=10",
         "duration": "2:21"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #11 - Buttons",
+        "name": "#11 - Buttons",
         "link": "https://www.youtube.com/watch?v=EESibt55RPI&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=11",
         "duration": "3:15"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #12 - Cards",
+        "name": "#12 - Cards",
         "link": "https://www.youtube.com/watch?v=FijGmbJzPSM&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=12",
         "duration": "8:23"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #13 - Creating Modals",
+        "name": "#13 - Creating Modals",
         "link": "https://www.youtube.com/watch?v=L8CF_k4jWBo&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=13",
         "duration": "4:37"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #14 - Form Fields",
+        "name": "#14 - Form Fields",
         "link": "https://www.youtube.com/watch?v=xA1WweBHC6M&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=14",
         "duration": "6:45"
       },
       {
-        "name": "Bulma Tutorial (Product Page Build) #15 - Adding a Footer",
+        "name": "#15 - Adding a Footer",
         "link": "https://www.youtube.com/watch?v=mR6kNv83or0&list=PL4cUxeGkcC9iXItWKbaQxcyDT1u6E7a8a&index=15",
         "duration": "3:12"
       }
@@ -921,66 +920,190 @@
     "price": 3200,
     "videos": [
       {
-        "name": "Vue 3 Animations Tutorial #1 - Intro & Setup",
+        "name": "1 - Intro & Setup",
         "link": "https://www.youtube.com/watch?v=RIApQjn9fvw&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu",
         "duration": "6:44"
       },
       {
-        "name": "Vue 3 Animations Tutorial #2 - Starter Project Walkthrough",
+        "name": "2 - Starter Project Walkthrough",
         "link": "https://www.youtube.com/watch?v=ORVr1Jx1mkM&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=2",
         "duration": "7:47"
       },
       {
-        "name": "Vue 3 Animations Tutorial #3 - Transition Component",
+        "name": "3 - Transition Component",
         "link": "https://www.youtube.com/watch?v=NzFRZKho23k&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=3",
         "duration": "9:41"
       },
       {
-        "name": "Vue 3 Animations Tutorial #4 - Animated Toast Notification",
+        "name": "4 - Animated Toast Notification",
         "link": "https://www.youtube.com/watch?v=z9DxKjnpjnI&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=4",
         "duration": "5:40"
       },
       {
-        "name": "Vue 3 Animations Tutorial #5 - Adding CSS Keyframes",
+        "name": "5 - Adding CSS Keyframes",
         "link": "https://www.youtube.com/watch?v=phTSjUsShiI&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=5",
         "duration": "4:56"
       },
       {
-        "name": "Vue 3 Animations Tutorial #6 - Group Transitions",
+        "name": "6 - Group Transitions",
         "link": "https://www.youtube.com/watch?v=gbCxH5KCeBg&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=6",
         "duration": "5:22"
       },
       {
-        "name": "Vue 3 Animations Tutorial #7 - Initial & Move Transitions",
+        "name": "7 - Initial & Move Transitions",
         "link": "https://www.youtube.com/watch?v=DGI_aKld0Jg&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=7",
         "duration": "3:07"
       },
       {
-        "name": "Vue 3 Animations Tutorial #8 - Transitioning Between Elements",
+        "name": "8 - Transitioning Between Elements",
         "link": "https://www.youtube.com/watch?v=nOd8yVfu3N4&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=8",
         "duration": "6:23"
       },
       {
-        "name": "Vue 3 Animations Tutorial #9 - Transition JavaScript Hooks",
+        "name": "9 - Transition JavaScript Hooks",
         "link": "https://www.youtube.com/watch?v=sWxL3c9rvc4&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=9",
         "duration": "10:54"
       },
       {
-        "name": "Vue 3 Animations Tutorial #10 - Using GSAP",
+        "name": "10 - Using GSAP",
         "link": "https://www.youtube.com/watch?v=Fog0zKi9xzo&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=10",
         "duration": "7:10"
       },
       {
-        "name": "Vue 3 Animations Tutorial #11 - Staggered Animations (using GSAP)",
+        "name": "11 - Staggered Animations (using GSAP)",
         "link": "https://www.youtube.com/watch?v=kKJKFrckyrw&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=11",
         "duration": "6:00"
       },
       {
-        "name": "Vue 3 Animations Tutorial #12 - Route Transitions",
+        "name": "12 - Route Transitions",
         "link": "https://www.youtube.com/watch?v=X4I6zUEM40A&list=PL4cUxeGkcC9ghm7-iTfS9n468Kp7l9Ipu&index=12",
         "duration": "5:46"
       }
     ],
     "students": "210"
+  },
+  {
+    "title": "Object Oriented PHP Crash Course",
+    "description": "Learn about objects in PHP & how to program in an object oriented way - using classes, constructors, access modifiers, inheritance & more. You'll also put all these things together to build a form validation class you can reuse in your own projects.If you know the basics of PHP and want to take it further, this is the course.",
+    "img": "https://cdn.fs.teachablecdn.com/VHPgkA3GTrGaRoPqZSAf",
+    "score": "5",
+    "duration": "03:48:45",
+    "categories": ["LenguajeDeProgramacion"],
+    "price": 2100,
+    "videos": [
+      {
+        "name": "1: Introduction To OOP PHP",
+        "link": "https://www.youtube.com/watch?v=Anz0ArcQ5kI&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=1",
+        "duration": "8:39"
+      },
+      {
+        "name": "2: What Is The MVC Model",
+        "link": "https://www.youtube.com/watch?v=3OKOe7CraGY&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=2",
+        "duration": "11:56"
+      },
+      {
+        "name": "3: Create Classes In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=iEGUOE9RKqM&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=3",
+        "duration": "6:25"
+      },
+      {
+        "name": "4: Visibility And Inheritance In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=X6xY4Ouydas&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=4",
+        "duration": "12:07"
+      },
+      {
+        "name": "5: Properties And Methods In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=U-SIguEOk0o&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=5",
+        "duration": "14:09"
+      },
+      {
+        "name": "6: Constructors and Destructors in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=ToomaGjgqBw&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=6",
+        "duration": "12:36"
+      },
+      {
+        "name": "7: Delete Objects In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=xeKc5VGUkPM&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=7",
+        "duration": "2:24"
+      },
+      {
+        "name": "8: Static Properties And Methods In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=L9jLxuLAAIY&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=8",
+        "duration": "10:23"
+      },
+      {
+        "name": "9: Load Classes Automatically In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=z3pZdmJ64jo&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=9",
+        "duration": "15:46"
+      },
+      {
+        "name": "10: Type Declarations In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=0MYqGSplVQs&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=10",
+        "duration": "7:35"
+      },
+      {
+        "name": "11: First exercise in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=zWOjI3HPHS8&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=11",
+        "duration": "24:01"
+      },
+      {
+        "name": "12: Scope Resolution Operators in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=rzew3ZgDMPA&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=12",
+        "duration": "8:35"
+      },
+      {
+        "name": "13: Interfaces in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=jHjjsgRNFVE&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=13",
+        "duration": "19:39"
+      },
+      {
+        "name": "14: Abstract Classes in OOP PHP",
+        "link": "https://www.youtube.com/watch?v=Eu7l8utquGY&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=14",
+        "duration": "11:21"
+      },
+      {
+        "name": "15: Anonymous Classes In OOP PHP",
+        "link": "https://www.youtube.com/watch?v=_PTTcxC25Lk&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=15",
+        "duration": "4:58"
+      },
+      {
+        "name": "16: Connect To A Database Using OOP PHP",
+        "link": "https://www.youtube.com/watch?v=rcNYXc-hG_I&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=16",
+        "duration": "13:57"
+      },
+      {
+        "name": "17: Query A Database Using OOP PHP",
+        "link": "https://www.youtube.com/watch?v=T41SMNgyRrc&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=17",
+        "duration": "19:58"
+      },
+      {
+        "name": "18: Apply The MVC Model Using OOP PHP",
+        "link": "https://www.youtube.com/watch?v=Fg0CP-ri87U&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh&index=18",
+        "duration": "24:16"
+      }
+    ],
+    "students": "356"
+  },
+  {
+    "title": "Data Visualization with D3, JavaScript, React",
+    "description": "Learn how to make great-looking, interactive & fun data visualizations such as line graphs, bar charts, pie charts, tree diagrams & more, with D3.js. You'll also learn how to hook your visualizations up to a real-time database (Firebase Firestore), so that your graphs & charts update in real-time.",
+    "img": "https://cdn.fs.teachablecdn.com/7syJ2pLnQG2uDceMeQAB",
+    "score": "2",
+    "duration": "7:11:28",
+    "categories": ["BackEnd"],
+    "price": 2700,
+    "videos": [
+      {
+        "name": "Data Visualization with D3, JavaScript, React [PART 1]",
+        "link": "https://www.youtube.com/watch?v=2LhoCfjm8R4",
+        "duration": "11:37:15"
+      },
+      {
+        "name": "Data Visualization with D3, JavaScript, React [PART 2]",
+        "link": "https://www.youtube.com/watch?v=H2qPeJx1RDI",
+        "duration": "5:27:47"
+      }
+    ],
+    "students": "26"
   }
 ]
