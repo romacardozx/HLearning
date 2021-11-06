@@ -10,6 +10,12 @@ router.use('/categories', categoriesRoutes);
 const usersRoutes = require('../routes/usersRoutes')
 router.use('/user', usersRoutes);
 
+const ordersRoutes = require('../routes/orderRoutes')
+router.use('/order', ordersRoutes);
+
+const reviewsRoutes = require('../routes/reviewsRoutes')
+router.use('/review', reviewsRoutes);
+
 
 
 
