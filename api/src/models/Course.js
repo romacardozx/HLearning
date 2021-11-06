@@ -35,9 +35,11 @@ const CourseSchema = new Schema({
             duration: String
         }]
     },
-    students: {
-        type: Number
-    },
+    students: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Users',
+        required: true
+    }],
     status: {
         type: String,
         enum: ["Confirmed", "In course", "Deleted"],
