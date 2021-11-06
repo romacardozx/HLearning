@@ -9,8 +9,6 @@ import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 import Popover from "@mui/material/Popover";
-/* import Button from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/Add"; */
 import { Box } from "@mui/system";
 import { CardActionArea } from "@material-ui/core";
 
