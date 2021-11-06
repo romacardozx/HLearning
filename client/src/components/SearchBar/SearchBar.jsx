@@ -24,7 +24,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div /* className={styles.srb} */>
+    <div>
       <Box sx={{ alignContent: "center" }}>
         <form onSubmit={(e) => handleSubmit(e)}>
           <Stack direction="row" spacing={0.5}>

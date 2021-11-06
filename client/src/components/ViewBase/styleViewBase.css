@@ -64,14 +64,21 @@
 .right {
   width: 80%;
 }
-.btn{
+.btn {
   display: flex;
   justify-content: right;
   margin-bottom: 20px;
   position: fixed;
   line-height: 10px;
-  bottom:0px;
+  bottom: 0px;
   right: -138px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
 }
 
 .map-container {
