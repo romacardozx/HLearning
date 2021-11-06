@@ -63,10 +63,9 @@ export default function Filters() {
               label="Price"
               onChange={(e) => handlePriceByRange(e)}
             >
-              {/* EL PRECIO MÍNIMO DE CURSOS ES $500, CAMBIAR FILTRO DE $1 A $500 */}
-              <MenuItem value={300}>$1 - $500</MenuItem>
-              <MenuItem value={900}>$500 - $1500</MenuItem>
-              <MenuItem value={1800}>$1500 - $2500</MenuItem>
+              <MenuItem value={300}>$1000 - $1500</MenuItem>
+              <MenuItem value={900}>$1500 - $2000</MenuItem>
+              <MenuItem value={1800}>$2000 - $2500</MenuItem>
               <MenuItem value={2550}>+ $2500</MenuItem>
             </Select>
           </FormControl>
