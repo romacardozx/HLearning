@@ -12,7 +12,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Stack from "@mui/material/Stack";
 
-export default function Filters() {
+export default function Filters({ setCurrentPage }) {
   const dispatch = useDispatch();
   const categories = useSelector(
     (state) => state.getCategories.getAllCategories
@@ -25,12 +25,13 @@ export default function Filters() {
 
   function handleSelectCategories(e) {
     e.preventDefault();
-
+    setCurrentPage(1);
     dispatch(filterByCategories(e.target.value));
   }
 
   function handlePriceByRange(e) {
     e.preventDefault();
+    setCurrentPage(1);
     dispatch(filterRangeByPrice(e.target.value));
   }
 
