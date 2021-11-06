@@ -15,7 +15,8 @@ const UserSchema = new Schema({
         ref:'Review',                
     }],
     picture: {                
-        type: String
+        type: String,
+        default:"https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png"
     },
     email: {
         type: String,  
