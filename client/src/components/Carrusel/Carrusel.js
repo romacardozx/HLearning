@@ -32,7 +32,7 @@ export default function Carrusel() {
     }
   }
   const coursesTop = useSelector((state) => state.getCourses.getAllCourses);
-  console.log("COURSES TOP" /*  coursesTop */);
+  /* console.log("COURSES TOP"  coursesTop); */
 
   /*  useEffect(() => {
     dispatch(getCoursesScore(5));
