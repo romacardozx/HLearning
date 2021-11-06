@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Detail from "./components/Detail/Detail";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import PruebaAdm from "./components/PanelAdmin/PruebaAdm"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/privacy" component={Privacy} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/courses/:id" component={Detail} />
+      <Route exact path="/prueba" component={PruebaAdm} />
     </div>
   );
 }
