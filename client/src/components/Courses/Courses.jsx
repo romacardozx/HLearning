@@ -55,10 +55,14 @@ export default function Courses() {
           <div>
             <Grid container direction="row" spacing={3}>
               <Grid item>
-                <Orders setCurrentPage={setCurrentPage} courses={allCourses} />
+                <Orders
+                  setCurrentPage={setCurrentPage} /* courses={allCourses} */
+                />
               </Grid>
               <Grid item>
-                <Filters courses={allCourses} />
+                <Filters
+                  setCurrentPage={setCurrentPage} /* courses={allCourses} */
+                />
               </Grid>
             </Grid>
           </div>

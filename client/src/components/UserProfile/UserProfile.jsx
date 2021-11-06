@@ -30,7 +30,7 @@ export default function UserProfile() {
               color="text.primary"
               m={5}
             >
-              <b>Information</b>
+              <b>Información</b>
             </Typography>
             <Box display="flex" justifyContent="flex-end" width="100%" mr={15}>
               <IconButton
@@ -82,24 +82,24 @@ export default function UserProfile() {
                     variant="body1"
                     color="text.primary"
                   >
-                    <b> Name:</b> {/* {user.name} {user.lastName} */}
+                    <b> Nombre:</b> {/* {user.name} {user.lastName} */}
                   </Typography>
+                  {/* <Typography
+                    sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
+                    border="1px solid gray"
+                    variant="body1"
+                    color="text.primary"
+                  >
+                    <b> Username: </b> {user.username}
+                  </Typography> */}
                   <Typography
                     sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
                     border="1px solid gray"
                     variant="body1"
                     color="text.primary"
                   >
-                    <b> Username: </b> {/* {user.username} */}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b>Nationality:</b>
-                    {/*  {user.nacionality} */}
+                    <b>Email:</b>
+                    {/*  {user.email} */}
                   </Typography>
                 </Box>
 
@@ -112,72 +112,20 @@ export default function UserProfile() {
                   }}
                 >
                   <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
+                    textAlign="center"
+                    variant="h5"
                     color="text.primary"
                   >
-                    <b>Description:</b> {/* {user.description} */}
+                    <b>Mis cursos:</b>
                   </Typography>
-
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
+                  <Box
+                    display="flex"
+                    flexWrap="wrap"
+                    justifyContent="center"
+                    gap={5}
+                    mb={5}
                   >
-                    <b> Date of Birth:</b> {/* {user.dateOfBirth} */}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> E-Mail:</b>
-                    {/*  {user.email} */}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Phone Number:</b>
-                    {/*  {user.phoneNumber} */}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Languages Spoken:</b>{" "}
-                    {/* {user.languagesSpoken?.join(", ")} */}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Points: </b>
-                    {/*  {user.points} */}
-                  </Typography>
-                </Box>
-              </Box>
-              <hr style={{ width: "90%" }} />
-              <Typography variant="h5" color="text.primary">
-                <b>My places</b>
-              </Typography>
-              <Box
-                display="flex"
-                flexWrap="wrap"
-                justifyContent="center"
-                gap={5}
-                mb={5}
-              >
-                {/* {ownerHouses?.length ? (
+                    {/* {ownerHouses?.length ? (
                   ownerHouses.map((house, idx) => (
                     <HouseCard
                       key={idx}
@@ -196,7 +144,63 @@ export default function UserProfile() {
                     Post your home!
                   </Button>
                 )} */}
+                  </Box>
+                  {/* <Typography
+                    sx={{ p: 1.5, borderRadius: 3 }}
+                    border="1px solid gray"
+                    variant="body1"
+                    color="text.primary"
+                  >
+                    <b>Description:</b> {user.description}
+                  </Typography>
+
+                  <Typography
+                    sx={{ p: 1.5, borderRadius: 3 }}
+                    border="1px solid gray"
+                    variant="body1"
+                    color="text.primary"
+                  >
+                    <b> Date of Birth:</b> {user.dateOfBirth}
+                  </Typography>
+                  <Typography
+                    sx={{ p: 1.5, borderRadius: 3 }}
+                    border="1px solid gray"
+                    variant="body1"
+                    color="text.primary"
+                  >
+                    <b> E-Mail:</b>
+                     {user.email}
+                  </Typography>
+                  <Typography
+                    sx={{ p: 1.5, borderRadius: 3 }}
+                    border="1px solid gray"
+                    variant="body1"
+                    color="text.primary"
+                  >
+                    <b> Phone Number:</b>
+                     {user.phoneNumber}
+                  </Typography>
+                  <Typography
+                    sx={{ p: 1.5, borderRadius: 3 }}
+                    border="1px solid gray"
+                    variant="body1"
+                    color="text.primary"
+                  >
+                    <b> Languages Spoken:</b>{" "}
+                    {user.languagesSpoken?.join(", ")}
+                  </Typography>
+                  <Typography
+                    sx={{ p: 1.5, borderRadius: 3 }}
+                    border="1px solid gray"
+                    variant="body1"
+                    color="text.primary"
+                  >
+                    <b> Points: </b>
+                     {user.points}
+                  </Typography> */}
+                </Box>
               </Box>
+              <hr style={{ width: "90%" }} />
             </Box>
           </Box>
         </Paper>
