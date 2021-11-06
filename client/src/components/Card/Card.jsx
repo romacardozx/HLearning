@@ -77,7 +77,7 @@ export default function CourseCard({
           anchorEl={anchorEl}
           anchorOrigin={{
             vertical: "top",
-            horizontal: "rigth",
+            horizontal: "right",
           }}
           transformOrigin={{
             vertical: "top",

@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCourses } from "../../redux/actions/getAllCourses";
-/* import { getAllCategories } from "../../redux/actions/getAllCategories"; */
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
@@ -55,14 +54,10 @@ export default function Courses() {
           <div>
             <Grid container direction="row" spacing={3}>
               <Grid item>
-                <Orders
-                  setCurrentPage={setCurrentPage} /* courses={allCourses} */
-                />
+                <Orders setCurrentPage={setCurrentPage} />
               </Grid>
               <Grid item>
-                <Filters
-                  setCurrentPage={setCurrentPage} /* courses={allCourses} */
-                />
+                <Filters setCurrentPage={setCurrentPage} />
               </Grid>
             </Grid>
           </div>
