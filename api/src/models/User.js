@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    name: {
-        type: String,
-        required: true
+    name:{
+        type:String,
+        required:true
     },
     courses: [{
         type: Schema.Types.ObjectId,
@@ -14,12 +14,13 @@ const UserSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref:'Review',                
     }],
-    picture: {                
+    pictures: {                
         type: String,
         default:"https://www.softzone.es/app/uploads-softzone.es/2018/04/guest.png"
     },
     email: {
         type: String,  
+        required:true
     },    
     status: {
         type: String,
@@ -35,9 +36,9 @@ const UserSchema = new Schema({
         default:false
     },
     sub: {
-        type: String      //PREGUNTAR A COBA QUE ES ESTO
+        type: String      
     }
     
 })
 
-module.exports = CourseModel = mongoose.model('Course', CourseSchema) 
+module.exports = UserModel = mongoose.model('User', UserSchema) 
