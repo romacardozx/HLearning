@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     name:{
-        type:String,
-        unique: true,
+        type:String,            
         required:true
     },
     courses: [{
@@ -21,7 +20,7 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,  
-        unique: true,
+        unique:true,     
         required:true
     },    
     status: {
