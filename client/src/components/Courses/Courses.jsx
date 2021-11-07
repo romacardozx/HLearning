@@ -80,7 +80,7 @@ export default function Courses() {
                             title={c.title}
                             image={c.img}
                             description={c.description}
-                            score={c.score}
+                            score={c.score.score}
                             price={c.price}
                           />
                         </Item>

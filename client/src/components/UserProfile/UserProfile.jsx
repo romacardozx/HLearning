@@ -1,4 +1,7 @@
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 //import { Link } from "react-router-dom";
@@ -12,6 +15,14 @@ import Avatar from "@mui/material/Avatar";
 //import Button from "@mui/material/Button";
 
 export default function UserProfile() {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  /* const purchasedCourse = useSelector((state) => state.getOrders.getOrders); */
+
+  /* useEffect(() => {
+    dispatch(getOrderById(id));
+    eslint - disable - next - line;
+  }, [dispatch]); */
   return (
     <div>
       <NavBar />
@@ -32,15 +43,15 @@ export default function UserProfile() {
             >
               <b>Información</b>
             </Typography>
-            <Box display="flex" justifyContent="flex-end" width="100%" mr={15}>
+            {/* <Box display="flex" justifyContent="flex-end" width="100%" mr={15}>
               <IconButton
                 color="primary"
                 aria-label="edit"
-                /* onClick={handleOpenProfile} */
+                onClick={handleOpenProfile}
               >
                 <EditIcon />
               </IconButton>
-            </Box>
+            </Box> */}
             <Box
               sx={{
                 display: "flex",
