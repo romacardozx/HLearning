@@ -51,7 +51,9 @@ export default function CourseDetail(props) {
     <div>
       <div className={styles.bkg}>
         <div>
-        <NavBar/> <br/>
+        <NavBar/> <br />
+          <br />
+          <br/><br/><br/>
         </div> 
         {Object.keys(courseDetailed).length ? (
         <div>
@@ -102,7 +104,7 @@ export default function CourseDetail(props) {
                     </Typography>
                     <Typography variant="body2" align='left' color="text.secondary">
                       {/* Duration: 38min */}
-                      Duration:{" "+courseDetailed.duration}min
+                      Duracion:{" "+courseDetailed.duration}min
                     </Typography>
                     <br />
                     <Typography
@@ -147,6 +149,7 @@ export default function CourseDetail(props) {
           </Paper>
           <br />
           <br />
+          <br/><br/><br/>
         </div>) : <Loading />
            }
         <Footer />
