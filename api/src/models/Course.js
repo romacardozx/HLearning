@@ -39,7 +39,7 @@ const CourseSchema = new Schema({
     students: [{
         type: Schema.Types.ObjectId,
         ref: 'Users',
-        required: true
+        required: true //VER ACA SI DEBE IR DEFAULT []
     }],
     status: {
         type: String,
