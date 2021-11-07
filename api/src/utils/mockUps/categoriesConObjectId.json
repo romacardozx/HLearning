@@ -1,0 +1,44 @@
+[
+  {
+    "_id": {
+      "$oid": "617d4c16119458f9b0b7ff81"
+    },
+    "name": "FrontEnd"
+  },
+  {
+    "_id": {
+      "$oid": "617d4c25119458f9b0b7ff83"
+    },
+    "name": "Css"
+  },
+  {
+    "_id": {
+      "$oid": "617d4c31119458f9b0b7ff85"
+    },
+    "name": "UI"
+  },
+  {
+    "_id": {
+      "$oid": "617d4c3d119458f9b0b7ff87"
+    },
+    "name": "LenguajeDeProgramacion"
+  },
+  {
+    "_id": {
+      "$oid": "617d4c47119458f9b0b7ff89"
+    },
+    "name": "BackEnd"
+  },
+  {
+    "_id": {
+      "$oid": "617d71de9fc634f278e19778"
+    },
+    "name": "Diseño Web"
+  },
+  {
+    "_id": {
+      "$oid": "617d6048f959278ac8cf3282"
+    },
+    "name": "HTML"
+  }
+]

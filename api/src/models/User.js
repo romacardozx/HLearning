@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     name:{
-        type:String,
-        unique:true,      
+        type:String,            
         required:true
     },
     courses: [{
