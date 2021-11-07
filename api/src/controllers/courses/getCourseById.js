@@ -1,7 +1,7 @@
 const Course = require("../../models/Course");
 const Category = require("../../models/Category");
-const Review = require("../../models/Review")
-// const User = require("../../models/User");
+const Review = require("../../models/Review");
+const User = require("../../models/User");
 
 module.exports = async (req, res, next) => {
   const { id } = req.params; 
@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
     let course = await Course.findById({_id:id, status: "Confirmed"});
     course = await Category.populate(course,{path:'categories'});
     course = await Review.populate(course, {path: "score"});
-    // course = await User.populate(course, {path: "students"}); // TIRA ERROR
+    course = await User.populate(course, {path: "students"});
     if(course) {
       res.json(course);
     } else {
