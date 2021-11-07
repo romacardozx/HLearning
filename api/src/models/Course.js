@@ -14,9 +14,9 @@ const CourseSchema = new Schema({
     img: {
         type: String
     },
-    score: {                
-        type: Number
-    },
+    score: [{
+        type:Schema.Types.ObjectId,
+    }],
     duration: {
         type: String,  
     },
