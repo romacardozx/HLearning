@@ -19,7 +19,7 @@ const ReviewSchema = new Schema({
     score: {
         type: Number,
         required: true
-    },
+    }
 })
 
 module.exports = ReviewModel = mongoose.model('Review', ReviewSchema)
