@@ -1,11 +1,13 @@
 const Course = require("../../models/Course");
 const Category = require("../../models/Category")
+const Review = require("../../models/Review")
 
 module.exports = async (req, res, next) => {
   try {
     let courses = await Course.find({status: "Confirmed"});
     if(courses.length >= 0) {
       courses = await Category.populate(courses, {path: "categories"})
+      courses = await Review.populate(courses, {path:'score'}) // probar
     } else {
       res.json({msg: "There're any course available"})
     }
