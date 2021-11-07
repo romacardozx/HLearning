@@ -53,9 +53,9 @@ export default function CourseCard({
             image={image}
             alt="img video"
           />
-          <CardContent>
+          {/* <CardContent>
             <Rating name="read-only" readOnly value={score} />
-          </CardContent>
+          </CardContent> */}
           <Typography
             textAlign="center"
             variant="h5"
@@ -66,20 +66,22 @@ export default function CourseCard({
           </Typography>
         </CardActionArea>
         <Popover
-          style={{ width: 427 }}
+          /*  style={{ width: 300 }} */
           id="mouse-over-popover"
           sx={{
             pointerEvents: "none",
+            minWidth: 200,
+            maxWidth: 350,
           }}
           open={open}
           anchorEl={anchorEl}
           anchorOrigin={{
             vertical: "top",
-            horizontal: "right",
+            horizontal: "center",
           }}
           transformOrigin={{
             vertical: "top",
-            horizontal: "left",
+            horizontal: "center",
           }}
           onClose={handlePopoverClose}
           disableRestoreFocus

@@ -8,6 +8,8 @@ export default function Paginate({ coursesPerPage, allCourses, paginate }) {
     pageNumbers.push(i);
   }
 
+  /* let pages = []; */
+
   return (
     <nav className={styles.pagination}>
       {pageNumbers &&
