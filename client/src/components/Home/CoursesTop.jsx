@@ -11,23 +11,24 @@ export default function CoursesTop() {
   const dispatch = useDispatch();
 
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
-  const fourCourses = coursesTop.slice(1, 5);
+  /*  const fourCourses = coursesTop.slice(1, 5); */
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(0.5),
   }));
 
-  useEffect(() => {
+  /* useEffect(() => {
     dispatch(getCoursesScore(5));
-  }, [dispatch]);
+  }, [dispatch]); */
 
   return (
     <div className="container-slider">
+      <br />
       <Grid container>
-        {fourCourses.length >= 0 ? (
+        {coursesTop.length >= 0 ? (
           <>
-            {fourCourses?.map((c, i) => (
+            {coursesTop?.map((c, i) => (
               <div key={i}>
                 <Grid item xs={2} sm={4} md={4}>
                   <Item sx={{ minWidth: 270 }}>
@@ -36,7 +37,7 @@ export default function CoursesTop() {
                       title={c.title}
                       image={c.img}
                       description={c.description}
-                      score={c.score}
+                      /* score={c.score} */
                       price={c.price}
                     />
                   </Item>
@@ -48,6 +49,7 @@ export default function CoursesTop() {
           <Typography>Cargando</Typography>
         )}
       </Grid>
+      <br />
     </div>
   );
 }
