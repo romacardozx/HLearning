@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCoursesScore } from "../../redux/actions/getCoursesScore";
 import CardTops from "./CardTops";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+// import Typography from "@mui/material/Typography";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import Loading from '../Loading/Loading'
 
 export default function CoursesTop() {
   const dispatch = useDispatch();
@@ -24,18 +25,18 @@ export default function CoursesTop() {
 
   return (
     <div className="container-slider">
-      <Grid container>
+      <Grid container align="center">
         {fourCourses.length >= 0 ? (
           <>
             {fourCourses?.map((c, i) => (
               <div key={i}>
                 <Grid item xs={2} sm={4} md={4}>
-                  <Item sx={{ minWidth: 270 }}>
+                  <Item sx={{ minWidth: 270 }} align='center'>
                     <CardTops
                       id={c._id}
                       title={c.title}
                       image={c.img}
-                      description={c.description}
+                      // description={c.description}
                       score={c.score}
                       price={c.price}
                     />
@@ -44,9 +45,7 @@ export default function CoursesTop() {
               </div>
             ))}
           </>
-        ) : (
-          <Typography>Cargando</Typography>
-        )}
+        ) : <Loading />}
       </Grid>
     </div>
   );
