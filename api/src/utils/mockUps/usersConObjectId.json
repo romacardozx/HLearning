@@ -9,7 +9,9 @@
         "$oid": "61844faa2d9146900b650f1c"
       }
     ],
-    "reviews": ["Tailwind Just in Time"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec277"
+    }],
     "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     "email": "verovalle@gmail.com",
     "status": "",
@@ -26,7 +28,9 @@
         "$oid": "61844faf2d9146900b650f1e"
       }
     ],
-    "reviews": ["Vue 3 with TypeScript Jump Start"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec278"
+    }],
     "picture": "https://pbs.twimg.com/media/BcINeMVCIAABeWd.jpg",
     "email": "luknito@gmail.com",
     "status": "",
@@ -43,7 +47,9 @@
         "$oid": "61844fb32d9146900b650f20"
       }
     ],
-    "reviews": ["Como hacer un sitio web con Bootstrap"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec279"
+    }],
     "picture": "https://pbs.twimg.com/media/D8dDZukXUAAXLdY.jpg",
     "email": "jacinta1992@gmail.com",
     "status": "",
@@ -60,7 +66,9 @@
         "$oid": "61844fba2d9146900b650f22"
       }
     ],
-    "reviews": ["Curso de JAVASCRIPT"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec27a"
+    }],
     "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     "email": "escobarnicbruno@gmail.com",
     "status": "",
@@ -77,7 +85,9 @@
         "$oid": "61844fc02d9146900b650f24"
       }
     ],
-    "reviews": ["Aprende CSS ahora! curso completo desde cero"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec27b"
+    }],
     "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHjVVE2DLkOgki9Pp3Rq3XU6FdpibvKM3KwA&usqp=CAU",
     "email": "fedejustin@gmail.com",
     "status": "",
@@ -94,7 +104,9 @@
         "$oid": "61844fc62d9146900b650f26"
       }
     ],
-    "reviews": ["Curso Básico de HTML desde 0"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec27c"
+    }],
     "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwAAgPvjuHXg_-rlVao0J8-v6ZA5gsIFryrg&usqp=CAU",
     "email": "luzlight@gmail.com",
     "status": "",
@@ -111,7 +123,9 @@
         "$oid": "61844fcd2d9146900b650f28"
       }
     ],
-    "reviews": ["Figma para principiantes"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec27d"
+    }],
     "picture": "https://www.farjo.com/app/uploads/2016/04/1ae-1-1600596661-800x800.jpg",
     "email": "gaizfootball@gmail.com",
     "status": "",
@@ -128,7 +142,9 @@
         "$oid": "61844fd22d9146900b650f2a"
       }
     ],
-    "reviews": ["Complete React Material UI"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec27e"
+    }],
     "picture": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/570a1745898621.58408191aee7a.jpg",
     "email": "raulrap@gmail.com",
     "status": "",
@@ -145,7 +161,9 @@
         "$oid": "61844fd92d9146900b650f2c"
       }
     ],
-    "reviews": ["Node.js para principiantes"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec27f"
+    }],
     "picture": "http://1.bp.blogspot.com/-kq-khZf2Njg/UP-TLgoBGtI/AAAAAAAAA-Q/Qvi0vTPSpuw/s1600/Standard2.jpg",
     "email": "marinodelmar@gmail.com",
     "status": "",
@@ -162,7 +180,9 @@
         "$oid": "61844fdf2d9146900b650f2e"
       }
     ],
-    "reviews": ["CURSO DE PYTHON"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec280"
+    }],
     "picture": "https://pm1.narvii.com/6749/628c9d4908fdb2e86d673c65be06ef848b45d08ev2_hq.jpg",
     "email": "evenarro@outlook.com",
     "status": "",
@@ -179,7 +199,9 @@
         "$oid": "618738033de1fe0066988e81"
       }
     ],
-    "reviews": ["Modern JavaScript"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec281"
+    }],
     "picture": "https://i.pinimg.com/originals/f5/87/34/f587347e06d6c3c9c0a3fc9675e6bdda.jpg",
     "email": "jennifergeminis@gmail.com",
     "status": "",
@@ -196,7 +218,9 @@
         "$oid": "61873905d388093b9b14d4a5"
       }
     ],
-    "reviews": ["Flutter Course"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec282"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -213,7 +237,9 @@
         "$oid": "61872119c3456d06a8569bcf"
       }
     ],
-    "reviews": ["Strapi Crash Course (with React & GraphQL)"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec283"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -230,7 +256,9 @@
         "$oid": "61872119c3456d06a8569bd0"
       }
     ],
-    "reviews": ["Learn Go (Golang)"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec284"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -247,7 +275,9 @@
         "$oid": "61872119c3456d06a8569bd1"
       }
     ],
-    "reviews": ["Mobile-First Responsive Build"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec285"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -264,7 +294,9 @@
         "$oid": "61872119c3456d06a8569bd2"
       }
     ],
-    "reviews": ["Node.js Auth (using JWT)"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec286"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -281,7 +313,9 @@
         "$oid": "61872119c3456d06a8569bd3"
       }
     ],
-    "reviews": ["Bulma CSS Page Build Tutorial"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec287"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -298,7 +332,9 @@
         "$oid": "61872119c3456d06a8569bd7"
       }
     ],
-    "reviews": ["Vue 3 Animations Tutorial"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec288"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -315,7 +351,9 @@
         "$oid": "61872119c3456d06a8569bd8"
       }
     ],
-    "reviews": ["Object Oriented PHP Crash Course"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec289"
+    }],
     "picture": "",
     "email": "",
     "status": "",
@@ -332,7 +370,9 @@
         "$oid": "61872119c3456d06a8569bd9"
       }
     ],
-    "reviews": ["Data Visualization with D3 JavaScript React"],
+    "reviews": [ {
+      "$oid": "618748fe521fdc29a93ec28a"
+    }],
     "picture": "",
     "email": "",
     "status": "",
