@@ -54,6 +54,7 @@ export default function Orders({ setCurrentPage }) {
               label="Name"
               placeholder="Nombre"
               onChange={(e) => handleChangeName(e)}
+              value=""
             >
               <MenuItem value="A-Z">A-Z</MenuItem>
               <MenuItem value="Z-A">Z-A</MenuItem>
@@ -69,6 +70,7 @@ export default function Orders({ setCurrentPage }) {
               id="select-score"
               label="Score"
               onChange={(e) => handleChangeScore(e)}
+              value=""
             >
               <MenuItem value="Asc">Mayor popularidad</MenuItem>
               <MenuItem value="Desc">Menor popularidad</MenuItem>
@@ -84,6 +86,7 @@ export default function Orders({ setCurrentPage }) {
               id="select-price"
               label="Price"
               onChange={(e) => handleChangePrice(e)}
+              value=""
             >
               <MenuItem value="Asc">Mayor precio</MenuItem>
               <MenuItem value="Desc">Menor precio</MenuItem>

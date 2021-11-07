@@ -45,6 +45,7 @@ export default function Filters({ setCurrentPage }) {
               id="select"
               label="Categories"
               onChange={(e) => handleSelectCategories(e)}
+              value=""
             >
               {categories.map((c) => (
                 <MenuItem value={c._id} key={c._id}>
@@ -62,10 +63,11 @@ export default function Filters({ setCurrentPage }) {
               id="select"
               label="Price"
               onChange={(e) => handlePriceByRange(e)}
+              value=""
             >
-              <MenuItem value={300}>$1000 - $1500</MenuItem>
-              <MenuItem value={900}>$1500 - $2000</MenuItem>
-              <MenuItem value={1800}>$2000 - $2500</MenuItem>
+              <MenuItem value={1200}>$1000 - $1500</MenuItem>
+              <MenuItem value={1600}>$1500 - $2000</MenuItem>
+              <MenuItem value={2200}>$2000 - $2500</MenuItem>
               <MenuItem value={2550}>+ $2500</MenuItem>
             </Select>
           </FormControl>
