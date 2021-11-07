@@ -16,6 +16,7 @@ const CourseSchema = new Schema({
     },
     score: [{
         type:Schema.Types.ObjectId,
+        ref: 'Review'
     }],
     duration: {
         type: String,  
