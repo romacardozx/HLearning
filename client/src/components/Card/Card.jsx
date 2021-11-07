@@ -53,9 +53,9 @@ export default function CourseCard({
             image={image}
             alt="img video"
           />
-          <CardContent>
+          {/* <CardContent>
             <Rating name="read-only" readOnly value={score} />
-          </CardContent>
+          </CardContent> */}
           <Typography
             textAlign="center"
             variant="h5"
