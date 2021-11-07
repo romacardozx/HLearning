@@ -17,7 +17,7 @@ export default function ViewBase({ carousel, courses }) {
         {carousel && <div className="carousel-container">{carousel}</div>}
       </div>
       <div className="title">
-        <h3>CURSOS DESTACADOS</h3>
+        <h2>CURSOS DESTACADOS</h2>
       </div>
       <div>
         <div>{courses}</div>
