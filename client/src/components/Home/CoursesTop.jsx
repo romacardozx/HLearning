@@ -31,7 +31,7 @@ export default function CoursesTop() {
       <Grid container align="center">
         {coursesTop.length >= 0 ? (
           <>
-            {fourCourses?.map((c, i) => (
+            {coursesTop?.map((c, i) => (
               <div key={i}>
                 <Grid item xs={2} sm={4} md={4}>
                   <Item sx={{ minWidth: 270 }} align='center'>
