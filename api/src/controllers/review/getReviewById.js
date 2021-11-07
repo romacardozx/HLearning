@@ -1,16 +1,17 @@
 const Review = require('../../models/Review');
-const User = require('../../models/User');
-const Course = require('../../models/Course');
+const User = require("../../models/User");
+const Course = require("../../models/Course");
 
-module.exports = async (_req, res, next) => {
+module.exports = async (req, res, next) => {
+    const { id } = req.params;
     try {
-        let review = await Review.find();
-        if(review.length > 0) {
+        let review = await Review.findById({_id:id});
+        if(review) {
             review = await User.populate(review, {path: "user"});
             review = await Course.populate(review, {path: "course"});
             res.json(review);
         } else {
-            res.json({msg: "There're any review available"});
+            res.json({msg: "There's any review with that id"});
         }
     } catch(err) {
         console.log(err);
