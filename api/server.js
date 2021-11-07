@@ -45,13 +45,13 @@ app.listen(port, async() => {
   console.log(`Server is running on port ${port}`);
   // const data = await Category.insertMany(categories)
   // console.log(data,"q me devuelve")
-  // const data = await User.insertMany(users)
+  // const data2 = await User.insertMany(users)
   // console.log(data,"q me devuelve")
-  //  const data = await Review.insertMany(reviews)
+  //  const data3 = await Review.insertMany(reviews)
   // console.log(data,"q me devuelve")
-  //  const data = await Order.insertMany(orders)
+  //  const data4 = await Order.insertMany(orders)
   // console.log(data,"q me devuelve")
-  //  const data = await Course.insertMany(courses)
+  //  const data5 = await Course.insertMany(courses)
   // console.log(data,"q me devuelve")
 
 
