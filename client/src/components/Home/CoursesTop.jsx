@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCoursesScore } from "../../redux/actions/getCoursesScore";
 import CardTops from "./CardTops";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+// import Typography from "@mui/material/Typography";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import Loading from '../Loading/Loading'
 import {getAllCourses, setAllCourses} from '../../redux/actions/getAllCourses'
 
 export default function CoursesTop() {
@@ -13,7 +14,7 @@ export default function CoursesTop() {
 
 
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
-   const fourCourses = coursesTop.slice(1, 5); 
+  // const fourCourses = coursesTop.slice(1, 5); 
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -27,20 +28,19 @@ export default function CoursesTop() {
 
   return (
     <div className="container-slider">
-      <br />
-      <Grid container>
-        {fourCourses.length >= 0 ? (
+      <Grid container align="center">
+        {coursesTop.length >= 0 ? (
           <>
             {fourCourses?.map((c, i) => (
               <div key={i}>
                 <Grid item xs={2} sm={4} md={4}>
-                  <Item sx={{ minWidth: 270 }}>
+                  <Item sx={{ minWidth: 270 }} align='center'>
                     <CardTops
                       id={c._id}
                       title={c.title}
                       image={c.img}
-                      description={c.description}
-                      score={c.score.score} 
+                      // description={c.description}
+                      // score={c.score}
                       price={c.price}
                     />
                   </Item>
@@ -48,9 +48,7 @@ export default function CoursesTop() {
               </div>
             ))}
           </>
-        ) : (
-          <Typography>Cargando</Typography>
-        )}
+        ) : <Loading />}
       </Grid>
       <br />
     </div>
