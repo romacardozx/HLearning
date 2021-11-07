@@ -1,27 +1,30 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCurse } from "../../redux/actions/deleteCourse"
+import { deleteCourse } from "../../redux/actions/deleteCourse"
 import { getAllCourses } from "../../redux/actions/getAllCourses"
 
 
-function DeleteCurse(){
+function DeleteCourse(){
     
     const dispatch = useDispatch();
-    const course = useSelector(state => state.getAllCourses)
+
+    const allCourses = useSelector((state) => state.getCourses.getAllCourses);
 
     function handleDelete(id){
-       dispatch(deleteCurse(id))
+       dispatch(deleteCourse(id))
     }
 
     useEffect(() =>{
         dispatch(getAllCourses())
     })
 
+    console.log(allCourses)
+
     return (
         <div>
             <select>
             {
-                course.map((c) => (
+                allCourses.map((c) => (
 
                     <option key={c}>
                         {c.name}
@@ -31,7 +34,7 @@ function DeleteCurse(){
             }
             </select>
             <div>
-            {course.map((e, i) => (
+            {allCourses.map((e, i) => (
 
                 <div key={i}>
 
@@ -47,4 +50,4 @@ function DeleteCurse(){
 }
 
 
-export default DeleteCurse;
+export default DeleteCourse;
