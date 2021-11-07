@@ -1,146 +1,146 @@
 [
     {
-       "user": "Veronica Valle",
+       "user": [{"$oid":"6186d90a521fdc29a93ec244"}],
        "price": 1900,
        "courses": ["Tailwind Just in Time"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Benito Luque",
+       "user": [{"$oid":"6186d90a521fdc29a93ec245"}],
        "price": 2700,
        "courses": ["Vue 3 with TypeScript Jump Start"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Jacinta Duque",
+       "user": [{"$oid":"6186d90a521fdc29a93ec246"}],
        "price": 1400,
        "courses": ["Como hacer un sitio web con Bootstrap"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Bruno Escobar",
+       "user": [{"$oid":"6186d90a521fdc29a93ec247"}],
        "price": 1200,
        "courses": ["Curso de JAVASCRIPT"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Federico Florez",
+       "user": [{"$oid":"6186d90a521fdc29a93ec248"}],
        "price": 2600,
        "courses": ["Aprende CSS ahora! curso completo desde cero"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Luz Carro",
+       "user": [{"$oid":"6186d90a521fdc29a93ec249"}],
        "price": 1200,
        "courses": ["Curso Básico de HTML desde 0"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Gaizka Manzano",
+       "user": [{"$oid":"6186d90a521fdc29a93ec24a"}],
        "price": 2300,
        "courses": ["Figma para principiantes"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Raul Casas",
+       "user": [{"$oid":"6186d90a521fdc29a93ec24b"}],
        "price": 51800,
        "courses": ["Complete React Material UI"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Marino Rovira",
+       "user": [{"$oid":"6186d90a521fdc29a93ec24c"}],
        "price": 2500,
        "courses":["Node.js para principiantes"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user":"Evelyn Navarro",
+       "user": [{"$oid":"6186d90a521fdc29a93ec24d"}],
        "price": 2800,
        "courses": ["CURSO DE PYTHON"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Jennifer Molero",
+       "user": [{"$oid":"6186d90a521fdc29a93ec24e"}],
        "price": 3200,         
        "courses":["Modern JavaScript"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user":  "Izan Valle",
+       "user": [{"$oid": "6186d90a521fdc29a93ec24f"}],
        "price": 2400,         
        "courses": ["Flutter Course"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Barbara Rio",
+       "user": [{"$oid":"6186d90a521fdc29a93ec250"}],
        "price": 1600,         
        "courses":["Strapi Crash Course (with React & GraphQL)"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Mustapha Sacristan",
+       "user": [{"$oid":"6186d90a521fdc29a93ec251"}],
        "price": 1600,         
        "courses":["Learn Go (Golang)"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Jairo Alvaro",
+       "user": [{"$oid":"6186d90a521fdc29a93ec252"}],
        "price": 1250,         
        "courses": ["Mobile-First Responsive Build"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user":"Fernando Paredes",
+       "user": [{"$oid":"6186d90a521fdc29a93ec253"}],
        "price": 1680,         
        "courses": ["Node.js Auth (using JWT)"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user":"Erika Sampedro",
+       "user": [{"$oid":"6186d90a521fdc29a93ec254"}],
        "price": 2300,         
        "courses": ["Bulma CSS Page Build Tutorial"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Maria Laura Luis",
+       "user": [{"$oid":"6186d90a521fdc29a93ec255"}],
        "price": 3200,         
        "courses":["Vue 3 Animations Tutorial"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Hugo Arcos",
+       "user": [{"$oid":"6186d90a521fdc29a93ec256"}],
        "price": 2100,         
        "courses": ["Object Oriented PHP Crash Course"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "Angela-Maria Catalan",
+       "user": [{"$oid":"6186d90a521fdc29a93ec257"}],
        "price": 2700,         
        "courses": ["Data Visualization with D3 JavaScript React"],
        "status": "Confirmed",
        "payment": true
     },
     {
-       "user": "",
+       "user": [{"$oid":""}],
        "price": 500,         
        "courses": "",
        "status": "Confirmed",
