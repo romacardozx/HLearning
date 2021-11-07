@@ -1,262 +1,143 @@
-[
+[ 
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec277"
-    },
-    "user": "Veronica Valle",
+    "_id": "618748fe521fdc29a93ec277",
+    "user": "6186d90a521fdc29a93ec244",
     "description": "Excelentes conceptos de Css, muy bien explicados",
-    "course": [
-      {
-        "$oid": "61844faa2d9146900b650f1c"
-      }
-    ],
+    "course": "61844faa2d9146900b650f1c",
     "score": 5
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec278"
-    },
-    "user": "Benito Luque",
+    "_id": "618748fe521fdc29a93ec278",
+    "user": "6186d90a521fdc29a93ec245",
     "description": "Nunca pense que iba a aprender tanto de TypeScript",
-    "course": [
-      {
-        "$oid": "61844faf2d9146900b650f1e"
-      }
-    ],
+    "course": "61844faf2d9146900b650f1e",
     "score": 5
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec279"
-    },
-    "user": "Jacinta Duque",
+    "_id": "618748fe521fdc29a93ec279",
+    "user": "6186d90a521fdc29a93ec245",
     "description": "claro, eficiente, buenos contenidos. Todo lo que busca en un curso",
-    "course": [
-      {
-        "$oid": "61844fb32d9146900b650f20"
-      }
-    ],
+    "course": "61844fb32d9146900b650f20",
     "score": 5
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec27a"
-    },
-    "user": "Bruno Escobar",
+    "_id": "618748fe521fdc29a93ec27a",
+    "user": "6186d90a521fdc29a93ec247",
     "description": "muy buen curso de JavaScript",
-    "course": [
-      {
-        "$oid": "61844fba2d9146900b650f22"
-      }
-    ],
+    "course": "61844fba2d9146900b650f22",
     "score": 4
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec27b"
-    },
-    "user": "Federico Florez",
+    "_id": "618748fe521fdc29a93ec27b",
+    "user": "6186d90a521fdc29a93ec248",
     "description": "nunca pensé que iba aprender tanto en un solo el curso",
-    "course": [
-      {
-        "$oid": "61844fc02d9146900b650f24"
-      }
-    ],
+    "course": "61844fc02d9146900b650f24",
     "score": 5
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec27c"
-    },
-    "user": "Luz Carro",
+    "_id": "618748fe521fdc29a93ec27c",
+    "user": "6186d90a521fdc29a93ec249",
     "description": "excelente curso de HTML para principiantes",
-    "course": [
-      {
-        "$oid": "61844fc62d9146900b650f26"
-      }
-    ],
+    "course": "61844fc62d9146900b650f26",
     "score": 4
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec27d"
-    },
-    "user": "Gaizka Manzano",
+    "_id": "618748fe521fdc29a93ec27d",
+    "user": "6186d90a521fdc29a93ec24a",
     "description": "",
-    "course": [
-      {
-        "$oid": "61844fcd2d9146900b650f28"
-      }
-    ],
+    "course": "61844fcd2d9146900b650f28",
     "score": 3
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec27e"
-    },
-    "user": "Raul Casas",
+    "_id": "618748fe521fdc29a93ec27e",
+    "user": "6186d90a521fdc29a93ec24b",
     "description": "no siento que tenga las herramientas para poder aplicar Material UI por mi cuenta en un proyecto individual",
-    "course": [
-      {
-        "$oid": "61844fd22d9146900b650f2a"
-      }
-    ],
+    "course": "61844fd22d9146900b650f2a",
     "score": 3
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec27f"
-    },
-    "user": "Marino Rovira",
+    "_id": "618748fe521fdc29a93ec27f",
+    "user": "6186d90a521fdc29a93ec24c",
     "description": "enseña lo básico de lo que sería Node.js",
-    "course": [
-      {
-        "$oid": "61844fd92d9146900b650f2c"
-      }
-    ],
+    "course": "61844fd92d9146900b650f2c",
     "score": 3
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec280"
-    },
-    "user": "Evelyn Navarro",
+    "_id": "618748fe521fdc29a93ec280",
+    "user": "6186d90a521fdc29a93ec24d",
     "description": "muy buen curso, me hubiese gustado que dure más",
-    "course": [
-      {
-        "$oid": "61844fdf2d9146900b650f2e"
-      }
-    ],
+    "course": "61844fdf2d9146900b650f2e",
     "score": 4
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec281"
-    },
-    "user": "Jennifer Molero",
+    "_id": "618748fe521fdc29a93ec281",
+    "user": "6186d90a521fdc29a93ec24e",
     "description": "me vino bien para actualizarme en la carrera de Front-End Developer",
-    "course": [
-      {
-        "$oid": "618738033de1fe0066988e81"
-      }
-    ],
+    "course": "618738033de1fe0066988e81",
     "score": 4
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec282"
-    },
-    "user": "Izan Valle",
+    "_id": "618748fe521fdc29a93ec282",
+    "user": "6186d90a521fdc29a93ec24f",
     "description": "no lo recomiendo",
-    "course": [
-      {
-        "$oid": "61873905d388093b9b14d4a5"
-      }
-    ],
+    "course": "61873905d388093b9b14d4a5",
     "score": 2
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec283"
-    },
-    "user": "Barbara Rio",
+    "_id": "618748fe521fdc29a93ec283",
+    "user": "6186d90a521fdc29a93ec250",
     "description": "me gustaría tener un reintegro, pero no hay posibilidad",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bcf"
-      }
-    ],
+    "course": "61872119c3456d06a8569bcf",
     "score": 2
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec284"
-    },
-    "user": "Mustapha Sacristan",
+    "_id": "618748fe521fdc29a93ec284",
+    "user": "6186d90a521fdc29a93ec251",
     "description": "",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bd0"
-      }
-    ],
+    "course": "61872119c3456d06a8569bd0",
     "score": 2
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec285"
-    },
-    "user": "Jairo Alvaro",
+    "_id": "618748fe521fdc29a93ec285",
+    "user": "6186d90a521fdc29a93ec252",
     "description": "Pèsimo",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bd1"
-      }
-    ],
+    "course": "61872119c3456d06a8569bd1",
     "score": 1
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec286"
-    },
-    "user": "Fernando Paredes",
+    "_id": "618748fe521fdc29a93ec286",
+    "user": "6186d90a521fdc29a93ec253",
     "description": "muy completo, súper recomendable",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bd2"
-      }
-    ],
+    "course": "61872119c3456d06a8569bd2",
     "score": 4
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec287"
-    },
-    "user": "Erika Sampedro",
+    "_id": "618748fe521fdc29a93ec287",
+    "user": "6186d90a521fdc29a93ec254",
     "description": "se podría decir que es de los mejores cursos que hice de CSS",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bd3"
-      }
-    ],
+    "course": "61872119c3456d06a8569bd3",
     "score": 5
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec288"
-    },
-    "user": "Maria Laura Luis",
+    "_id": "618748fe521fdc29a93ec288",
+    "user": "6186d90a521fdc29a93ec255",
     "description": "excelente curso de animaciones, ya quiero poner en práctica todo lo que aprendí",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bd7"
-      }
-    ],
+    "course": "61872119c3456d06a8569bd7",
     "score": 5
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec289"
-    },
-    "user": "Hugo Arcos",
+    "_id": "618748fe521fdc29a93ec289",
+    "user": "6186d90a521fdc29a93ec256",
     "description": "",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bd8"
-      }
-    ],
+    "course": "61872119c3456d06a8569bd8",
     "score": 5
   },
   {
-    "_id": {
-      "$oid": "618748fe521fdc29a93ec28a"
-    },
-    "user": "Angela-Maria Catalan",
+    "_id": "618748fe521fdc29a93ec28a",
+    "user": "6186d90a521fdc29a93ec257",
     "description": "",
-    "course": [
-      {
-        "$oid": "61872119c3456d06a8569bd9"
-      }
-    ],
+    "course": "61872119c3456d06a8569bd9",
     "score": 5
   }
 ]
+
