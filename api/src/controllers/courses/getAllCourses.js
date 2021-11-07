@@ -1,6 +1,6 @@
 const Course = require("../../models/Course");
-const Category = require("../../models/Category")
 const Review = require("../../models/Review")
+const Category = require("../../models/Category")
 
 module.exports = async (req, res, next) => {
   try {

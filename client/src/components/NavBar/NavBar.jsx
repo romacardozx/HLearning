@@ -28,7 +28,7 @@ const Navbar = () => {
             Cursos
           </NavLink>
           <NavLink to='/contact' >
-            Contacto
+            Contacto 
           </NavLink>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
