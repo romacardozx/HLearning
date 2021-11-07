@@ -1,281 +1,161 @@
 [
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec291 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec244" }],
+    "_id": "6187494b521fdc29a93ec291",
+    "user": "6186d90a521fdc29a93ec244",
     "price": 1900,
-    "courses": [
-      {
-        "$oid": "61844faa2d9146900b650f1c"
-      }
-    ],
+    "courses": ["61844faa2d9146900b650f1c"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec292 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec245" }],
+    "_id": "6187494b521fdc29a93ec292",
+    "user": "6186d90a521fdc29a93ec245",
     "price": 2700,
-    "courses": [
-      {
-        "$oid": "61844faf2d9146900b650f1e"
-      }
-    ],
+    "courses": ["61844faf2d9146900b650f1e"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec293 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec246" }],
+    "_id": "6187494b521fdc29a93ec293",
+    "user": "6186d90a521fdc29a93ec246",
     "price": 1400,
-    "courses": [
-      {
-        "$oid": "61844fb32d9146900b650f20"
-      }
-    ],
+    "courses": ["61844fb32d9146900b650f20"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec294 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec247" }],
+    "_id": "6187494b521fdc29a93ec294",
+    "user": "6186d90a521fdc29a93ec247",
     "price": 1200,
-    "courses": [
-      {
-        "$oid": "61844fba2d9146900b650f22"
-      }
-    ],
+    "courses": ["61844fba2d9146900b650f22"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec295 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec248" }],
+    "_id": "6187494b521fdc29a93ec295",
+    "user": "6186d90a521fdc29a93ec248",
     "price": 2600,
-    "courses": [
-      {
-        "$oid": "61844fc02d9146900b650f24"
-      }
-    ],
+    "courses": ["61844fc02d9146900b650f24"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec296  "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec249" }],
+    "_id": "6187494b521fdc29a93ec296",
+    "user": "6186d90a521fdc29a93ec249",
     "price": 1200,
-    "courses": [
-      {
-        "$oid": "61844fc62d9146900b650f26"
-      }
-    ],
+    "courses": ["61844fc62d9146900b650f26"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec297 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec24a" }],
+    "_id": "6187494b521fdc29a93ec297",
+    "user": "6186d90a521fdc29a93ec24a",
     "price": 2300,
-    "courses": [
-      {
-        "$oid": "61844fcd2d9146900b650f28"
-      }
-    ],
+    "courses": ["61844fcd2d9146900b650f28"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec298 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec24b" }],
+    "_id": "6187494b521fdc29a93ec298",
+    "user": "6186d90a521fdc29a93ec24b",
     "price": 51800,
-    "courses": [
-      {
-        "$oid": "61844fd22d9146900b650f2a"
-      }
-    ],
+    "courses": ["61844fd22d9146900b650f2a"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec299 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec24c" }],
+    "_id": "6187494b521fdc29a93ec299",
+    "user": "6186d90a521fdc29a93ec24c",
     "price": 2500,
-    "courses": [
-      {
-        "$oid": "61844fd92d9146900b650f2c"
-      }
-    ],
+    "courses": ["61844fd92d9146900b650f2c"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec29a "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec24d" }],
+    "_id": "6187494b521fdc29a93ec29a",
+    "user": "6186d90a521fdc29a93ec24d",
     "price": 2800,
-    "courses": [
-      {
-        "$oid": "61844fdf2d9146900b650f2e"
-      }
-    ],
+    "courses": ["61844fdf2d9146900b650f2e"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec29b "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec24e" }],
+    "_id": "6187494b521fdc29a93ec29b",
+    "user": "6186d90a521fdc29a93ec24e",
     "price": 3200,
-    "courses": [
-      {
-        "$oid": "618738033de1fe0066988e81"
-      }
-    ],
+    "courses": ["618738033de1fe0066988e81"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec29c "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec24f" }],
+    "_id": "6187494b521fdc29a93ec29c",
+    "user": "6186d90a521fdc29a93ec24f",
     "price": 2400,
-    "courses": [
-      {
-        "$oid": "61873905d388093b9b14d4a5"
-      }
-    ],
+    "courses": ["61873905d388093b9b14d4a5"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec29d "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec250" }],
+    "_id": "6187494b521fdc29a93ec29d",
+    "user": "6186d90a521fdc29a93ec250",
     "price": 1600,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bcf"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bcf"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec29e "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec251" }],
+    "_id": "6187494b521fdc29a93ec29e",
+    "user": "6186d90a521fdc29a93ec251",
     "price": 1600,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bd0"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bd0"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec29f "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec252" }],
+    "_id": "6187494b521fdc29a93ec29f",
+    "user": "6186d90a521fdc29a93ec252",
     "price": 1250,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bd1"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bd1"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec2a0 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec253" }],
+    "_id": "6187494b521fdc29a93ec2a0",
+    "user": "6186d90a521fdc29a93ec253",
     "price": 1680,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bd2"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bd2"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec2a1 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec254" }],
+    "_id": "6187494b521fdc29a93ec2a1",
+    "user": "6186d90a521fdc29a93ec254",
     "price": 2300,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bd3"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bd3"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec2a2 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec255" }],
+    "_id": "6187494b521fdc29a93ec2a2",
+    "user": "6186d90a521fdc29a93ec255",
     "price": 3200,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bd7"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bd7"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec2a3 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec256" }],
+    "_id": "6187494b521fdc29a93ec2a3",
+    "user": "6186d90a521fdc29a93ec256",
     "price": 2100,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bd8"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bd8"],
     "status": "Confirmed",
     "payment": true
   },
   {
-   "_id": {
-     "$oid": " 6187494b521fdc29a93ec2a4 "
-    }, 
-   "user": [{ "$oid": "6186d90a521fdc29a93ec257" }],
+    "_id": "6187494b521fdc29a93ec2a4",
+    "user": "6186d90a521fdc29a93ec257",
     "price": 2700,
-    "courses": [
-      {
-        "$oid": "61872119c3456d06a8569bd9"
-      }
-    ],
+    "courses": ["61872119c3456d06a8569bd9"],
     "status": "Confirmed",
     "payment": true
   }

@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     let courses = await Course.find({status: "Confirmed"});
     if(courses.length >= 0) {
       courses = await Category.populate(courses, {path: "categories"})
-      courses = await Review.populate(courses, {path:'score'}) // probar
+      courses = await Review.populate(courses, {path: "score"})
     } else {
       res.json({msg: "There're any course available"})
     }
