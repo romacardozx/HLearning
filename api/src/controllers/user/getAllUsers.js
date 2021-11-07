@@ -4,12 +4,13 @@ const Review = require("../../models/Review");
 
 module.exports = async (_req, res, next) => {
     try {
-        // SOLUCIONAR TEMA DE POPULARLE EL CURSO Y LA REVIEW
         let users = await User.find({status: "Confirmed"});
         if(users.length >= 0) {
+            users = await Course.populate(users, {path: "courses"});
+            users = await Review.populate(users, {path: "reviews"});
             res.json (users);
         } else {
-            res.json({msg: "There're any user registred"})
+            res.json({msg: "There're any user registred"});
         }
     } catch(err) {
         console.log(err);
