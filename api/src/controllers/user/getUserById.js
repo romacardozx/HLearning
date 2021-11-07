@@ -5,8 +5,9 @@ const Review = require("../../models/Review");
 module.exports = async (req, res, next) => {
     const { id } = req.params;
     try {
-        // SOLUCIONAR TEMA DE POPULARLE EL CURSO Y LA REVIEW
         let user = await User.findById({_id:id, status: "Confirmed"});
+        user = await Course.populate(user, {path: "courses"});
+        user = await Review.populate(user, {path: "reviews"});
         if(user) {
             res.json(user);
         } else {

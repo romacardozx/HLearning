@@ -1,15 +1,17 @@
 const Course = require("../../models/Course");
 const Category = require("../../models/Category")
-const Review = require("../../models/Review")
+// const Review = require("../../models/Review")
+// const User = require("../../models/User");
 
 module.exports = async (req, res, next) => {
   try {
     let courses = await Course.find({status: "Confirmed"});
     if(courses.length >= 0) {
-      courses = await Category.populate(courses, {path: "categories"})
-      courses = await Review.populate(courses, {path:'score'}) // probar
+      courses = await Category.populate(courses, {path: "categories"});
+      // courses = await Review.populate(courses, {path: "score"}) // NO POPULA
+      // courses = await User.populate(courses, {path: "students"}); // TIRA ERROR
     } else {
-      res.json({msg: "There're any course available"})
+      res.json({msg: "There're any course available"});
     }
 
     let { name, score, price, priceToFilter, categories, scoreToFilter } = req.query;
