@@ -6,7 +6,7 @@
     "title": "Tailwind Just in Time",
     "description": "In this Tailwind JIT tutorial series you'll learn how to use the Just in Time compiler for better performance during development.",
     "img": "https://cdn.fs.teachablecdn.com/6iMO3BaS9GF42GIAlWPQ",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec277"}],
     "duration": "00:39:29",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -52,7 +52,7 @@
     "title": "Vue 3 with TypeScript Jump Start",
     "description": "Hey gang, in this Vue 3 & TypeScript jump start tutorial I'll show you how to get up and running with Vue 3 using TypeScript. In this lesson we'll discuss the benefits of TS & set the initial project up.",
     "img": "https://cdn.fs.teachablecdn.com/1M8MbfrSQme0aCzmJFmQ",
-    "score": "5",
+    "score": [{ "$oid": "618748fe521fdc29a93ec278"}],
     "duration": "00:59:26",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -104,7 +104,7 @@
     "title": "Como hacer un sitio web con Bootstrap",
     "description": "Aprende como hacer un sitio web con bootstrap",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7W1KDUdra9jgXWtf-NYIIqWbXj23rvtvr7A&usqp=CAU",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec279"}],
     "duration": "01:04:21",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -136,7 +136,7 @@
     "title": "Curso de JAVASCRIPT",
     "description": "¿Queres aprender a programar en Javascript desde cero? Este es el curso de javascript desde cero a experto que vas a terminar, te prometo que no te vas a aburrir durante el aprendizaje de este curso de javascript, vas a aprender javascript fácil",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhJlTMKGEP32O9dXs3Laz-XYbL5gynMI08A&usqp=CAU",
-    "score": 4,
+    "score": [{ "$oid": "618748fe521fdc29a93ec27a"}],
     "duration": "00:17:19",
     "categories": [{
       "$oid": "617d4c3d119458f9b0b7ff87"
@@ -168,7 +168,7 @@
     "title": "Aprende CSS ahora! curso completo desde cero",
     "description": "Aprende CSS con el youtuber de Hola Mundo",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ahxxcR2SA-SW1rMpjQzHj5cTwx06LooCGw&usqp=CAU",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec27b"}],
     "duration": "00:02:05",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -192,7 +192,7 @@
     "title": "Curso Básico de HTML desde 0",
     "description": "",
     "img": "https://img-c.udemycdn.com/course/480x270/3462566_1a6b_2.jpg",
-    "score": 4,
+    "score": [{ "$oid": "618748fe521fdc29a93ec27c"}],
     "duration": "1:26:39",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -256,7 +256,7 @@
     "title": "Figma para principiantes",
     "description": "Aprende Figma desde cero y empieza hoy a crear tus propios diseños, no limites tu creatividad y ejecuta cada idea.Figma es la mayor revolución en el diseño porque permite trabajar en equipo, en tiempo real y sobre un mismo producto",
     "img": "https://img-c.udemycdn.com/course/480x270/3294068_93e5_2.jpg",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec27d"}],
     "duration": "4:53:27",
     "categories": [{
       "$oid": "617d71de9fc634f278e19778"
@@ -305,7 +305,7 @@
     "title": "Complete React Material UI",
     "description": " Material UI es un framework creado por Google para aplicar elementos más visuales y modernos, haciendo que tu diseño sea más profesional. Se combina a la perfeccion con tus proyectos en React. En este curso aprenderas a dominarlo para incluirlo en tus proximos proyectos",
     "img": "https://img-c.udemycdn.com/course/480x270/4331564_0297_5.jpg",
-    "score": 3,
+    "score": [{ "$oid": "618748fe521fdc29a93ec27e"}],
     "duration": "8:42:06",
     "categories": [{
       "$oid": "617d4c31119458f9b0b7ff85"
@@ -364,7 +364,7 @@
     "title": "Node.js para principiantes",
     "description": "Aprender Node.js es una gran manera de adentrarse en el desarrollo web de backend o de ampliar tu práctica en desarrollo de fullstack. Con este curso práctico de HLearning sobre Node.js podrás aprender los conceptos y las aplicaciones de este sistema en tiempo de ejecución de JavaScript tremendamente útil.",
     "img": "https://img-c.udemycdn.com/course/480x270/2306018_7bc8_4.jpg",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec27f"}],
     "duration": "3:43:53",
     "categories": [{
       "$oid": "617d4c47119458f9b0b7ff89"
@@ -401,7 +401,7 @@
     "title": "CURSO DE PYTHON",
     "description": "Este es el curso en español más completo y exhaustivo que encontrarás sobre Python 3 en HLearning. Perfectamente estructurado y balanceado, introduce todos los temas de forma sencilla, gradual y 100% práctica. Todos los temas han sido cuidadosamente preparados para presentarse de forma gradual, de manera que el alumno nunca se sienta perdido durante su aprendizaje.",
     "img": "https://i.ytimg.com/vi/GuIQHhxeARI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBHQv7CABKYev2WNvygB6D2yTgUXA",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec280"}],
     "duration": "3:48:36",
     "categories": [{
       "$oid": "617d4c3d119458f9b0b7ff87"
@@ -443,7 +443,7 @@
     "title": "Modern JavaScript",
     "description": "If you're new to JavaScript and want to master it completely then look no further than this 20-hr JavaScript master class.In this course you'll learn JavaScript from the ground up, using modern techniques and workflows. You'll build a weather app, a chat room, an interactive quix and a UI library, all from scratch.Your JavaScript journey starts here...",
     "img": "https://cdn.fs.teachablecdn.com/fMcgVhkQ6enjVY1aS8Mg",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec281"}],
     "duration": "4:44:27",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -492,7 +492,7 @@
     "title": "Flutter Course",
     "description": "Flutter is a mobile UI framework developed by Google, used to make native mobile apps. To create Flutter apps we use a language called Dart, also developed by Google.In this Flutter course, you'll learn the basics of Dart, from the ground up, and develop a Flutter app from scratch. I'll also show you how to preview your apps on an android emulator.",
     "img": "https://cdn.fs.teachablecdn.com/TtFjxf2STRaKKcKsaHUq",
-    "score": 2,
+    "score": [{ "$oid": "618748fe521fdc29a93ec282"}],
     "duration": "1:45:52",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -516,7 +516,7 @@
     "title": "Strapi Crash Course (with React & GraphQL)",
     "description": "Strapi is what's known as a headless CMS, meaning it's like a traditional CMS but without the front-end templates. It gives us total control as to how we'd like to make the front-end.In this course you'll learn how to use Strapi from the ground up & implement it into a React application. You'll also learn how to use GraphQL to query Strapi data from the React application.",
     "img": "https://cdn.fs.teachablecdn.com/wFj48YuyS3yQTWsX3pF6",
-    "score": 4,
+    "score": [{ "$oid": "618748fe521fdc29a93ec283"}],
     "duration": "1:42:46",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -603,7 +603,7 @@
     "title": "Learn Go (Golang)",
     "description": "Go is a general purpose programming language which can be used for many things - to create REST API's, cloud services & build web apps. It's fast, it's fun & it's relatvely easy to pick up and run with.In this Go tutorial you'll learn how to install Go & use all the basic features & types. You'll also use your new found skills to reate a small command line application to create and save cafe bills",
     "img": "https://cdn.fs.teachablecdn.com/YaYU0l6vSpG1DBIrGEjs",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec284"}],
     "duration": "4:47:45",
     "categories": [{
       "$oid": "617d4c3d119458f9b0b7ff87"
@@ -730,7 +730,7 @@
     "title": "Mobile-First Responsive Build",
     "description": "Hey gang, in this mini-series, we'll build a responsive website using a mobile-first approach (developing the site for mobiles first and then extending the design to larger screens) with CSS grid.",
     "img": "https://cdn.fs.teachablecdn.com/IKtjmPhHQYindxT2qh2d",
-    "score": 3,
+    "score": [{ "$oid": "618748fe521fdc29a93ec285"}],
     "duration": "2:05:19",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -819,7 +819,7 @@
     "title": "Node.js Auth (using JWT)",
     "description": "In this Node.js authentication course, you'll learn how to authenticate requests to your server using JWT's (JSON web tokens). I'll show you how to protect data and guard web pages from users who are not authenticated, how to hash passwords, store user information in a database & how to create web tokens for logged-in users.",
     "img": "https://cdn.fs.teachablecdn.com/OckIeaP2RhWmnudlMi1Q",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec286"}],
     "duration": "3:07:30",
     "categories": [{
       "$oid": "617d4c47119458f9b0b7ff89"
@@ -926,7 +926,7 @@
     "title": "Bulma CSS Page Build Tutorial",
     "description": "Bulma CSS is a component-based CSS framework not too dissimilar to Bootstrap. It includes a grid system, helper classes for things like colours & fonts & a few ready-made components like buttons, navbars & tabs.In this Bulma page build tutorial you'll build a product page from scratch, which implements these classes & components.",
     "img": "https://cdn.fs.teachablecdn.com/qPETL7XhShGiSECFvAzH",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec287"}],
     "duration": "1:38:04",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -1020,7 +1020,7 @@
     "title": "Vue 3 Animations Tutorial",
     "description": "Learn how to add subtle animations & transitions to your Vue components to make your website look slicker & generally better thought out. In this series you'll learn about the Vue Transition component, transition groups, stagger effects & GSAP.",
     "img": "https://cdn.fs.teachablecdn.com/qHEIpabRjm4NtLMEPLat",
-    "score": 4,
+    "score": [{ "$oid": "618748fe521fdc29a93ec288"}],
     "duration": "1:19:30",
     "categories": [{
       "$oid": "617d4c16119458f9b0b7ff81"
@@ -1099,7 +1099,7 @@
     "title": "Object Oriented PHP Crash Course",
     "description": "Learn about objects in PHP & how to program in an object oriented way - using classes, constructors, access modifiers, inheritance & more. You'll also put all these things together to build a form validation class you can reuse in your own projects.If you know the basics of PHP and want to take it further, this is the course.",
     "img": "https://cdn.fs.teachablecdn.com/VHPgkA3GTrGaRoPqZSAf",
-    "score": 5,
+    "score": [{ "$oid": "618748fe521fdc29a93ec289"}],
     "duration": "03:48:45",
     "categories": [{
       "$oid": "617d4c3d119458f9b0b7ff87"
@@ -1206,7 +1206,7 @@
     "title": "Data Visualization with D3, JavaScript, React",
     "description": "Learn how to make great-looking, interactive & fun data visualizations such as line graphs, bar charts, pie charts, tree diagrams & more, with D3.js. You'll also learn how to hook your visualizations up to a real-time database (Firebase Firestore), so that your graphs & charts update in real-time.",
     "img": "https://cdn.fs.teachablecdn.com/7syJ2pLnQG2uDceMeQAB",
-    "score": 2,
+    "score": [{ "$oid": "618748fe521fdc29a93ec28a"}],
     "duration": "7:11:28",
     "categories": [{
       "$oid": "617d4c47119458f9b0b7ff89"
