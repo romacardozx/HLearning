@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCourses } from "../../redux/actions/getAllCourses";
-/* import { getAllCategories } from "../../redux/actions/getAllCategories"; */
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
@@ -19,7 +18,7 @@ export default function Courses() {
   const allCourses = useSelector((state) => state.getCourses.getAllCourses);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage, /* setCoursesPerPage */] = useState(4);
+  const [coursesPerPage /* setCoursesPerPage */] = useState(4);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
   const currentCourses =
@@ -33,7 +32,6 @@ export default function Courses() {
 
   useEffect(() => {
     dispatch(getAllCourses());
-    /*  dispatch(getAllCategories()); */
   }, [dispatch]);
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -49,20 +47,16 @@ export default function Courses() {
       <br />
       <br />
       <div>
-        <Grid container direction="column" alignItems="center" >
+        <Grid container direction="column" alignItems="center">
           <SearchBar courses={allCourses} />
           <br />
           <div>
             <Grid container direction="row" spacing={3}>
               <Grid item>
-                <Orders
-                  setCurrentPage={setCurrentPage} /* courses={allCourses} */
-                />
+                <Orders setCurrentPage={setCurrentPage} />
               </Grid>
               <Grid item>
-                <Filters
-                  setCurrentPage={setCurrentPage} /* courses={allCourses} */
-                />
+                <Filters setCurrentPage={setCurrentPage} />
               </Grid>
             </Grid>
           </div>
@@ -74,7 +68,7 @@ export default function Courses() {
             />
           </div>
           <div>
-            <Grid container sx={3}>
+            <Grid container>
               {currentCourses.length >= 0 ? (
                 <>
                   {currentCourses?.map((c, i) => (

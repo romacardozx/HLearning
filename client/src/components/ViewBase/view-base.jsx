@@ -3,7 +3,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import Paso from "../../images/Paso.png";
 
-export default function ViewBase({ carousel, carousel2 }) {
+export default function ViewBase({ carousel, courses }) {
   return (
     <div className="base-container">
       <div
@@ -19,12 +19,8 @@ export default function ViewBase({ carousel, carousel2 }) {
       <div className="title">
         <h3>CURSOS DESTACADOS</h3>
       </div>
-      <div
-        className={
-          carousel ? "header-container with-carousel" : "header-container"
-        }
-      >
-        {carousel2 && <div className="carousel-container">{carousel2}</div>}
+      <div>
+        <div>{courses}</div>
       </div>
 
       <div className="body-container">

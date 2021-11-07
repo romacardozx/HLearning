@@ -1,12 +1,12 @@
 import React from "react";
 import ViewBase from "../ViewBase/view-base";
-import Carrusel from "../../components/Carrusel/Carrusel";
-import CarruselPics from "../Carrusel/CarruselPics";
+import Carousel from "../Carousel/Carousel";
+import CoursesTop from "./CoursesTop";
 
 export default function Home() {
   return (
     <div>
-      <ViewBase carousel={<CarruselPics />} carousel2={<Carrusel />} />
+      <ViewBase carousel={<Carousel />} courses={<CoursesTop />} />
     </div>
   );
 }

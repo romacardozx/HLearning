@@ -14,7 +14,7 @@ const CourseSchema = new Schema({
     img: {
         type: String
     },
-    score: {                 //ref a review?
+    score: {                
         type: Number
     },
     duration: {

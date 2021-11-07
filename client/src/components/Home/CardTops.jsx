@@ -8,7 +8,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
-import Popover from "@mui/material/Popover";
 import { Box } from "@mui/system";
 import { CardActionArea } from "@material-ui/core";
 
@@ -20,29 +19,10 @@ export default function CourseCard({
   score,
   price,
 }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-
-  const open = Boolean(anchorEl);
-
   return (
     <Box p={1}>
       <Card sx={{ maxWidth: 270, minWidth: 100 }} elevation={6}>
-        <CardActionArea
-          aria-owns={open ? "mouse-over-popover" : undefined}
-          aria-haspopup="true"
-          onMouseEnter={handlePopoverOpen}
-          onMouseLeave={handlePopoverClose}
-          component={Link}
-          to={`/courses/${id}`}
-        >
+        <CardActionArea component={Link} to={`/courses/${id}`}>
           <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
             {title}
           </Typography>
@@ -64,30 +44,11 @@ export default function CourseCard({
           >
             ${price}
           </Typography>
-        </CardActionArea>
-        <Popover
-          style={{ width: 427 }}
-          id="mouse-over-popover"
-          sx={{
-            pointerEvents: "none",
-          }}
-          open={open}
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "left",
-          }}
-          onClose={handlePopoverClose}
-          disableRestoreFocus
-        >
+
           <Typography paragraph sx={{ p: 1 }}>
             {description}
           </Typography>
-        </Popover>
+        </CardActionArea>
         <CardActions>
           <IconButton
             onClick={() => {
