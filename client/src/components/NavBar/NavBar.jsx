@@ -26,18 +26,21 @@ const Navbar = () => {
           <NavLink to="/courses">Cursos</NavLink>
           <NavLink to="/contact">Contacto</NavLink>
           <NavLink to="/user">Mi Cuenta</NavLink>
+
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+          <NavLink to="/cart">
+            <span className="material-icons-outlined">shopping_cart</span>
+          </NavLink>
+          {/* <NavLink to="/user">
+            <AddShoppingCartIcon />
+          </NavLink> */}
         </NavMenu>
-
-        <NavLink to="/cart">
-          <AddShoppingCartIcon />
-        </NavLink>
 
         <NavBtn>
           <NavBtnLink to="/login">Iniciar Sesión</NavBtnLink>
         </NavBtn>
-        <Account />
+        {/*  <Account /> */}
       </Nav>
     </>
   );
