@@ -4,7 +4,9 @@ const express = require("express");
 const getAllUsers = require("../controllers/user/getAllUsers");
 const getUserById = require("../controllers/user/getUserById");
 
-const createUser = require('../controllers/user/createUser')
+const createUser = require('../controllers/user/createUser');
+
+const updateUser = require('../controllers/user/updateUser');
 
 const deleteUser = require('../controllers/user/deleteUser');
 
@@ -19,6 +21,7 @@ router.get("/:id", getUserById);
 router.post('/createUser', createUser);
 
 // ----> PUT <----
+router.put("/updateUser/:id", updateUser);
 
 // ----> DELETE <----
 router.delete("/deleteUser/:id", deleteUser); 

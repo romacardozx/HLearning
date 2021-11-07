@@ -14,7 +14,7 @@ const Course = require("./src/models/Course");
 const courses = require('./src/utils/mockUps/coursesConObjectId.json')
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 
 //Crea el servidor
@@ -42,7 +42,7 @@ mongoose
   .catch((error) => console.log(error));
 
 app.listen(port, async() => {
-  console.log(`Server is running on port ${port}`);
+  // console.log(`Server is running on port ${port}`);
   // const data = await Category.insertMany(categories)
   // console.log(data,"q me devuelve")
   // const data2 = await User.insertMany(users)
