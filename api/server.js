@@ -42,7 +42,7 @@ mongoose
   .catch((error) => console.log(error));
 
 app.listen(port, async() => {
-  console.log(`Server is running on port ${port}`);
+  // console.log(`Server is running on port ${port}`);
   // const data = await Category.insertMany(categories)
   // console.log(data,"q me devuelve")
   // const data2 = await User.insertMany(users)
