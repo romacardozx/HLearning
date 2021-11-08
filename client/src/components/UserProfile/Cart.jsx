@@ -80,7 +80,7 @@ export default function Cart() {
                       sx={{ borderRadius: 3, minWidth: 300, marginTop: 0 }}
                       variant="outlined"
                       onClick={() => {
-                        alert("Pagado exitosamente!");
+                        alert("Tu pago está siendo procesado");
                       }}
                     >
                       Mercado Pago

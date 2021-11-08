@@ -10,7 +10,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 import { Box } from "@mui/system";
 import { CardActionArea } from "@material-ui/core";
-import calculeScore from '../../utils/calculeScore';
+import calculeScore from "../../utils/calculeScore";
 
 export default function CourseCard({
   id,
@@ -27,8 +27,7 @@ export default function CourseCard({
           <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
             {title}
           </Typography>
-          <Rating name="read-only" readOnly value={calculeScore(score)} />
-          {/* <Rating name="half-rating-read" defaultValue={score.score} precision={0.5} /> */}
+          <Rating name="read-only" readOnly value="5" />
           <CardMedia
             title={title}
             component="img"
@@ -37,9 +36,7 @@ export default function CourseCard({
             image={image}
             alt="img video"
           />
-          <CardContent>
-            {/* <Rating name="read-only" readOnly value={score} /> */}
-          </CardContent>
+          <br />
           <Typography
             textAlign="center"
             variant="h5"
@@ -48,6 +45,7 @@ export default function CourseCard({
           >
             ${price}
           </Typography>
+          <br />
         </CardActionArea>
         <CardActions>
           <IconButton
@@ -55,7 +53,7 @@ export default function CourseCard({
               alert("Agregado a tu carrito");
             }}
           >
-            <AddShoppingCartIcon/>
+            <AddShoppingCartIcon />
             <Typography> Agregar al carrito</Typography>
           </IconButton>
         </CardActions>
