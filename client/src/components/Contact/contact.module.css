@@ -9,9 +9,7 @@
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   font-family: "Josefin Sans", sans-serif;
-
 }
-
 
 .container {
   width: 100%;
@@ -75,7 +73,6 @@
   align-items: center;
 }
 
-
 .form button {
   width: 190px;
   height: 55px;
@@ -89,7 +86,7 @@
   font-weight: bold;
   margin-top: 20%;
   cursor: pointer;
-  font-size: calc(1em + .4vw);
+  font-size: calc(1em + 0.4vw);
 }
 
 .form button:hover {
@@ -99,12 +96,9 @@
   -o-transition: 0.5s linear;
   transition: 0.5s linear;
   color: black;
-
-
 }
 
 .contForm {
-
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,9 +111,7 @@
   border-radius: 20px;
 }
 
-
 .formWord {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,14 +121,13 @@
 }
 
 .formWords {
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
   padding: 4%;
-  font-size: calc(1em + .4vw);
+  font-size: calc(1em + 0.4vw);
 }
 
 @media (max-width: 1000px) {
@@ -148,7 +139,6 @@
   .formWords {
     width: 80%;
     margin: auto;
-
   }
 }
 

@@ -105,7 +105,7 @@ export default function CourseDetail(props) {
                     </Typography>
                     <Typography variant="body2" align='left' color="text.secondary">
                       {/* Duration: 38min */}
-                      Duracion:{" "+courseDetailed.duration}min
+                      Duracion:{" "+courseDetailed.duration}
                     </Typography>
                     <br />
                     <Typography

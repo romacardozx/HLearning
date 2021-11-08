@@ -118,3 +118,22 @@
   background-image: url('../../images/bk4.jpg');
   background-size: cover;
 }
+.prueba2{
+  background-color: rgb(37, 37, 37);
+  background-size: cover;
+}
+.icons{
+  color: white;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  font-size: 65px;
+}
+.title2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
