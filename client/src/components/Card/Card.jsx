@@ -8,16 +8,16 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
-import Popover from "@mui/material/Popover";
+/* import Popover from "@mui/material/Popover"; */
 import { Box } from "@mui/system";
 import { CardActionArea } from "@material-ui/core";
-import calculeScore from '../../utils/calculeScore';
+import calculeScore from "../../utils/calculeScore";
 
 export default function CourseCard({
   id,
   title,
   image,
-  description,
+  /*  description, */
   score,
   price,
 }) {
@@ -70,8 +70,8 @@ export default function CourseCard({
             ${price}
           </Typography>
         </CardActionArea>
-        <Popover
-          /*  style={{ width: 300 }} */
+        {/* <Popover
+           style={{ width: 300 }}
           id="mouse-over-popover"
           sx={{
             pointerEvents: "none",
@@ -94,7 +94,7 @@ export default function CourseCard({
           <Typography paragraph sx={{ p: 1 }}>
             {description}
           </Typography>
-        </Popover>
+        </Popover> */}
         <CardActions>
           <IconButton
             onClick={() => {

@@ -9,37 +9,32 @@ import styles from "./detail.module.css";
 // import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
-import { getDetailCourses } from '../../redux/actions/getDetailCourses';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect} from 'react';
-import Loading from '../Loading/Loading'
-
-
+import { getDetailCourses } from "../../redux/actions/getDetailCourses";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import Loading from "../Loading/Loading";
 
 export default function CourseDetail(props) {
-
   const dispatch = useDispatch();
   const { id } = useParams();
 
+  const courseDetailed = useSelector(
+    (state) => state.getDetails.getCourseDetail
+  );
+  console.log(courseDetailed);
 
-  const courseDetailed = useSelector((state) => state.getDetails.getCourseDetail)
-  console.log(courseDetailed)
-
-
-    useEffect(() => { 
-        dispatch(getDetailCourses(id)) // eslint-disable-next-line
-    },[dispatch]);
-
-
+  useEffect(() => {
+    dispatch(getDetailCourses(id)); // eslint-disable-next-line
+  }, [dispatch]);
 
   return (
     <div>
       <div className={styles.bkg}>
         <div>
-        <NavBar/> <br />
+          <NavBar /> <br />
           <br />
-          <br/>
-        </div> 
+          <br />
+        </div>
         {Object.keys(courseDetailed).length ? (
         <div>
           <Paper
@@ -92,16 +87,57 @@ export default function CourseDetail(props) {
                     </Typography>
                   </Grid>
                 </Grid>
-                <Grid item>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Typography
+                        variant="body2"
+                        align="left"
+                        color="text.secondary"
+                      >
+                        {courseDetailed.categories.map((el) => el.name + " ")}
+                      </Typography>
+                      <Typography
+                        gutterBottom
+                        variant="h4"
+                        component="div"
+                        textAlign="center"
+                      >
+                        {courseDetailed.title}
+                      </Typography>
+                      <Typography variant="h6" gutterBottom textAlign="center">
+                        {courseDetailed.description}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        align="left"
+                        color="text.secondary"
+                      ></Typography>
+                      <br />
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        align="left"
+                      ></Typography>
+                    </Grid>
+                    <Grid item align="left">
+                      <Typography
+                        sx={{ cursor: "pointer" }}
+                        variant="body2"
+                      ></Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid item></Grid>
                 </Grid>
               </Grid>
-            </Grid>
-          </Paper>
-          <br />
-          <br />
-          <br/>
-        </div>) : <Loading />
-           }
+            </Paper>
+            <br />
+            <br />
+            <br />
+          </div>
+        ) : (
+          <Loading />
+        )}
         <Footer />
       </div>
     </div>

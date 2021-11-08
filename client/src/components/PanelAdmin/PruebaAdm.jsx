@@ -24,3 +24,4 @@ export default function PruebaAdm(){
         </div>
     )
 }
+

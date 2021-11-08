@@ -2,6 +2,8 @@ import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { FieldArray, Formik } from "formik";
+import swal from 'sweetalert';
+
 import axios from "axios";
 import * as Yup from "yup";
 // import Input from "@mui/material/Input"
@@ -14,7 +16,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem } from "@mui/material";
-import zIndex from "@mui/material/styles/zIndex";
 // import Select from '@material-ui/core/Select';
 import CreateCategory from './CreateCategory';
 
@@ -34,7 +35,7 @@ const schemaValidate = Yup.object().shape({
       .required("Requiere un precio"),
         img: Yup.string()
       .required("Requiere una imagen"),
-    category: Yup.string()
+    categories: Yup.string()
       .min(1, "Se necesita al menos una categoria")
       .required("Eliga una categoria"),
     // videos: Yup.array()
@@ -47,7 +48,7 @@ const initValues = {
   duration: "",
   price: "",
   img: "",
-  category: "",
+  categories: "",
   videos: [
     {
       name: "",
@@ -77,16 +78,16 @@ function CreateCourse() {
 
   const [currency, setCurrency] = useState("");
 
-//   const handleSelect = (event) => {
-//       event.target.value.toString()
-//     setCurrency(event.target.value);
-//   };
+  //   const handleSelect = (event) => {
+  //       event.target.value.toString()
+  //     setCurrency(event.target.value);
+  //   };
   // console.log(handle,"CATEGORIA QUE TOMA EL HANDLE")
-    // console.log(currency, "categorias");
+  // console.log(currency, "categorias");
 
-//   const handleSubmit = (values) => {
-//     values.category = currency;
-//   };
+  //   const handleSubmit = (values) => {
+  //     values.category = currency;
+  //   };
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -97,17 +98,26 @@ function CreateCourse() {
       <Formik
         initialValues={initValues}
         validationSchema={schemaValidate}
-        onSubmit={ async (values) => {
+        onSubmit={ async (values, {resetForm}) => {
             console.log(values)
             try {
                 const response = await axios.post('/courses/createCourse', values)   
-                console.log(response) 
+                console.log(response);
+                swal("Curso Creado!", "Presione para continuar", "success");
+                resetForm();
             } catch (error) {
                 console.log(error)
             }
         }}
       >
-        {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        }) => (
           <Container sx={{ marginBottom: 10 }} maxWidth="lg">
             <Paper elevation={1}>
               {/* <Form >   */}
@@ -191,13 +201,13 @@ function CreateCourse() {
                 <div>
                   <TextField
                     select
-                    name="category"
-                    label="Category"
+                    name="categories"
+                    label="Categories"
                     value={currency}
                     onChange={handleChange}
-                    helperText={errors.category}
+                    helperText={errors.categories}
                     error={Boolean(
-                        touched.category && errors.category
+                        touched.categories && errors.categories
                     )}
                   >
                     {currencies?.map((option) => (
