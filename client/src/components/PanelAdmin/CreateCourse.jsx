@@ -77,16 +77,16 @@ function CreateCourse() {
 
   const [currency, setCurrency] = useState("");
 
-//   const handleSelect = (event) => {
-//       event.target.value.toString()
-//     setCurrency(event.target.value);
-//   };
+  //   const handleSelect = (event) => {
+  //       event.target.value.toString()
+  //     setCurrency(event.target.value);
+  //   };
   // console.log(handle,"CATEGORIA QUE TOMA EL HANDLE")
-    // console.log(currency, "categorias");
+  // console.log(currency, "categorias");
 
-//   const handleSubmit = (values) => {
-//     values.category = currency;
-//   };
+  //   const handleSubmit = (values) => {
+  //     values.category = currency;
+  //   };
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -109,7 +109,14 @@ function CreateCourse() {
             }
         }}
       >
-        {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        }) => (
           <Container sx={{ marginBottom: 10 }} maxWidth="lg">
             <Paper elevation={1}>
               {/* <Form >   */}

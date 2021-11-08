@@ -8,8 +8,8 @@ import {
   NavBtnLink,
 } from "./NavbarElements";
 import Logo from "../../images/Hlearning.png";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import Account from "./Account";
+/* import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import Account from "./Account"; */
 /* import { Button } from "@mui/material"; */
 
 const Navbar = () => {
@@ -34,12 +34,15 @@ const Navbar = () => {
           </NavLink>
           {/* <NavLink to="/user">
             <AddShoppingCartIcon />
-          </NavLink> */}
+        </NavLink> */}
         </NavMenu>
 
         <NavBtn>
           <NavBtnLink to="/login">Iniciar Sesión</NavBtnLink>
         </NavBtn>
+        <NavLink to="/prueba">
+          <span class="material-icons-outlined">supervisor_account</span>
+        </NavLink>
         {/*  <Account /> */}
       </Nav>
     </>

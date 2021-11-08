@@ -90,9 +90,27 @@ export default function Courses() {
                 </>
               ) : (
                 <Grid>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                   <Typography variant="h2" color="initial">
                     No se encontraron cursos con esa busqueda
                   </Typography>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                 </Grid>
               )}
             </Grid>
