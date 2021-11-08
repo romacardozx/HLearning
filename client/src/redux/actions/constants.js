@@ -5,6 +5,8 @@ export const GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES"
 export const GET_DETAIL_COURSES = "GET_DETAIL_COURSES"
 export const GET_COURSE_BY_NAME = "GET_COURSE_BY_NAME"
 export const GET_COURSES_SCORE = "GET_COURSES_SCORE"
+export const GET_USER = "GET_USER"
+export const GET_ORDER = "GET_ORDER"
 
 // ORDES //
 

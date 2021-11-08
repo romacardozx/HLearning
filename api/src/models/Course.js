@@ -16,6 +16,7 @@ const CourseSchema = new Schema({
     },
     score: [{
         type:Schema.Types.ObjectId,
+        ref: 'Review'
     }],
     duration: {
         type: String,  
@@ -38,8 +39,8 @@ const CourseSchema = new Schema({
     },
     students: [{
         type: Schema.Types.ObjectId,
-        ref: 'Users',
-        required: true //VER ACA SI DEBE IR DEFAULT []
+        ref: 'User',
+        required: true
     }],
     status: {
         type: String,

@@ -15,8 +15,8 @@ export default function CourseCard({
   id,
   title,
   image,
-  description,
-  /*  score, */
+  // description,
+  score,
   price,
 }) {
   return (
@@ -26,16 +26,19 @@ export default function CourseCard({
           <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
             {title}
           </Typography>
+          <Rating name="read-only" readOnly value={score} />
+          {/* <Rating name="half-rating-read" defaultValue={score.score} precision={0.5} /> */}
           <CardMedia
             title={title}
             component="img"
-            height="180"
+            height="150"
+            width="100"
             image={image}
             alt="img video"
           />
-          {/*  <CardContent>
-            <Rating name="read-only" readOnly value={score} />
-          </CardContent> */}
+          <CardContent>
+            {/* <Rating name="read-only" readOnly value={score} /> */}
+          </CardContent>
           <Typography
             textAlign="center"
             variant="h5"
@@ -44,10 +47,6 @@ export default function CourseCard({
           >
             ${price}
           </Typography>
-
-          <Typography paragraph sx={{ p: 1 }}>
-            {description}
-          </Typography>
         </CardActionArea>
         <CardActions>
           <IconButton
@@ -55,7 +54,7 @@ export default function CourseCard({
               alert("Agregado a tu carrito");
             }}
           >
-            <AddShoppingCartIcon />
+            <AddShoppingCartIcon/>
             <Typography> Agregar al carrito</Typography>
           </IconButton>
         </CardActions>
