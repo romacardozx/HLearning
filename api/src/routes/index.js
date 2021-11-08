@@ -11,7 +11,7 @@ const usersRoutes = require('../routes/usersRoutes')
 router.use('/users', usersRoutes);
 
 const ordersRoutes = require('../routes/orderRoutes')
-router.use('/order', ordersRoutes);
+router.use('/orders', ordersRoutes);
 
 const reviewsRoutes = require('../routes/reviewsRoutes')
 router.use('/reviews', reviewsRoutes);

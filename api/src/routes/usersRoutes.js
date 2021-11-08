@@ -24,6 +24,6 @@ router.post('/createUser', createUser);
 router.put("/updateUser/:id", updateUser);
 
 // ----> DELETE <----
-router.delete("/deleteUser/:id", deleteUser); 
+router.post("/delete/:id", deleteUser); 
 
 module.exports = router

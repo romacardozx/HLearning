@@ -24,6 +24,6 @@ router.post('/createReview', createReview);
 router.put("/update/:id", updateReview);
 
 // ----> DELETE <----
-router.delete("/delete/:id", deleteReview);
+router.post("/delete/:id", deleteReview);
 
 module.exports = router
