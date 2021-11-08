@@ -1,11 +1,9 @@
 import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
-import { FieldArray, Form, Formik } from "formik";
+import { FieldArray, Formik } from "formik";
+import axios from "axios";
 import * as Yup from "yup";
-// import Input from "@mui/material/Input"
-// import IconButton from '@mui/material/IconButton';
-// import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
@@ -14,39 +12,37 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem } from "@mui/material";
 import zIndex from "@mui/material/styles/zIndex";
+// import Input from "@mui/material/Input"
+// import IconButton from '@mui/material/IconButton';
+// import PhotoCamera from '@mui/icons-material/PhotoCamera';
 // import Select from '@material-ui/core/Select';
 
 const schemaValidate = Yup.object().shape({
-  //   title: Yup.string()
-  //     .min(8, "El titulo debe tener al menos 8 caracteres")
-  //     .max(25, "El maximo es de 25 caracteres")
-  //     .required("Debe agregar un titulo"),
-  //   description: Yup.string()
-  //     // .min(25, "La descripcion debe ser de al menos 25 caracteres")
-  //     .required("Debe agregar una descripcion"),
-  // score: Yup.string()
-  //     .min(1, "Must be at score")             donde esta en el form??? porque si descomento no anda submit
-  //     .max(5, "Must be score required")
-  //     .required("Debe agregar un score"),
-  //   duration: Yup.string()
-  //     .min(1, "Required must be at duration (1hs.)")
-  //     .required("Debe indicar la duracion aproximada"),
-  // price: Yup.number().positive()
-  //     .min(1000,"El precio debe ser mayor a $1000")
-  //     .required("Requiere un precio"),
-  // img: Yup.string()
-  //     .required("Requiere una imagen"),
-  // category: Yup.array()
-  //     .min(1, "Se necesita al menos una categoria")
-  //     .required("Eliga una categoria"),
-  // videos: Yup.array()
-  //     .min(1, "El curso debe poseer al menos un video")
+    title: Yup.string()
+      .min(8, "El titulo debe tener al menos 8 caracteres")
+      .max(25, "El maximo es de 25 caracteres")
+      .required("Debe agregar un titulo"),
+    description: Yup.string()
+      // .min(25, "La descripcion debe ser de al menos 25 caracteres")
+      .required("Debe agregar una descripcion"),
+    duration: Yup.string()
+      .min(1, "Required must be at duration (1hs.)")
+      .required("Debe indicar la duracion aproximada"),
+    price: Yup.number().positive()
+      .min(1000,"El precio debe ser mayor a $1000")
+      .required("Requiere un precio"),
+    img: Yup.string()
+      .required("Requiere una imagen"),
+    category: Yup.string()
+    //   .min(1, "Se necesita al menos una categoria")
+      .required("Eliga una categoria"),
+//   videos: Yup.array()
+//       .required("Se necesita al menos un video")
 });
 
 const initValues = {
   title: "",
   description: "",
-  score: "",
   duration: "",
   price: "",
   img: "",
@@ -100,8 +96,14 @@ function CreateCourse() {
       <Formik
         initialValues={initValues}
         validationSchema={schemaValidate}
-        onSubmit={(values) => {
+        onSubmit={ async (values) => {
             console.log(values)
+            try {
+                const response = await axios.post('/courses/createCourse', values)   
+                console.log(response) 
+            } catch (error) {
+                console.log(error)
+            }
         }}
       >
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
@@ -251,8 +253,6 @@ function CreateCourse() {
                                 // required
                                 onBlur={handleBlur}
                                 onChange={handleChange}
-                                helperText={errors.videos}
-                                error={Boolean(touched.videos && errors.videos)}
                               />
                             </div>
                             <div>
@@ -264,8 +264,6 @@ function CreateCourse() {
                                 // required
                                 onBlur={handleBlur}
                                 onChange={handleChange}
-                                helperText={errors.videos}
-                                error={Boolean(touched.videos && errors.videos)}
                               />
                             </div>
                             <Button
