@@ -79,15 +79,17 @@ function CreateCourse() {
   //   console.log(currencies, "currencies");
 
   const [currency, setCurrency] = useState("");
-  const handleSelect = (event) => {
-    setCurrency(event.target.value);
-  };
-  // console.log(handle,"CATEGORIA QUE TOMA EL HANDLE")
-  //   console.log(currency, "categorias");
 
-  const handleSubmit = (values) => {
-    values.category = currency;
-  };
+//   const handleSelect = (event) => {
+//       event.target.value.toString()
+//     setCurrency(event.target.value);
+//   };
+  // console.log(handle,"CATEGORIA QUE TOMA EL HANDLE")
+    // console.log(currency, "categorias");
+
+//   const handleSubmit = (values) => {
+//     values.category = currency;
+//   };
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -98,9 +100,11 @@ function CreateCourse() {
       <Formik
         initialValues={initValues}
         validationSchema={schemaValidate}
-        // onSubmit={handleSubmit}
+        onSubmit={(values) => {
+            console.log(values)
+        }}
       >
-        {({ values, errors, touched, handleChange, handleBlur }) => (
+        {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
           <Container sx={{ marginBottom: 10 }} maxWidth="lg">
             <Paper elevation={1}>
               {/* <Form >   */}
@@ -187,11 +191,11 @@ function CreateCourse() {
                     name="category"
                     label="Category"
                     value={currency}
-                    onChange={handleSelect}
-                    // helperText={errors.category}
-                    // error={Boolean(
-                    //     touched.category && errors.category
-                    // )}
+                    onChange={handleChange}
+                    helperText={errors.category}
+                    error={Boolean(
+                        touched.category && errors.category
+                    )}
                   >
                     {currencies?.map((option) => (
                       <MenuItem key={option.value} value={option.value}>
