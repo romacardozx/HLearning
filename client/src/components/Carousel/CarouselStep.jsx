@@ -10,28 +10,26 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
+
+
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: "San Francisco – Oakland Bay Bridge, United States",
     imgPath:
-      "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+      "https://i.imgur.com/B6h8XrJ.png",
   },
   {
-    label: "Bird",
     imgPath:
-      "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
+      "https://i.imgur.com/hZUlew0.png",
   },
   {
-    label: "Bali, Indonesia",
     imgPath:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
+      "https://i.imgur.com/dCGecDy.png",
   },
   {
-    label: "Goč, Serbia",
     imgPath:
-      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
+      "https://i.imgur.com/bA6FauC.png",
   },
 ];
 
@@ -53,20 +51,20 @@ export default function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 1600, flexGrow: 1 }}>
-      <Paper
+    <Box sx={{ maxWidth: 600, flexGrow: 1,}}> 
+      {/* <Paper
         square
-        elevation={0}
+        elevation={2}
         sx={{
           display: "flex",
           alignItems: "center",
           height: 50,
           pl: 2,
           bgcolor: "background.default",
-        }}
-      >
+        }}>
         <Typography>{images[activeStep].label}</Typography>
-      </Paper>
+      </Paper> */}
+      <br/>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -79,9 +77,9 @@ export default function SwipeableTextMobileStepper() {
               <Box
                 component="img"
                 sx={{
-                  height: 255,
+                  height: 400,
                   display: "block",
-                  maxWidth: 400,
+                  maxWidth: 600,
                   overflow: "hidden",
                   width: "100%",
                 }}
@@ -121,6 +119,7 @@ export default function SwipeableTextMobileStepper() {
           </Button>
         }
       />
-    </Box>
+      <br/>
+    </Box> 
   );
 }

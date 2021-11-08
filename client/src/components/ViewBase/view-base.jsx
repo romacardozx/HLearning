@@ -17,19 +17,19 @@ export default function ViewBase({ carousel, courses, steps }) {
         {carousel && <div className="carousel-container">{carousel}</div>}
       </div>
       <div className="title">
-        <h2>CURSOS DESTACADOS</h2>
+        <h2>⇩ CURSOS DESTACADOS ⇩</h2>
       </div>
       <div>
         <div>{courses}</div>
       </div>
       <div className="title">
-        <h2>PASO A PASO</h2>
+        <h2>⬇ ¿COMO USAR HLEARNING? ⬇</h2>
       </div>
-      <div>
-        <div>{steps}</div>
+      <div align="center">
+        <div className="prueba">{steps}</div>
       </div>
       <div className="title">
-        <h2>EMPRESAS ASOCIADAS</h2>
+        <h2>⇩ EMPRESAS ASOCIADAS ⇩</h2>
       </div>
       <div className="prueba">
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
