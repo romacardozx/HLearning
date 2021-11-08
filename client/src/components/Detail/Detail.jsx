@@ -21,6 +21,7 @@ import { useEffect} from 'react';
 import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
 import Button from '@mui/material/Button';
+import calculeScore from '../../utils/calculeScore';
 
 
 const Img = styled("img")({
@@ -88,7 +89,7 @@ export default function CourseDetail(props) {
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
-                    <Rating name="read-only" readOnly value={courseDetailed.score} />
+                    <Rating name="read-only" readOnly value={calculeScore(courseDetailed.score)} />
                     <Typography gutterBottom variant="h4" component="div">
                       {/* Tailwind Just in Time */}
                       {courseDetailed.title}
