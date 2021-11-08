@@ -40,7 +40,6 @@ export default function CoursesTop() {
                       id={c._id}
                       title={c.title}
                       image={c.img}
-                      // description={c.description}
                       score={c.score}
                       price={c.price}
                     />
