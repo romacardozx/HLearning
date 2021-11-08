@@ -55,6 +55,8 @@ export default function Frequent() {
             mas por estar aquí, por visitarnos y por elegirnos.
           </p>
         </div>
+        <br/><br/>
+        <br/>
         <Footer />
       </div>
     </div>
