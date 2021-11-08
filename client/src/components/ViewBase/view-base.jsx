@@ -1,7 +1,7 @@
 import "./styleViewBase.css";
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
-import Paso from "../../images/Paso.png";
+
 
 export default function ViewBase({ carousel, courses, steps }) {
   return (
@@ -28,10 +28,12 @@ export default function ViewBase({ carousel, courses, steps }) {
       <div>
         <div>{steps}</div>
       </div>
-
-      {/* <div className="body-container">
-        <img src={Paso} alt="" width="1390px" height="900px" />
-      </div> */}
+      <div className="title">
+        <h2>EMPRESAS ASOCIADAS</h2>
+      </div>
+      <div className="prueba">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </div>
       <div className="footer-container">
         <Footer />
       </div>
