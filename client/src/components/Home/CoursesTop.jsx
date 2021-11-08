@@ -40,7 +40,7 @@ export default function CoursesTop() {
                       title={c.title}
                       image={c.img}
                       // description={c.description}
-                      score={c.score.score}
+                      score={c.score}
                       price={c.price}
                     />
                   </Item>
