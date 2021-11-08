@@ -8,11 +8,12 @@ import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Loading from "../Loading/Loading";
 import { getAllCourses } from "../../redux/actions/getAllCourses";
+import {orderByScore} from '../../redux/actions/orderByScore'
 
 export default function CoursesTop() {
   const dispatch = useDispatch();
 
-  const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
+  const coursesTop = useSelector((state) => state.getCourses.getAllCourses);
   console.log("VERRRRRR",coursesTop)
   const fourCourses = coursesTop.slice(1, 5); 
 
@@ -22,9 +23,10 @@ export default function CoursesTop() {
   }));
 
   useEffect(() => {
-    dispatch(getCoursesScore(5));
-    dispatch(getAllCourses());
+    dispatch(orderByScore("Asc"));   
   }, [dispatch]);
+
+  
 
   return (
     <div className="container-slider">
