@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
+/* import CardContent from "@mui/material/CardContent"; */
 import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -10,7 +10,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 import { Box } from "@mui/system";
 import { CardActionArea } from "@material-ui/core";
-import calculeScore from "../../utils/calculeScore";
+/* import calculeScore from "../../utils/calculeScore"; */
 
 export default function CourseCard({
   id,

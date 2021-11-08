@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { getUserById } from "../../redux/actions/getUserById";
@@ -8,7 +8,7 @@ import { getOrderById } from "../../redux/actions/getOrderById";
 import s from "../Contact/contact.module.css";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
-import { CardActionArea } from "@material-ui/core";
+/* import { CardActionArea } from "@material-ui/core"; */
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";

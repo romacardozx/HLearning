@@ -8,8 +8,8 @@ import {
   NavBtnLink,
 } from "./NavbarElements";
 import Logo from "../../images/Hlearning.png";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import Account from "./Account";
+/* import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import Account from "./Account"; */
 /* import { Button } from "@mui/material"; */
 
 const Navbar = () => {

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUserById } from "../../redux/actions/getUserById";
 /* import { getOrderById } from "../../redux/actions/getOrderById"; */
-import { getCourseByName } from "../../redux/actions/getCourseByName";
+/* import { getCourseByName } from "../../redux/actions/getCourseByName"; */
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 //import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
-import Rating from "@mui/material/Rating";
+/* import Rating from "@mui/material/Rating"; */
 import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
