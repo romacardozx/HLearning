@@ -21,6 +21,7 @@ import { useEffect} from 'react';
 import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
 import Button from '@mui/material/Button';
+import calculeScore from '../../utils/calculeScore';
 
 
 const Img = styled("img")({
@@ -51,7 +52,9 @@ export default function CourseDetail(props) {
     <div>
       <div className={styles.bkg}>
         <div>
-        <NavBar/> <br/>
+        <NavBar/> <br />
+          <br />
+          <br/><br/><br/>
         </div> 
         {Object.keys(courseDetailed).length ? (
         <div>
@@ -86,7 +89,7 @@ export default function CourseDetail(props) {
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
-                    <Rating name="read-only" readOnly value={courseDetailed.score} />
+                    <Rating name="read-only" readOnly value={calculeScore(courseDetailed.score)} />
                     <Typography gutterBottom variant="h4" component="div">
                       {/* Tailwind Just in Time */}
                       {courseDetailed.title}
@@ -102,7 +105,7 @@ export default function CourseDetail(props) {
                     </Typography>
                     <Typography variant="body2" align='left' color="text.secondary">
                       {/* Duration: 38min */}
-                      Duration:{" "+courseDetailed.duration}min
+                      Duracion:{" "+courseDetailed.duration}min
                     </Typography>
                     <br />
                     <Typography
@@ -147,6 +150,7 @@ export default function CourseDetail(props) {
           </Paper>
           <br />
           <br />
+          <br/><br/><br/>
         </div>) : <Loading />
            }
         <Footer />

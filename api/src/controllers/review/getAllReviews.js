@@ -1,12 +1,16 @@
 const Review = require('../../models/Review');
+const User = require('../../models/User');
+const Course = require('../../models/Course');
 
-module.exports = async (req, res, next) => {
+module.exports = async (_req, res, next) => {
     try {
-        let review = await Review.find(); //Saque esto dentro del Find que rompia la Ruta {course: "_id"}(yamila)
-        if(review) {
+        let review = await Review.find({status: "Confirmed"});
+        if(review.length > 0) {
+            review = await User.populate(review, {path: "user"});
+            review = await Course.populate(review, {path: "course"});
             res.json(review);
         } else {
-            res.json({msg: "The review doesn't exist"});
+            res.json({msg: "There're any review available"});
         }
     } catch(err) {
         console.log(err);

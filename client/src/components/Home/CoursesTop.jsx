@@ -13,7 +13,8 @@ export default function CoursesTop() {
   const dispatch = useDispatch();
 
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
-  const fourCourses = coursesTop.slice(1, 5);
+  console.log("VERRRRRR",coursesTop)
+  const fourCourses = coursesTop.slice(1, 5); 
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -27,6 +28,7 @@ export default function CoursesTop() {
 
   return (
     <div className="container-slider">
+      <br/>
       <Grid container align="center">
         {fourCourses.length >= 0 ? (
           <>
@@ -38,8 +40,7 @@ export default function CoursesTop() {
                       id={c._id}
                       title={c.title}
                       image={c.img}
-                      // description={c.description}
-                      // score={c.score}
+                      score={c.score}
                       price={c.price}
                     />
                   </Item>

@@ -39,8 +39,8 @@ const CourseSchema = new Schema({
     },
     students: [{
         type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+        ref: 'Users',
+        // required: true VER ACA SI DEBE IR DEFAULT [] (esto no lo descomenten por que no anda el create si no. Gracias!)
     }],
     status: {
         type: String,

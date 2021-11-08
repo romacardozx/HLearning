@@ -5,7 +5,7 @@ const Review = require("../../models/Review");
 module.exports = async (req, res, next) => {
   const { id } = req.params;
   try {
-    let user = await User.findById({ _id: id, status: "Confirmed" });
+    let user = await User.findOne({ _id: id, status: "Confirmed" });
     if (user) {
       user = await Course.populate(user, { path: "courses" });
       user = await Review.populate(user, { path: "reviews" });
