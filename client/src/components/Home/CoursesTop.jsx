@@ -13,7 +13,6 @@ export default function CoursesTop() {
   const dispatch = useDispatch();
 
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
-  console.log("VERRRRRR",coursesTop)
   const fourCourses = coursesTop.slice(1, 5); 
 
   const Item = styled(Paper)(({ theme }) => ({

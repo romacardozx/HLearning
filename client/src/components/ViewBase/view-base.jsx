@@ -19,9 +19,9 @@ export default function ViewBase({ carousel, courses, steps }) {
       <div className="title">
         <h2>⇩ CURSOS DESTACADOS ⇩</h2>
       </div>
-      <div>
+      {/* <div>
         <div>{courses}</div>
-      </div>
+      </div> */}
       <div className="title">
         <h2>⬇ ¿COMO USAR HLEARNING? ⬇</h2>
       </div>
