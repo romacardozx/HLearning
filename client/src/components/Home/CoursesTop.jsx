@@ -15,7 +15,7 @@ export default function CoursesTop() {
 
   const coursesTop = useSelector((state) => state.getCourses.getAllCourses);
   console.log("VERRRRRR", coursesTop);
-  const fourCourses = coursesTop.slice(1, 7);
+  const fourCourses = coursesTop.slice(1, 6);
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,

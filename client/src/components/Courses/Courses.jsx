@@ -45,7 +45,6 @@ export default function Courses() {
         <NavBar />
       </div>
       <br />
-      <br />
       <div>
         <Grid container direction="column" alignItems="center">
           <SearchBar courses={allCourses} />
