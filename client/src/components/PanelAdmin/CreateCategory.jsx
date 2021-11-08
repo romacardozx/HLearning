@@ -9,6 +9,9 @@ import { Grid } from '@mui/material';
 // import Button from '@mui/material/Button';
 // import { useDispatch, useSelector } from "react-redux";
 // import { getAllCategories } from '../../redux/actions/getAllCategories.js'
+import Button from "@mui/material/Button";
+
+
 
 
 /* function BasicButtons() { 
@@ -34,14 +37,23 @@ export default function CreateCategory() {
   //       dispatch(getAllCategories());
   //     },[dispatch]);
 
+    //   function handleSubmit(e){
+    //     e.preventDefault();
+    //     console.log(input)
+    //     dispatch(createCategory(input))
+    //     alert('La categoria ha sido creada')
+    //     setInput({
+    //         name: ""
+    //     })
+    // }
 
   return (
     <Paper
     sx={{
-      p: 2,
+      p: 3,
       margin: "auto",
       maxWidth: 400,
-      elevation: 24,
+      elevation: 0,
       flexGrow: 50,
     }}
   >
@@ -65,14 +77,21 @@ export default function CreateCategory() {
           placeholder="Nombre de la categoria"
         />
         </div>
-    {/* <div>
-    <Button variant="contained" size="small">Agregar categoría</Button>
-    <button type="submit">Enviar Curso</button>
-                        {setFormSent && <p> Curso enviado con exito!</p>}
-    </div> */}
+           <Button
+                  sx={{
+                    marginTop: 5,
+                    marginBottom: 10,
+                    width: "17rem",
+                    height: "3rem",
+                  }}
+                  type="submit"
+                  variant="contained"
+                >
+                  Crear Categoria
+                </Button>
     </Box>
     </Grid>
-    </Paper>
+    </Paper>  
   );
 }
 

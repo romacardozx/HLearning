@@ -2,8 +2,6 @@ import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { FieldArray, Formik } from "formik";
-import swal from 'sweetalert';
-
 import axios from "axios";
 import * as Yup from "yup";
 // import Input from "@mui/material/Input"
@@ -16,46 +14,18 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem } from "@mui/material";
+import zIndex from "@mui/material/styles/zIndex";
 // import Select from '@material-ui/core/Select';
-import CreateCategory from './CreateCategory';
 
 const schemaValidate = Yup.object().shape({
     title: Yup.string()
       .min(8, "El titulo debe tener al menos 8 caracteres")
       .max(25, "El maximo es de 25 caracteres")
       .required("Debe agregar un titulo"),
-    description: Yup.string()
-      // .min(25, "La descripcion debe ser de al menos 25 caracteres")
-      .required("Debe agregar una descripcion"),
-    duration: Yup.string()
-      .min(1, "Required must be at duration (1hs.)")
-      .required("Debe indicar la duracion aproximada"),
-    price: Yup.number().positive()
-      .min(1000,"El precio debe ser mayor a $1000")
-      .required("Requiere un precio"),
-        img: Yup.string()
-      .required("Requiere una imagen"),
-    categories: Yup.string()
-      .min(1, "Se necesita al menos una categoria")
-      .required("Eliga una categoria"),
-    // videos: Yup.array()
-    //   .required("Se necesita al menos un video")
 });
 
 const initValues = {
   title: "",
-  description: "",
-  duration: "",
-  price: "",
-  img: "",
-  categories: "",
-  videos: [
-    {
-      name: "",
-      url: "",
-      duration: "",
-    },
-  ],
 };
 
 const categories = (allcategories) => {
@@ -68,26 +38,26 @@ const categories = (allcategories) => {
 
 function CreateCourse() {
   const dispatch = useDispatch();
-  const getAllCategory = useSelector(
-    (state) => state.getCategories.getAllCategories
-  );
+//   const getAllCategory = useSelector(
+//     (state) => state.getCategories.getAllCategories
+ 
   //Cargo las categorias de GetAllCategories acomodadas en currencies
-  let currencies = categories(getAllCategory);
+//   let currencies = categories(getAllCategory);
 
   //   console.log(currencies, "currencies");
 
   const [currency, setCurrency] = useState("");
 
-  //   const handleSelect = (event) => {
-  //       event.target.value.toString()
-  //     setCurrency(event.target.value);
-  //   };
+//   const handleSelect = (event) => {
+//       event.target.value.toString()
+//     setCurrency(event.target.value);
+//   };
   // console.log(handle,"CATEGORIA QUE TOMA EL HANDLE")
-  // console.log(currency, "categorias");
+    // console.log(currency, "categorias");
 
-  //   const handleSubmit = (values) => {
-  //     values.category = currency;
-  //   };
+//   const handleSubmit = (values) => {
+//     values.category = currency;
+//   };
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -98,26 +68,17 @@ function CreateCourse() {
       <Formik
         initialValues={initValues}
         validationSchema={schemaValidate}
-        onSubmit={ async (values, {resetForm}) => {
+        onSubmit={ async (values) => {
             console.log(values)
             try {
                 const response = await axios.post('/courses/createCourse', values)   
-                console.log(response);
-                swal("Curso Creado!", "Presione para continuar", "success");
-                resetForm();
+                console.log(response) 
             } catch (error) {
                 console.log(error)
             }
         }}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        }) => (
+        {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
           <Container sx={{ marginBottom: 10 }} maxWidth="lg">
             <Paper elevation={1}>
               {/* <Form >   */}
@@ -201,13 +162,13 @@ function CreateCourse() {
                 <div>
                   <TextField
                     select
-                    name="categories"
-                    label="Categories"
+                    name="category"
+                    label="Category"
                     value={currency}
                     onChange={handleChange}
-                    helperText={errors.categories}
+                    helperText={errors.category}
                     error={Boolean(
-                        touched.categories && errors.categories
+                        touched.category && errors.category
                     )}
                   >
                     {currencies?.map((option) => (
@@ -315,7 +276,6 @@ function CreateCourse() {
                 >
                   Enviar Curso
                 </Button>
-                <CreateCategory/>
               </Box>
               {/* </Form> */}
             </Paper>

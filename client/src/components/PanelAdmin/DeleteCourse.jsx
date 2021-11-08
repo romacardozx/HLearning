@@ -126,7 +126,7 @@ export default function Courses() {
                             score={c.score}
                           />
                           <Typography>
-                          <Button variant="contained" size="medium" onClick={() => handleDelete(i)}>
+                          <Button variant="contained" size="medium" onClick={() => handleDelete(c._id)}>
                            Eliminar curso
                           </Button>
                           </Typography>
