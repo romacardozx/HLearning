@@ -4,18 +4,18 @@ const Review = require("../../models/Review");
 const User = require("../../models/User");
 
 module.exports = async (req, res, next) => {
-  const { id } = req.params; 
+  const { id } = req.params;
   try {
-    let course = await Course.findById({_id:id, status: "Confirmed"});
-    course = await Category.populate(course,{path:'categories'});
-    course = await Review.populate(course, {path: "score"});
-    course = await User.populate(course, {path: "students"});
-    if(course) {
+    let course = await Course.findById({ _id: id, status: "Confirmed" });
+    if (course) {
+      course = await Category.populate(course, { path: "categories" });
+      course = await Review.populate(course, { path: "score" });
+      course = await User.populate(course, {path: "students"}); 
       res.json(course);
     } else {
-      res.json({msg: "There's any course with that id"});
+      res.json({ msg: "There's any course with that id" });
     }
-    } catch (err) {    
+  } catch (err) {
     console.log(err);
     next(err);
   }

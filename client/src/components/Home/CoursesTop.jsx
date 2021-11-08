@@ -6,12 +6,11 @@ import Grid from "@mui/material/Grid";
 // import Typography from "@mui/material/Typography";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import Loading from '../Loading/Loading'
-import {getAllCourses, setAllCourses} from '../../redux/actions/getAllCourses'
+import Loading from "../Loading/Loading";
+import { getAllCourses } from "../../redux/actions/getAllCourses";
 
 export default function CoursesTop() {
   const dispatch = useDispatch();
-
 
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
   console.log("VERRRRRR",coursesTop)
@@ -22,10 +21,10 @@ export default function CoursesTop() {
     padding: theme.spacing(0.5),
   }));
 
-   useEffect(() => {
+  useEffect(() => {
     dispatch(getCoursesScore(5));
-    dispatch(getAllCourses())
-  }, [dispatch]); 
+    dispatch(getAllCourses());
+  }, [dispatch]);
 
   return (
     <div className="container-slider">
@@ -35,7 +34,7 @@ export default function CoursesTop() {
             {fourCourses?.map((c, i) => (
               <div key={i}>
                 <Grid item xs={2} sm={4} md={4}>
-                  <Item sx={{ minWidth: 270 }} align='center'>
+                  <Item sx={{ minWidth: 270 }} align="center">
                     <CardTops
                       id={c._id}
                       title={c.title}
@@ -49,7 +48,9 @@ export default function CoursesTop() {
               </div>
             ))}
           </>
-        ) : <Loading />}
+        ) : (
+          <Loading />
+        )}
       </Grid>
       <br />
     </div>
