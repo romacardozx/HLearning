@@ -12,6 +12,7 @@ const Order = require("./src/models/Order");
 const orders = require ('./src/utils/mockUps/orderConObjectId.json');
 const Course = require("./src/models/Course");
 const courses = require('./src/utils/mockUps/coursesConObjectId.json')
+const morgan = require("morgan");
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "production"}`,
@@ -24,6 +25,9 @@ app.use(
     origin: "http://localhost:3000",
   })
 );
+
+//Morgan
+app.use(morgan(':method :status :url'))
 
 //Habilitar el parseo de los datos
 app.use(express.json());
