@@ -1,28 +1,47 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+/* import { useParams } from "react-router-dom"; */
+import { Link } from "react-router-dom";
+import { getUserById } from "../../redux/actions/getUserById";
+/* import { getOrderById } from "../../redux/actions/getOrderById"; */
+import { getCourseByName } from "../../redux/actions/getCourseByName";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 //import { Link } from "react-router-dom";
+import CardMedia from "@mui/material/CardMedia";
+import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
+import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
+import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import EditIcon from "@mui/icons-material/Edit";
+/* import IconButton from "@mui/material/IconButton";
+import EditIcon from "@mui/icons-material/Edit"; */
 import Avatar from "@mui/material/Avatar";
+import { CardActionArea } from "@material-ui/core";
+/* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
 //import Button from "@mui/material/Button";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
-  const { id } = useParams();
-  /* const purchasedCourse = useSelector((state) => state.getOrders.getOrders); */
+  /* const { id } = useParams(); */
+  const User = useSelector((state) => state.getUser.getUserId);
+  /* const course = User.courses.title; */
 
-  /* useEffect(() => {
-    dispatch(getOrderById(id));
-    eslint - disable - next - line;
-  }, [dispatch]); */
+  useEffect(() => {
+    dispatch(getUserById("6186d90a521fdc29a93ec257"));
+    /*  dispatch(getOrderById("6187494b521fdc29a93ec291")); */
+    /*  dispatch(getCourseByName(course)); */
+    /* dispatch(getAllCourses()); */
+  }, [dispatch]);
+
+  /* const getOrderId = useSelector((state) => state.getOrder.getOrderId); */
+  /* const getCourseName = useSelector((state) => state.getCourses.getAllCourses); */
+  /* console.log("USER", User);*/
+  console.log("COURSES", User.courses);
+
   return (
     <div>
       <NavBar />
@@ -84,8 +103,8 @@ export default function UserProfile() {
                 >
                   <Avatar
                     sx={{ width: 200, height: 200 }}
-                    /* src={user.profilePicture}
-                    alt={user.username} */
+                    src={User.pictures}
+                    alt={User.name}
                   />
                   <Typography
                     sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
@@ -93,24 +112,15 @@ export default function UserProfile() {
                     variant="body1"
                     color="text.primary"
                   >
-                    <b> Nombre:</b> {/* {user.name} {user.lastName} */}
+                    <b> Nombre: {User.name}</b>
                   </Typography>
-                  {/* <Typography
-                    sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Username: </b> {user.username}
-                  </Typography> */}
                   <Typography
                     sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
                     border="1px solid gray"
                     variant="body1"
                     color="text.primary"
                   >
-                    <b>Email:</b>
-                    {/*  {user.email} */}
+                    <b>Email: {User.email}</b>
                   </Typography>
                 </Box>
 
@@ -136,79 +146,55 @@ export default function UserProfile() {
                     gap={5}
                     mb={5}
                   >
-                    {/* {ownerHouses?.length ? (
-                  ownerHouses.map((house, idx) => (
-                    <HouseCard
-                      key={idx}
-                      house={house}
-                      handleOpen={handleOpenHouse}
-                      handleClose={handleCloseHouse}
-                      handleCurrentHouse={setCurrentHouse}
-                    />
-                  ))
-                ) : (
-                  <Button
-                    component={Link}
-                    to="/announcement"
-                    variant="outlined"
-                  >
-                    Post your home!
-                  </Button>
-                )} */}
+                    {User.courses?.length ? (
+                      User.courses.map((c, index) => (
+                        <Card
+                          key={index}
+                          sx={{ maxWidth: 270, minWidth: 100 }}
+                          elevation={6}
+                        >
+                          <CardActionArea
+                            component={Link}
+                            to={`/mycourses/${User.courses._id}`}
+                          >
+                            <Typography
+                              sx={{ mb: 1 }}
+                              paddingLeft={1}
+                              variant="h6"
+                            >
+                              {User.courses.title}
+                            </Typography>
+                            <CardMedia
+                              component="img"
+                              height="180"
+                              image={User.courses.img}
+                              alt="img video"
+                            />
+                            <CardContent>
+                              {/*  <Rating name="read-only" readOnly value={score} /> */}
+                            </CardContent>
+                            <Typography
+                              textAlign="center"
+                              variant="h5"
+                              component="div"
+                              noWrap={true}
+                            >
+                              ${User.courses.price}
+                            </Typography>
+                          </CardActionArea>
+                        </Card>
+                      ))
+                    ) : (
+                      <Typography
+                        textAlign="center"
+                        variant="h5"
+                        component="div"
+                        noWrap={true}
+                      >
+                        NO HAS COMPRANDO NINGUN CURSO
+                      </Typography>
+                    )}
                   </Box>
-                  {/* <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b>Description:</b> {user.description}
-                  </Typography>
-
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Date of Birth:</b> {user.dateOfBirth}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> E-Mail:</b>
-                     {user.email}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Phone Number:</b>
-                     {user.phoneNumber}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Languages Spoken:</b>{" "}
-                    {user.languagesSpoken?.join(", ")}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Points: </b>
-                     {user.points}
-                  </Typography> */}
                 </Box>
               </Box>
               <hr style={{ width: "90%" }} />

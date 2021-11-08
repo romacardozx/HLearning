@@ -34,12 +34,15 @@ const Navbar = () => {
           </NavLink>
           {/* <NavLink to="/user">
             <AddShoppingCartIcon />
-          </NavLink> */}
+        </NavLink> */}
         </NavMenu>
 
         <NavBtn>
           <NavBtnLink to="/login">Iniciar Sesión</NavBtnLink>
         </NavBtn>
+        <NavLink to="/prueba">
+          <span class="material-icons-outlined">supervisor_account</span>
+        </NavLink>
         {/*  <Account /> */}
       </Nav>
     </>

@@ -1,49 +1,48 @@
-import React from 'react'
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import { getUserById } from '../../redux/actions/getUserById';
-import { getOrderById } from '../../redux/actions/getOrderById';
+import { getUserById } from "../../redux/actions/getUserById";
+import { getOrderById } from "../../redux/actions/getOrderById";
 //import { getCourseByName } from '../../redux/actions/getCourseByName';
 
 export default function Cart() {
   const dispatch = useDispatch();
-  
-  
-  useEffect(() => { 
-    dispatch(getUserById("6186d90a521fdc29a93ec257")) 
-    dispatch(getOrderById("6187494b521fdc29a93ec291")) 
-   // dispatch(getCourseByName("Vue 3 with TypeScript Jump Start")) 
-},[dispatch]);  
 
-const getUserId = useSelector(state => state.getUser.getUserId)
-const getOrderId = useSelector(state => state.getOrder.getOrderId)
-//const getAllCourses = useSelector(state => state.getCourses.getAllCourses)
+  useEffect(() => {
+    dispatch(getUserById("6186d90a521fdc29a93ec257"));
+    dispatch(getOrderById("6187494b521fdc29a93ec291"));
+    // dispatch(getCourseByName("Vue 3 with TypeScript Jump Start"))
+  }, [dispatch]);
 
-console.log(getUserId, 'user traido por id');
-console.log(getOrderId, 'order traida por id');
-//console.log(getAllCourses, 'order traida por id');
+  const getUserId = useSelector((state) => state.getUser.getUserId);
+  const getOrderId = useSelector((state) => state.getOrder.getOrderId);
+  //const getAllCourses = useSelector(state => state.getCourses.getAllCourses)
 
+  console.log(getUserId, "user traido por id");
+  console.log(getOrderId, "order traida por id");
+  //console.log(getAllCourses, 'order traida por id');
 
-
-
-    return (
+  return (
     <div>
-        <div>
+      <div>
         <NavBar />
-        </div>
-        <h2>{getUserId.name}</h2>
-        <h2>2700$</h2>
-        <h2>00:59:26 ------- es el unico que viene de json de courses</h2>
-        <h2>Vue 3 with TypeScript Jump Start</h2>
-        <img src={getOrderId.img} alt="" height='200px' />
-        <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_MP/280231858061-210518-mla-transforma-tu-sitio-web-con-el-checkout-de-mercado-pago-card-01.png" alt="" />
-        <br />
-        
-        <Footer /> 
+      </div>
+      <h2>{getUserId.name}</h2>
+      <h2>2700$</h2>
+      <h2>00:59:26 ------- es el unico que viene de json de courses</h2>
+      <h2>Vue 3 with TypeScript Jump Start</h2>
+      <img src={getOrderId.img} alt="" height="200px" />
+      <img
+        src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_MP/280231858061-210518-mla-transforma-tu-sitio-web-con-el-checkout-de-mercado-pago-card-01.png"
+        alt=""
+      />
+      <br />
+
+      <Footer />
     </div>
-    )
+  );
 }
 
 // json del order
@@ -55,7 +54,7 @@ console.log(getOrderId, 'order traida por id');
 //     "payment": true
 //  },
 
-// json de courses 
+// json de courses
 // {
 //     "_id": {
 //       "$oid": "61844faf2d9146900b650f1e"
