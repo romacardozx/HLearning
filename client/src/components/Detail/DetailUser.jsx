@@ -1,5 +1,4 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
@@ -13,22 +12,15 @@ import { useParams } from "react-router-dom";
 import { getDetailCourses } from '../../redux/actions/getDetailCourses';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
-import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
 
 
-const Img = styled("img")({
-  margin: "auto",
-  display: "block",
-  maxWidth: "100%",
-  maxHeight: "100%",
-});
 
 export default function CourseDetail(props) {
 
   const dispatch = useDispatch();
   const { id } = useParams();
-  const history = useHistory();
+
 
   const courseDetailed = useSelector((state) => state.getDetails.getCourseDetail)
   console.log(courseDetailed)
