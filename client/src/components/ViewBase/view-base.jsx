@@ -29,9 +29,9 @@ export default function ViewBase({ carousel, courses, steps }) {
         <div>{steps}</div>
       </div>
 
-      <div className="body-container">
+      {/* <div className="body-container">
         <img src={Paso} alt="" width="1390px" height="900px" />
-      </div>
+      </div> */}
       <div className="footer-container">
         <Footer />
       </div>

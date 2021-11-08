@@ -13,7 +13,8 @@ export default function CoursesTop() {
   const dispatch = useDispatch();
 
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
-  const fourCourses = coursesTop.slice(1, 5);
+  console.log("VERRRRRR",coursesTop)
+  const fourCourses = coursesTop.slice(1, 5); 
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -39,7 +40,7 @@ export default function CoursesTop() {
                       title={c.title}
                       image={c.img}
                       // description={c.description}
-                      // score={c.score}
+                      score={c.score.score}
                       price={c.price}
                     />
                   </Item>

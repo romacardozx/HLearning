@@ -27,6 +27,7 @@ export default function CourseCard({
             {title}
           </Typography>
           <Rating name="read-only" readOnly value={score} />
+          {/* <Rating name="half-rating-read" defaultValue={score.score} precision={0.5} /> */}
           <CardMedia
             title={title}
             component="img"
