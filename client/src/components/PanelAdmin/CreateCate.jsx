@@ -16,45 +16,16 @@ import Button from "@mui/material/Button";
 import { MenuItem } from "@mui/material";
 import zIndex from "@mui/material/styles/zIndex";
 // import Select from '@material-ui/core/Select';
-import CreateCategory from './CreateCategory';
 
 const schemaValidate = Yup.object().shape({
     title: Yup.string()
       .min(8, "El titulo debe tener al menos 8 caracteres")
       .max(25, "El maximo es de 25 caracteres")
       .required("Debe agregar un titulo"),
-    description: Yup.string()
-      // .min(25, "La descripcion debe ser de al menos 25 caracteres")
-      .required("Debe agregar una descripcion"),
-    duration: Yup.string()
-      .min(1, "Required must be at duration (1hs.)")
-      .required("Debe indicar la duracion aproximada"),
-    price: Yup.number().positive()
-      .min(1000,"El precio debe ser mayor a $1000")
-      .required("Requiere un precio"),
-        img: Yup.string()
-      .required("Requiere una imagen"),
-    category: Yup.string()
-      .min(1, "Se necesita al menos una categoria")
-      .required("Eliga una categoria"),
-    // videos: Yup.array()
-    //   .required("Se necesita al menos un video")
 });
 
 const initValues = {
   title: "",
-  description: "",
-  duration: "",
-  price: "",
-  img: "",
-  category: "",
-  videos: [
-    {
-      name: "",
-      url: "",
-      duration: "",
-    },
-  ],
 };
 
 const categories = (allcategories) => {
@@ -67,11 +38,11 @@ const categories = (allcategories) => {
 
 function CreateCourse() {
   const dispatch = useDispatch();
-  const getAllCategory = useSelector(
-    (state) => state.getCategories.getAllCategories
-  );
+//   const getAllCategory = useSelector(
+//     (state) => state.getCategories.getAllCategories
+ 
   //Cargo las categorias de GetAllCategories acomodadas en currencies
-  let currencies = categories(getAllCategory);
+//   let currencies = categories(getAllCategory);
 
   //   console.log(currencies, "currencies");
 
@@ -305,7 +276,6 @@ function CreateCourse() {
                 >
                   Enviar Curso
                 </Button>
-                <CreateCategory/>
               </Box>
               {/* </Form> */}
             </Paper>

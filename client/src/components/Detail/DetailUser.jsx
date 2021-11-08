@@ -56,7 +56,8 @@ export default function CourseDetail(props) {
               <Grid>
                 <ButtonBase>
                   <ReactPlayer
-              url='https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ'
+              // url='https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ'
+              url={courseDetailed.videos[0].link}
               className='react-player'
               playing
               width='750px'

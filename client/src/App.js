@@ -26,8 +26,8 @@ function App() {
       <Route exact path="/privacy" component={Privacy} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/courses/:id" component={Detail} />
-      <Route exact path="/prueba" component={PruebaAdm} />
-      <Route exact path="/prueba2" component={DeleteCourse} />
+      <Route exact path="/admin" component={PruebaAdm} />
+      <Route exact path="/admcourses" component={DeleteCourse} />
       <Route exact path="/Cart" component={Cart} />
       <Route exact path="/mycourses/:id" component={DetailUser} />
       <Route exact path="/createcourse" component={CreateCourse} />

@@ -40,6 +40,9 @@ const Navbar = () => {
         <NavBtn>
           <NavBtnLink to="/login">Iniciar Sesión</NavBtnLink>
         </NavBtn>
+        <NavLink to="/admin">
+        <span class="material-icons-outlined">supervisor_account</span>
+        </NavLink>
         {/*  <Account /> */}
       </Nav>
     </>
