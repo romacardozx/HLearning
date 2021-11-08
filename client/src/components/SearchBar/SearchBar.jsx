@@ -1,14 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getCourseByName } from "../../actions/getCourseByName";
+import { getCourseByName } from "../../redux/actions/getCourseByName";
+import { getAllCourses } from "../../redux/actions/getAllCourses";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchIcon from "@mui/icons-material/Search";
-import { StylesProvider } from "@material-ui/core";
-import { Box, style } from "@mui/system";
-import styles from "./SearchBar.css";
+/* import { Box } from "@mui/system"; */
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -25,12 +24,20 @@ export default function SearchBar() {
     setName("");
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch(getAllCourses());
+  };
+
   return (
-    <div className={styles.srb}>
-      <Box sx={{ alignContent: "center" }}>
+    <div>
+      {/* <Box sx={{ alignContent: "center" }}> */}
+      <Stack direction="row" spacing={14}>
         <form onSubmit={(e) => handleSubmit(e)}>
           <Stack direction="row" spacing={0.5}>
             <TextField
+              /* sx={{ maxWidth: 150 }} */
+              size="small"
               id="outlined-basic"
               label="Buscar"
               variant="outlined"
@@ -45,7 +52,17 @@ export default function SearchBar() {
             </Button>
           </Stack>
         </form>
-      </Box>
+        <Button
+          sx={{ borderRadius: 3 }}
+          variant="outlined"
+          onClick={(e) => {
+            handleClick(e);
+          }}
+        >
+          Ver Todos
+        </Button>
+      </Stack>
+      {/* </Box> */}
     </div>
   );
 }

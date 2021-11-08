@@ -8,7 +8,11 @@ module.exports = async (req, res, next) => {
             newDataCourse, {
                 new:true
             });
+        if(course) {
             res.json(course)
+        } else {
+            res.json({msg: "The course that you're trying to edit doesn't exist"})
+        }
     } catch(err) {
         console.log(err);
         next(err)

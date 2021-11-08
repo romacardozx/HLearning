@@ -1,0 +1,128 @@
+[
+ {
+    "user": "Veronica Valle",
+    "description":"Excelentes conceptos de Css, muy bien explicados",
+    "course": ["Tailwind Just in Time"],
+    "score": 5
+ },
+ {
+    "user": "Benito Luque",
+    "description":"Nunca pense que iba a aprender tanto de TypeScript",
+    "course": ["Vue 3 with TypeScript Jump Start"],
+    "score": 5
+ },
+ {
+    "user": "Jacinta Duque",
+    "description":"claro, eficiente, buenos contenidos. Todo lo que busca en un curso",
+    "course": ["Como hacer un sitio web con Bootstrap"],
+    "score": 5
+ },
+ {
+    "user": "Bruno Escobar",
+    "description":"muy buen curso de JavaScript",
+    "course": ["Curso de JAVASCRIPT"],
+    "score": 4
+ },
+ {
+    "user": "Federico Florez",
+    "description":"nunca pensé que iba aprender tanto en un solo el curso",
+    "course": ["Aprende CSS ahora! curso completo desde cero"],
+    "score": 5
+ },
+ {
+    "user": "Luz Carro",
+    "description":"excelente curso de HTML para principiantes",
+    "course": ["Curso Básico de HTML desde 0"],
+    "score": 4
+ },
+ {
+    "user": "Gaizka Manzano",
+    "description": "",
+    "course": ["Figma para principiantes"],
+    "score": 3
+ },
+ {
+    "user": "Raul Casas",
+    "description": "no siento que tenga las herramientas para poder aplicar Material UI por mi cuenta en un proyecto individual",
+    "course": ["Complete React Material UI"],
+    "score": 3
+ },
+ {
+    "user": "Marino Rovira",
+    "description":"enseña lo básico de lo que sería Node.js",
+    "course":["Node.js para principiantes"],
+    "score": 3
+ },
+ {
+    "user":"Evelyn Navarro",
+    "description":"muy buen curso, me hubiese gustado que dure más",
+    "course": ["CURSO DE PYTHON"],
+    "score": 4
+ },
+ {
+    "user": "Jennifer Molero",
+    "description":"me vino bien para actualizarme en la carrera de Front-End Developer",
+    "course":["Modern JavaScript"],
+    "score": 4
+ },
+ {
+    "user":  "Izan Valle",
+    "description":"no lo recomiendo",
+    "course": ["Flutter Course"],
+    "score": 2
+ },
+ {
+    "user": "Barbara Rio",
+    "description":"me gustaría tener un reintegro, pero no hay posibilidad",
+    "course":["Strapi Crash Course (with React & GraphQL)"],
+    "score": 2
+ },
+ {
+    "user": "Mustapha Sacristan",
+    "description":"",
+    "course":["Learn Go (Golang)"],
+    "score": 2
+ },
+ {
+    "user": "Jairo Alvaro",
+    "description":"Pèsimo",
+    "course": ["Mobile-First Responsive Build"],
+    "score": 1
+ },
+ {
+    "user":"Fernando Paredes",
+    "description":"muy completo, súper recomendable",
+    "course": ["Node.js Auth (using JWT)"],
+    "score": 4
+ },
+ {
+    "user":"Erika Sampedro",
+    "description":"se podría decir que es de los mejores cursos que hice de CSS",
+    "course": ["Bulma CSS Page Build Tutorial"],
+    "score": 5
+ },
+ {
+    "user": "Maria Laura Luis",
+    "description":"excelente curso de animaciones, ya quiero poner en práctica todo lo que aprendí",
+    "course":["Vue 3 Animations Tutorial"],
+    "score": 5
+ },
+ {
+    "user": "Hugo Arcos",
+    "description":"",
+    "course": ["Object Oriented PHP Crash Course"],
+    "score": 5
+ },
+ {
+    "user": "Angela-Maria Catalan",
+    "description":"",
+    "course": ["Data Visualization with D3 JavaScript React"],
+    "score": 5
+ },
+ {
+    "user": "",
+    "description":"",
+    "course": "",
+    "score": 5
+ }
+]

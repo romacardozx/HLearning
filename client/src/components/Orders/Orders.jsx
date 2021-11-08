@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { orderByName } from "../../actions/orderByName";
-import { orderByScore } from "../../actions/orderByScore";
-import { orderByPrice } from "../../actions/orderByPrice";
+import { orderByName } from "../../redux/actions/orderByName";
+import { orderByScore } from "../../redux/actions/orderByScore";
+import { orderByPrice } from "../../redux/actions/orderByPrice";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -46,7 +46,7 @@ export default function Orders({ setCurrentPage }) {
     <div>
       <Stack direction="row" spacing={3}>
         <Box sx={{ minWidth: 110 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-name">Nombre</InputLabel>
             <Select
               labelId="select-name"
@@ -54,6 +54,7 @@ export default function Orders({ setCurrentPage }) {
               label="Name"
               placeholder="Nombre"
               onChange={(e) => handleChangeName(e)}
+              value=""
             >
               <MenuItem value="A-Z">A-Z</MenuItem>
               <MenuItem value="Z-A">Z-A</MenuItem>
@@ -62,13 +63,14 @@ export default function Orders({ setCurrentPage }) {
         </Box>
         <br />
         <Box sx={{ minWidth: 160 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-score">Popularidad</InputLabel>
             <Select
               labelId="select-score"
               id="select-score"
               label="Score"
               onChange={(e) => handleChangeScore(e)}
+              value=""
             >
               <MenuItem value="Asc">Mayor popularidad</MenuItem>
               <MenuItem value="Desc">Menor popularidad</MenuItem>
@@ -77,13 +79,14 @@ export default function Orders({ setCurrentPage }) {
         </Box>
         <br />
         <Box sx={{ minWidth: 100 }}>
-          <FormControl fullWidth>
+          <FormControl fullWidth size="small">
             <InputLabel id="select-price">Precio</InputLabel>
             <Select
               labelId="select-price"
               id="select-price"
               label="Price"
               onChange={(e) => handleChangePrice(e)}
+              value=""
             >
               <MenuItem value="Asc">Mayor precio</MenuItem>
               <MenuItem value="Desc">Menor precio</MenuItem>
@@ -91,30 +94,6 @@ export default function Orders({ setCurrentPage }) {
           </FormControl>
         </Box>
       </Stack>
-      {/* <span>Ordenar por Nombre</span>
-      <select defaultValue="default" onChange={(e) => handleChangeName(e)}>
-        <option value="default" disabled="disabled">
-          Todos
-        </option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
-      </select>
-      <span className="span">Ordenar por Popularidad</span>
-      <select defaultValue="default" onChange={(s) => handleChangeScore(s)}>
-        <option value="All" disabled="disabled">
-          Todos
-        </option>
-        <option value="Asc">Mayor popularidad</option>
-        <option value="Desc">Menor popularidad</option>
-      </select>
-      <span className="span">Ordenar por Precio</span>
-      <select defaultValue="default" onChange={(s) => handleChangePrice(s)}>
-        <option value="All" disabled="disabled">
-          Todos
-        </option>
-        <option value="Asc">Mayor precio</option>
-        <option value="Desc">Menor precio</option>
-      </select> */}
     </div>
   );
 }

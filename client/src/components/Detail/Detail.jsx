@@ -7,18 +7,21 @@ import ButtonBase from "@mui/material/ButtonBase";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import styles from "./detail.module.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 // import { style } from "@mui/system";
 // import { Component } from "react";
 // import ReactPlayer from "react-player";
+import { useParams } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import IconButton from "@mui/material/IconButton";
-import { getDetailCourses } from '../../actions/getDetailCourses';
+import { getDetailCourses } from '../../redux/actions/getDetailCourses';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
 import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
+import Button from '@mui/material/Button';
+import calculeScore from '../../utils/calculeScore';
 
 
 const Img = styled("img")({
@@ -31,16 +34,17 @@ const Img = styled("img")({
 export default function CourseDetail(props) {
 
   const dispatch = useDispatch();
-  // const { id } = useParams();
+  const { id } = useParams();
   const history = useHistory();
 
-  const courseDetailed = useSelector((state) => state.getCourseDetail)
+  const courseDetailed = useSelector((state) => state.getDetails.getCourseDetail)
   console.log(courseDetailed)
 
 
     useEffect(() => { 
-        dispatch(getDetailCourses(props.match.params.id))
+        dispatch(getDetailCourses(id)) // eslint-disable-next-line
     },[dispatch]);
+
 
   const handleBuy = () => history.push("/payment");
 
@@ -48,7 +52,9 @@ export default function CourseDetail(props) {
     <div>
       <div className={styles.bkg}>
         <div>
-        <NavBar/> <br/>
+        <NavBar/> <br />
+          <br />
+          <br/><br/><br/>
         </div> 
         {Object.keys(courseDetailed).length ? (
         <div>
@@ -56,7 +62,7 @@ export default function CourseDetail(props) {
             sx={{
               p: 2,
               margin: "auto",
-              maxWidth: 450,
+              maxWidth: 1200,
               elevation: 24,
               flexGrow: 50,
               bottom: 0,
@@ -69,7 +75,7 @@ export default function CourseDetail(props) {
                     alt="complex"
                     src={courseDetailed.img}
                     width="450px"
-                    height="250px"
+                    height="300px"
                   />
                   {/* <ReactPlayer
               url='https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ'
@@ -83,11 +89,14 @@ export default function CourseDetail(props) {
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
-                    <Rating name="read-only" readOnly value={courseDetailed.score} />
+                    <Rating name="read-only" readOnly value={calculeScore(courseDetailed.score)} />
                     <Typography gutterBottom variant="h4" component="div">
                       {/* Tailwind Just in Time */}
                       {courseDetailed.title}
                     </Typography>
+                    <Typography variant="body2" align='left' color="text.secondary">
+                    {courseDetailed.categories.map(el => el.name + (' '))}
+                    </Typography><br/>
                     <Typography variant="h6" gutterBottom>
                       {/* In this Tailwind JIT tutorial series you'll learn how to
                       use the Just in Time compiler for better performance
@@ -96,7 +105,7 @@ export default function CourseDetail(props) {
                     </Typography>
                     <Typography variant="body2" align='left' color="text.secondary">
                       {/* Duration: 38min */}
-                      Duration:{courseDetailed.duration}min
+                      Duracion:{" "+courseDetailed.duration}min
                     </Typography>
                     <br />
                     <Typography
@@ -104,28 +113,19 @@ export default function CourseDetail(props) {
                       color="text.secondary"
                       align="left"
                     >
-                      <Link className={styles.links} to="/courses">
-                        {/* FrontEnd */}
-                        {courseDetailed.categories[0]}
-                      </Link>
-                      <Link className={styles.links} to="/courses">
-                        {/* Css */}
-                        {/* {courseDetailed.categories[1]} */}
-                      </Link>
-                      <Link className={styles.links} to="/courses">
-                        {/* UI */}
-                        {/* {courseDetailed.categories[2]} */}
-                      </Link>
                     </Typography>
                   </Grid>
                   <Grid item align="left">
-                    <Typography variant="body2">
-                      <button className={styles.btn} onClick={handleBuy}>
-                        <span className={styles.parpadea}>Buy now!</span>
-                      </button>
+                    <Typography sx={{ cursor: "pointer" }} variant="body2">
+                      {/* <button className={styles.btn} onClick={handleBuy}>
+                        <span>Buy now!</span>
+                      </button> */}
+                      <Button variant="contained" size="medium" onClick={handleBuy}>
+                      Comprar ahora!
+                      </Button>
                       <IconButton>
                         <AddShoppingCartIcon />
-                          <Typography> Agregar al carrito</Typography>
+                        <Typography>Agregar al carrito</Typography>
                     </IconButton>
                     </Typography>
                   </Grid>
@@ -150,6 +150,7 @@ export default function CourseDetail(props) {
           </Paper>
           <br />
           <br />
+          <br/><br/><br/>
         </div>) : <Loading />
            }
         <Footer />

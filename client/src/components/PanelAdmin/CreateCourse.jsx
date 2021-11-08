@@ -1,176 +1,319 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState }  from "react";
-import { Formik, Form, FieldArray, Field, ErrorMenssage } from 'Formik'
+import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategories } from '../../actions/getAllCategories.js'
-import * as Yup from 'yup';
+import { getAllCategories } from "../../redux/actions/getAllCategories";
+import { FieldArray, Form, Formik } from "formik";
+import * as Yup from "yup";
+// import Input from "@mui/material/Input"
+// import IconButton from '@mui/material/IconButton';
+// import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import Container from "@mui/material/Container";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { MenuItem } from "@mui/material";
+import zIndex from "@mui/material/styles/zIndex";
+// import Select from '@material-ui/core/Select';
 
+const schemaValidate = Yup.object().shape({
+  //   title: Yup.string()
+  //     .min(8, "El titulo debe tener al menos 8 caracteres")
+  //     .max(25, "El maximo es de 25 caracteres")
+  //     .required("Debe agregar un titulo"),
+  //   description: Yup.string()
+  //     // .min(25, "La descripcion debe ser de al menos 25 caracteres")
+  //     .required("Debe agregar una descripcion"),
+  // score: Yup.string()
+  //     .min(1, "Must be at score")             donde esta en el form??? porque si descomento no anda submit
+  //     .max(5, "Must be score required")
+  //     .required("Debe agregar un score"),
+  //   duration: Yup.string()
+  //     .min(1, "Required must be at duration (1hs.)")
+  //     .required("Debe indicar la duracion aproximada"),
+  // price: Yup.number().positive()
+  //     .min(1000,"El precio debe ser mayor a $1000")
+  //     .required("Requiere un precio"),
+  // img: Yup.string()
+  //     .required("Requiere una imagen"),
+  // category: Yup.array()
+  //     .min(1, "Se necesita al menos una categoria")
+  //     .required("Eliga una categoria"),
+  // videos: Yup.array()
+  //     .min(1, "El curso debe poseer al menos un video")
+});
 
+const initValues = {
+  title: "",
+  description: "",
+  score: "",
+  duration: "",
+  price: "",
+  img: "",
+  category: [],
+  videos: [
+    {
+      name: "",
+      url: "",
+      duration: "",
+    },
+  ],
+};
 
-function CreateCurse (){
+const categories = (allcategories) => {
+  const datos = allcategories.map((c) => {
+    const data = { label: c.name, value: c._id };
+    return data;
+  });
+  return datos;
+};
 
+function CreateCourse() {
+  const dispatch = useDispatch();
+  const getAllCategory = useSelector(
+    (state) => state.getCategories.getAllCategories
+  );
+  //Cargo las categorias de GetAllCategories acomodadas en currencies
+  let currencies = categories(getAllCategory);
 
-    const dispatch = useDispatch();
-    const getAllCategory = useSelector(state => state.getAllCategories);
+  //   console.log(currencies, "currencies");
 
-    const [formSent, setFormSent] = useState(false)
-    console.log(formSent);
+  const [currency, setCurrency] = useState("");
 
-    useEffect(() => {
-        dispatch(getAllCategories());
-      },[dispatch]);
-    
-    
-    
-    return(
-        <div>
-            <Formik
-                initialValues= {{ 
-                    title: '',
-                    description: '',
-                    score: '',
-                    duration: '',
-                    price: '',
-                    img:'', 
-                    students: '', //CONSULTAR
-                    category: [],
-                    videos: [], 
-                }}
+  const handleSelect = (event) => {
+    setCurrency(event.target.value);
+  };
 
-                validationSchema = {
-                    Yup.object().shape({
-                        title: Yup.string()
-                            .min(5, "Title must be at title")
-                            .max(10, "Must be 10 characters")
-                            .required("Title is required"),
-                        description: Yup.string()  
-                            .max(25, "Must be 25 characters")
-                            .required("Description is required"),
-                        score: Yup.string()
-                            .min(1, "Must be at score")  
-                            .max(5, "Must be score required")
-                            .required("Score is required"),  
-                        duration: Yup.string()
-                            .min(1,"Required must be at duration (1hs.)")
-                            .required("Duration is required"),
-                        price: Yup.number()   
-                            .min(1,"Required min price")  
-                            .required("Price is required"),
-                        img: Yup.string()    
-                            .required("Price is required"),    
-                        category: Yup.array()
-                            .min(1, "at least one category is needed")
-                            .max(2, "Max two categories"),
-                        videos: Yup.array()
-                            .min(1, "at least one video is needed")        
-                    })
-                }
-                onSubmit={(value, {resetForm}) => {
-                    resetForm();
-                    console.log("send...")
-                    setFormSent(true);
-                    setTimeout(() => setFormSent(false), 3000)
-                }}
+  const handleChange = (newValue) => {
+    setValue(newValue);
+  }
+
+  // console.log(handle,"CATEGORIA QUE TOMA EL HANDLE")
+  // console.log(currency, "categorias");
+
+    const handleSubmit = (values) => {
+      values.category = currency;
+    };
+
+  useEffect(() => {
+    dispatch(getAllCategories());
+  }, [dispatch]);
+
+  return (
+    <div>
+      <Formik
+        initialValues={initValues}
+        validationSchema={schemaValidate}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+      >
+        <Container sx={{ marginBottom: 10 }} maxWidth="lg">
+          <Paper elevation={1}>
+            {/* <Form >   */}
+            <Typography
+              sx={{ marginTop: 5 }}
+              align="center"
+              variant="h4"
+              gutterBottom
             >
-                {({errors, videos}) => (
-                    <Form>
-                        <Field 
-                            type="text"
-                            name="title"
-                        />
-                        <ErrorMenssage name="title" component={<div>{errors.title}</div>}/>
-                        <Field 
-                            type="text"
-                            name="description"
-                        />
-                        <ErrorMenssage name="description" component={<div>{errors.description}</div>}/>
-                        <Field 
-                            type="text"
-                            name="score"
-                        />
-                        <ErrorMenssage name="score" component={<div>{errors.score}</div>}/>
-                        <Field 
-                            type="text"
-                            name="duration"
-                        />
-                        <ErrorMenssage name="duration" component={<div>{errors.duration}</div>}/>
-                        <Field 
-                            type="text"
-                            name="price"
-                        />
-                        <ErrorMenssage name="price" component={<div>{errors.price}</div>}/>
-                        <Field 
-                            type="text"
-                            name="students"
-                        />
-                        <ErrorMenssage name="students" component={<div>{errors.students}</div>}/>
-                        <Field 
-                            type=" "
-                            name="img"
-                        />
-                        <ErrorMenssage name="img" component={<div>{errors.img}</div>}/>
-                        <FieldArray>
-                        {({push, remove}) => (
-                            <div>
-                                {
-                                    videos.length > 0 && videos.map((video, index) =>(
-                                        <div key={index}>
-                                            
-                                            <label>Insert Url</label>
-                                            
-                                            <Field
-                                            name={index}
-                                            placeholder = "Insert url"
-                                            type="text"
-                                            />
+              Crear Curso :
+            </Typography>
+            <Box
+              component="form"
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                "& .MuiTextField-root": { m: 2, width: "17rem" },
+                "& .MuiFormControl-root": { m: 2, width: "17rem" },
+              }}
+              autoComplete="off"
+              onSubmit={handleSubmit}
+            >
+              <div>
+                <TextField
+                  // required
+                  label="Titulo del Curso"
+                  type="text"
+                  name="title"
+                  value={values.title}
+                  onChange={handleChange}
+                //   onBlur={handleBlur}
+                //   error={Boolean(touched.title && errors.title)}
+                //   helperText={touched.title && errors.title}
+                />
+              </div>
+              <div>
+                <TextField
+                  // required
+                  id="description"
+                  name="description"
+                  label="Detalle del curso"
+                  control="textarea"
+                  type="text"
+                  multiline={true}
+                  rows={4}
+                  onChange={handleChange}
+                  value={values.description}
+                //   onBlur={handleBlur}
+                //   error={Boolean(touched.description && errors.description)}
+                //   helperText={touched.description && errors.description}
+                />
+              </div>
+              <div>
+                <TextField
+                  // required
+                  label="Precio"
+                  placeholder="Precio"
+                  type="number"
+                  name="price"
+                  onChange={handleChange}
+                  value={values.price}
+                //   onBlur={handleBlur}
+                //   helperText={errors.price}
+                //   error={Boolean(touched.price && errors.price)}
+                />
+              </div>
+              <div>
+                <TextField
+                  // required
+                  label="Duracion aproximada"
+                  type="text"
+                  name="duration"
+                  onChange={handleChange}
+                  value={values.duration}
+                //   onBlur={handleBlur}
+                //   helperText={errors.duration}
+                //   error={Boolean(touched.duration && errors.duration)}
+                />
+              </div>
+              <div>
+                <TextField
+                  select
+                  name="category"
+                  label="Category"
+                  value={currency}
+                  onChange={handleSelect}
+                //   helperText={errors.category}
+                //   error={Boolean(touched.category && errors.category)}
+                >
+                  {currencies?.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div>
+                <TextField
+                  type="text"
+                  name="img"
+                  placeholder="Inserte URL de la imagen"
+                  onChange={handleChange()}
+                  value={values.img}
+                //   onBlur={handleBlur}
+                //   helperText={errors.img}
+                //   error={Boolean(touched.img && errors.img)}
+                ></TextField>
+                {/* <Button type="submit">Subir</Button> */}
 
-                                            <button
-                                            type="button"
-                                            onClick={()=> push(index)}
-                                            > Add video</button>
-                                            
-                                            <button
-                                            type="button"
-                                            onClick={() => remove(index)}
-                                            > Delete Link</button>
-
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        )}
-                        <ErrorMenssage name="videos" component={<div>{errors.videos}</div>}/>
-                        </FieldArray>
-                        {/* <select multiple >
-                        {
-                            getAllCategory.map((c) => (
-                                <option key={c.id} value={c.name}>
-                                    {c.name}
-                                </option>
-                            ))
-                        } 
-                        </select> */}
-
-                        {/* {linea 157 invento Gudy!, no test} */}
-                        {/* key={c.id} value={c.name} */}
-                        {
-                            getAllCategory.map((c) => (
-                                <Field as="select" multiple>
-                                    <option>
-                                        {c.name}
-                                    </option>
-                                </Field>
-                            ))
-                        } 
-                        <ErrorMenssage name="category" component={<div>{errors.category}</div>}/>
-                        <button type="submit">Enviar Curso</button>
-                        {setFormSent && <p> Curso enviado con exito!</p>}
-                    </Form>
+                {/* <TextField accept="image/*" id="icon-button-file" type="file">
+                                        <IconButton color="primary" aria-label="upload picture" component="span">
+                                        <PhotoCamera />
+                                    </IconButton>
+                                    </TextField> */}
+              </div>
+              <FieldArray name="videos">
+                {({ push, remove }) => (
+                  <div>
+                    {values.videos.map((p, index) => {
+                      return (
+                        <div key={p}>
+                          <div>
+                            <TextField
+                              type="text"
+                              name={`videos.${index}.name`}
+                              value={p.name}
+                              placeholder="Inserte el nombre del video"
+                              // required
+                              onChange={handleChange}
+                            //   onBlur={handleBlur}
+                            //   helperText={errors.videos}
+                            //   error={Boolean(touched.videos && errors.videos)}
+                            />
+                          </div>
+                          <div>
+                            <TextField
+                              type="text"
+                              name={`videos.${index}.url`}
+                              placeholder="Inserte el URL del video"
+                              value={p.url}
+                              // required
+                            //   onBlur={handleBlur}
+                            //   onChange={handleChange}
+                            //   helperText={errors.videos}
+                            //   error={Boolean(touched.videos && errors.videos)}
+                            />
+                          </div>
+                          <div>
+                            <TextField
+                              type="text"
+                              name={`videos.${index}.duration`}
+                              placeholder="duracion aproximada del video"
+                              value={p.duration}
+                              // required
+                            //   onBlur={handleBlur}
+                            //   onChange={handleChange}
+                            //   helperText={errors.videos}
+                            //   error={Boolean(touched.videos && errors.videos)}
+                            />
+                          </div>
+                          <Button
+                            margin="normal"
+                            type="button"
+                            color="primary"
+                            variant="outlined"
+                            onClick={() => remove(index)}
+                          >
+                            x
+                          </Button>
+                        </div>
+                      );
+                    })}
+                    <div>
+                      <Button
+                        type="button"
+                        variant="outlined"
+                        onClick={() =>
+                          push({ name: "", url: "", duration: "" })
+                        }
+                      >
+                        Agregar video
+                      </Button>
+                    </div>
+                  </div>
                 )}
-
-            </Formik>
-        </div>
-    )
+              </FieldArray>
+              <Button
+                sx={{
+                  marginTop: 5,
+                  marginBottom: 10,
+                  width: "17rem",
+                  height: "3rem",
+                }}
+                type="submit"
+                variant="contained"
+              >
+                Enviar Curso
+              </Button>
+            </Box>
+            {/* </Form> */}
+          </Paper>
+        </Container>
+      </Formik>
+    </div>
+  );
 }
 
-export default CreateCurse;
+export default CreateCourse;

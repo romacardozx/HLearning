@@ -1,12 +1,16 @@
 import React from "react";
 import ViewBase from "../ViewBase/view-base";
-import Carrusel from '../../components/Carrusel/Carrusel';
+import Carousel from "../Carousel/Carousel";
+import CoursesTop from "./CoursesTop";
+import CarouselStep from "../Carousel/CarouselStep";
 
 export default function Home() {
   return (
     <div>
       <ViewBase
-      carousel={<Carrusel />}
+        carousel={<Carousel />}
+        courses={<CoursesTop />}
+        steps={<CarouselStep />}
       />
     </div>
   );

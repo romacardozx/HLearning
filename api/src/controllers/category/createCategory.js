@@ -10,6 +10,7 @@ module.exports = async (req, res, next) => {
         await category.save();
         res.json({msg: "Category created", category});
     } catch(err) {
+        console.log(err)
         next(err)
     }
 }

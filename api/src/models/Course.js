@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const CourseSchema = new Schema({
     title: {
         type: String,
+        unique:true,
         required: true
     },
     description: {
@@ -13,11 +14,12 @@ const CourseSchema = new Schema({
     img: {
         type: String
     },
-    score: {
-        type: Number
-    },
+    score: [{
+        type:Schema.Types.ObjectId,
+        ref: 'Review'
+    }],
     duration: {
-        type: Schema.Types.Mixed,  
+        type: String,  
     },
     categories: [{
         type: Schema.Types.ObjectId,
@@ -32,11 +34,18 @@ const CourseSchema = new Schema({
         default: [{
             name: String,
             link: String,
-            duration: Number
+            duration: String
         }]
     },
-    students: {
-        type: Number
+    students: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }],
+    status: {
+        type: String,
+        enum: ["Confirmed", "In course", "Deleted"],
+        default: "Confirmed"
     }
 })
 
