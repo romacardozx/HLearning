@@ -4,6 +4,9 @@ import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { FieldArray, Formik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
+// import Input from "@mui/material/Input"
+// import IconButton from '@mui/material/IconButton';
+// import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
@@ -12,9 +15,6 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem } from "@mui/material";
 import zIndex from "@mui/material/styles/zIndex";
-// import Input from "@mui/material/Input"
-// import IconButton from '@mui/material/IconButton';
-// import PhotoCamera from '@mui/icons-material/PhotoCamera';
 // import Select from '@material-ui/core/Select';
 
 const schemaValidate = Yup.object().shape({
@@ -31,13 +31,13 @@ const schemaValidate = Yup.object().shape({
     price: Yup.number().positive()
       .min(1000,"El precio debe ser mayor a $1000")
       .required("Requiere un precio"),
-    img: Yup.string()
+        img: Yup.string()
       .required("Requiere una imagen"),
     category: Yup.string()
-    //   .min(1, "Se necesita al menos una categoria")
+      .min(1, "Se necesita al menos una categoria")
       .required("Eliga una categoria"),
-//   videos: Yup.array()
-//       .required("Se necesita al menos un video")
+    // videos: Yup.array()
+    //   .required("Se necesita al menos un video")
 });
 
 const initValues = {

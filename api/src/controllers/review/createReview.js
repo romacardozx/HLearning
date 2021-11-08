@@ -1,6 +1,6 @@
 const Review = require("../../models/Review");
 
-//Crear un nuevo curso
+//Crear una review
 module.exports = async (req, res, next) => {
   const data = req.body;
   try {

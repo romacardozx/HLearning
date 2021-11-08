@@ -1,11 +1,14 @@
-import * as React from 'react';
+// import React, { useEffect, useState }  from "react";
+import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { Grid } from '@mui/material';
 //import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
+// import { useDispatch, useSelector } from "react-redux";
+// import { getAllCategories } from '../../redux/actions/getAllCategories.js'
 
 
 /* function BasicButtons() { 
@@ -20,6 +23,18 @@ import Button from '@mui/material/Button';
  */
 
 export default function CreateCategory() {
+  // const dispatch = useDispatch();
+
+  // const getAllCategory = useSelector(state => state.getCategories.getAllCategories);
+
+  //   const [formSent, setFormSent] = useState(false)
+  //   console.log(formSent);
+
+  //   useEffect(() => {
+  //       dispatch(getAllCategories());
+  //     },[dispatch]);
+
+
   return (
     <Paper
     sx={{
@@ -50,9 +65,11 @@ export default function CreateCategory() {
           placeholder="Nombre de la categoria"
         />
         </div>
-    <div>
+    {/* <div>
     <Button variant="contained" size="small">Agregar categoría</Button>
-    </div>
+    <button type="submit">Enviar Curso</button>
+                        {setFormSent && <p> Curso enviado con exito!</p>}
+    </div> */}
     </Box>
     </Grid>
     </Paper>

@@ -14,9 +14,9 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import PersonIcon from "@mui/icons-material/Person";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 
-/* import BookIcon from "@mui/icons-material/Book";
+import BookIcon from "@mui/icons-material/Book";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings"; */
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 
 /* import { signOut } from "../../redux/actions/userActions"; */
 import { Link } from "react-router-dom";
@@ -89,10 +89,10 @@ export default function Account() {
           <LoyaltyIcon sx={{ mr: 1 }} />
           Mis Favoritos
         </MenuItem>
-        {/* <MenuItem component={Link} to="/mercadopago">
+        <MenuItem component={Link} /* to="/mercadopago" */>
           <ShoppingCartIcon sx={{ mr: 1 }} /> Mi carro de compras
         </MenuItem>
-        <MenuItem component={Link} to="/my-bookings">
+        {/* <MenuItem component={Link} to="/my-bookings">
           <BookIcon sx={{ mr: 1 }} />
           My Bookings
         </MenuItem>
