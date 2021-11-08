@@ -14,9 +14,9 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import PersonIcon from "@mui/icons-material/Person";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 
-import BookIcon from "@mui/icons-material/Book";
+/* import BookIcon from "@mui/icons-material/Book"; */
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+/* import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings"; */
 
 /* import { signOut } from "../../redux/actions/userActions"; */
 import { Link } from "react-router-dom";
