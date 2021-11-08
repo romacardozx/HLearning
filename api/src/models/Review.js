@@ -19,7 +19,12 @@ const ReviewSchema = new Schema({
     score: {
         type: Number,
         required: true
-    }
+    },
+    status: {
+        type: String,
+        enum: ["Confirmed", "Deleted"],
+        default: "Confirmed",
+      }
 })
 
 module.exports = ReviewModel = mongoose.model('Review', ReviewSchema)

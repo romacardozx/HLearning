@@ -4,7 +4,7 @@ const Course = require('../../models/Course');
 
 module.exports = async (_req, res, next) => {
     try {
-        let review = await Review.find();
+        let review = await Review.find({status: "Confirmed"});
         if(review.length > 0) {
             review = await User.populate(review, {path: "user"});
             review = await Course.populate(review, {path: "course"});

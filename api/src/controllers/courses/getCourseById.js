@@ -6,7 +6,7 @@ const User = require("../../models/User");
 module.exports = async (req, res, next) => {
   const { id } = req.params;
   try {
-    let course = await Course.findById({ _id: id, status: "Confirmed" });
+    let course = await Course.findOne({ _id: id, status: "Confirmed" });
     if (course) {
       course = await Category.populate(course, { path: "categories" });
       course = await Review.populate(course, { path: "score" });

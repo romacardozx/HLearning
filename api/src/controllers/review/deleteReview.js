@@ -3,7 +3,7 @@ const Review = require('../../models/Review');
 module.exports = async (req, res, next) => {
     const { id } = req.params;
     try {
-        let review = await Review.findOneAndDelete({_id:id});
+        let review = await Review.findOneAndUpdate({_id:id}, {status: "Deleted"});
         if(review) {
             res.json({msg: "Review deleted"});
         } else {
