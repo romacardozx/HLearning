@@ -11,6 +11,7 @@ import Rating from "@mui/material/Rating";
 import Popover from "@mui/material/Popover";
 import { Box } from "@mui/system";
 import { CardActionArea } from "@material-ui/core";
+import calculeScore from '../../utils/calculeScore';
 
 export default function CourseCard({
   id,
@@ -29,7 +30,11 @@ export default function CourseCard({
   const handlePopoverClose = () => {
     setAnchorEl(null);
   };
-
+  // let score2 =0
+  // if(score){
+  //   score2 = calculeScore(score)
+  // }
+  // console.log(score,"Scoreeee")
   const open = Boolean(anchorEl);
 
   return (
@@ -54,7 +59,7 @@ export default function CourseCard({
             alt="img video"
           />
           <CardContent>
-            <Rating name="read-only" readOnly value={score} />
+            <Rating name="read-only" readOnly value={calculeScore(score)} />
           </CardContent>
           <Typography
             textAlign="center"
