@@ -2,6 +2,8 @@ import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { FieldArray, Formik } from "formik";
+import swal from 'sweetalert';
+
 import axios from "axios";
 import * as Yup from "yup";
 // import Input from "@mui/material/Input"
@@ -14,30 +16,29 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem } from "@mui/material";
-/* import zIndex from "@mui/material/styles/zIndex"; */
 // import Select from '@material-ui/core/Select';
 
 const schemaValidate = Yup.object().shape({
-  title: Yup.string()
-    .min(8, "El titulo debe tener al menos 8 caracteres")
-    .max(25, "El maximo es de 25 caracteres")
-    .required("Debe agregar un titulo"),
-  description: Yup.string()
-    // .min(25, "La descripcion debe ser de al menos 25 caracteres")
-    .required("Debe agregar una descripcion"),
-  duration: Yup.string()
-    .min(1, "Required must be at duration (1hs.)")
-    .required("Debe indicar la duracion aproximada"),
-  price: Yup.number()
-    .positive()
-    .min(1000, "El precio debe ser mayor a $1000")
-    .required("Requiere un precio"),
-  img: Yup.string().required("Requiere una imagen"),
-  category: Yup.string()
-    .min(1, "Se necesita al menos una categoria")
-    .required("Eliga una categoria"),
-  // videos: Yup.array()
-  //   .required("Se necesita al menos un video")
+    title: Yup.string()
+      .min(8, "El titulo debe tener al menos 8 caracteres")
+      .max(25, "El maximo es de 25 caracteres")
+      .required("Debe agregar un titulo"),
+    description: Yup.string()
+      // .min(25, "La descripcion debe ser de al menos 25 caracteres")
+      .required("Debe agregar una descripcion"),
+    duration: Yup.string()
+      .min(1, "Required must be at duration (1hs.)")
+      .required("Debe indicar la duracion aproximada"),
+    price: Yup.number().positive()
+      .min(1000,"El precio debe ser mayor a $1000")
+      .required("Requiere un precio"),
+        img: Yup.string()
+      .required("Requiere una imagen"),
+    categories: Yup.string()
+      .min(1, "Se necesita al menos una categoria")
+      .required("Eliga una categoria"),
+    // videos: Yup.array()
+    //   .required("Se necesita al menos un video")
 });
 
 const initValues = {
@@ -46,7 +47,7 @@ const initValues = {
   duration: "",
   price: "",
   img: "",
-  category: "",
+  categories: "",
   videos: [
     {
       name: "",
@@ -96,14 +97,16 @@ function CreateCourse() {
       <Formik
         initialValues={initValues}
         validationSchema={schemaValidate}
-        onSubmit={async (values) => {
-          console.log(values);
-          try {
-            const response = await axios.post("/courses/createCourse", values);
-            console.log(response);
-          } catch (error) {
-            console.log(error);
-          }
+        onSubmit={ async (values, {resetForm}) => {
+            console.log(values)
+            try {
+                const response = await axios.post('/courses/createCourse', values)   
+                console.log(response);
+                swal("Curso Creado!", "Presione para continuar", "success");
+                resetForm();
+            } catch (error) {
+                console.log(error)
+            }
         }}
       >
         {({
@@ -197,12 +200,14 @@ function CreateCourse() {
                 <div>
                   <TextField
                     select
-                    name="category"
-                    label="Category"
+                    name="categories"
+                    label="Categories"
                     value={currency}
                     onChange={handleChange}
-                    helperText={errors.category}
-                    error={Boolean(touched.category && errors.category)}
+                    helperText={errors.categories}
+                    error={Boolean(
+                        touched.categories && errors.categories
+                    )}
                   >
                     {currencies?.map((option) => (
                       <MenuItem key={option.value} value={option.value}>
