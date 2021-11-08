@@ -12,8 +12,8 @@ router.use(express.json());
 router.get('/', getAllCategories);
 router.get('/:id', getCategoryById);
 router.post('/createCategory', createCategory);
+router.post('/delete/:id', deleteCategoryById);
 router.put('/:id', updateCategoryById);
-router.delete('/:id', deleteCategoryById);
 
 
 module.exports = router
