@@ -28,6 +28,7 @@ export default function CoursesTop() {
 
   return (
     <div className="container-slider">
+      <br/>
       <Grid container align="center">
         {fourCourses.length >= 0 ? (
           <>
