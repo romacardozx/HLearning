@@ -31,10 +31,7 @@ export default function UserProfile() {
   /* const course = User.courses.title; */
 
   useEffect(() => {
-    dispatch(getUserById("6186d90a521fdc29a93ec257"));
-    /*  dispatch(getOrderById("6187494b521fdc29a93ec291")); */
-    /*  dispatch(getCourseByName(course)); */
-    /* dispatch(getAllCourses()); */
+    dispatch(getUserById("6186d90a521fdc29a93ec244"));
   }, [dispatch]);
 
   /* const getOrderId = useSelector((state) => state.getOrder.getOrderId); */
@@ -102,7 +99,7 @@ export default function UserProfile() {
                   }}
                 >
                   <Avatar
-                    sx={{ width: 200, height: 200 }}
+                    sx={{ width: 200, height: 200, marginLeft: 3 }}
                     src={User.pictures}
                     alt={User.name}
                   />
@@ -155,19 +152,19 @@ export default function UserProfile() {
                         >
                           <CardActionArea
                             component={Link}
-                            to={`/mycourses/${User.courses._id}`}
+                            to={`/mycourses/${c._id}`}
                           >
                             <Typography
                               sx={{ mb: 1 }}
                               paddingLeft={1}
                               variant="h6"
                             >
-                              {User.courses.title}
+                              {c.title}
                             </Typography>
                             <CardMedia
                               component="img"
                               height="180"
-                              image={User.courses.img}
+                              image={c.img}
                               alt="img video"
                             />
                             <CardContent>
@@ -179,7 +176,7 @@ export default function UserProfile() {
                               component="div"
                               noWrap={true}
                             >
-                              ${User.courses.price}
+                              DISPONIBLE!!
                             </Typography>
                           </CardActionArea>
                         </Card>
