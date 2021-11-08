@@ -1,7 +1,8 @@
 import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
-import { FieldArray, Form, Formik } from "formik";
+import { FieldArray, Formik } from "formik";
+import axios from "axios";
 import * as Yup from "yup";
 // import Input from "@mui/material/Input"
 // import IconButton from '@mui/material/IconButton';
@@ -17,40 +18,35 @@ import zIndex from "@mui/material/styles/zIndex";
 // import Select from '@material-ui/core/Select';
 
 const schemaValidate = Yup.object().shape({
-  //   title: Yup.string()
-  //     .min(8, "El titulo debe tener al menos 8 caracteres")
-  //     .max(25, "El maximo es de 25 caracteres")
-  //     .required("Debe agregar un titulo"),
-  //   description: Yup.string()
-  //     // .min(25, "La descripcion debe ser de al menos 25 caracteres")
-  //     .required("Debe agregar una descripcion"),
-  // score: Yup.string()
-  //     .min(1, "Must be at score")             donde esta en el form??? porque si descomento no anda submit
-  //     .max(5, "Must be score required")
-  //     .required("Debe agregar un score"),
-  //   duration: Yup.string()
-  //     .min(1, "Required must be at duration (1hs.)")
-  //     .required("Debe indicar la duracion aproximada"),
-  // price: Yup.number().positive()
-  //     .min(1000,"El precio debe ser mayor a $1000")
-  //     .required("Requiere un precio"),
-  // img: Yup.string()
-  //     .required("Requiere una imagen"),
-  // category: Yup.array()
-  //     .min(1, "Se necesita al menos una categoria")
-  //     .required("Eliga una categoria"),
-  // videos: Yup.array()
-  //     .min(1, "El curso debe poseer al menos un video")
+    title: Yup.string()
+      .min(8, "El titulo debe tener al menos 8 caracteres")
+      .max(25, "El maximo es de 25 caracteres")
+      .required("Debe agregar un titulo"),
+    description: Yup.string()
+      // .min(25, "La descripcion debe ser de al menos 25 caracteres")
+      .required("Debe agregar una descripcion"),
+    duration: Yup.string()
+      .min(1, "Required must be at duration (1hs.)")
+      .required("Debe indicar la duracion aproximada"),
+    price: Yup.number().positive()
+      .min(1000,"El precio debe ser mayor a $1000")
+      .required("Requiere un precio"),
+        img: Yup.string()
+      .required("Requiere una imagen"),
+    category: Yup.string()
+      .min(1, "Se necesita al menos una categoria")
+      .required("Eliga una categoria"),
+    // videos: Yup.array()
+    //   .required("Se necesita al menos un video")
 });
 
 const initValues = {
   title: "",
   description: "",
-  score: "",
   duration: "",
   price: "",
   img: "",
-  category: [],
+  category: "",
   videos: [
     {
       name: "",
@@ -80,20 +76,16 @@ function CreateCourse() {
 
   const [currency, setCurrency] = useState("");
 
-  const handleSelect = (event) => {
-    setCurrency(event.target.value);
-  };
-
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  }
-
+//   const handleSelect = (event) => {
+//       event.target.value.toString()
+//     setCurrency(event.target.value);
+//   };
   // console.log(handle,"CATEGORIA QUE TOMA EL HANDLE")
-  // console.log(currency, "categorias");
+    // console.log(currency, "categorias");
 
-    const handleSubmit = (values) => {
-      values.category = currency;
-    };
+//   const handleSubmit = (values) => {
+//     values.category = currency;
+//   };
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -104,213 +96,219 @@ function CreateCourse() {
       <Formik
         initialValues={initValues}
         validationSchema={schemaValidate}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={ async (values) => {
+            console.log(values)
+            try {
+                const response = await axios.post('/courses/createCourse', values)   
+                console.log(response) 
+            } catch (error) {
+                console.log(error)
+            }
         }}
       >
-        <Container sx={{ marginBottom: 10 }} maxWidth="lg">
-          <Paper elevation={1}>
-            {/* <Form >   */}
-            <Typography
-              sx={{ marginTop: 5 }}
-              align="center"
-              variant="h4"
-              gutterBottom
-            >
-              Crear Curso :
-            </Typography>
-            <Box
-              component="form"
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                "& .MuiTextField-root": { m: 2, width: "17rem" },
-                "& .MuiFormControl-root": { m: 2, width: "17rem" },
-              }}
-              autoComplete="off"
-              onSubmit={handleSubmit}
-            >
-              <div>
-                <TextField
-                  // required
-                  label="Titulo del Curso"
-                  type="text"
-                  name="title"
-                  value={values.title}
-                  onChange={handleChange}
-                //   onBlur={handleBlur}
-                //   error={Boolean(touched.title && errors.title)}
-                //   helperText={touched.title && errors.title}
-                />
-              </div>
-              <div>
-                <TextField
-                  // required
-                  id="description"
-                  name="description"
-                  label="Detalle del curso"
-                  control="textarea"
-                  type="text"
-                  multiline={true}
-                  rows={4}
-                  onChange={handleChange}
-                  value={values.description}
-                //   onBlur={handleBlur}
-                //   error={Boolean(touched.description && errors.description)}
-                //   helperText={touched.description && errors.description}
-                />
-              </div>
-              <div>
-                <TextField
-                  // required
-                  label="Precio"
-                  placeholder="Precio"
-                  type="number"
-                  name="price"
-                  onChange={handleChange}
-                  value={values.price}
-                //   onBlur={handleBlur}
-                //   helperText={errors.price}
-                //   error={Boolean(touched.price && errors.price)}
-                />
-              </div>
-              <div>
-                <TextField
-                  // required
-                  label="Duracion aproximada"
-                  type="text"
-                  name="duration"
-                  onChange={handleChange}
-                  value={values.duration}
-                //   onBlur={handleBlur}
-                //   helperText={errors.duration}
-                //   error={Boolean(touched.duration && errors.duration)}
-                />
-              </div>
-              <div>
-                <TextField
-                  select
-                  name="category"
-                  label="Category"
-                  value={currency}
-                  onChange={handleSelect}
-                //   helperText={errors.category}
-                //   error={Boolean(touched.category && errors.category)}
-                >
-                  {currencies?.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-              </div>
-              <div>
-                <TextField
-                  type="text"
-                  name="img"
-                  placeholder="Inserte URL de la imagen"
-                  onChange={handleChange()}
-                  value={values.img}
-                //   onBlur={handleBlur}
-                //   helperText={errors.img}
-                //   error={Boolean(touched.img && errors.img)}
-                ></TextField>
-                {/* <Button type="submit">Subir</Button> */}
+        {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+          <Container sx={{ marginBottom: 10 }} maxWidth="lg">
+            <Paper elevation={1}>
+              {/* <Form >   */}
+              <Typography
+                sx={{ marginTop: 5 }}
+                align="center"
+                variant="h4"
+                gutterBottom
+              >
+                Crear Curso :
+              </Typography>
+              <Box
+                component="form"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  "& .MuiTextField-root": { m: 2, width: "17rem" },
+                  "& .MuiFormControl-root": { m: 2, width: "17rem" },
+                }}
+                autoComplete="off"
+                onSubmit={handleSubmit}
+              >
+                <div>
+                  <TextField
+                    // required
+                    label="Titulo del Curso"
+                    type="text"
+                    name="title"
+                    value={values.title}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={Boolean(touched.title && errors.title)}
+                    helperText={touched.title && errors.title}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    // required
+                    id="description"
+                    name="description"
+                    label="Detalle del curso"
+                    control="textarea"
+                    type="text"
+                    multiline={true}
+                    rows={4}
+                    onChange={handleChange}
+                    value={values.description}
+                    onBlur={handleBlur}
+                    error={Boolean(touched.description && errors.description)}
+                    helperText={touched.description && errors.description}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    // required
+                    label="Precio"
+                    placeholder="Precio"
+                    type="number"
+                    name="price"
+                    onChange={handleChange("price")}
+                    value={values.price}
+                    onBlur={handleBlur}
+                    helperText={errors.price}
+                    error={Boolean(touched.price && errors.price)}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    // required
+                    label="Duracion aproximada"
+                    type="text"
+                    name="duration"
+                    onChange={handleChange}
+                    value={values.duration}
+                    onBlur={handleBlur}
+                    helperText={errors.duration}
+                    error={Boolean(touched.duration && errors.duration)}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    select
+                    name="category"
+                    label="Category"
+                    value={currency}
+                    onChange={handleChange}
+                    helperText={errors.category}
+                    error={Boolean(
+                        touched.category && errors.category
+                    )}
+                  >
+                    {currencies?.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </div>
+                <div>
+                  <TextField
+                    type="text"
+                    name="img"
+                    placeholder="Inserte URL de la imagen"
+                    onChange={handleChange("img")}
+                    value={values.img}
+                    onBlur={handleBlur}
+                    helperText={errors.img}
+                    error={Boolean(touched.img && errors.img)}
+                  ></TextField>
+                  {/* <Button type="submit">Subir</Button> */}
 
-                {/* <TextField accept="image/*" id="icon-button-file" type="file">
+                  {/* <TextField accept="image/*" id="icon-button-file" type="file">
                                         <IconButton color="primary" aria-label="upload picture" component="span">
                                         <PhotoCamera />
                                     </IconButton>
                                     </TextField> */}
-              </div>
-              <FieldArray name="videos">
-                {({ push, remove }) => (
-                  <div>
-                    {values.videos.map((p, index) => {
-                      return (
-                        <div key={p}>
-                          <div>
-                            <TextField
-                              type="text"
-                              name={`videos.${index}.name`}
-                              value={p.name}
-                              placeholder="Inserte el nombre del video"
-                              // required
-                              onChange={handleChange}
-                            //   onBlur={handleBlur}
-                            //   helperText={errors.videos}
-                            //   error={Boolean(touched.videos && errors.videos)}
-                            />
-                          </div>
-                          <div>
-                            <TextField
-                              type="text"
-                              name={`videos.${index}.url`}
-                              placeholder="Inserte el URL del video"
-                              value={p.url}
-                              // required
-                            //   onBlur={handleBlur}
-                            //   onChange={handleChange}
-                            //   helperText={errors.videos}
-                            //   error={Boolean(touched.videos && errors.videos)}
-                            />
-                          </div>
-                          <div>
-                            <TextField
-                              type="text"
-                              name={`videos.${index}.duration`}
-                              placeholder="duracion aproximada del video"
-                              value={p.duration}
-                              // required
-                            //   onBlur={handleBlur}
-                            //   onChange={handleChange}
-                            //   helperText={errors.videos}
-                            //   error={Boolean(touched.videos && errors.videos)}
-                            />
-                          </div>
-                          <Button
-                            margin="normal"
-                            type="button"
-                            color="primary"
-                            variant="outlined"
-                            onClick={() => remove(index)}
-                          >
-                            x
-                          </Button>
-                        </div>
-                      );
-                    })}
+                </div>
+                <FieldArray name="videos">
+                  {({ push, remove }) => (
                     <div>
-                      <Button
-                        type="button"
-                        variant="outlined"
-                        onClick={() =>
-                          push({ name: "", url: "", duration: "" })
-                        }
-                      >
-                        Agregar video
-                      </Button>
+                      {values.videos.map((p, index) => {
+                        return (
+                          <div key={p}>
+                            <div>
+                              <TextField
+                                type="text"
+                                name={`videos.${index}.name`}
+                                value={p.name}
+                                placeholder="Inserte el nombre del video"
+                                // required
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                helperText={errors.videos}
+                                error={Boolean(touched.videos && errors.videos)}
+                              />
+                            </div>
+                            <div>
+                              <TextField
+                                type="text"
+                                name={`videos.${index}.url`}
+                                placeholder="Inserte el URL del video"
+                                value={p.url}
+                                // required
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div>
+                              <TextField
+                                type="text"
+                                name={`videos.${index}.duration`}
+                                placeholder="duracion aproximada del video"
+                                value={p.duration}
+                                // required
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <Button
+                              margin="normal"
+                              type="button"
+                              color="primary"
+                              variant="outlined"
+                              onClick={() => remove(index)}
+                            >
+                              x
+                            </Button>
+                          </div>
+                        );
+                      })}
+                      <div>
+                        <Button
+                          type="button"
+                          variant="outlined"
+                          onClick={() =>
+                            push({ name: "", url: "", duration: "" })
+                          }
+                        >
+                          Agregar video
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </FieldArray>
-              <Button
-                sx={{
-                  marginTop: 5,
-                  marginBottom: 10,
-                  width: "17rem",
-                  height: "3rem",
-                }}
-                type="submit"
-                variant="contained"
-              >
-                Enviar Curso
-              </Button>
-            </Box>
-            {/* </Form> */}
-          </Paper>
-        </Container>
+                  )}
+                </FieldArray>
+                <Button
+                  sx={{
+                    marginTop: 5,
+                    marginBottom: 10,
+                    width: "17rem",
+                    height: "3rem",
+                  }}
+                  type="submit"
+                  variant="contained"
+                >
+                  Enviar Curso
+                </Button>
+              </Box>
+              {/* </Form> */}
+            </Paper>
+          </Container>
+        )}
       </Formik>
     </div>
   );
