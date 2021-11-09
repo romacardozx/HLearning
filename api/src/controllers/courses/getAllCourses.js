@@ -2,6 +2,22 @@ const Course = require("../../models/Course");
 const Category = require("../../models/Category");
 const Review = require("../../models/Review");
 const User = require("../../models/User");
+// filterdata
+
+
+const calculeScore = (arrayScores) => {
+  let sumScore = 0;
+  arrayScores.map((r) => {
+
+    sumScore = sumScore + parseInt(r.score);
+  });
+
+  const totalScore = sumScore / arrayScores.length;
+
+  return totalScore;
+};
+
+
 
 module.exports = async (req, res, next) => {
   try {
@@ -34,34 +50,51 @@ module.exports = async (req, res, next) => {
         return res.send(coursesOrder);
       }
     }
-    if (score) {
-      if (score === "Asc" || !score || score === "") {
-        orderScore = courses.sort((a, b) => {
-          if (a.score < b.score) return 1;
-          if (a.score > b.score) return -1;
-          return 0;
-        });
-        return res.send(orderScore);
-      }
+
+    if (score) { 
+      
+      // for (let i = 0; i < courses.length; i++) {
+      //  if(courses[i].score.length){
+      //   let sumaDeScores = 0
+      //   for (let j = 0; j < courses[i].score.length; j++) {
+          
+      //     sumaDeScores  = sumaDeScores + courses[i].score[j]?.score  
+          
+      //   }
+      //   sumaDeScores  = sumaDeScores / courses[i].score.length  
+      //   console.log(sumaDeScores)
+      //   courses[i]["scoreTotal"] = sumaDeScores
+      // } else { 
+
+      // }
+      // console.log(courses);
+       
+        //res.send(courses)
+      //}
+      
       if (score === "Desc" || !score || score === "") {
         orderScore = courses.sort((a, b) => {
-          if (a.score < b.score) return -1;
-          if (a.score > b.score) return 1;
+
+
+          
+          if (calculeScore(a.score) < calculeScore(b.score)) return 1;
+          if (calculeScore(a.score) > calculeScore(b.score)) return -1;
           return 0;
         });
-        return res.send(orderScore);
+        return res.send(courses);
+      }
+      if (score === "Asc" || !score || score === "") {
+        orderScore = courses.sort((a, b) => {
+          if (calculeScore(a.score) < calculeScore(b.score)) return -1;
+          if (calculeScore(a.score) > calculeScore(b.score)) return 1;
+          return 0;
+        });
+        return res.send(courses);
       }
     }
-    if (price) {
+
+    if (price) {  
       if (price === "Asc" || !price || price === "") {
-        orderPrice = courses.sort((a, b) => {
-          if (a.price < b.price) return 1;
-          if (a.price > b.price) return -1;
-          return 0;
-        });
-        return res.send(orderPrice);
-      }
-      if (price === "Desc" || !price || price === "") {
         orderPrice = courses.sort((a, b) => {
           if (a.price < b.price) return -1;
           if (a.price > b.price) return 1;
@@ -69,25 +102,16 @@ module.exports = async (req, res, next) => {
         });
         return res.send(orderPrice);
       }
+      if (price === "Desc" || !price || price === "") {
+        orderPrice = courses.sort((a, b) => {
+          if (a.price < b.price) return 1;
+          if (a.price > b.price) return -1;
+          return 0;
+        });
+        return res.send(orderPrice);
+      }
     }
-    if(price){
-      if(price === "Asc" || !price || price ===""){
-        orderPrice = courses.sort((a,b) => {
-            if(a.price > b.price) return 1;
-            if (a.price < b.price)return -1;
-            return 0;    
-        })
-        return res.send(orderPrice)
-      } if(price === "Desc" || !price || price ===""){
-          orderPrice = courses.sort((a,b) => {
-            if(a.price > b.price) return -1;
-            if (a.price < b.price)return 1;
-            return 0;    
-        })
-    return res.send(orderPrice);
-    
-    }
-    }
+
     if(priceToFilter){
       priceToFilter = parseInt(priceToFilter)
       if(priceToFilter <  1000 ){
@@ -121,52 +145,23 @@ module.exports = async (req, res, next) => {
          return res.send(priceToFilterGrater)
        } 
      }
+  
      if(categories){
          const videoFiltercategory = await Course
          .find({categories: {$all: [`${categories}`]}})
         //  .populate()
          return res.send(videoFiltercategory)
      } 
+    
      if (scoreToFilter) {
-      // ojo que se puede necesitar un parseInt
-     if(scoreToFilter <=  0.4 ){
-       const scoreToFilterLess = await Course
-       .find({score: {$lte: 0.4}})
-      //  .populate('categories', 'name -_id')
-        return res.send(scoreToFilterLess)
-      }
-      if(scoreToFilter > 0.4 && scoreToFilter <= 1.4){
-       const scoreToFilterBetween = await Course
-       .find({score: {$gt: 0.4, $lte: 1.4}})
-      //  .populate('categories', 'name -_id')
-       return res.send(scoreToFilterBetween)
-     } 
-      if(scoreToFilter > 1.4 && scoreToFilter <= 2.4){
-       const scoreToFilterBetween2 = await Course
-       .find({score: {$gt: 1.4, $lte: 2.4}})
-      //  .populate('categories', 'name -_id')
-       return res.send(scoreToFilterBetween2)
-     } 
-      if(scoreToFilter > 2.4 && scoreToFilter <= 3.4){
-       const scoreToFilterBetween3 = await Course
-       .find({score: {$gt: 2.4, $lte: 3.4}})
-      //  .populate('categories', 'name -_id')
-       return res.send(scoreToFilterBetween3)
-     } 
-      if(scoreToFilter > 3.4 && scoreToFilter <= 4.4){
-       const scoreToFilterBetween4 = await Course
-       .find({score: {$gt: 3.4, $lte: 4.4}})
-      //  .populate('categories', 'name -_id')
-       return res.send(scoreToFilterBetween4)
-     } 
-      if(scoreToFilter > 4.4 ){
        const scoreToFilterBetween5 = await Course
        .find({score: {$gt: 4.4}})
       //  .populate('categories', 'name -_id')
        return res.send(scoreToFilterBetween5)
-     } 
     }
-    else { res.json(courses) }
+    else 
+    { res.json(courses) }
+
   } catch (err) {
     console.log(err);
     next(err);
