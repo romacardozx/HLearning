@@ -8,7 +8,7 @@ export function filterRangeByPrice(priceToFilter) {
       );
       return dispatch({
         type: "FILTER_BY_RANGE_PRICE",
-        payload: json.data,
+        payload: { filterData: json.data, name: priceToFilter },
       });
     } catch (error) {
       console.log("error order price", error);
