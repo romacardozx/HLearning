@@ -24,14 +24,14 @@ module.exports = async (req, res, next) => {
 
   try {
     
-    if(filterCourses.length > 0) {
-       let courses = filterCourses
-       console.log('courses de filtro', courses);
+    // if(filterCourses.length > 0) {
+    //    let courses = filterCourses
+    //    console.log('courses de filtro', courses);
        
-       courses = await Category.populate(courses, { path: "categories" });
-       courses = await Review.populate(courses, { path: "score" });
-      courses = await User.populate(courses, { path: "students" });
-    } else {
+    //    courses = await Category.populate(courses, { path: "categories" });
+    //    courses = await Review.populate(courses, { path: "score" });
+    //   courses = await User.populate(courses, { path: "students" });
+    // } else {
      let courses = await Course.find({ status: "Confirmed" });
     if (courses) {
       console.log('filtro de la base de datos', courses);
@@ -42,7 +42,7 @@ module.exports = async (req, res, next) => {
     } else {
       res.json({ msg: "There're any course available" });
     }
-}
+//}
     let { name, score, price, priceToFilter, categories, scoreToFilter } =
       req.query;
 
