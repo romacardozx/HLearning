@@ -2,6 +2,20 @@ const Course = require("../../models/Course");
 const Category = require("../../models/Category");
 const Review = require("../../models/Review");
 const User = require("../../models/User");
+// filterdata
+
+
+const calculeScore = (arrayScores) => {
+  let sumScore = 0;
+  arrayScores.map((r) => {
+
+    sumScore = sumScore + parseInt(r.score);
+  });
+
+  const totalScore = sumScore / arrayScores.length;
+
+  return totalScore;
+};
 
 const calculeScore = (arrayScores) => {
   let sumScore = 0;
@@ -46,34 +60,29 @@ module.exports = async (req, res, next) => {
         return res.send(coursesOrder);
       }
     }
-    if (score) {
-      if (score === "Asc" || !score || score === "") {
-        orderScore = courses.sort((a, b) => {
-          if (a.score < b.score) return 1;
-          if (a.score > b.score) return -1;
-          return 0;
-        });
-        return res.send(orderScore);
-      }
+
+    if (score) { 
+      
       if (score === "Desc" || !score || score === "") {
         orderScore = courses.sort((a, b) => {
-          if (a.score < b.score) return -1;
-          if (a.score > b.score) return 1;
+
+          if (calculeScore(a.score) < calculeScore(b.score)) return 1;
+          if (calculeScore(a.score) > calculeScore(b.score)) return -1;
           return 0;
         });
-        return res.send(orderScore);
+        return res.send(courses);
+      }
+      if (score === "Asc" || !score || score === "") {
+        orderScore = courses.sort((a, b) => {
+          if (calculeScore(a.score) < calculeScore(b.score)) return -1;
+          if (calculeScore(a.score) > calculeScore(b.score)) return 1;
+          return 0;
+        });
+        return res.send(courses);
       }
     }
-    if (price) {
+    if (price) {  
       if (price === "Asc" || !price || price === "") {
-        orderPrice = courses.sort((a, b) => {
-          if (a.price < b.price) return 1;
-          if (a.price > b.price) return -1;
-          return 0;
-        });
-        return res.send(orderPrice);
-      }
-      if (price === "Desc" || !price || price === "") {
         orderPrice = courses.sort((a, b) => {
           if (a.price < b.price) return -1;
           if (a.price > b.price) return 1;
@@ -81,29 +90,20 @@ module.exports = async (req, res, next) => {
         });
         return res.send(orderPrice);
       }
-    }
-    if (price) {
-      if (price === "Asc" || !price || price === "") {
-        orderPrice = courses.sort((a, b) => {
-          if (a.price > b.price) return 1;
-          if (a.price < b.price) return -1;
-          return 0;
-        });
-        return res.send(orderPrice);
-      }
       if (price === "Desc" || !price || price === "") {
         orderPrice = courses.sort((a, b) => {
-          if (a.price > b.price) return -1;
           if (a.price < b.price) return 1;
+          if (a.price > b.price) return -1;
           return 0;
         });
         return res.send(orderPrice);
       }
     }
-    if (priceToFilter) {
-      priceToFilter = parseInt(priceToFilter);
-      if (priceToFilter < 1000) {
-        const priceToFilterLess = await Course.find({ price: { $lt: 1000 } });
+    if(priceToFilter){
+      priceToFilter = parseInt(priceToFilter)
+      if(priceToFilter <  1000 ){
+        const priceToFilterLess = await Course
+        .find({price: {$lt: 1000}})
         // .populate('categories', 'name -_id')
         return res.send(priceToFilterLess);
       }
