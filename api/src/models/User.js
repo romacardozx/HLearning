@@ -28,6 +28,10 @@ const UserSchema = new Schema({
     unique: true,
     required: true,
   },
+  password: {
+    type: String,
+    default: "Password12345"
+  },
   status: {
     type: String,
     enum: ["Confirmed", "Deleted"],
