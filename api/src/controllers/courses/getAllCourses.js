@@ -17,8 +17,6 @@ const calculeScore = (arrayScores) => {
   return totalScore;
 };
 
-
-
 module.exports = async (req, res, next) => {
   try {
     let courses = await Course.find({status: "Confirmed"});
@@ -53,30 +51,9 @@ module.exports = async (req, res, next) => {
 
     if (score) { 
       
-      // for (let i = 0; i < courses.length; i++) {
-      //  if(courses[i].score.length){
-      //   let sumaDeScores = 0
-      //   for (let j = 0; j < courses[i].score.length; j++) {
-          
-      //     sumaDeScores  = sumaDeScores + courses[i].score[j]?.score  
-          
-      //   }
-      //   sumaDeScores  = sumaDeScores / courses[i].score.length  
-      //   console.log(sumaDeScores)
-      //   courses[i]["scoreTotal"] = sumaDeScores
-      // } else { 
-
-      // }
-      // console.log(courses);
-       
-        //res.send(courses)
-      //}
-      
       if (score === "Desc" || !score || score === "") {
         orderScore = courses.sort((a, b) => {
 
-
-          
           if (calculeScore(a.score) < calculeScore(b.score)) return 1;
           if (calculeScore(a.score) > calculeScore(b.score)) return -1;
           return 0;
@@ -92,7 +69,6 @@ module.exports = async (req, res, next) => {
         return res.send(courses);
       }
     }
-
     if (price) {  
       if (price === "Asc" || !price || price === "") {
         orderPrice = courses.sort((a, b) => {
@@ -111,7 +87,6 @@ module.exports = async (req, res, next) => {
         return res.send(orderPrice);
       }
     }
-
     if(priceToFilter){
       priceToFilter = parseInt(priceToFilter)
       if(priceToFilter <  1000 ){
@@ -144,15 +119,13 @@ module.exports = async (req, res, next) => {
         //  .populate('categories', 'name -_id')
          return res.send(priceToFilterGrater)
        } 
-     }
-  
+     }  
      if(categories){
          const videoFiltercategory = await Course
          .find({categories: {$all: [`${categories}`]}})
         //  .populate()
          return res.send(videoFiltercategory)
-     } 
-    
+     }     
      if (scoreToFilter) {
        const scoreToFilterBetween5 = await Course
        .find({score: {$gt: 4.4}})
@@ -161,7 +134,6 @@ module.exports = async (req, res, next) => {
     }
     else 
     { res.json(courses) }
-
   } catch (err) {
     console.log(err);
     next(err);
