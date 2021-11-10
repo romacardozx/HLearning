@@ -11,7 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Stack from "@mui/material/Stack";
 
-export default function Orders({ setCurrentPage }) {
+export default function Orders({ setCurrentPage, filtered }) {
   const dispatch = useDispatch();
 
   const [orderName, setOrderName] = useState("");
@@ -23,21 +23,21 @@ export default function Orders({ setCurrentPage }) {
 
   function handleChangeName(e) {
     e.preventDefault();
-    dispatch(orderByName(e.target.value));
+    dispatch(orderByName(e.target.value, filtered));
     setCurrentPage(1);
     setOrderName("Order" + e.target.value);
   }
 
   const handleChangeScore = (e) => {
     e.preventDefault();
-    dispatch(orderByScore(e.target.value));
+    dispatch(orderByScore(e.target.value, filtered));
     setCurrentPage(1);
     setOrderScore("Order" + e.target.value);
   };
 
   const handleChangePrice = (e) => {
     e.preventDefault();
-    dispatch(orderByPrice(e.target.value));
+    dispatch(orderByPrice(e.target.value, filtered));
     setCurrentPage(1);
     setOrderPrice("Order" + e.target.value);
   };
