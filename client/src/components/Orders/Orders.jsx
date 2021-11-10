@@ -17,29 +17,26 @@ export default function Orders({ setCurrentPage, filtered }) {
   const [orderName, setOrderName] = useState("");
   const [orderScore, setOrderScore] = useState("");
   const [orderPrice, setOrderPrice] = useState("");
-  console.log(orderName);
-  console.log(orderScore);
-  console.log(orderPrice);
 
   function handleChangeName(e) {
     e.preventDefault();
     dispatch(orderByName(e.target.value, filtered));
     setCurrentPage(1);
-    setOrderName("Order" + e.target.value);
+    setOrderName(e.target.value);
   }
 
   const handleChangeScore = (e) => {
     e.preventDefault();
     dispatch(orderByScore(e.target.value, filtered));
     setCurrentPage(1);
-    setOrderScore("Order" + e.target.value);
+    setOrderScore(e.target.value);
   };
 
   const handleChangePrice = (e) => {
     e.preventDefault();
     dispatch(orderByPrice(e.target.value, filtered));
     setCurrentPage(1);
-    setOrderPrice("Order" + e.target.value);
+    setOrderPrice(e.target.value);
   };
 
   return (
@@ -54,7 +51,7 @@ export default function Orders({ setCurrentPage, filtered }) {
               label="Name"
               placeholder="Nombre"
               onChange={(e) => handleChangeName(e)}
-              value=""
+              value={orderName}
             >
               <MenuItem value="A-Z">A-Z</MenuItem>
               <MenuItem value="Z-A">Z-A</MenuItem>
@@ -70,7 +67,7 @@ export default function Orders({ setCurrentPage, filtered }) {
               id="select-score"
               label="Score"
               onChange={(e) => handleChangeScore(e)}
-              value=""
+              value={orderScore}
             >
               <MenuItem value="Asc">Mayor popularidad</MenuItem>
               <MenuItem value="Desc">Menor popularidad</MenuItem>
@@ -86,7 +83,7 @@ export default function Orders({ setCurrentPage, filtered }) {
               id="select-price"
               label="Price"
               onChange={(e) => handleChangePrice(e)}
-              value=""
+              value={orderPrice}
             >
               <MenuItem value="Asc">Mayor precio</MenuItem>
               <MenuItem value="Desc">Menor precio</MenuItem>
