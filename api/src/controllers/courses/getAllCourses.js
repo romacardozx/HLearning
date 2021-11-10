@@ -17,24 +17,14 @@ const calculeScore = (arrayScores) => {
 
 
 module.exports = async (req, res, next) => {
-  //const filterCourses = req.body.hola
-  console.log(filterCourses);
   
   
 
   try {
     
-    // if(filterCourses.length > 0) {
-    //    let courses = filterCourses
-    //    console.log('courses de filtro', courses);
-       
-    //    courses = await Category.populate(courses, { path: "categories" });
-    //    courses = await Review.populate(courses, { path: "score" });
-    //   courses = await User.populate(courses, { path: "students" });
-    // } else {
      let courses = await Course.find({ status: "Confirmed" });
     if (courses) {
-      console.log('filtro de la base de datos', courses);
+     
       
       courses = await Category.populate(courses, { path: "categories" });
       courses = await Review.populate(courses, { path: "score" });
@@ -42,7 +32,7 @@ module.exports = async (req, res, next) => {
     } else {
       res.json({ msg: "There're any course available" });
     }
-//}
+
     let { name, score, price, priceToFilter, categories, scoreToFilter } =
       req.query;
 
@@ -150,37 +140,7 @@ module.exports = async (req, res, next) => {
     }
     if (scoreToFilter) {
       scoreToFilter = parseInt(scoreToFilter);
-      // ojo que se puede necesitar un parseInt
-      //  if(scoreToFilter <=  0.4 ){
-      //    const scoreToFilterLess = await Course
-      //    .find({score: {$lte: 0.4}})
-      //   //  .populate('categories', 'name -_id')
-      //     return res.send(scoreToFilterLess)
-      //   }
-      //   if(scoreToFilter > 0.4 && scoreToFilter <= 1.4){
-      //    const scoreToFilterBetween = await Course
-      //    .find({score: {$gt: 0.4, $lte: 1.4}})
-      //   //  .populate('categories', 'name -_id')
-      //    return res.send(scoreToFilterBetween)
-      //  }
-      //   if(scoreToFilter > 1.4 && scoreToFilter <= 2.4){
-      //    const scoreToFilterBetween2 = await Course
-      //    .find({score: {$gt: 1.4, $lte: 2.4}})
-      //   //  .populate('categories', 'name -_id')
-      //    return res.send(scoreToFilterBetween2)
-      //  }
-      //   if(scoreToFilter > 2.4 && scoreToFilter <= 3.4){
-      //    const scoreToFilterBetween3 = await Course
-      //    .find({score: {$gt: 2.4, $lte: 3.4}})
-      //   //  .populate('categories', 'name -_id')
-      //    return res.send(scoreToFilterBetween3)
-      //  }
-      //   if(scoreToFilter > 3.4 && scoreToFilter <= 4.4){
-      //    const scoreToFilterBetween4 = await Course
-      //    .find({score: {$gt: 3.4, $lte: 4.4}})
-      //   //  .populate('categories', 'name -_id')
-      //    return res.send(scoreToFilterBetween4)
-      //  }
+      
       if (scoreToFilter === 5) {
         const courses5stars = [];
         courses.map((c) => {
