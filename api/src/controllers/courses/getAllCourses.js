@@ -17,7 +17,7 @@ const calculeScore = (arrayScores) => {
 
 
 module.exports = async (req, res, next) => {
-  const filterCourses = req.body.hola
+  //const filterCourses = req.body.hola
   console.log(filterCourses);
   
   
