@@ -55,6 +55,7 @@ export default function CourseDetail(props) {
         <NavBar/> <br />
           <br />
           <br/><br/><br/>
+          <br/><br/>
         </div> 
         {Object.keys(courseDetailed).length ? (
         <div>
