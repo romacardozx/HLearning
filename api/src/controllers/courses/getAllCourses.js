@@ -2,8 +2,6 @@ const Course = require("../../models/Course");
 const Category = require("../../models/Category");
 const Review = require("../../models/Review");
 const User = require("../../models/User");
-// filterdata
-
 
 const calculeScore = (arrayScores) => {
   let sumScore = 0;
@@ -19,16 +17,32 @@ const calculeScore = (arrayScores) => {
 
 
 module.exports = async (req, res, next) => {
+  //const filterCourses = req.body.hola
+  console.log(filterCourses);
+  
+  
+
   try {
-    let courses = await Course.find({ status: "Confirmed" });
+    
+    // if(filterCourses.length > 0) {
+    //    let courses = filterCourses
+    //    console.log('courses de filtro', courses);
+       
+    //    courses = await Category.populate(courses, { path: "categories" });
+    //    courses = await Review.populate(courses, { path: "score" });
+    //   courses = await User.populate(courses, { path: "students" });
+    // } else {
+     let courses = await Course.find({ status: "Confirmed" });
     if (courses) {
+      console.log('filtro de la base de datos', courses);
+      
       courses = await Category.populate(courses, { path: "categories" });
       courses = await Review.populate(courses, { path: "score" });
       courses = await User.populate(courses, { path: "students" });
     } else {
       res.json({ msg: "There're any course available" });
     }
-
+//}
     let { name, score, price, priceToFilter, categories, scoreToFilter } =
       req.query;
 
@@ -129,8 +143,9 @@ module.exports = async (req, res, next) => {
     if (categories) {
       const videoFiltercategory = await Course.find({
         categories: { $all: [`${categories}`] },
-      });
-      //  .populate()
+      })
+    
+      
       return res.send(videoFiltercategory);
     }
     if (scoreToFilter) {
