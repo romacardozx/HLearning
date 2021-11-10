@@ -15,7 +15,7 @@ const courses = require('./src/utils/mockUps/coursesConObjectId.json')
 const morgan = require("morgan");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 
 //Crea el servidor
