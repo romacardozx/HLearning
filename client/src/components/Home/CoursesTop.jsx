@@ -9,6 +9,8 @@ import Paper from "@mui/material/Paper";
 import Loading from "../Loading/Loading";
 /* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
 import { orderByScore } from "../../redux/actions/orderByScore";
+import calculateScore from '../../utils/calculeScore';
+import {filterByStars} from '../../redux/actions/filterByStars'
 
 export default function CoursesTop() {
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ export default function CoursesTop() {
   }));
 
   useEffect(() => {
-    dispatch(orderByScore("Asc"));
+    dispatch(filterByStars(5));
   }, [dispatch]);
 
   return (
@@ -40,7 +42,7 @@ export default function CoursesTop() {
                       id={c._id}
                       title={c.title}
                       image={c.img}
-                      score={c.score}
+                      score={calculateScore(c.score)}
                       price={c.price}
                     />
                   </Item>

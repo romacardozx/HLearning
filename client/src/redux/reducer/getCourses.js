@@ -8,6 +8,7 @@ import {
   ORDER_BY_SCORE,
   ORDER_BY_PRICE,
   GET_COURSES_SCORE,
+  FILTER_BY_STARS
 } from "../actions/constants.js";
 
 const initialState = {
@@ -47,6 +48,13 @@ const getCourses = (state = initialState, action) => {
     }
 
     case FILTER_BY_DURATION: {
+      return {
+        ...state,
+        getAllCourses: action.payload,
+      };
+    }
+
+    case FILTER_BY_STARS: {
       return {
         ...state,
         getAllCourses: action.payload,
