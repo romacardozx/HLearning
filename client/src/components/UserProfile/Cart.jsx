@@ -5,7 +5,7 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { getUserById } from "../../redux/actions/getUserById";
 import { getOrderById } from "../../redux/actions/getOrderById";
-import s from "../Contact/contact.module.css";
+import s from "./Cart.module.css";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 /* import { CardActionArea } from "@material-ui/core"; */
@@ -38,19 +38,12 @@ export default function Cart() {
         <NavBar />
       </div>
       <div className={s.body}>
-        <div className={s.contactme} id="contact">
+        <div className={s.contactme}>
           <div className={s.contactOverlay}>
             <div className={s.container}>
               <div className={s.form}>
                 <div className={s.contForm}>
                   <div className={s.formWord}>
-                    {/* <h2>{getUserId.name}</h2>
-                    <h2>2700$</h2>
-                    <h2>
-                      00:59:26 ------- es el unico que viene de json de courses
-                    </h2>
-                    <h2>Vue 3 with TypeScript Jump Start</h2>
-                    <img src={getOrderId.img} alt="" height="200px" /> */}
                     <Card sx={{ maxWidth: 270, minWidth: 100 }} elevation={6}>
                       <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
                         Vue 3 with TypeScript Jump Start
@@ -85,7 +78,6 @@ export default function Cart() {
                     >
                       Mercado Pago
                     </Button>
-
                     <br />
                     <br />
                     <h2>Cursos:</h2>
@@ -94,10 +86,6 @@ export default function Cart() {
                     <br />
                     <h2>Total: $2700</h2>
                   </div>
-                  {/* <img
-                    src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_MP/280231858061-210518-mla-transforma-tu-sitio-web-con-el-checkout-de-mercado-pago-card-01.png"
-                    alt=""
-                  /> */}
                 </div>
               </div>
             </div>
@@ -105,7 +93,6 @@ export default function Cart() {
         </div>
       </div>
       <br />
-
       <Footer />
     </div>
   );

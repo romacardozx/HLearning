@@ -14,6 +14,7 @@ import {
 const initialState = {
   getAllCourses: [],
   setAllCourses: [],
+  filteredString: "Filter By",
 };
 
 const getCourses = (state = initialState, action) => {
@@ -21,29 +22,32 @@ const getCourses = (state = initialState, action) => {
     case GET_ALL_COURSES: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        getAllCourses: action.payload.allCourses,
         setAllCourses: action.payload,
+        filteredString: action.payload.name,
       };
     }
 
     case GET_COURSE_BY_NAME: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        setAllCourses: action.payload,
       };
     }
 
     case FILTER_BY_RANGE_PRICE: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        setAllCourses: action.payload.filterData,
+        filteredString: action.payload.name,
       };
     }
 
     case FILTER_BY_CATEGORIES: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        setAllCourses: action.payload.filterData,
+        filteredString: action.payload.name,
       };
     }
 
@@ -85,7 +89,7 @@ const getCourses = (state = initialState, action) => {
     case GET_COURSES_SCORE: {
       return {
         ...state,
-        setAllCourses: action.payload,
+        getAllCourses: action.payload,
       };
     }
     default:

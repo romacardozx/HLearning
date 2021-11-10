@@ -10,8 +10,9 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 /* import Popover from "@mui/material/Popover"; */
 import { Box } from "@mui/system";
-import { CardActionArea } from "@material-ui/core";
 import calculeScore from "../../utils/calculeScore";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function CourseCard({
   id,
@@ -21,57 +22,48 @@ export default function CourseCard({
   score,
   price,
 }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
+  /* const [anchorEl, setAnchorEl] = React.useState(null);
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handlePopoverClose = () => {
     setAnchorEl(null);
   };
-  // let score2 =0
-  // if(score){
-  //   score2 = calculeScore(score)
-  // }
-  // console.log(score,"Scoreeee")
-  const open = Boolean(anchorEl);
+  const open = Boolean(anchorEl); */
 
   return (
     <Box p={1}>
-      <Card sx={{ maxWidth: 270, minWidth: 100 }} elevation={6}>
-        <CardActionArea
-          aria-owns={open ? "mouse-over-popover" : undefined}
-          aria-haspopup="true"
-          onMouseEnter={handlePopoverOpen}
-          onMouseLeave={handlePopoverClose}
-          component={Link}
-          to={`/courses/${id}`}
+      <Card
+        sx={{ maxWidth: 270, minWidth: 100 }}
+        elevation={6}
+        /* aria-owns={open ? "mouse-over-popover" : undefined}
+        aria-haspopup="true"
+        onMouseEnter={handlePopoverOpen}
+        onMouseLeave={handlePopoverClose} */
+      >
+        <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
+          {title}
+        </Typography>
+        <CardMedia
+          title={title}
+          component="img"
+          height="180"
+          image={image}
+          alt="img video"
+        />
+        <CardContent>
+          <Rating name="read-only" readOnly value={calculeScore(score)} />
+        </CardContent>
+        <Typography
+          textAlign="center"
+          variant="h5"
+          component="div"
+          noWrap={true}
         >
-          <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
-            {title}
-          </Typography>
-          <CardMedia
-            title={title}
-            component="img"
-            height="180"
-            image={image}
-            alt="img video"
-          />
-          <CardContent>
-            <Rating name="read-only" readOnly value={calculeScore(score)} />
-          </CardContent>
-          <Typography
-            textAlign="center"
-            variant="h5"
-            component="div"
-            noWrap={true}
-          >
-            ${price}
-          </Typography>
-        </CardActionArea>
+          ${price}
+        </Typography>
         {/* <Popover
-           style={{ width: 300 }}
+          style={{ width: 300 }}
           id="mouse-over-popover"
           sx={{
             pointerEvents: "none",
@@ -105,6 +97,15 @@ export default function CourseCard({
             <Typography> Agregar al carrito</Typography>
           </IconButton>
         </CardActions>
+        <Button
+          variant="contained"
+          size="medium"
+          component={Link}
+          to={`/courses/${id}`}
+          endIcon={<AddIcon size="large" />}
+        >
+          VER
+        </Button>
       </Card>
     </Box>
   );
