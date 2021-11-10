@@ -2,20 +2,8 @@ const Course = require("../../models/Course");
 const Category = require("../../models/Category");
 const Review = require("../../models/Review");
 const User = require("../../models/User");
-// filterdata
+const {calculeScore} = require('../../utils/calculeScore')
 
-
-const calculeScore = (arrayScores) => {
-  let sumScore = 0;
-  arrayScores.map((r) => {
-
-    sumScore = sumScore + parseInt(r.score);
-  });
-
-  const totalScore = sumScore / arrayScores.length;
-
-  return totalScore;
-};
 
 module.exports = async (req, res, next) => {
   try {
