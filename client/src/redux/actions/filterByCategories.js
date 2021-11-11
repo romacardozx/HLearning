@@ -3,8 +3,8 @@ import axios from "axios";
 export function filterByCategories(categories) {
   return async function (dispatch) {
     try {
-      var json = await axios(
-        `/courses/?categories=${categories ? categories : ""}`
+      var json = await axios.post(
+        `/courses/filters/?categories=${categories ? categories : ""}`
       );
       return dispatch({
         type: "FILTER_BY_CATEGORIES",

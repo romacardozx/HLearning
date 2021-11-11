@@ -5,7 +5,7 @@ export function getDetailCourses(id){
     
     return async function(dispatch){
         try {
-            var json = await axios(`/courses/${id}`);
+            var json = await axios.post(`/courses/${id}`);
             return dispatch({
                 type: "GET_DETAIL_COURSES",
                 payload: json.data

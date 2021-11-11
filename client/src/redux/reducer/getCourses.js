@@ -24,7 +24,7 @@ const getCourses = (state = initialState, action) => {
         ...state,
         getAllCourses: action.payload.allCourses,
         setAllCourses: action.payload,
-        filteredString: action.payload.name,
+        filteredString: action.payload.name2,
       };
     }
 
@@ -66,24 +66,48 @@ const getCourses = (state = initialState, action) => {
     }
 
     case ORDER_BY_NAME: {
+      console.log(state.setAllCourses.length);
+      
+      if(state.setAllCourses.length === undefined){
       return {
         ...state,
-        getAllCourses: action.payload,
-      };
+        getAllCourses: action.payload
+      }} else {
+        return {
+          ...state,
+          setAllCourses: action.payload
+        }
+      }
     }
 
     case ORDER_BY_SCORE: {
+    console.log(state.setAllCourses.length);
+      
+      if(state.setAllCourses.length === undefined){
       return {
         ...state,
-        getAllCourses: action.payload,
-      };
+        getAllCourses: action.payload
+      }} else {
+        return {
+          ...state,
+          setAllCourses: action.payload
+        }
+      }
     }
 
     case ORDER_BY_PRICE: {
+   console.log(state.setAllCourses.length);
+      
+      if(state.setAllCourses.length === undefined){
       return {
         ...state,
-        getAllCourses: action.payload,
-      };
+        getAllCourses: action.payload
+      }} else {
+        return {
+          ...state,
+          setAllCourses: action.payload
+        }
+      }
     }
 
     case GET_COURSES_SCORE: {
