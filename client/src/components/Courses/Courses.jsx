@@ -16,7 +16,9 @@ import Paper from "@mui/material/Paper";
 export default function Courses() {
   const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.getCourses.getAllCourses);
-  const filteredCourses = useSelector((state) => state.getCourses.setAllCourses);
+  const filteredCourses = useSelector(
+    (state) => state.getCourses.setAllCourses
+  );
   const filterName = useSelector((state) => state.getCourses.filteredString);
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -62,7 +64,7 @@ export default function Courses() {
               <Grid item>
                 <Orders
                   setCurrentPage={setCurrentPage}
-                  filtered={filteredCourses}
+                  fitered={filteredCourses}
                 />
               </Grid>
               <Grid item>

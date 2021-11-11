@@ -10,9 +10,6 @@ const createCourse = require("../controllers/courses/createCourse");
 const updateCourse = require("../controllers/courses/updateCourse");
 
 const deleteCourse = require("../controllers/courses/deleteCourse");
-const filterOrdinances = require("../controllers/courses/filtersOrdiances");
-
-
 
 const router = Router();
 router.use(express.json());
@@ -30,7 +27,5 @@ router.put("/update/:id", updateCourse);
 
 // ----> DELETE <----
 router.post("/delete/:id", deleteCourse);
-router.post("/filters", filterOrdinances);
-
 
 module.exports = router;
