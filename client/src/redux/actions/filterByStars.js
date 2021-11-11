@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-export function filterByStars(stars, filtered){
+export function filterByStars(stars){
 
   return async function(dispatch){
       try {
-        var json = await axios.post(`/courses?scoreToFilter=${stars?stars:""}`, filtered);
+        var json = await axios(`/courses?scoreToFilter=${stars?stars:""}`);
         return dispatch({
           type: "FILTER_BY_STARS",
           payload: json.data
