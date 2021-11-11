@@ -8,7 +8,6 @@ import { getUserById } from "../../redux/actions/getUserById";
 /* import { getCourseByName } from "../../redux/actions/getCourseByName"; */
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-//import { Link } from "react-router-dom";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
@@ -20,9 +19,9 @@ import Typography from "@mui/material/Typography";
 /* import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit"; */
 import Avatar from "@mui/material/Avatar";
-import { CardActionArea } from "@material-ui/core";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
 /* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
-//import Button from "@mui/material/Button";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
@@ -149,36 +148,46 @@ export default function UserProfile() {
                           key={index}
                           sx={{ maxWidth: 270, minWidth: 100 }}
                           elevation={6}
+                          align="center"
                         >
-                          <CardActionArea
+                          {/* <CardActionArea
                             component={Link}
                             to={`/mycourses/${c._id}`}
+                          > */}
+                          <Typography
+                            sx={{ mb: 1 }}
+                            paddingLeft={1}
+                            variant="h6"
                           >
-                            <Typography
-                              sx={{ mb: 1 }}
-                              paddingLeft={1}
-                              variant="h6"
-                            >
-                              {c.title}
-                            </Typography>
-                            <CardMedia
-                              component="img"
-                              height="180"
-                              image={c.img}
-                              alt="img video"
-                            />
-                            <CardContent>
-                              {/*  <Rating name="read-only" readOnly value={score} /> */}
-                            </CardContent>
-                            <Typography
+                            {c.title}
+                          </Typography>
+                          <CardMedia
+                            component="img"
+                            height="180"
+                            image={c.img}
+                            alt="img video"
+                          />
+                          <CardContent>
+                            {/*  <Rating name="read-only" readOnly value={score} /> */}
+                          </CardContent>
+                          {/* <Typography
                               textAlign="center"
                               variant="h5"
                               component="div"
                               noWrap={true}
                             >
                               DISPONIBLE!!
-                            </Typography>
-                          </CardActionArea>
+                            </Typography> */}
+                          {/* </CardActionArea> */}
+                          <Button
+                            variant="contained"
+                            size="medium"
+                            component={Link}
+                            to={`/mycourses/${c._id}`}
+                            endIcon={<AddIcon size="large" />}
+                          >
+                            VER MIS VIDEOS
+                          </Button>
                         </Card>
                       ))
                     ) : (
