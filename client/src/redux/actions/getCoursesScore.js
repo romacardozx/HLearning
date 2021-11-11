@@ -3,7 +3,7 @@ import axios from "axios";
 export function getCoursesScore(scoreToFilter) {
   return async function (dispatch) {
     try {
-      let json = await axios(`/courses?scoreToFilter=${scoreToFilter}`);
+      let json = await axios.post(`/courses?scoreToFilter=${scoreToFilter}`);
       return dispatch({
         type: "GET_COURSES_SCORE",
         payload: json.data,
