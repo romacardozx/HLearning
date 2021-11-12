@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -10,10 +10,10 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 /* import Popover from "@mui/material/Popover"; */
 import { Box } from "@mui/system";
-import { CardActionArea } from "@material-ui/core";
 import calculeScore from "../../utils/calculeScore";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
+import { loadState, saveState } from "../../localStorage.js"
 
 export default function CourseCard({
   id,
@@ -22,34 +22,30 @@ export default function CourseCard({
   /*  description, */
   score,
   price,
+  course
 }) {
   /* const [anchorEl, setAnchorEl] = React.useState(null);
-
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handlePopoverClose = () => {
     setAnchorEl(null);
-  }; */
-  // let score2 =0
-  // if(score){
-  //   score2 = calculeScore(score)
-  // }
-  // console.log(score,"Scoreeee")
-  /* const open = Boolean(anchorEl); */
+  };
+  const open = Boolean(anchorEl); */
+
+  const cart = loadState();
+  const [, setAddCart] = useState();
 
   return (
     <Box p={1}>
-      <Card sx={{ /* maxWidth: 270, */ minWidth: 100 }} elevation={6}>
-        {/*  <CardActionArea
-         aria-owns={open ? "mouse-over-popover" : undefined}
-          aria-haspopup="true"
-          onMouseEnter={handlePopoverOpen}
-          onMouseLeave={handlePopoverClose}
-        component={Link}
-          to={`/courses/${id}`}
-        > */}
+      <Card
+        sx={{ maxWidth: 270, minWidth: 100 }}
+        elevation={6}
+        /* aria-owns={open ? "mouse-over-popover" : undefined}
+        aria-haspopup="true"
+        onMouseEnter={handlePopoverOpen}
+        onMouseLeave={handlePopoverClose} */
+      >
         <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
           {title}
         </Typography>
@@ -71,9 +67,8 @@ export default function CourseCard({
         >
           ${price}
         </Typography>
-        {/*  </CardActionArea> */}
         {/* <Popover
-           style={{ width: 300 }}
+          style={{ width: 300 }}
           id="mouse-over-popover"
           sx={{
             pointerEvents: "none",
@@ -97,31 +92,30 @@ export default function CourseCard({
             {description}
           </Typography>
         </Popover> */}
-        <CardActions>
-          <IconButton
-            onClick={() => {
-              alert("Agregado a tu carrito");
-            }}
-          >
-            {/*   <AddShoppingCartIcon /> */}
-            <Typography> Agregar al carrito</Typography>
-          </IconButton>
-        </CardActions>
-        {/* <Button
-          variant="outlined"
-          component={Link}
-          to={`/courses/${id}`}
-          size="small"
-          endIcon={<AddIcon size="large" />}
-        >
-          VER
-        </Button> */}
+        {
+          cart.includes(JSON.stringify(course)) ? null : 
+          <CardActions>
+            <IconButton
+              onClick={() => {
+                saveState(course);
+                loadState();
+                setAddCart("Agregado al carrito");
+                alert("Agregado a tu carrito");
+              }}
+            >
+              <AddShoppingCartIcon />
+              <Typography> Agregar al carrito</Typography>
+            </IconButton>
+          </CardActions>
+        }
         <Button
           variant="contained"
           size="medium"
-          /* onClick={() => handleDelete(c._id)} */
+          component={Link}
+          to={`/courses/${id}`}
+          endIcon={<AddIcon size="large" />}
         >
-          Eliminar curso
+          VER
         </Button>
       </Card>
     </Box>

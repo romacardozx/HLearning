@@ -16,6 +16,9 @@ router.use('/orders', ordersRoutes);
 const reviewsRoutes = require('../routes/reviewsRoutes')
 router.use('/reviews', reviewsRoutes);
 
+const authRoutes = require('../routes/authRoutes');
+router.use('/auth', authRoutes)
+
 
 
 

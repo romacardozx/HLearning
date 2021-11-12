@@ -16,10 +16,10 @@ router.get('/:id', getOrderById);
 
 // ----> POST <----
 router.post('/createOrder', createOrder);
-router.post('/delete/:id', deleteOrder);
+
 
 // ----> PUT <----
-router.post('/update/:id', updateOrder);
-
+router.put('/update/:id', updateOrder);
+router.put('/delete/:id', deleteOrder);
 
 module.exports = router

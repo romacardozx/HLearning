@@ -5,7 +5,6 @@ import { getAllCourses } from "../../redux/actions/getAllCourses";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
-import Card2 from "../Card/Card2";
 import Paginate from "../Paginate/Paginate";
 import Orders from "../Orders/Orders";
 import Filters from "../Filters/Filters";
@@ -25,16 +24,11 @@ export default function Courses() {
     setCurrentPage(pageNumber);
   };
 
-  let Courses;
-
   useEffect(() => {
     dispatch(getAllCourses());
   }, [dispatch]);
 
-  const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(0.5),
-  }));
+  let Courses;
 
   filterName === "Filter By"
     ? (Courses = allCourses)
@@ -49,6 +43,11 @@ export default function Courses() {
     Courses.length >= 0
       ? Courses.slice(indexOfFirstCourse, indexOfLastCourse)
       : Courses;
+
+  const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(0.5),
+  }));
 
   return (
     <div>
@@ -80,14 +79,13 @@ export default function Courses() {
               paginate={paginate}
             />
           </div>
-          {/* <div> */}
-          <Grid container>
+
+          <Grid container align="center">
             {currentCourses.length >= 0 ? (
               <>
                 {currentCourses?.map((c, i) => (
-                  /*  <div> */
-                  <Grid key={i} item xs={2} sm={4} md={4}>
-                    <Item /* sx={{ minWidth: 270 }} */>
+                  <Grid key={i} item xs={12} sm={6} md={3} lg={3}>
+                    <Item sx={{ minWidth: 270, maxWidth: 280 }}>
                       <Card
                         id={c._id}
                         title={c.title}
@@ -95,10 +93,10 @@ export default function Courses() {
                         description={c.description}
                         score={c.score}
                         price={c.price}
+                        course={c}
                       />
                     </Item>
                   </Grid>
-                  /*  </div> */
                 ))}
               </>
             ) : (
@@ -127,7 +125,6 @@ export default function Courses() {
               </Grid>
             )}
           </Grid>
-          {/*  </div> */}
         </Grid>
       </div>
       <br />
