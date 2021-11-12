@@ -93,6 +93,7 @@ export default function Courses() {
                         description={c.description}
                         score={c.score}
                         price={c.price}
+                        course={c}
                       />
                     </Item>
                   </Grid>

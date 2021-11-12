@@ -39,7 +39,7 @@ const UserSchema = new Schema({
   },
   isGoogle: {
     type: Boolean,
-    default: true,
+    default: false,
   },
   isAdmin: {
     type: Boolean,

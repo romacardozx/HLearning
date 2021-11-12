@@ -21,11 +21,11 @@ const OrderSchema = new Schema({
     enum: ["Confirmed", "Cancel"],
     default: "Confirmed"
 },
-  payment: {
-    type: Boolean,
-    required: true,
-    default:false 
-  }  
+payment: {
+  type: String,
+  enum: ["Created", "Confirmed", "Processing", "Canceled"],
+  default: "Created"
+}  
 });
 
 module.exports = mongoose.model("Order", OrderSchema);
