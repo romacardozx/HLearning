@@ -36,9 +36,9 @@ const schemaValidate = yup.object().shape({
     .required("Requiere un precio"),
   img: yup.string()
     .required("Requiere una imagen"),
-  categories: yup.string()
-    .required("Eliga una categoria"),
-   videos: yup.array().of()
+  // categories: yup.string()
+  //   .required("Eliga una categoria"),  COMENTO ESTO ASI NO ROMPE EL CLIENT (YAMI)
+  //  videos: yup.array().of()
 });
 
 
