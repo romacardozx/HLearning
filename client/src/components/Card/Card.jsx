@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -13,6 +13,7 @@ import { Box } from "@mui/system";
 import calculeScore from "../../utils/calculeScore";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
+import { loadState, saveState } from "../../localStorage.js"
 
 export default function CourseCard({
   id,
@@ -21,6 +22,7 @@ export default function CourseCard({
   /*  description, */
   score,
   price,
+  course
 }) {
   /* const [anchorEl, setAnchorEl] = React.useState(null);
   const handlePopoverOpen = (event) => {
@@ -30,6 +32,9 @@ export default function CourseCard({
     setAnchorEl(null);
   };
   const open = Boolean(anchorEl); */
+
+  const cart = loadState();
+  const [, setAddCart] = useState();
 
   return (
     <Box p={1}>
@@ -87,16 +92,22 @@ export default function CourseCard({
             {description}
           </Typography>
         </Popover> */}
-        <CardActions>
-          <IconButton
-            onClick={() => {
-              alert("Agregado a tu carrito");
-            }}
-          >
-            <AddShoppingCartIcon />
-            <Typography> Agregar al carrito</Typography>
-          </IconButton>
-        </CardActions>
+        {
+          cart.includes(JSON.stringify(course)) ? null : 
+          <CardActions>
+            <IconButton
+              onClick={() => {
+                saveState(course);
+                loadState();
+                setAddCart("Agregado al carrito");
+                alert("Agregado a tu carrito");
+              }}
+            >
+              <AddShoppingCartIcon />
+              <Typography> Agregar al carrito</Typography>
+            </IconButton>
+          </CardActions>
+        }
         <Button
           variant="contained"
           size="medium"

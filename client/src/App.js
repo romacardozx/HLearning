@@ -10,10 +10,11 @@ import Register from "./components/Register/Register";
 import PruebaAdm from "./components/PanelAdmin/PruebaAdm"
 import UserProfile from "./components/UserProfile/UserProfile";
 import DeleteCourse from "./components/PanelAdmin/DeleteCourse";
-import Cart from "./components/UserProfile/Cart";
+// import Cart from "./components/UserProfile/Cart";
 import DetailUser from "./components/Detail/DetailUser";
-import CreateCourse from "./components/PanelAdmin/CreateCourse"
-import CreateCategory from "./components/PanelAdmin/CreateCategory"
+import CreateCourse from "./components/PanelAdmin/CreateCourse";
+import CreateCategory from "./components/PanelAdmin/CreateCategory";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -29,10 +30,11 @@ function App() {
       <Route exact path="/courses/:id" component={Detail} />
       <Route exact path="/admin" component={PruebaAdm} />
       <Route exact path="/admcourses" component={DeleteCourse} />
-      <Route exact path="/Cart" component={Cart} />
+      {/* <Route exact path="/Cart" component={Cart} /> */}
       <Route exact path="/mycourses/:id" component={DetailUser} />
       <Route exact path="/createcourse" component={CreateCourse} />
       <Route exact path="/createcategory" component={CreateCategory} />
+      <Route exact path="/cart" component={Cart} />
     </div>
   );
 }
