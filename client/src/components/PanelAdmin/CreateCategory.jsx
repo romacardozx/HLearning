@@ -27,9 +27,9 @@ function CreateCategory() {
           try {
 
             const response = await axios.post('/categories/createCategory', values)
-            console.log(response);
-            resetForm();
+            console.log(response);            
             swal("Categoria Creada!", "Presione para continuar", "success");
+            resetForm();
 
           } catch (error) {
 
