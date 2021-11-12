@@ -15,37 +15,28 @@ const calculeScore = (arrayScores) => {
 };
 
 module.exports = async (req, res, next) => {
-  const  filterdata  = req.body;
-  console.log(filterdata);
-
+  
+  
   try {
-       let courses
-    if(filterdata){
-       courses = await Course.find({ status: "Confirmed" });
-    if (courses) {
-      // console.log("filtro de la base de datos", courses);
+    let courses;
+   
+      courses = await Course.find({ status: "Confirmed" });
+      if (courses) {       
 
-      courses = await Category.populate(courses, { path: "categories" });
-      courses = await Review.populate(courses, { path: "score" });
-      courses = await User.populate(courses, { path: "students" });
+        courses = await Category.populate(courses, { path: "categories" });
+        courses = await Review.populate(courses, { path: "score" });
+        courses = await User.populate(courses, { path: "students" });
 
-      // res.json(courses);
-    } else {
-      res.json({ msg: "There're any course available" });
-    }
-    }else{
-      courses = filterdata
-
-      console.log("ENTRE ACAAAA")
-     
-    
-
-    }
+        
+      } else {
+        res.json({ msg: "There're any course available" });
+      }
     
 
     let { name, score, price, priceToFilter, categories, scoreToFilter } =
       req.query;
 
+    // ----------------ORDENAMIENTO ALFABETICO---------------------------------
     if (name) {
       if (name === "A-Z" || !name || name === "") {
         coursesOrder = courses.sort((a, b) => {
@@ -65,7 +56,7 @@ module.exports = async (req, res, next) => {
       }
     }
 
-    // -------------------------------------------------
+    // ----------------ORDENAMIENTO POR ESTRELLAS---------------------------------
 
     if (score) {
       if (score === "Desc" || !score || score === "") {
@@ -86,7 +77,7 @@ module.exports = async (req, res, next) => {
       }
     }
 
-    // ------------------------------------------------------------
+    // -----------------------ORDENAMIENTO POR PRECIO-------------------------------------
     if (price) {
       if (price === "Asc" || !price || price === "") {
         orderPrice = courses.sort((a, b) => {
@@ -106,68 +97,68 @@ module.exports = async (req, res, next) => {
       }
     }
 
-    // ------------------------------------------------------------
+    // ----------------------FILTRADO POR PRECIOS--------------------------------------
     if (priceToFilter) {
       priceToFilter = parseInt(priceToFilter);
       if (priceToFilter < 1000) {
         const priceToFilterLess = await Course.find({ price: { $lt: 1000 } })
-        .populate('categories')
-        .populate('score')
-        .populate('students')
+          .populate("categories")
+          .populate("score")
+          .populate("students");
         return res.send(priceToFilterLess);
       }
       if (priceToFilter >= 1000 && priceToFilter < 1500) {
         const priceToFilterBetween = await Course.find({
           price: { $gte: 1000, $lt: 1500 },
         })
-        .populate('categories')
-        .populate('score')
-        .populate('students')
+          .populate("categories")
+          .populate("score")
+          .populate("students");
         return res.send(priceToFilterBetween);
       }
       if (priceToFilter >= 1500 && priceToFilter < 2000) {
         const priceToFilterBetween2 = await Course.find({
           price: { $gte: 1500, $lt: 2000 },
         })
-        .populate('categories')
-        .populate('score')
-        .populate('students')
+          .populate("categories")
+          .populate("score")
+          .populate("students");
         return res.send(priceToFilterBetween2);
       }
       if (priceToFilter >= 2000 && priceToFilter < 2500) {
         const priceToFilterBetween3 = await Course.find({
           price: { $gte: 2000, $lt: 2500 },
         })
-        .populate('categories')
-        .populate('score')
-        .populate('students')
+          .populate("categories")
+          .populate("score")
+          .populate("students");
         return res.send(priceToFilterBetween3);
       }
       if (priceToFilter >= 2500) {
         const priceToFilterGrater = await Course.find({
           price: { $gte: 2500 },
         })
-        .populate('categories')
-        .populate('score')
-        .populate('students')
+          .populate("categories")
+          .populate("score")
+          .populate("students");
         return res.send(priceToFilterGrater);
       }
     }
 
-    // -------------------------------------------------------------------
+    // ------------------------FILTRADO POR CATEGORIAS-------------------------------------------
 
     if (categories) {
       const videoFiltercategory = await Course.find({
         categories: { $all: [`${categories}`] },
       })
-        .populate('categories')
-        .populate('score')
-        .populate('students')
+        .populate("categories")
+        .populate("score")
+        .populate("students");
 
       return res.send(videoFiltercategory);
     }
 
-    // ------------------------------------------------------------------------------
+    // ------------------------FILTRADO POR 5 ESTRELLAS-----------------------------------------------
 
     if (scoreToFilter) {
       scoreToFilter = parseInt(scoreToFilter);
