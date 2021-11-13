@@ -94,6 +94,8 @@ const getCourses = (state = initialState, action) => {
       return {
         ...state,
         setAllCourses: sortedFilters,
+        filteredString: action.payload.name,
+
       };
     }
 
@@ -123,6 +125,7 @@ const getCourses = (state = initialState, action) => {
       return {
         ...state,
         setAllCourses: sortedFilters,
+        filteredString: action.payload.score,
       };
     }
 
@@ -152,6 +155,7 @@ const getCourses = (state = initialState, action) => {
       return {
         ...state,
         setAllCourses: sortedFilters,
+        filteredString: action.payload.price,
       };
     }
 
