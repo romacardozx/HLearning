@@ -64,7 +64,7 @@ export default function Courses() {
               <Grid item>
                 <Orders
                   setCurrentPage={setCurrentPage}
-                  fitered={filteredCourses}
+                  filtered={filteredCourses}
                 />
               </Grid>
               <Grid item>
