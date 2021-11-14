@@ -8,26 +8,20 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
-
-
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    imgPath:
-      "https://i.imgur.com/B6h8XrJ.png",
+    imgPath: "https://i.imgur.com/B6h8XrJ.png",
   },
   {
-    imgPath:
-      "https://i.imgur.com/hZUlew0.png",
+    imgPath: "https://i.imgur.com/hZUlew0.png",
   },
   {
-    imgPath:
-      "https://i.imgur.com/dCGecDy.png",
+    imgPath: "https://i.imgur.com/dCGecDy.png",
   },
   {
-    imgPath:
-      "https://i.imgur.com/bA6FauC.png",
+    imgPath: "https://i.imgur.com/bA6FauC.png",
   },
 ];
 
@@ -49,7 +43,7 @@ export default function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 600, flexGrow: 1,}}> 
+    <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
       {/* <Paper
         square
         elevation={2}
@@ -62,7 +56,7 @@ export default function SwipeableTextMobileStepper() {
         }}>
         <Typography>{images[activeStep].label}</Typography>
       </Paper> */}
-      <br/>
+      <br />
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -70,7 +64,7 @@ export default function SwipeableTextMobileStepper() {
         enableMouseEvents
       >
         {images.map((step, index) => (
-          <div key={step.label}>
+          <div key={index}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
@@ -117,7 +111,7 @@ export default function SwipeableTextMobileStepper() {
           </Button>
         }
       />
-      <br/>
-    </Box> 
+      <br />
+    </Box>
   );
 }
