@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 
-export async function postNewRecipe(payload){
+export default async function postNewRecipe(payload){
     
-    const response = await axios.post("/createReview", payload);
+    const response = await axios.post("/reviews/createReview", payload);
     return response;
 
 }
