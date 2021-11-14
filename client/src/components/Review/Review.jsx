@@ -1,8 +1,9 @@
 import React from "react";
 import s from "./review.module.css";
+import {useHistory} from 'react-router-dom';
 import { useState } from "react";
 import Navbar from "../NavBar/NavBar";
-
+import createReview from "../../redux/actions/createReview"
 
 function validate(state) {
   let errors = {};
@@ -15,9 +16,10 @@ function validate(state) {
 }
 
 function Review() {
+  const history = useHistory()
   const [state, setState] = useState({
     description: "",
-    score: ""
+    score: 0
   });
 
   const [errors, setErrors] = useState({});
@@ -34,11 +36,27 @@ function Review() {
       })
     );
   }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
+    else{
+
+        createReview(state)
+        alert("Reseña enviada. Gracias!")
+        setState({
+          description: "",
+          score: 0
+        })
+        history.push('/home')
+    }
+}
+
   return (
   <div>
    <Navbar/>
     <div className={s.cont} >
-      <form className={s.formulario} onSubmit>
+      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)}>
         <h1>Reseña</h1>
         <div className={s.contenedor}>
           <div className={s.inputContenedor}>
@@ -65,6 +83,7 @@ function Review() {
         </div>
       </form>
     </div>
+      {console.log('este es el state', state)}
   </div>
   );
 }

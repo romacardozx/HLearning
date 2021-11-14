@@ -34,7 +34,8 @@ const getCourses = (state = initialState, action) => {
     case GET_COURSE_BY_NAME: {
       return {
         ...state,
-        setAllCourses: action.payload,
+        setAllCourses: action.payload.data,
+        filteredString: action.payload.name,
       };
     }
 

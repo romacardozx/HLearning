@@ -11,7 +11,7 @@
       "617d4c25119458f9b0b7ff83",
       "617d4c31119458f9b0b7ff85"
     ],
-    "price": 500,
+    "price": 1500,
     "videos": [
       {
         "name": "Introduction",
@@ -49,7 +49,7 @@
     "score": ["618748fe521fdc29a93ec278"],
     "duration": "00:59:26",
     "categories": ["617d4c16119458f9b0b7ff81"],
-    "price": 900,
+    "price": 1900,
     "videos": [
       {
         "name": "Intro & Setup",
@@ -97,7 +97,7 @@
     "score": ["618748fe521fdc29a93ec279"],
     "duration": "01:04:21",
     "categories": ["617d4c16119458f9b0b7ff81"],
-    "price": 500,
+    "price": 1500,
     "videos": [
       {
         "name": "Introducción y Header",
@@ -153,7 +153,7 @@
     "score": ["618748fe521fdc29a93ec27b"],
     "duration": "00:02:05",
     "categories": ["617d4c16119458f9b0b7ff81", "617d4c25119458f9b0b7ff83"],
-    "price": 750,
+    "price": 1750,
     "videos": [
       {
         "name": "Aprende CSS ahora! curso completo desde cero",
