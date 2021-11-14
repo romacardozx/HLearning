@@ -6,7 +6,7 @@ const ReviewSchema = new Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        required: true, 
+        required: false, 
       },
     description: {
         type: String        
@@ -14,11 +14,11 @@ const ReviewSchema = new Schema({
     course: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Course",       
-        required: true,       
+        required: false,       
     },
     score: {
         type: Number,
-        required: true
+        required: false
     },
     status: {
         type: String,
