@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { loadState, removeState, saveState } from "../../localStorage";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -13,10 +14,10 @@ import { Box } from "@mui/system";
 import calculeScore from "../../utils/calculeScore";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
-import { loadState, saveState } from "../../localStorage.js";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { styled } from "@mui/material/styles";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -51,7 +52,7 @@ export default function CourseCard({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+  const [, setRemove] = useState();
   const cart = loadState();
   const [, setAddCart] = useState();
 
@@ -111,7 +112,19 @@ export default function CourseCard({
             {description}
           </Typography>
         </Popover> */}
-        {cart.includes(JSON.stringify(course)) ? null : (
+        {cart.includes(JSON.stringify(course)) ? (
+          <IconButton>
+            <ShoppingCartIcon
+              onClick={() => {
+                removeState(course);
+                loadState();
+                setRemove("eliminado del carrito");
+                alert("Eliminado");
+              }}
+            />
+            <Typography> Agregado</Typography>
+          </IconButton>
+        ) : (
           <CardActions>
             <IconButton
               onClick={() => {
