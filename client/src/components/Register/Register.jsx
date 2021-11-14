@@ -1,13 +1,15 @@
 import React from "react";
 import s from "./register.module.css";
+import {useHistory} from 'react-router-dom';
 import { useState } from "react";
 import Navbar from "../NavBar/NavBar";
+import createUser from "../../redux/actions/createUser"
 
 
 function validate(state) {
   let errors = {};
-  if (!state.fullName) {
-    errors.fullName = "Ingresa tu nombre y apellido";
+  if (!state.name) {
+    errors.name = "Ingresa tu nombre y apellido";
   } else if (!state.email) {
     errors.email = "Ingresa un email";
   } else if (!state.password) {
@@ -21,8 +23,9 @@ function validate(state) {
 }
 
 function Register() {
+  const history = useHistory()
   const [state, setState] = useState({
-    fullName: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -41,11 +44,28 @@ function Register() {
       })
     );
   }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
+    else{
+
+        createUser(state)
+        alert("Registro exitoso!")
+        setState({
+          name: "",
+          email: "",
+          password: "",
+        })
+        history.push('/home')
+    }
+  }
+
   return (
   <div>
    <Navbar/>
     <div className={s.cont}>
-      <form className={s.formulario} onSubmit>
+      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)}>
         <h1>Registrate</h1>
         <div className={s.contenedor}>
           <div className={s.inputContenedor}>
@@ -53,15 +73,15 @@ function Register() {
             <input
               className={s.input}
               type="text"
-              value={state.fullName}
-              name="fullName"
+              value={state.name}
+              name="name"
               placeholder="Nombre Completo"
               onChange={(e) => handleInputChange(e)}
               required
             />
           </div>
 
-          {errors.fullName && <p className={s.errors}>{errors.fullName}</p>}
+          {errors.name && <p className={s.errors}>{errors.name}</p>}
 
           <div className={s.inputContenedor}>
             {/*<i class="fas fa-envelope icon"></i>*/}
@@ -128,6 +148,7 @@ function Register() {
         </div>
       </form>
     </div>
+    {console.log('este es el state', state)}
   </div>
   );
 }
