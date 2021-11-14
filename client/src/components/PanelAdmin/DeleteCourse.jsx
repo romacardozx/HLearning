@@ -13,13 +13,14 @@ import { Grid, Typography } from "@material-ui/core";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import { deleteCourse } from "../../redux/actions/deleteCourse"
+import { maxWidth } from "@mui/system";
 
 export default function Courses() {
   const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.getCourses.getAllCourses);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage /* setCoursesPerPage */] = useState(8);
+  const [coursesPerPage /* setCoursesPerPage */] = useState(6);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
   const currentCourses =
@@ -47,17 +48,17 @@ export default function Courses() {
 
   return (
     <div>
-      <div>
-        <NavBar />
-      </div>
-      <br />
-      <br />
+      <NavBar/>
       <div>
         <Grid container direction="column" alignItems="center">
           <br />
           <div>
           <Typography variant="h4"  align='center'>CURSOS ACTUALES</Typography><br/>
-            <Grid container>
+            <Grid  container
+             direction="row"
+             alignItems="center"
+             justify="center"
+             >
               {currentCourses.length >= 0 ? (
                 <>
                   {currentCourses?.map((c, i) => (
@@ -91,10 +92,7 @@ export default function Courses() {
           </div>
         </Grid>
       </div>
-      <br />
-      <br />
-      <br />
-      <Footer />
+      <Footer/>
     </div>
   );
 }
