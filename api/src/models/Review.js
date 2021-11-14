@@ -14,11 +14,11 @@ const ReviewSchema = new Schema({
     course: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Course",       
-        required: false,       
+        required: true,       
     },
     score: {
         type: Number,
-        required: false
+        required: true
     },
     status: {
         type: String,
