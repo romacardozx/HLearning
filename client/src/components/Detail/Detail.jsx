@@ -13,8 +13,8 @@ import Rating from "@mui/material/Rating";
 // import { Component } from "react";
 // import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import IconButton from "@mui/material/IconButton";
+// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+// import IconButton from "@mui/material/IconButton";
 import { getDetailCourses } from '../../redux/actions/getDetailCourses';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
@@ -124,10 +124,10 @@ export default function CourseDetail(props) {
                       <Button variant="contained" size="medium" onClick={handleBuy}>
                       Comprar ahora!
                       </Button>
-                      <IconButton>
+                      {/* <IconButton>
                         <AddShoppingCartIcon />
                         <Typography>Agregar al carrito</Typography>
-                    </IconButton>
+                    </IconButton> */}
                     </Typography>
                   </Grid>
                   {/* <Grid item align="right"> */}

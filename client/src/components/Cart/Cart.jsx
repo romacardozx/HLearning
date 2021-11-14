@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { loadState, removeState } from '../../localStorage'
+import Footer from '../Footer/Footer'
+import Navbar from '../NavBar/NavBar';
 import Card from '../Card/Card.jsx'
 import { Grid } from "@material-ui/core";
 import { experimentalStyled as styled } from "@mui/material/styles";
@@ -12,16 +14,18 @@ function Cart() {
         padding: theme.spacing(0.5),
     }));
 
+    const [, setRemove] = useState();
     const cart = loadState();
     cart.shift();
-    const [, setRemove] = useState();
-    console.log(cart, "cart")
+    console.log(cart, "Componente cart")
 
     return (
         <div>
+            <Navbar/>
             {
                 cart.length > 0 ? 
                 <div>
+                    <Grid container align="center">
                     {
                         cart?.map(c => {
 
@@ -45,7 +49,7 @@ function Cart() {
                                                 removeState(course);
                                                 loadState();
                                                 setRemove("eliminado del carrito");
-                                                alert("Eliminado");
+                                                alert("Eliminado");   
                                             }}
                                         >X</button>
                                     </Item>
@@ -53,9 +57,11 @@ function Cart() {
                             </div>
                         )})
                     }
+                    </Grid>
                 </div> 
                 : <h1>Empty Cart</h1>
             }
+            <Footer/>
         </div>
     )
 }
