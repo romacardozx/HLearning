@@ -6,7 +6,7 @@ export function getCourseByName(name) {
       var json = await axios(`/courses/search?name=${name ? name : ""}`);
       return dispatch({
         type: "GET_COURSE_BY_NAME",
-        payload: json.data,
+        payload: {data:json.data, name:name},
       });
     } catch (error) {
       console.log("error", error);
