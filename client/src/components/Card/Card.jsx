@@ -10,7 +10,6 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
 /* import Popover from "@mui/material/Popover"; */
 import { Box } from "@mui/system";
-import { Grid } from "@mui/material";
 import calculeScore from "../../utils/calculeScore";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
