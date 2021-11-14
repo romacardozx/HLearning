@@ -6,7 +6,6 @@ export const loadState = () => {
         i = keys.length;
         
         while (i > 0) {
-            
             cart.push(localStorage.getItem(keys[i]));
             i--;
         }
