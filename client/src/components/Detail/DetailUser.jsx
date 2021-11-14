@@ -56,6 +56,7 @@ export default function CourseDetail(props) {
                       playing
                       width="750px"
                       height="550px"
+                      controls="false"
                     />
                   </ButtonBase>
                 </Grid>
@@ -80,11 +81,6 @@ export default function CourseDetail(props) {
                       <Typography variant="h6" gutterBottom textAlign="center">
                         {courseDetailed.description}
                       </Typography>
-                      <Typography
-                        variant="body2"
-                        align="left"
-                        color="text.secondary"
-                      ></Typography>
                       <br />
                       <Typography
                         variant="body2"

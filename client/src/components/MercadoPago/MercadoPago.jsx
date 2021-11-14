@@ -1,7 +1,7 @@
-import Checkout from "../Checkout/Checkout";
+// import Checkout from "../Checkout/Checkout";
 
-function MercadoPago() {
-  return <div className="App">{<Checkout />}</div>;
-}
+// function MercadoPago() {
+//   return <div className="App">{<Checkout />}</div>;
+// }
 
-export default MercadoPago;
+// export default MercadoPago;
