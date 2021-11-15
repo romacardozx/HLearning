@@ -18,13 +18,13 @@ const OrderSchema = new Schema({
   },
   status: {
     type: String,
-    enum: ["Confirmed", "Cancel"],
+    enum: ["Confirmed", "Deleted"],
     default: "Confirmed"
 },
   payment: {
-    type: Boolean,
-    required: true,
-    default:false 
+    type: String,
+    enum: ["Created", "Confirmed", "Processing", "Canceled"],
+    default: "Created"
   }  
 });
 
