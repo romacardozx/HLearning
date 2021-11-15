@@ -7,6 +7,7 @@ export const GET_COURSE_BY_NAME = "GET_COURSE_BY_NAME"
 export const GET_COURSES_SCORE = "GET_COURSES_SCORE"
 export const GET_USER = "GET_USER"
 export const GET_ORDER = "GET_ORDER"
+export const GET_CART = "GET_CART"
 
 // ORDES //
 
@@ -29,3 +30,4 @@ export const POST_USER = "POST_USER"
 export const POST_SIGN_IN = "POST_SIGN_IN"
 export const SIGN_OUT_SUCCESS = "SIGN_OUT_SUCCESS"
 export const SIGN_OUT_FAILED = "SIGN_OUT_FAILED"
+export const UPDATE_CART = "UPDATE_CART"
