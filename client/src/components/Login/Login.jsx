@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 import s from './login.module.css';
 import Navbar from '../NavBar/NavBar';
+import login from "../../redux/actions/login"
 
 
 function validate(state) {
@@ -16,6 +18,7 @@ function validate(state) {
 
 
 function Login() {
+  const history = useHistory()
   const [state, setState] = useState({
     email: "",
     password: ""
@@ -34,6 +37,21 @@ function Login() {
       })
     )
   }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
+    else{
+
+        login(state)
+        setState({
+          email: "",
+          password: "",
+        })
+        history.push('/user')
+    }
+  }
+
   return (
     <div>
       <Navbar/>
@@ -42,7 +60,7 @@ function Login() {
 
         <h1 className={s.h1}>Login</h1>
         <div className={s.contenedor}>
-          <form onSubmit>
+          <form onSubmit={(e)=>handleSubmit(e)}>
             <div className={s.inputcontenedor}>
               <i className="fas fa-envelope icon"></i>
               <input className={s.input} type="email" name="email" value={state.email} placeholder="Correo Electronico" onChange={(e) => handleInputChange(e)} required/>

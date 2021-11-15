@@ -69,7 +69,7 @@ function Register() {
         <h1>Registrate</h1>
         <div className={s.contenedor}>
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-user icon"></i>*/}
+            
             <input
               className={s.input}
               type="text"
@@ -84,7 +84,7 @@ function Register() {
           {errors.name && <p className={s.errors}>{errors.name}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-envelope icon"></i>*/}
+            
             <input
               className={s.input}
               type="email"
@@ -99,7 +99,7 @@ function Register() {
           {errors.email && <p className={s.errors}>{errors.email}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-key icon"></i>*/}
+            
             <input
               className={s.input}
               type="password"
@@ -114,7 +114,7 @@ function Register() {
           {errors.password && <p className={s.errors}>{errors.password}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-key icon"></i>*/}
+            
             <input
               className={s.input}
               type="password"

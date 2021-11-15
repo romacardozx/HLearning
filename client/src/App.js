@@ -16,6 +16,7 @@ import Review from "./components/Review/Review"
 import CreateCourse from "./components/PanelAdmin/CreateCourse";
 import CreateCategory from "./components/PanelAdmin/CreateCategory";
 import Cart from "./components/Cart/Cart";
+import EditProfile from "./components/UserProfile/EditProfile"
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       <Route exact path="/review" component={Review} />
       <Route exact path="/createcategory" component={CreateCategory} />
       <Route exact path="/cart" component={Cart} />
+      <Route exact path="/editprofile" component={EditProfile} />
     </div>
   );
 }
