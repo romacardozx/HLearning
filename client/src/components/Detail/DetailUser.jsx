@@ -15,6 +15,12 @@ import { useEffect } from "react";
 import Loading from "../Loading/Loading";
 import Button from '@mui/material/Button';
 import style from "./detail.module.css";
+import Card from '@mui/material/Card';
+import Rating from "@mui/material/Rating";
+import CardContent from '@mui/material/CardContent';
+import Avatar from "@mui/material/Avatar";
+
+
 
 export default function CourseDetail(props) {
   const dispatch = useDispatch();
@@ -104,6 +110,27 @@ export default function CourseDetail(props) {
         ) : (
           <Loading />
         )}
+<Grid align="center">
+<Card sx={{ maxWidth: 345 }}>
+      <CardContent>
+      <Avatar sx={{ width: 100, height: 100 }}/>
+        <Typography gutterBottom variant="h5" component="div">
+          
+        </Typography>
+        <Rating name="read-only" readOnly value={3} />
+        <Typography variant="body2" color="text.secondary">
+        No siento que tenga las herramientas para poder aplicar 
+        Material UI por mi cuenta en un proyecto individual
+        </Typography>
+      </CardContent>
+    </Card>
+    </Grid>
+
+
+    <br />
+            <br />
+
+
         <Footer />
       </div>
     </div>
