@@ -6,9 +6,7 @@ const bcrypt = require("bcrypt");
 
 module.exports = async (req, res, next) => {
   try {
-    const { fullName, password, email } = req.body;
-    const name = fullName;
-    console.log("name", fullName);
+    const { name, password, email } = req.body;
     if (!name) {
       return res.status(400).json({
         error: "Please provide a name",

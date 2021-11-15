@@ -22,8 +22,8 @@ router.use('/auth', authRoutes);
 const cartRoutes = require('../routes/cartRoutes');
 router.use('/cart', cartRoutes);
 
-// const mercadoPagoRoutes = require('../routes/mercadoPagoRoutes');
-// router.use('/mercadopago', mercadoPagoRoutes);
+const mercadoPagoRoutes = require('../routes/mercadoPagoRoutes');
+router.use('/mercadopago', mercadoPagoRoutes);
 
 
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { loadState, removeState, saveState } from "../../localStorage";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -13,10 +14,11 @@ import { Box } from "@mui/system";
 import calculeScore from "../../utils/calculeScore";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
-import { loadState, saveState } from "../../localStorage.js";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { styled } from "@mui/material/styles";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { BsCartPlus, BsCartCheckFill } from "react-icons/bs";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -52,13 +54,14 @@ export default function CourseCard({
     setExpanded(!expanded);
   };
 
+  /* const [remove, setRemove] = useState(); */
   const cart = loadState();
   const [, setAddCart] = useState();
 
   return (
     <Box p={1}>
       <Card
-        sx={{ maxWidth: 270, minWidth: 100 }}
+        /*  sx={{ maxWidth: 270, minWidth: 100 }} */
         elevation={6}
         /* aria-owns={open ? "mouse-over-popover" : undefined}
         aria-haspopup="true"
@@ -112,7 +115,7 @@ export default function CourseCard({
           </Typography>
         </Popover> */}
         {cart.includes(JSON.stringify(course)) ? null : (
-          <CardActions>
+          /*  <CardActions>
             <IconButton
               onClick={() => {
                 saveState(course);
@@ -124,7 +127,17 @@ export default function CourseCard({
               <AddShoppingCartIcon />
               <Typography> Agregar al carrito</Typography>
             </IconButton>
-          </CardActions>
+          </CardActions> */
+          <button
+            onClick={() => {
+              saveState(course);
+              loadState();
+              setAddCart("Agregado al carrito");
+              alert("Agregado a tu carrito");
+            }}
+          >
+            Agregar al <BsCartPlus />
+          </button>
         )}
 
         <ExpandMore
@@ -155,3 +168,23 @@ export default function CourseCard({
     </Box>
   );
 }
+
+/* <IconButton>
+            <ShoppingCartIcon
+              onClick={() => {
+                removeState(course);
+                loadState();
+                setRemove("eliminado del carrito");
+                alert("Eliminado");
+              }}
+            />
+            <Typography> Agregado</Typography>
+          </IconButton> */
+/* <button
+            onClick={() => {
+              removeState(course);
+              setRemove(!remove);
+            }}
+          >
+            <BsCartCheckFill />
+          </button> */
