@@ -38,7 +38,7 @@ module.exports = async (req, res, next) => {
       email,
     });
     await user.save();
-    res.json({
+    res.status(200).json({
       msg: "User created",
       user,
     });
