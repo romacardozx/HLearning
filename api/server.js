@@ -34,13 +34,15 @@ app.use(
   })
 );
 
-const secretKey = process.env.SECRET_KEY;
+// const secretKey = process.env.SECRET_KEY;
+// console.log(SECRET_KEY,"miclave")
+
 
 // Iniciar passport y la sesión de express
 app.use(passport.initialize());
 app.use(
   session({
-    secret: secretKey,
+    secret: "miclavesecreta",
     saveUninitialized: false,
     resave: false,
   })

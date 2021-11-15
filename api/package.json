@@ -23,6 +23,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
     "passport": "^0.5.0",
+    "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0"
   }
 }

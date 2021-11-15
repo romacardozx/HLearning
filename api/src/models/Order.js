@@ -18,14 +18,14 @@ const OrderSchema = new Schema({
   },
   status: {
     type: String,
-    enum: ["Confirmed", "Cancel"],
+    enum: ["Confirmed", "Deleted"],
     default: "Confirmed"
 },
-payment: {
-  type: String,
-  enum: ["Created", "Confirmed", "Processing", "Canceled"],
-  default: "Created"
-}  
+  payment: {
+    type: String,
+    enum: ["Created", "Confirmed", "Processing", "Canceled"],
+    default: "Created"
+  }  
 });
 
 module.exports = mongoose.model("Order", OrderSchema);

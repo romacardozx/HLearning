@@ -32,10 +32,11 @@ module.exports = async (req, res, next) => {
         error: "The email is already in use",
       });
     }
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({
       name,
-      password: hashedPassword,
+      // password: hashedPassword,
+      password,
       email,
     });
     await user.save();

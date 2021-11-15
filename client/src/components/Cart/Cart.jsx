@@ -14,10 +14,8 @@ function Cart() {
         padding: theme.spacing(0.5),
     }));
 
-    const [, setRemove] = useState();
+    const [remove, setRemove] = useState(false);
     const cart = loadState();
-    cart.shift();
-    console.log(cart, "Componente cart")
 
     return (
         <div>
@@ -27,10 +25,7 @@ function Cart() {
                 <div>
                     <Grid container align="center">
                     {
-                        cart?.map(c => {
-
-                            const course = JSON.parse(c) 
-
+                        cart.map(course => {
                             return (
                                 <div  key={course._id}>
                                 <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -47,9 +42,7 @@ function Cart() {
                                         <button
                                             onClick={()=> {
                                                 removeState(course);
-                                                loadState();
-                                                setRemove("eliminado del carrito");
-                                                alert("Eliminado");   
+                                                setRemove(!remove);
                                             }}
                                         >X</button>
                                     </Item>
