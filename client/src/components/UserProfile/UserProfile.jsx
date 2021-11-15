@@ -1,34 +1,27 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-/* import { useParams } from "react-router-dom"; */
 import { Link } from "react-router-dom";
 import { getUserById } from "../../redux/actions/getUserById";
 import { getSignOut } from "../../redux/actions/userActions";
 /* import { getOrderById } from "../../redux/actions/getOrderById"; */
 /* import { getCourseByName } from "../../redux/actions/getCourseByName"; */
+
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
-/* import Rating from "@mui/material/Rating"; */
 import Box from "@mui/material/Box";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-/* import IconButton from "@mui/material/IconButton";
-import EditIcon from "@mui/icons-material/Edit"; */
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
-/* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
 
 export default function UserProfile() {
   const dispatch = useDispatch();
-  /* const { id } = useParams(); */
   const User = useSelector((state) => state.getUser.getUserId);
-  /* const course = User.courses.title; */
 
   useEffect(() => {
     dispatch(getUserById("6186d90a521fdc29a93ec244"));
@@ -64,15 +57,6 @@ export default function UserProfile() {
             >
               <b>Información</b>
             </Typography>
-            {/* <Box display="flex" justifyContent="flex-end" width="100%" mr={15}>
-              <IconButton
-                color="primary"
-                aria-label="edit"
-                onClick={handleOpenProfile}
-              >
-                <EditIcon />
-              </IconButton>
-            </Box> */}
             <Box
               sx={{
                 display: "flex",
@@ -89,7 +73,7 @@ export default function UserProfile() {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 5,
-                  m: 5,
+                  m: 1,
                 }}
               >
                 <Box
@@ -164,10 +148,6 @@ export default function UserProfile() {
                           elevation={6}
                           align="center"
                         >
-                          {/* <CardActionArea
-                            component={Link}
-                            to={`/mycourses/${c._id}`}
-                          > */}
                           <Typography
                             sx={{ mb: 1 }}
                             paddingLeft={1}
@@ -181,18 +161,6 @@ export default function UserProfile() {
                             image={c.img}
                             alt="img video"
                           />
-                          <CardContent>
-                            {/*  <Rating name="read-only" readOnly value={score} /> */}
-                          </CardContent>
-                          {/* <Typography
-                              textAlign="center"
-                              variant="h5"
-                              component="div"
-                              noWrap={true}
-                            >
-                              DISPONIBLE!!
-                            </Typography> */}
-                          {/* </CardActionArea> */}
                           <Button
                             variant="contained"
                             size="medium"
@@ -217,7 +185,7 @@ export default function UserProfile() {
                   </Box>
                 </Box>
               </Box>
-              <hr style={{ width: "90%" }} />
+              <hr style={{ width: "50%" }} />
             </Box>
           </Box>
         </Paper>
