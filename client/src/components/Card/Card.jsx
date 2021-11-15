@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -13,14 +13,30 @@ import { Box } from "@mui/system";
 import calculeScore from "../../utils/calculeScore";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
+import { loadState, saveState } from "../../localStorage.js";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Collapse from "@mui/material/Collapse";
+import { styled } from "@mui/material/styles";
+
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginRight: "70px",
+  transition: theme.transitions.create("transform", {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 export default function CourseCard({
   id,
   title,
   image,
-  /*  description, */
+  description,
   score,
   price,
+  course,
 }) {
   /* const [anchorEl, setAnchorEl] = React.useState(null);
   const handlePopoverOpen = (event) => {
@@ -30,6 +46,14 @@ export default function CourseCard({
     setAnchorEl(null);
   };
   const open = Boolean(anchorEl); */
+  const [expanded, setExpanded] = useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
+  const cart = loadState();
+  const [, setAddCart] = useState();
 
   return (
     <Box p={1}>
@@ -87,16 +111,37 @@ export default function CourseCard({
             {description}
           </Typography>
         </Popover> */}
-        <CardActions>
-          <IconButton
-            onClick={() => {
-              alert("Agregado a tu carrito");
-            }}
-          >
-            <AddShoppingCartIcon />
-            <Typography> Agregar al carrito</Typography>
-          </IconButton>
-        </CardActions>
+        {cart.includes(JSON.stringify(course)) ? null : (
+          <CardActions>
+            <IconButton
+              onClick={() => {
+                saveState(course);
+                loadState();
+                setAddCart("Agregado al carrito");
+                alert("Agregado a tu carrito");
+              }}
+            >
+              <AddShoppingCartIcon />
+              <Typography> Agregar al carrito</Typography>
+            </IconButton>
+          </CardActions>
+        )}
+
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>Descripción:</Typography>
+            <Typography paragraph>{description}</Typography>
+          </CardContent>
+        </Collapse>
         <Button
           variant="contained"
           size="medium"

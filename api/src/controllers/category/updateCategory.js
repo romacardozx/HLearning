@@ -4,10 +4,10 @@ const Category = require("../../models/Category");
 //RECORDAR CONSULTAR SI SE QUIERE CAMBIAR A ESTADO UPDATE EL STATUS DE LAS CATEGORIAS
 module.exports = async (req, res, next) => {
   const { id } = req.params;
-  const newData = req.body;
+  const {name} = req.body;
 
   try {
-    let category = await Category.findOneAndUpdate({ _id: id }, newData, {
+    let category = await Category.findOneAndUpdate({ _id: id }, {name:name}, {
       new: true,
     });
    
