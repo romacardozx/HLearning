@@ -3,17 +3,12 @@ const express = require("express");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`,
-});
-const { SECRET_KEY } = process.env;
 
 const router = Router();
 router.use(express.json());
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", async (err, user) => {
-    //Este método no me está generado el req.user automáticamente, y no comprendo porque
     if (err) throw err;
     if (!user) {
       res.status(400).send("User or password incorrect!!");
@@ -27,8 +22,6 @@ router.post("/login", (req, res, next) => {
         "miclavesecreta",
         { expiresIn: "24hr" }
       );
-      console.log("token", token);
-      console.log("req.user", req.user);
       return res.status(200).json({
         id: user._id,
         isAdmin: user.isAdmin,
@@ -38,16 +31,15 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+//Ruta para pedir datos de un usuario logeado con seguridad bearer. Mandan el token y envia los datos del usuario dueño de ese token
 router.get(
   "/user",
   passport.authenticate("bearer", { session: false }),
   async function (req, res) {
     try {
-      console.log(req.user.id);      
       let user = await User.findOne({
-        _id: req.user.id,            
+        _id: req.user.id,
       });
-      console.log(user, "usuario que encuentra");
       res.json(user);
     } catch (error) {
       res.json(error.message);
@@ -61,13 +53,5 @@ router.get("/logout", (req, res, next) => {
   req.session = null;
   res.send("Logged out");
 });
-
-// router.get("/profile", (req, res, next) => {
-//   console.log("hello")
-//   console.log(req.session);
-//   console.log(req.user);
-
-//   next();
-// });
 
 module.exports = router;

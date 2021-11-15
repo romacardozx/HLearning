@@ -3,40 +3,36 @@ const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const routers = require("./src/routes/index");
 const cors = require("cors");
-const Category = require('./src/models/Category');
-const categories = require('./src/utils/mockUps/categoriesConObjectId.json');
+const Category = require("./src/models/Category");
+const categories = require("./src/utils/mockUps/categoriesConObjectId.json");
 const Review = require("./src/models/Review");
-const reviews = require('./src/utils/mockUps/reviewsConObjectId.json');
-const User = require('./src/models/User');
-const users = require('./src/utils/mockUps/usersConObjectId.json');
+const reviews = require("./src/utils/mockUps/reviewsConObjectId.json");
+const User = require("./src/models/User");
+const users = require("./src/utils/mockUps/usersConObjectId.json");
 const Order = require("./src/models/Order");
-const orders = require ('./src/utils/mockUps/orderConObjectId.json');
+const orders = require("./src/utils/mockUps/orderConObjectId.json");
 const Course = require("./src/models/Course");
-const courses = require('./src/utils/mockUps/coursesConObjectId.json')
+const courses = require("./src/utils/mockUps/coursesConObjectId.json");
 const morgan = require("morgan");
 
 const session = require("express-session");
 const passport = require("passport");
 
-require("./src/utils/auth/passport")
+require("./src/utils/auth/passport");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`,
+  path: `.env.${process.env.NODE_ENV || "production"}`,
 });
 
 //Crea el servidor
 const app = express();
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(
   cors({
     origin: "*",
-    credentials: true
+    credentials: true,
   })
 );
-
-// const secretKey = process.env.SECRET_KEY;
-// console.log(SECRET_KEY,"miclave")
-
 
 // Iniciar passport y la sesión de express
 app.use(passport.initialize());
@@ -63,7 +59,7 @@ app.use((req, res, next) => {
 });
 
 //Morgan
-app.use(morgan('dev'))
+app.use(morgan("dev"));
 
 //Habilitar el parseo de los datos
 app.use(express.json());
@@ -82,7 +78,7 @@ mongoose
   .then(() => console.log("Mongo DB connected!"))
   .catch((error) => console.log(error));
 
-app.listen(port, async() => {
+app.listen(port, async () => {
   console.log(`Server is running on port ${port}`);
 
   // Mock Ups
@@ -96,6 +92,4 @@ app.listen(port, async() => {
   // console.log(data,"q me devuelve")
   //  const data5 = await Course.insertMany(courses)
   // console.log(data,"q me devuelve")
-
-
 });
