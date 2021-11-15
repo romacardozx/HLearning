@@ -23,7 +23,7 @@ const passport = require("passport");
 require("./src/utils/auth/passport");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "development"}`,
+  path: `.env.${process.env.NODE_ENV || "production"}`,
 });
 
 //Crea el servidor
