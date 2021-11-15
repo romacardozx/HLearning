@@ -18,6 +18,17 @@ const UserSchema = new Schema({
       ref: "Review",
     },
   ],
+  cart: {
+    type: Schema.Types.ObjectId,
+    ref: "Cart",    
+  },
+  // orders: [
+  //   {
+  //     type: Schema.Types.ObjectId,  Ver mas adelante!!!
+  //     ref: "Order",
+  //     default:[]
+  //   },
+  // ],
   pictures: {
     type: String,
     default:
@@ -30,7 +41,7 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    default: "Password12345"
+    default: "Password12345",
   },
   status: {
     type: String,
