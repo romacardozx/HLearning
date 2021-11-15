@@ -1,19 +1,11 @@
 export const loadState = () => {
     try {
 
-        var cart = [],
-        keys = Object.keys(localStorage),
-        i = keys.length;
-        
-        while (i > 0) {
-            cart.push(localStorage.getItem(keys[i]));
-            i--;
-        }
-        
-        return cart;
+        return Object.values(localStorage).map(JSON.parse);
+
     } catch (error) {
-        
-        console.log(undefined)
+
+        return [];
     }
 }
 
