@@ -22,10 +22,8 @@ import AddIcon from "@mui/icons-material/Add";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
-  // const User = useSelector((state) => state.getUser.getUserId);
   const User = useSelector((state) => state.userReducer.userDetail);
   const isAuthenticated = useSelector((state) => state.userReducer.isAuthenticated);
-  console.log("User", User);
 
   useEffect(() => {
     dispatch(getUserInfo());
