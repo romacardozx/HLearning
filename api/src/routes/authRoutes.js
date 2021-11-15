@@ -40,9 +40,9 @@ router.get(
       let user = await User.findOne({
         _id: req.user.id,
       });
-      res.json(user);
+      res.status(200).json(user);
     } catch (error) {
-      res.json(error.message);
+      res.status(400).json(error.message);
     }
   }
 );

@@ -13,6 +13,8 @@ const Order = require("./src/models/Order");
 const orders = require("./src/utils/mockUps/orderConObjectId.json");
 const Course = require("./src/models/Course");
 const courses = require("./src/utils/mockUps/coursesConObjectId.json");
+const Cart = require("./src/models/Cart");
+const carts = require("./src/utils/mockUps/cartsConObjectId.json")
 const morgan = require("morgan");
 
 const session = require("express-session");
@@ -21,7 +23,7 @@ const passport = require("passport");
 require("./src/utils/auth/passport");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 
 //Crea el servidor
@@ -83,13 +85,15 @@ app.listen(port, async () => {
 
   // Mock Ups
   // const data = await Category.insertMany(categories)
-  // console.log(data,"q me devuelve")
+  
   // const data2 = await User.insertMany(users)
-  // console.log(data,"q me devuelve")
+  
   //  const data3 = await Review.insertMany(reviews)
-  // console.log(data,"q me devuelve")
+  
   //  const data4 = await Order.insertMany(orders)
-  // console.log(data,"q me devuelve")
+ 
   //  const data5 = await Course.insertMany(courses)
-  // console.log(data,"q me devuelve")
+  
+  // const data6 = await Cart.insertMany(carts)
+  //  console.log(data6,"q me devuelve")
 });

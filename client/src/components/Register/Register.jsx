@@ -3,7 +3,8 @@ import s from "./register.module.css";
 import {useHistory} from 'react-router-dom';
 import { useState } from "react";
 import Navbar from "../NavBar/NavBar";
-import createUser from "../../redux/actions/createUser"
+import { postSignUp } from "../../redux/actions/userActions";
+import {useDispatch} from "react-redux";
 
 
 function validate(state) {
@@ -24,6 +25,7 @@ function validate(state) {
 
 function Register() {
   const history = useHistory()
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -50,14 +52,14 @@ function Register() {
     if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
     else{
 
-        createUser(state)
+        dispatch(postSignUp(state))
         alert("Registro exitoso!")
         setState({
           name: "",
           email: "",
           password: "",
         })
-        history.push('/home')
+        history.push('/login')
     }
   }
 

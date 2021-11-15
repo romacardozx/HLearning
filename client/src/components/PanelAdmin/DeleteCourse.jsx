@@ -18,6 +18,7 @@ import { maxWidth } from "@mui/system";
 export default function Courses() {
   const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.getCourses.getAllCourses);
+  const [currentId, setCurrentId] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage /* setCoursesPerPage */] = useState(6);
@@ -34,11 +35,12 @@ export default function Courses() {
 
   useEffect(() => {
     dispatch(getAllCourses());
-  }, [dispatch]);
+  }, [dispatch,currentId]);
 
 
   function handleDelete(id){
            dispatch(deleteCourse(id))
+           setCurrentId(id)
         }  
 
   const Item = styled(Paper)(({ theme }) => ({
