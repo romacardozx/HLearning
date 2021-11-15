@@ -17,13 +17,15 @@ mercadopago.configure({
 
 module.exports = async (req, res, next) => {
     // console.log("ENTRO A MP")
-    
     const { id } = req.params;
     // console.log(id)
     try {
       let order = await Order.findOne({_id:id});
+      //   console.log("LA ORDEN SIN POPULATE", order);
       order = await Course.populate(order, {path: "courses"});
-      order = await User.populate(order, {path: "user"})
+      //  console.log("LA ORDEN CON EL CURSO POPULADO", order);
+      order = await User.populate(order, {path: "user"});
+      //   console.log("LA ORDEN CON EL USUARIO POPULADO", order);
       //   console.log(order)
       // if(!order) {
       //   res.json({
@@ -47,12 +49,14 @@ module.exports = async (req, res, next) => {
               // Se saca estado pending, y que no puedan pagar por pago fácil o rapipago, que solamente sea débito o crédito
             }
           ],
-          installments: 1  // Solo se puede abonar en 1 pago (1 cuota)
+          installments: 1,  // Solo se puede abonar en 1 pago (1 cuota)
         },
+        binary_mode: true,
         back_urls: {
-          success: 'http://localhost:9000/mercadopago/payment',
-          failure: 'http://localhost:9000/mercadopago/payment',
-        }
+          success: `http://localhost:9000/mercadopago/pagos?external_reference=${external_reference}`,
+          failure: `http://localhost:9000/mercadopago/pagos?external_reference=${external_reference}`,
+        },
+        auto_return: "approved"  // Para compras success, mercado pago redirije automáticamente al back_url de success, sin mostrar el botón, de forma automática
       }
 
       //   console.log("LA PREFERENCIA", preference)
@@ -75,9 +79,3 @@ module.exports = async (req, res, next) => {
       next(err)
     }
 }
-
-
-
-
-
-
