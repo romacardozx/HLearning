@@ -54,7 +54,7 @@ export default function CourseCard({
     setExpanded(!expanded);
   };
 
-  const [remove, setRemove] = useState();
+  /* const [remove, setRemove] = useState(); */
   const cart = loadState();
   const [, setAddCart] = useState();
 
@@ -136,7 +136,7 @@ export default function CourseCard({
               alert("Agregado a tu carrito");
             }}
           >
-            <BsCartPlus /> Agregar al Carrito
+            Agregar al <BsCartPlus />
           </button>
         )}
 
