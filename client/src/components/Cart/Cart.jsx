@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {useSelector, useDispatch} from 'react-redux'
 import { loadState, removeState } from "../../localStorage";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
@@ -11,15 +12,28 @@ import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import {getAllCarts} from '../../redux/actions/getAllCarts'
 
 function Cart() {
+  const dispatch = useDispatch()
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(0.5),
   }));
 
   const [remove, setRemove] = useState(false);
-  const cart = loadState();
+  
+    useEffect(() => {
+      dispatch(getAllCarts("8186d90a521fdc29a93ec244"))
+    }, [dispatch])
+
+  const cart = useSelector(state => state.cartReducer.allCart)
+  const allCartBackEnd = useSelector(state => state.cartReducer.allCartBackEnd)
+
+  console.log(cart, 'cart');
+  console.log(allCartBackEnd, 'allCartBackEnd');
+  
+  
 
   return (
     <div>
