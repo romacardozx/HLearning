@@ -46,7 +46,7 @@ module.exports = async (req, res, next) => {
     user.cart = cart._id;
 
     await user.save();
-    res.json({
+    res.status(200).json({
       msg: "User created",
       user,
     });
