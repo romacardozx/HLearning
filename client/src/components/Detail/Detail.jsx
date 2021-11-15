@@ -17,7 +17,7 @@ import { useParams } from "react-router-dom";
 // import IconButton from "@mui/material/IconButton";
 import { getDetailCourses } from '../../redux/actions/getDetailCourses';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
 import Button from '@mui/material/Button';
@@ -41,119 +41,91 @@ export default function CourseDetail(props) {
   console.log(courseDetailed)
 
 
-    useEffect(() => { 
-        dispatch(getDetailCourses(id)) // eslint-disable-next-line
-    },[dispatch]);
+  useEffect(() => {
+    dispatch(getDetailCourses(id)) // eslint-disable-next-line
+  }, [dispatch]);
 
 
-  const handleBuy = () => history.push("/payment");
+  const handleBuy = () => history.push("/checkout");
 
   return (
     <div>
       <div className={styles.bkg}>
         <div>
-        <NavBar/> <br />
+          <NavBar />
           <br />
-          <br/><br/><br/>
-          <br/><br/>
-        </div> 
+          <br />
+          <br />
+        </div>
         {Object.keys(courseDetailed).length ? (
-        <div>
-          <Paper
-            sx={{
-              p: 2,
-              margin: "auto",
-              maxWidth: 1200,
-              elevation: 24,
-              flexGrow: 50,
-              bottom: 0,
-            }}
-          >
-            <Grid container spacing={1}>
-              <Grid>
-                <ButtonBase>
-                  <Img
-                    alt="complex"
-                    src={courseDetailed.img}
-                    width="450px"
-                    height="300px"
-                  />
-                  {/* <ReactPlayer
-              url='https://youtu.be/aQS7kaje-24?list=PL4cUxeGkcC9ht1OMQPhBVKAb2dVLhg-MJ'
-              className='react-player'
-              playing
-              width='550px'
-              height='350px'
-              /> */}
-                </ButtonBase>
-              </Grid>
-              <Grid item xs={12} sm container>
-                <Grid item xs container direction="column" spacing={2}>
-                  <Grid item xs>
-                    <Rating name="read-only" readOnly value={calculeScore(courseDetailed.score)} />
-                    <Typography gutterBottom variant="h4" component="div">
-                      {/* Tailwind Just in Time */}
-                      {courseDetailed.title}
-                    </Typography>
-                    <Typography variant="body2" align='left' color="text.secondary">
-                    {courseDetailed.categories.map(el => el.name + (' '))}
-                    </Typography><br/>
-                    <Typography variant="h6" gutterBottom>
-                      {/* In this Tailwind JIT tutorial series you'll learn how to
-                      use the Just in Time compiler for better performance
-                      during development. */}
-                      {courseDetailed.description}
-                    </Typography>
-                    <Typography variant="body2" align='left' color="text.secondary">
-                      {/* Duration: 38min */}
-                      Duracion:{" "+courseDetailed.duration}
-                    </Typography>
-                    <br />
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      align="left"
-                    >
+          <div>
+            <Paper
+              sx={{
+                p: 2,
+                margin: "auto",
+                maxWidth: 1200,
+                elevation: 24,
+                flexGrow: 50,
+                bottom: 0,
+              }}
+            >
+              <Grid container spacing={1}>
+                <Grid>
+                  <ButtonBase>
+                    <Img
+                      alt="complex"
+                      src={courseDetailed.img}
+                      width="450px"
+                      height="300px"
+                    />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Rating name="read-only" readOnly value={calculeScore(courseDetailed.score)} />
+                      <Typography gutterBottom variant="h4" component="div">
+                        {courseDetailed.title}
+                      </Typography>
+                      <Typography variant="body2" align='left' color="text.secondary">
+                        {courseDetailed.categories.map(el => el.name + (' '))}
+                      </Typography><br />
+                      <Typography variant="h6" gutterBottom>
+                        {courseDetailed.description}
+                      </Typography>
+                      <Typography variant="body2" align='left' color="text.secondary">
+                        Duracion:{" " + courseDetailed.duration}
+                      </Typography>
+                      <br />
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        align="left"
+                      >
+                      </Typography>
+                    </Grid>
+                    <Grid item align="left">
+                      <Typography sx={{ cursor: "pointer" }} variant="body2">
+                        <Button variant="contained" size="medium" onClick={handleBuy}>
+                          Comprar ahora!
+                        </Button>
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="h5" component="div">
+                      ${courseDetailed.price}
                     </Typography>
                   </Grid>
-                  <Grid item align="left">
-                    <Typography sx={{ cursor: "pointer" }} variant="body2">
-                      {/* <button className={styles.btn} onClick={handleBuy}>
-                        <span>Buy now!</span>
-                      </button> */}
-                      <Button variant="contained" size="medium" onClick={handleBuy}>
-                      Comprar ahora!
-                      </Button>
-                      {/* <IconButton>
-                        <AddShoppingCartIcon />
-                        <Typography>Agregar al carrito</Typography>
-                    </IconButton> */}
-                    </Typography>
-                  </Grid>
-                  {/* <Grid item align="right"> */}
-                    {/* <Typography sx={{ cursor: "pointer" }} variant="body2">
-                      <button className={styles.btn}>Add to cart</button>
-                    </Typography> */}
-                    {/* <IconButton>
-                        <AddShoppingCartIcon />
-                          <Typography> Agregar al carrito</Typography>
-                    </IconButton> */}
-                  {/* </Grid> */}
-                </Grid>
-                <Grid item>
-                  <Typography variant="h5" component="div">
-                    {/* $500.00 */}
-                    ${courseDetailed.price}
-                  </Typography>
                 </Grid>
               </Grid>
-            </Grid>
-          </Paper>
-          <br />
-          <br />
-          <br/><br/><br/>
-        </div>) : <Loading />
-           }
+            </Paper>
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>) : <Loading />
+        }
         <Footer />
       </div>
     </div>
