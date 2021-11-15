@@ -19,8 +19,8 @@ router.use('/reviews', reviewsRoutes);
 const authRoutes = require('../routes/authRoutes');
 router.use('/auth', authRoutes);
 
-// const mercadoPagoRoutes = require('../routes/mercadoPagoRoutes');
-// router.use('/mercadopago', mercadoPagoRoutes);
+const mercadoPagoRoutes = require('../routes/mercadoPagoRoutes');
+router.use('/mercadopago', mercadoPagoRoutes);
 
 
 
