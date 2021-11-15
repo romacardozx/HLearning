@@ -3,6 +3,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUserById } from "../../redux/actions/getUserById";
+import { getSignOut } from "../../redux/actions/userActions";
+/* import { getOrderById } from "../../redux/actions/getOrderById"; */
+/* import { getCourseByName } from "../../redux/actions/getCourseByName"; */
+
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import CardMedia from "@mui/material/CardMedia";
@@ -22,6 +26,16 @@ export default function UserProfile() {
   useEffect(() => {
     dispatch(getUserById("6186d90a521fdc29a93ec244"));
   }, [dispatch]);
+
+  const signOutHandler = (e) => {
+    e.preventDefault();
+    dispatch(getSignOut())
+  }
+
+  /* const getOrderId = useSelector((state) => state.getOrder.getOrderId); */
+  /* const getCourseName = useSelector((state) => state.getCourses.getAllCourses); */
+  /* console.log("USER", User);*/
+  console.log("COURSES", User.courses);
 
   return (
     <div>
@@ -94,6 +108,14 @@ export default function UserProfile() {
                   >
                     <b>Email: {User.email}</b>
                   </Typography>
+                  <Button
+                      variant="contained"
+                      size="medium"
+                      endIcon={<AddIcon size="large" />}
+                      onClick={(e) => signOutHandler(e)}
+                          >
+                            SIGN OUT
+                          </Button>
                 </Box>
 
                 <Box
