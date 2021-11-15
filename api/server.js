@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const routers = require("./src/routes/index");
 const cors = require("cors");
@@ -15,7 +16,6 @@ const courses = require('./src/utils/mockUps/coursesConObjectId.json')
 const morgan = require("morgan");
 
 const session = require("express-session");
-const cookieParser = require("cookie-parser");
 const passport = require("passport");
 
 require("./src/utils/auth/passport")
@@ -26,6 +26,7 @@ require("dotenv").config({
 
 //Crea el servidor
 const app = express();
+app.use(cookieParser())
 app.use(
   cors({
     origin: "*",
@@ -36,7 +37,7 @@ app.use(
 const secretKey = process.env.SECRET_KEY;
 
 // Iniciar passport y la sesión de express
-app.use(cookieParser(secretKey))
+app.use(passport.initialize());
 app.use(
   session({
     secret: secretKey,
@@ -46,7 +47,6 @@ app.use(
 );
 
 // Iniciar la sesión de passport
-app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {

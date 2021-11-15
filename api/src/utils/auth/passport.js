@@ -21,12 +21,13 @@ passport.use(
       passwordField: "password",
       session: false,
     },
-    async (email, password, done) => {
-        const user = await User.findOne({ email: email });
+    async (username, password, done) => {
+        const user = await User.findOne({ email: username }); // Lo puse así para mantener el username que passport me pedía, pero busca por e-mail correctamente
 
       if (!user) return done(null, false);
-      if (!bcrypt.compare(password, user.password)) {
+      if (!await bcrypt.compare(password, user.password)) {
           console.log("las contraseñas no coinciden")
+          
         return done(null, false);
       }
       console.log("autentica usuario", user)

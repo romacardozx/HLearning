@@ -13,30 +13,32 @@ router.use(express.json());
 
 
 router.post("/login", (req, res, next) => {
-    passport.authenticate("local", async (err, user) => {
-      if (err) throw err;
-      if (!user) res.status(400).send("No User Exists");
-      else {
-        const token = await jwt.sign(
-          {
-            id: user._id,
-            email: user.email,
-            // isAdmin: user.isAdmin,
-            // isDeleted: user.isDeleted,
-          },
-          SECRET_KEY,
-          { expiresIn: "24hr" }
-        );
-          console.log("token", token)
-        return res.status(200).json({
+  passport.authenticate("local", async (err, user) => { //Este método no me está generado el req.user automáticamente, y no comprendo porque
+    if (err) throw err;
+    if (!user) res.status(400).send("No User Exists");
+    else {
+      const token = await jwt.sign(
+        {
           id: user._id,
-        //   isAdmin: user.isAdmin,
-        //   isDeleted: user.isDeleted,
-          token,
-        });
-      }
-    })(req, res, next);
-  });
+          email: user.email,
+          // isAdmin: user.isAdmin,
+          // isDeleted: user.isDeleted,
+        },
+        SECRET_KEY,
+        { expiresIn: "24hr" }
+      );
+        console.log("token", token)
+        console.log("req.user", req.user)
+      return res.status(200).json({
+        id: user._id,
+      //   isAdmin: user.isAdmin,
+      //   isDeleted: user.isDeleted,
+        token,
+      });
+    }
+  })(req, res, next);
+});
+
 
   // Ruta para ver la información del usuario y la sesión
   router.get("/user", (req, res, next) => { 
