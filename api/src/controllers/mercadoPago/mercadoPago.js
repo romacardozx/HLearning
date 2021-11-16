@@ -2,9 +2,7 @@ const Order = require('../../models/Order');
 const Course = require('../../models/Course');
 const User = require('../../models/User');
 const mercadopago = require('mercadopago');  // SDK MP
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
-});
+require("dotenv").config();
 
 // console.log("El access tokennn", process.env.ACCESS_TOKEN);
 // console.log("El portttt", process.env.PORT);
