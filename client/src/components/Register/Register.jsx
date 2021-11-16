@@ -7,6 +7,7 @@ import { postSignUp } from "../../redux/actions/userActions";
 import {useDispatch} from "react-redux";
 
 
+
 function validate(state) {
   let errors = {};
   if (!state.name) {
@@ -53,7 +54,7 @@ function Register() {
     else{
 
         dispatch(postSignUp(state))
-        alert("Registro exitoso!")
+
         setState({
           name: "",
           email: "",
