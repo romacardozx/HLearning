@@ -20,6 +20,10 @@ export default function Courses() {
     (state) => state.getCourses.setAllCourses
   );
   const filterName = useSelector((state) => state.getCourses.filteredString);
+  const userDetail = useSelector((state) => state.userReducer.userDetail);
+  const auth = useSelector((state) => state.userReducer.isAuthenticated);
+  console.log("userdetail", userDetail);
+
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -33,7 +37,7 @@ export default function Courses() {
   filterName === "Filter By"
     ? (Courses = allCourses)
     : (Courses = filteredCourses);
-  console.log("COURSES", Courses);
+  /*  console.log("COURSES", Courses); */
   //Paginado:
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage /* setCoursesPerPage */] = useState(4);
