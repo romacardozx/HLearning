@@ -23,10 +23,10 @@ const OrderSchema = new Schema({
   },
   payment: {
     type: String,
-    enum: ["Created", "Confirmed", "Processing", "Canceled"],
+    enum: ["Created", "Confirmed", "Processing", "Cancelled"],
     default: "Created"
   },
-  payment_id: {
+  paymentId: {
     type: String,
     default: "0"
   }

@@ -10,6 +10,6 @@ router.use(express.json());
 
 // TIENE QUE SER UN POST
 router.get("/:id", mercadoPago);
-router.get("/pagos", pagos)
+router.get("/pagos/:id", pagos)
 
 module.exports = router;

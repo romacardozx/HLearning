@@ -53,8 +53,8 @@ module.exports = async (req, res, next) => {
         },
         binary_mode: true,
         back_urls: {
-          success: `http://localhost:9000/mercadopago/pagos?external_reference=${external_reference}`,
-          failure: `http://localhost:9000/mercadopago/pagos?external_reference=${external_reference}`,
+          success: `http://localhost:9000/mercadopago/pagos/${id}`,
+          failure: `http://localhost:9000/mercadopago/pagos/${id}`,
         },
         auto_return: "approved"  // Para compras success, mercado pago redirije automáticamente al back_url de success, sin mostrar el botón, de forma automática
       }
