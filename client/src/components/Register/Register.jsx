@@ -6,6 +6,10 @@ import Navbar from "../NavBar/NavBar";
 import { postSignUp } from "../../redux/actions/userActions";
 import {useDispatch} from "react-redux";
 
+function esEmail (word) {
+  if(word.includes("@") && word.includes(".com")) return true;
+     else return false
+}
 
 function validate(state) {
   let errors = {};
@@ -13,10 +17,14 @@ function validate(state) {
     errors.name = "Ingresa tu nombre y apellido";
   } else if (!state.email) {
     errors.email = "Ingresa un email";
+  } else if (esEmail(state.email)===false) {
+    errors.email = "No es un email";
   } else if (!state.password) {
     errors.password = "Ingresa una constraseña";
+  } else if (state.password.length < 7) {
+    errors.password = "La contraseña debe superar los 8 caracteres";
   } else if (!state.confirmPassword) {
-    errors.confirmPassword = "Vuelve a escribir tu constraseña";
+    errors.confirmPassword = "Repita su constraseña";
   } else if (state.password !== state.confirmPassword) {
     errors.confirmPassword = "Las contraseñas no coinciden";
   }
@@ -53,7 +61,7 @@ function Register() {
     else{
 
         dispatch(postSignUp(state))
-        alert("Registro exitoso!")
+
         setState({
           name: "",
           email: "",
