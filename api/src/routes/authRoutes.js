@@ -3,6 +3,8 @@ const express = require("express");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const Course = require("../models/Course");
+const Review = require("../models/Review");
 
 const router = Router();
 router.use(express.json());
@@ -40,6 +42,8 @@ router.get(
       let user = await User.findOne({
         _id: req.user.id,
       });
+      await Course.populate(user, {path: "courses"});
+      await Review.populate(user, {path: "reviews"});
       res.status(200).json(user);
     } catch (error) {
       res.status(400).json(error.message);
