@@ -16,6 +16,7 @@ import { useHistory } from "react-router-dom";
 import Loading from '../Loading/Loading'
 import Button from '@mui/material/Button';
 import calculeScore from '../../utils/calculeScore';
+import MercadoPago from "../../redux/actions/MercadoPago";
 
 
 const Img = styled("img")({
@@ -38,25 +39,6 @@ export default function CourseDetail(props) {
   useEffect(() => {
     dispatch(getDetailCourses(id)) // eslint-disable-next-line
   }, [dispatch]);
-
-
-    // useEffect(()=>{
-    //   const script = document.createElement('script');
-    //   const attr_data_preference = document.createAttribute('data-preference-id')
-    //   //const attr_nonce = document.createAttribute('nonce')
-    
-    //   attr_data_preference.value = data.id
-    //   //attr_nonce.value = 'abcdefg'
-    //   script.src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js";
-    //   script.setAttributeNode(attr_data_preference)
-    //  // script.setAttributeNode(attr_nonce)
-    // console.log(data)
-    //   document.getElementById('form1').appendChild(script)
-    //   return () =>{
-    //     document.getElementById('form1').removeChild(script);
-    //   }
-    //  },[data])
-
 
   const handleBuy = () => history.push("/checkout");
 
@@ -118,7 +100,7 @@ export default function CourseDetail(props) {
                     </Grid>
                     <Grid item align="left">
                       <Typography sx={{ cursor: "pointer" }} variant="body2">
-                        <Button variant="contained" size="medium" onClick={handleBuy}>
+                        <Button variant="contained" size="medium" onClick={() => dispatch(MercadoPago("6192bc7ccaeaefa81437d425"))}>
                           Comprar ahora!
                         </Button>
                       </Typography>
@@ -145,3 +127,5 @@ export default function CourseDetail(props) {
 }
 
 // sx={{ width: 128, height: 128 }}
+//? EJEMPLO DE ONCLICK DE MERCADO PAGO
+//!  onClick={() => dispatch(MercadoPago("id"))}>
