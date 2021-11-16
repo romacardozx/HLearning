@@ -7,14 +7,8 @@ import ButtonBase from "@mui/material/ButtonBase";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import styles from "./detail.module.css";
-// import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
-// import { style } from "@mui/system";
-// import { Component } from "react";
-// import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
-// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-// import IconButton from "@mui/material/IconButton";
 import { getDetailCourses } from '../../redux/actions/getDetailCourses';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -44,6 +38,24 @@ export default function CourseDetail(props) {
   useEffect(() => {
     dispatch(getDetailCourses(id)) // eslint-disable-next-line
   }, [dispatch]);
+
+
+    // useEffect(()=>{
+    //   const script = document.createElement('script');
+    //   const attr_data_preference = document.createAttribute('data-preference-id')
+    //   //const attr_nonce = document.createAttribute('nonce')
+    
+    //   attr_data_preference.value = data.id
+    //   //attr_nonce.value = 'abcdefg'
+    //   script.src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js";
+    //   script.setAttributeNode(attr_data_preference)
+    //  // script.setAttributeNode(attr_nonce)
+    // console.log(data)
+    //   document.getElementById('form1').appendChild(script)
+    //   return () =>{
+    //     document.getElementById('form1').removeChild(script);
+    //   }
+    //  },[data])
 
 
   const handleBuy = () => history.push("/checkout");
