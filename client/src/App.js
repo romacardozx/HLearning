@@ -17,20 +17,23 @@ import CreateCourse from "./components/PanelAdmin/CreateCourse";
 import CreateCategory from "./components/PanelAdmin/CreateCategory";
 import Cart from "./components/Cart/Cart";
 import EditProfile from "./components/UserProfile/EditProfile"
+import PrivateRoute from "./routes/PrivateRoute";
+import AdminRoute from "./routes/AdminRoute"
+
 
 function App() {
   return (
     <div className="App">
       <Route exact path="/" component={Landing} />
       <Route exact path="/home" component={Home} />
-      <Route exact path="/user" component={UserProfile} />
+      <PrivateRoute exact path="/user" component={UserProfile} />
       <Route exact path="/courses" component={Courses} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/privacy" component={Privacy} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/courses/:id" component={Detail} />
-      <Route exact path="/admin" component={PruebaAdm} />
+      <AdminRoute exact path="/admin" component={PruebaAdm} />
       <Route exact path="/admcourses" component={DeleteCourse} />
       {/* <Route exact path="/Cart" component={Cart} /> */}
       <Route exact path="/mycourses/:id" component={DetailUser} />

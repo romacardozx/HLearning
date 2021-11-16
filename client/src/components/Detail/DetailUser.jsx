@@ -6,13 +6,18 @@ import ButtonBase from "@mui/material/ButtonBase";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import styles from "./detail.module.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
 import { getDetailCourses } from "../../redux/actions/getDetailCourses";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Loading from "../Loading/Loading";
+import Button from '@mui/material/Button';
+import style from "./detail.module.css";
+import ReviewCard from "../Review/ReviewCard";
+
+
 
 export default function CourseDetail(props) {
   const dispatch = useDispatch();
@@ -56,6 +61,7 @@ export default function CourseDetail(props) {
                       playing
                       width="750px"
                       height="550px"
+                      controls="false"
                     />
                   </ButtonBase>
                 </Grid>
@@ -80,26 +86,17 @@ export default function CourseDetail(props) {
                       <Typography variant="h6" gutterBottom textAlign="center">
                         {courseDetailed.description}
                       </Typography>
-                      <Typography
-                        variant="body2"
-                        align="left"
-                        color="text.secondary"
-                      ></Typography>
                       <br />
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        align="left"
-                      ></Typography>
-                    </Grid>
-                    <Grid item align="left">
-                      <Typography
-                        sx={{ cursor: "pointer" }}
-                        variant="body2"
-                      ></Typography>
+                      <Typography textAlign="center">
+                        <Link to='/review' className={style.link}>
+                          <Button variant="contained" size="medium">
+                            ¿Que te parecio el curso?
+                          </Button>
+                        </Link>
+                      </Typography>
+                      <br />
                     </Grid>
                   </Grid>
-                  <Grid item></Grid>
                 </Grid>
               </Grid>
             </Paper>
@@ -110,6 +107,24 @@ export default function CourseDetail(props) {
         ) : (
           <Loading />
         )}
+        {/* <Grid align="center">
+          <Card sx={{ maxWidth: 345 }}>
+            <CardContent>
+              <Avatar sx={{ width: 100, height: 100 }} />
+              <Typography gutterBottom variant="h5" component="div">
+
+              </Typography>
+              <Rating name="read-only" readOnly value={3} />
+              <Typography variant="body2" color="text.secondary">
+                No siento que tenga las herramientas para poder aplicar
+                Material UI por mi cuenta en un proyecto individual
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid> */}
+        <ReviewCard />
+        <br />
+        <br />
         <Footer />
       </div>
     </div>

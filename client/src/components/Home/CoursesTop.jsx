@@ -8,16 +8,16 @@ import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Loading from "../Loading/Loading";
 /* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
-import { orderByScore } from "../../redux/actions/orderByScore";
-import calculateScore from '../../utils/calculeScore';
-import {filterByStars} from '../../redux/actions/filterByStars'
+/* import { orderByScore } from "../../redux/actions/orderByScore"; */
+import calculateScore from "../../utils/calculeScore";
+import { filterByStars } from "../../redux/actions/filterByStars";
+import Card from "../Card/Card";
 
 export default function CoursesTop() {
   const dispatch = useDispatch();
 
-  const coursesTop = useSelector((state) => state.getCourses.getAllCourses);
-  console.log("VERRRRRR", coursesTop);
-  const fourCourses = coursesTop.slice(1, 6);
+  const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
+  const fourCourses = coursesTop.slice(1, 5); 
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -35,7 +35,7 @@ export default function CoursesTop() {
         {fourCourses.length >= 0 ? (
           <>
             {fourCourses?.map((c, i) => (
-              <div key={i}>
+              /*  <div key={i}>
                 <Grid item xs={2} sm={4} md={4}>
                   <Item sx={{ minWidth: 270 }} align="center">
                     <CardTops
@@ -47,7 +47,20 @@ export default function CoursesTop() {
                     />
                   </Item>
                 </Grid>
-              </div>
+              </div> */
+              <Grid key={i} item xs={12} sm={6} md={3} lg={3}>
+                <Item sx={{ minWidth: 270, maxWidth: 280 }}>
+                  <Card
+                    id={c._id}
+                    title={c.title}
+                    image={c.img}
+                    description={c.description}
+                    score={c.score}
+                    price={c.price}
+                    course={c}
+                  />
+                </Item>
+              </Grid>
             ))}
           </>
         ) : (

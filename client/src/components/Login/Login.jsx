@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom';
 import s from './login.module.css';
 import Navbar from '../NavBar/NavBar';
-import login from "../../redux/actions/login"
+import { postSignIn } from "../../redux/actions/userActions"
+import {useDispatch} from "react-redux";
+
 
 
 function validate(state) {
@@ -19,6 +21,7 @@ function validate(state) {
 
 function Login() {
   const history = useHistory()
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     email: "",
     password: ""
@@ -43,12 +46,12 @@ function Login() {
     if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
     else{
 
-        login(state)
+        dispatch(postSignIn(state))
         setState({
           email: "",
           password: "",
         })
-        history.push('/user')
+        // history.push('/user')
     }
   }
 

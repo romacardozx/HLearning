@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const OrderSchema = new Schema({
+const CartSchema = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -10,26 +10,17 @@ const OrderSchema = new Schema({
   courses: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Course",       
-      required: true,       
+      default:[],       
   }],
   price: {
     type: Number,
-    required: true, 
+    default:0, 
   },
   status: {
     type: String,
     enum: ["Confirmed", "Deleted"],
     default: "Confirmed"
-  },
-  payment: {
-    type: String,
-    enum: ["Created", "Confirmed", "Processing", "Cancelled"],
-    default: "Created"
-  },
-  paymentId: {
-    type: String,
-    default: "0"
-  }
+}
 });
 
-module.exports = mongoose.model("Order", OrderSchema);
+module.exports = mongoose.model("Cart", CartSchema);
