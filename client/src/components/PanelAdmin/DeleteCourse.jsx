@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import Card from "./CardDelete";
 import Paginate from "../Paginate/Paginate";
 import Button from '@mui/material/Button';
+import Swal from "sweetalert2";
 
 import { Grid, Typography } from "@material-ui/core";
 
@@ -38,10 +39,35 @@ export default function Courses() {
   }, [dispatch,currentId]);
 
 
-  function handleDelete(id){
-           dispatch(deleteCourse(id))
-           setCurrentId(id)
-        }  
+  // function handleDelete(id){
+  //          dispatch(deleteCourse(id))
+  //          setCurrentId(id)
+  //       }  
+
+  function handleDelete(id) {
+          Swal.fire({
+            title: "Estas seguro?",
+            text: "No podras revertir esto..",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, borralo!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              dispatch(deleteCourse(id));
+              Swal.fire({
+                title: "Borrado!",
+                text: `El curso ha sido borrado.`,
+                imageUrl: "https://i.gifer.com/7efs.gif",
+                imageWidth: 250,
+                imageHeight: 200,
+                imageAlt: "Custom image",
+              });
+              setCurrentId(id)
+            }
+          });
+        }
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
