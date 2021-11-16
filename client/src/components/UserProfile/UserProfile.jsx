@@ -2,12 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getUserById } from "../../redux/actions/getUserById";
+/* import { getUserById } from "../../redux/actions/getUserById"; */
 import { getSignOut } from "../../redux/actions/userActions";
 import { getUserInfo } from "../../redux/actions/userActions";
 /* import { getOrderById } from "../../redux/actions/getOrderById"; */
 /* import { getCourseByName } from "../../redux/actions/getCourseByName"; */
-
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import CardMedia from "@mui/material/CardMedia";
@@ -19,11 +18,15 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
+import IconButton from "@mui/material/IconButton";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
   const User = useSelector((state) => state.userReducer.userDetail);
-  const isAuthenticated = useSelector((state) => state.userReducer.isAuthenticated);
+  const isAuthenticated = useSelector(
+    (state) => state.userReducer.isAuthenticated
+  );
 
   useEffect(() => {
     dispatch(getUserInfo());
@@ -37,7 +40,7 @@ export default function UserProfile() {
   /* const getOrderId = useSelector((state) => state.getOrder.getOrderId); */
   /* const getCourseName = useSelector((state) => state.getCourses.getAllCourses); */
   /* console.log("USER", User);*/
-  console.log("COURSES", User.courses);
+  /*  console.log("COURSES", User.courses); */
 
   return (
     <div>
@@ -59,6 +62,15 @@ export default function UserProfile() {
             >
               <b>Información</b>
             </Typography>
+            <Box display="flex" justifyContent="flex-end" width="100%" mr={15}>
+              <IconButton
+                color="primary"
+                aria-label="edit"
+                /* onClick={handleOpenProfile} */
+              >
+                <EditIcon />
+              </IconButton>
+            </Box>
             <Box
               sx={{
                 display: "flex",
@@ -110,16 +122,18 @@ export default function UserProfile() {
                   >
                     <b>Email: {User.email}</b>
                   </Typography>
-                  {
-                    isAuthenticated ? <Button
-                    variant="contained"
-                    size="medium"
-                    endIcon={<AddIcon size="large" />}
-                    onClick={(e) => signOutHandler(e)}
-                  >
-                    SIGN OUT
-                  </Button> : ""
-                  }
+                  {isAuthenticated ? (
+                    <Button
+                      variant="contained"
+                      size="medium"
+                      endIcon={<AddIcon size="large" />}
+                      onClick={(e) => signOutHandler(e)}
+                    >
+                      SIGN OUT
+                    </Button>
+                  ) : (
+                    ""
+                  )}
                 </Box>
 
                 <Box
@@ -179,7 +193,7 @@ export default function UserProfile() {
                     ) : (
                       <Typography
                         textAlign="center"
-                        variant="h5"
+                        variant="h6"
                         component="div"
                         noWrap={true}
                       >

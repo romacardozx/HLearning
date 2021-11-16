@@ -6,14 +6,14 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "./CardDelete";
 import Paginate from "../Paginate/Paginate";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import Swal from "sweetalert2";
 
 import { Grid, Typography } from "@material-ui/core";
 
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import { deleteCourse } from "../../redux/actions/deleteCourse"
+import { deleteCourse } from "../../redux/actions/deleteCourse";
 import { maxWidth } from "@mui/system";
 
 export default function Courses() {
@@ -36,38 +36,37 @@ export default function Courses() {
 
   useEffect(() => {
     dispatch(getAllCourses());
-  }, [dispatch,currentId]);
-
+  }, [dispatch, currentId]);
 
   // function handleDelete(id){
   //          dispatch(deleteCourse(id))
   //          setCurrentId(id)
-  //       }  
+  //       }
 
   function handleDelete(id) {
-          Swal.fire({
-            title: "Estas seguro?",
-            text: "No podras revertir esto..",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, borralo!",
-          }).then((result) => {
-            if (result.isConfirmed) {
-              dispatch(deleteCourse(id));
-              Swal.fire({
-                title: "Borrado!",
-                text: `El curso ha sido borrado.`,
-                imageUrl: "https://i.gifer.com/7efs.gif",
-                imageWidth: 250,
-                imageHeight: 200,
-                imageAlt: "Custom image",
-              });
-              setCurrentId(id)
-            }
-          });
-        }
+    Swal.fire({
+      title: "Estas seguro?",
+      text: "No podras revertir esto..",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borralo!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteCourse(id));
+        Swal.fire({
+          title: "Borrado!",
+          text: `El curso ha sido borrado.`,
+          imageUrl: "https://i.gifer.com/7efs.gif",
+          imageWidth: 250,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+        });
+        setCurrentId(id);
+      }
+    });
+  }
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -76,17 +75,21 @@ export default function Courses() {
 
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <div>
         <Grid container direction="column" alignItems="center">
           <br />
           <div>
-          <Typography variant="h4"  align='center'>CURSOS ACTUALES</Typography><br/>
-            <Grid  container
-             direction="row"
-             alignItems="center"
-             justify="center"
-             >
+            <Typography variant="h4" align="center">
+              CURSOS ACTUALES
+            </Typography>
+            <br />
+            <Grid
+              container
+              direction="row"
+              alignItems="center"
+              justify="center"
+            >
               {currentCourses.length >= 0 ? (
                 <>
                   {currentCourses?.map((c, i) => (
@@ -101,16 +104,22 @@ export default function Courses() {
                             score={c.score}
                           />
                           <Typography>
-                          <Button variant="contained" size="medium" onClick={() => handleDelete(c._id)}>
-                           Eliminar curso
-                          </Button>
+                            <Button
+                              variant="contained"
+                              size="medium"
+                              onClick={() => handleDelete(c._id)}
+                            >
+                              Eliminar curso
+                            </Button>
                           </Typography>
                         </Item>
                       </Grid>
                     </div>
                   ))}
                 </>
-              ) : <p>Loading...</p>}
+              ) : (
+                <p>Loading...</p>
+              )}
             </Grid>
             <Paginate
               coursesPerPage={coursesPerPage}
@@ -120,7 +129,7 @@ export default function Courses() {
           </div>
         </Grid>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
