@@ -52,7 +52,7 @@ module.exports = async (req, res, next) => {
         binary_mode: true,
         back_urls: {
           success: `http://localhost:3000/home`,
-          failure: `http://localhost:9000/mercadopago/pagos/${id}`,
+          failure: `http://localhost:3000/courses`,
         },
         auto_return: "approved"  // Para compras success, mercado pago redirije automáticamente al back_url de success, sin mostrar el botón, de forma automática
       }
