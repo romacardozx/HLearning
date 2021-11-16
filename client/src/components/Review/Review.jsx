@@ -15,14 +15,16 @@ function validate(state) {
   return errors;
 }
 
-function Review() {
+function Review(userObj, courseObj) {
   const history = useHistory()
+  const [errors, setErrors] = useState({});
   const [state, setState] = useState({
+    user: userObj,
     description: "",
+    course: courseObj,
     score: 0
   });
 
-  const [errors, setErrors] = useState({});
 
   function handleInputChange(e) {
     setState({
@@ -48,9 +50,9 @@ function Review() {
           description: "",
           score: 0
         })
-        history.push('/home')
+        history.push('/user')
     }
-}
+  }
 
   return (
   <div>
