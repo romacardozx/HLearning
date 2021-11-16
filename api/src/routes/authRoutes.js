@@ -54,4 +54,23 @@ router.get("/logout", (req, res, next) => {
   res.send("Logged out");
 });
 
+router.post("/admin", async (req, res, next) => {
+  const {token} = req.body;
+  try {
+    let email = jwt.verify(token, "miclavesecreta").email.toLowerCase();
+    const isAdmin = await User.findOne({
+      email: email, 
+      isAdmin: true,
+      status: "Confirmed"
+    })
+    if(isAdmin){
+      res.status(200).json(true);
+    } else {
+      res.status(401).json(false)
+    }
+  } catch (error) {
+    console.log(error.message)
+  }
+})
+
 module.exports = router;

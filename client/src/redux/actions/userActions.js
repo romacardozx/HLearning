@@ -72,6 +72,7 @@ export const getUserInfo = () => {
                 const {data, request} = await axios.get("/auth/user", config);
                 if(request.status === 200){
                     dispatch({type: types.USER_AUTH_SUCCESS, payload: data})
+                    dispatch(isAdmin())
                 } else {
                     dispatch({type: types.USER_AUTH_FAILED})
                 }
@@ -81,6 +82,23 @@ export const getUserInfo = () => {
             console.log(error.message);
             dispatch({type: types.USER_AUTH_FAILED});
             window.localStorage.removeItem("user");
+        }
+    }
+}
+
+export const isAdmin = () => {
+    return async (dispatch) => {
+        try {
+            const token = JSON.parse(window.localStorage.getItem("user"));
+            if(token){
+                const {data, request} = await axios.post("/auth/admin", {token});
+                if(request.status === 200){
+                    dispatch({type: types.ADMIN_AUTH_SUCCESS, payload: data})
+                }
+            }
+        } catch (error) {
+            dispatch({type: types.ADMIN_AUTH_FAILED, payload: false})
+            console.log(error.message)
         }
     }
 }
