@@ -1,57 +1,3 @@
-// import React, { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { deleteCourse } from "../../redux/actions/deleteCourse"
-// import { getAllCourses } from "../../redux/actions/getAllCourses"
-
-
-// function DeleteCourse(){
-    
-//     const dispatch = useDispatch();
-
-//     const allCourses = useSelector((state) => state.getCourses.getAllCourses);
-
-//     function handleDelete(id){
-//        dispatch(deleteCourse(id))
-//     }
-
-//     useEffect(() =>{
-//         dispatch(getAllCourses())
-//     })
-
-//     console.log(allCourses)
-
-//     return (
-//         <div>
-//             <select>
-//             {
-//                 allCourses.map((c) => (
-
-//                     <option key={c}>
-//                         {c.name}
-//                     </option>
-                    
-//                 ))
-//             }
-//             </select>
-//             <div>
-//             {allCourses.map((e, i) => (
-
-//                 <div key={i}>
-
-//                     <p>{e}</p>
-//                     <button onClick={() => handleDelete(e)}>X</button>
-                    
-//                 </div>
-
-//             ))}
-//             </div>
-//         </div>
-//     )
-// }
-
-
-// export default DeleteCourse;
-
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -67,13 +13,15 @@ import { Grid, Typography } from "@material-ui/core";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import { deleteCourse } from "../../redux/actions/deleteCourse"
+import { maxWidth } from "@mui/system";
 
 export default function Courses() {
   const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.getCourses.getAllCourses);
+  const [currentId, setCurrentId] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage /* setCoursesPerPage */] = useState(8);
+  const [coursesPerPage /* setCoursesPerPage */] = useState(6);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
   const currentCourses =
@@ -87,11 +35,12 @@ export default function Courses() {
 
   useEffect(() => {
     dispatch(getAllCourses());
-  }, [dispatch]);
+  }, [dispatch,currentId]);
 
 
   function handleDelete(id){
            dispatch(deleteCourse(id))
+           setCurrentId(id)
         }  
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -101,17 +50,17 @@ export default function Courses() {
 
   return (
     <div>
-      <div>
-        <NavBar />
-      </div>
-      <br />
-      <br />
+      <NavBar/>
       <div>
         <Grid container direction="column" alignItems="center">
           <br />
           <div>
           <Typography variant="h4"  align='center'>CURSOS ACTUALES</Typography><br/>
-            <Grid container>
+            <Grid  container
+             direction="row"
+             alignItems="center"
+             justify="center"
+             >
               {currentCourses.length >= 0 ? (
                 <>
                   {currentCourses?.map((c, i) => (
@@ -126,7 +75,7 @@ export default function Courses() {
                             score={c.score}
                           />
                           <Typography>
-                          <Button variant="contained" size="medium" onClick={() => handleDelete(i)}>
+                          <Button variant="contained" size="medium" onClick={() => handleDelete(c._id)}>
                            Eliminar curso
                           </Button>
                           </Typography>
@@ -145,10 +94,7 @@ export default function Courses() {
           </div>
         </Grid>
       </div>
-      <br />
-      <br />
-      <br />
-      <Footer />
+      <Footer/>
     </div>
   );
 }

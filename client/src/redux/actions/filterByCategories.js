@@ -8,12 +8,10 @@ export function filterByCategories(categories) {
       );
       return dispatch({
         type: "FILTER_BY_CATEGORIES",
-        payload: json.data,
+        payload: { filterData: json.data, name: categories },
       });
     } catch (error) {
       console.log("error", error);
     }
   };
 }
-
-

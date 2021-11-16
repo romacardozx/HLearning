@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { filterByCategories } from "../../redux/actions/filterByCategories";
@@ -17,6 +17,8 @@ export default function Filters({ setCurrentPage }) {
   const categories = useSelector(
     (state) => state.getCategories.getAllCategories
   );
+  const [filterCategories, setFilterCategories] = useState("");
+  const [filterPrice, setFilterPrice] = useState("");
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -26,12 +28,14 @@ export default function Filters({ setCurrentPage }) {
     e.preventDefault();
     setCurrentPage(1);
     dispatch(filterByCategories(e.target.value));
+    setFilterCategories(e.target.value);
   }
 
   function handlePriceByRange(e) {
     e.preventDefault();
     setCurrentPage(1);
     dispatch(filterRangeByPrice(e.target.value));
+    setFilterPrice(e.target.value);
   }
 
   return (
@@ -45,7 +49,7 @@ export default function Filters({ setCurrentPage }) {
               id="select"
               label="Categories"
               onChange={(e) => handleSelectCategories(e)}
-              value=""
+              value={filterCategories}
             >
               {categories.map((c) => (
                 <MenuItem value={c._id} key={c._id}>
@@ -63,7 +67,7 @@ export default function Filters({ setCurrentPage }) {
               id="select"
               label="Price"
               onChange={(e) => handlePriceByRange(e)}
-              value=""
+              value={filterPrice}
             >
               <MenuItem value={1200}>$1000 - $1500</MenuItem>
               <MenuItem value={1600}>$1500 - $2000</MenuItem>

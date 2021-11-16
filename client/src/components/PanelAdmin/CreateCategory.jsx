@@ -1,78 +1,97 @@
-// import React, { useEffect, useState }  from "react";
-import React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import { Grid } from '@mui/material';
-//import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
-// import { useDispatch, useSelector } from "react-redux";
-// import { getAllCategories } from '../../redux/actions/getAllCategories.js'
+import { React } from "react";
+import {  Formik } from "formik";
+import axios from "axios";
+import * as Yup from "yup";
+import swal from 'sweetalert';
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+
+const schemaValidate = Yup.object().shape({
+  name: Yup.string()
+    .required("Debe agregar un nombre"),
+});
 
 
-/* function BasicButtons() { 
-  return (
-    <Stack spacing={2} direction="row">
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </Stack>
-  );
+function CreateCategory() { 
+
+  return(
+
+    <div>
+      <Formik
+        initialValues={{
+          name: ""
+        }}
+        validationSchema={schemaValidate}
+        onSubmit={ async (values, {resetForm}) => {
+          try {
+
+            const response = await axios.post('/categories/createCategory', values)
+            console.log(response);            
+            swal("Categoria Creada!", "Presione para continuar", "success");
+            resetForm();
+
+          } catch (error) {
+
+            swal ( "Algo salio mal!" ,  "Por favor vuelva a intentar" ,  "error" );
+            console.log(error)
+            resetForm();
+          }
+        }}
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        }) => (
+            <Box
+              component="form"
+              sx={{
+                rowGap: 1,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                marginBottom: 5,
+                marginTop: 5,
+                paddingBottom: 5,
+                paddingTop: 5,
+                "& .MuiTextField-root": { m: 2, width: "40rem" },
+                "& .MuiFormControl-root": { m: 2, width: "40rem" },
+                "& .MuiSelect-root": { m: 2, width: "40rem" },
+              }}
+              autoComplete="off"
+              onSubmit={handleSubmit}
+            >
+              <TextField
+                label="Categoria"
+                type="text"
+                name="name"
+                value={values.title}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={Boolean(touched.title && errors.title)}
+                helperText={touched.title && errors.title}
+              />
+              <Button
+                sx={{
+                  marginTop: 5,
+                  marginBottom: 10,
+                  width: "17rem",
+                  height: "3rem",
+                }}
+                type="submit"
+                variant="contained"
+              >
+                Cargar Categoria
+              </Button>
+            </Box>
+        )}
+      </Formik>
+    </div>
+  )
 }
- */
 
-export default function CreateCategory() {
-  // const dispatch = useDispatch();
-
-  // const getAllCategory = useSelector(state => state.getCategories.getAllCategories);
-
-  //   const [formSent, setFormSent] = useState(false)
-  //   console.log(formSent);
-
-  //   useEffect(() => {
-  //       dispatch(getAllCategories());
-  //     },[dispatch]);
-
-
-  return (
-    <Paper
-    sx={{
-      p: 2,
-      margin: "auto",
-      maxWidth: 400,
-      elevation: 24,
-      flexGrow: 50,
-    }}
-  >
-      <Grid container spacing={1}>     
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-         <Typography gutterBottom variant="h4" component="div">
-             Crear Categoría
-         </Typography> <br/>
-      <div>
-        <TextField
-          required
-          id="outlined-required"
-          label="Requerido"
-          placeholder="Nombre de la categoria"
-        />
-        </div>
-    {/* <div>
-    <Button variant="contained" size="small">Agregar categoría</Button>
-    <button type="submit">Enviar Curso</button>
-                        {setFormSent && <p> Curso enviado con exito!</p>}
-    </div> */}
-    </Box>
-    </Grid>
-    </Paper>
-  );
-}
-
+export default CreateCategory;

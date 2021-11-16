@@ -14,11 +14,7 @@ export default function CourseCard({
   
   return (
     <Box p={1}>
-      <Card sx={{ maxWidth: 270, minWidth: 100 }} elevation={6}>
-        <CardActionArea
-          component={Link}
-          to={`/courses/${id}`}
-        >
+      <Card sx={{ maxWidth: 270, minWidth: 270 }} elevation={0}>
           <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
             {title}
           </Typography>
@@ -26,10 +22,10 @@ export default function CourseCard({
             title={title}
             component="img"
             height="180"
+            widht="270"
             image={image}
             alt="img video"
-          />
-        </CardActionArea>       
+          />    
       </Card>
     </Box>
   );

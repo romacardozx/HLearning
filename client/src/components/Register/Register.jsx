@@ -1,13 +1,16 @@
 import React from "react";
 import s from "./register.module.css";
+import {useHistory} from 'react-router-dom';
 import { useState } from "react";
 import Navbar from "../NavBar/NavBar";
+import { postSignUp } from "../../redux/actions/userActions";
+import {useDispatch} from "react-redux";
 
 
 function validate(state) {
   let errors = {};
-  if (!state.fullName) {
-    errors.fullName = "Ingresa tu nombre y apellido";
+  if (!state.name) {
+    errors.name = "Ingresa tu nombre y apellido";
   } else if (!state.email) {
     errors.email = "Ingresa un email";
   } else if (!state.password) {
@@ -21,8 +24,10 @@ function validate(state) {
 }
 
 function Register() {
+  const history = useHistory()
+  const dispatch = useDispatch();
   const [state, setState] = useState({
-    fullName: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -41,30 +46,47 @@ function Register() {
       })
     );
   }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
+    else{
+
+        dispatch(postSignUp(state))
+        alert("Registro exitoso!")
+        setState({
+          name: "",
+          email: "",
+          password: "",
+        })
+        history.push('/login')
+    }
+  }
+
   return (
   <div>
    <Navbar/>
     <div className={s.cont}>
-      <form className={s.formulario} onSubmit>
+      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)}>
         <h1>Registrate</h1>
         <div className={s.contenedor}>
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-user icon"></i>*/}
+            
             <input
               className={s.input}
               type="text"
-              value={state.fullName}
-              name="fullName"
+              value={state.name}
+              name="name"
               placeholder="Nombre Completo"
               onChange={(e) => handleInputChange(e)}
               required
             />
           </div>
 
-          {errors.fullName && <p className={s.errors}>{errors.fullName}</p>}
+          {errors.name && <p className={s.errors}>{errors.name}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-envelope icon"></i>*/}
+            
             <input
               className={s.input}
               type="email"
@@ -79,7 +101,7 @@ function Register() {
           {errors.email && <p className={s.errors}>{errors.email}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-key icon"></i>*/}
+            
             <input
               className={s.input}
               type="password"
@@ -94,7 +116,7 @@ function Register() {
           {errors.password && <p className={s.errors}>{errors.password}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-key icon"></i>*/}
+            
             <input
               className={s.input}
               type="password"
@@ -128,6 +150,7 @@ function Register() {
         </div>
       </form>
     </div>
+    {console.log('este es el state', state)}
   </div>
   );
 }

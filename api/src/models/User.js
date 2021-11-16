@@ -18,6 +18,17 @@ const UserSchema = new Schema({
       ref: "Review",
     },
   ],
+  cart: {
+    type: Schema.Types.ObjectId,
+    ref: "Cart",    
+  },
+  // orders: [
+  //   {
+  //     type: Schema.Types.ObjectId,  Ver mas adelante!!!
+  //     ref: "Order",
+  //     default:[]
+  //   },
+  // ],
   pictures: {
     type: String,
     default:
@@ -28,6 +39,10 @@ const UserSchema = new Schema({
     unique: true,
     required: true,
   },
+  password: {
+    type: String,
+    default: "Password12345",
+  },
   status: {
     type: String,
     enum: ["Confirmed", "Deleted"],
@@ -35,7 +50,7 @@ const UserSchema = new Schema({
   },
   isGoogle: {
     type: Boolean,
-    default: true,
+    default: false,
   },
   isAdmin: {
     type: Boolean,
