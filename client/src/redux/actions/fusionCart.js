@@ -4,12 +4,11 @@ import { loadState } from "../../localStorage";
 export function fusionCart(id) {
   return async function (dispatch) {
     try {
+
       let cartStorage = loadState();
 
       const json = await axios(`/cart?id=${id ? id : ""}`);
-
       const idCart = json.data._id;
-
       const cartFusioned = cartStorage.concat(json.data.courses);
 
       let cartMap = cartFusioned.map((item) => {
