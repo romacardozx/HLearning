@@ -24,6 +24,18 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    case types.EDIT_USER_REQUEST:
+      return {
+        ...state
+      }
+      case types.EDIT_USER_SUCCESS:
+      return {
+        ...state
+      }
+      case types.EDIT_USER_FAILED:
+      return {
+        ...state
+      }
     case types.USER_AUTH_REQUEST:
       return {
         ...state,
