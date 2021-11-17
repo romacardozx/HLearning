@@ -8,6 +8,7 @@ export const GET_COURSES_SCORE = "GET_COURSES_SCORE"
 export const GET_USER = "GET_USER"
 export const GET_ORDER = "GET_ORDER"
 export const GET_CART = "GET_CART"
+export const GET_REVIEWS_BY_ID = "GET_REVIEWS_BY_ID"
 
 // ORDES //
 
