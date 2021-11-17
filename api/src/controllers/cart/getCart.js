@@ -6,7 +6,7 @@ module.exports = async (req, res, next) => {
   try {
     let cart = await Cart.findOne({ user: id })
       .populate("user", "name")
-      .populate("courses", "title , price");
+      .populate("courses");
     if (cart) {
       res.json(cart);
     } else {

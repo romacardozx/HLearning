@@ -35,11 +35,15 @@ function Cart() {
   }));
 
   const [remove, setRemove] = useState(false);
+ 
 
   useEffect(() => {
     dispatch(getAllCarts(userDetail._id));
     dispatch(fusionCart(userDetail._id));
   }, [dispatch, auth]);
+
+
+  
 
   let cartAll = useSelector((state) => state.cartReducer.allCart);
   let authentification = useSelector(
@@ -55,6 +59,13 @@ function Cart() {
   } else {
     let cartRender = cartStorage;
   } */
+
+  let price = []
+  cart.map(c => {
+    price.push(c.price)
+  })
+  let price2 = price.reduce((a,b) => a + b, 0)
+
 
   return (
     <div>
@@ -95,6 +106,7 @@ function Cart() {
                   /* <div> */
                   <Grid container direction="column" justifyContent="center">
                     {cart.map((course) => {
+                      
                       return (
                         <div key={course._id}>
                           <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -107,7 +119,7 @@ function Cart() {
                                 score={course.score}
                                 price={course.price}
                                 course={course}
-                              />
+                                />
                               <button
                                 onClick={() => {
                                   removeState(course);
@@ -149,7 +161,7 @@ function Cart() {
                   variant="h5"
                   color="text.primary"
                 >
-                  <b>Total:</b>
+                  <b>Total: {price2}</b>
                 </Typography>
               </Box>
             </Box>
@@ -162,3 +174,4 @@ function Cart() {
 }
 
 export default Cart;
+
