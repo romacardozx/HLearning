@@ -1,4 +1,4 @@
-import { GET_ALL_CART } from "../actions/constants.js";
+import { GET_ALL_CART, GET_CART } from "../actions/constants.js";
 
 const initialState = {
   allCart: [],
@@ -8,6 +8,12 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_CART: {
+      return {
+        ...state,
+        allCart: action.payload,
+      };
+    }
+    case GET_CART: {
       return {
         ...state,
         allCart: action.payload,
