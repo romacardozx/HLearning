@@ -8,7 +8,9 @@ module.exports = async (req, res, next) => {
   try {
     const cart = await Cart.findOneAndUpdate({ _id: id }, data, {
       new: true,
-    });
+    })
+      .populate("user", "name")
+      .populate("courses");
     if (cart) {
       res.json(cart);
     } else {
