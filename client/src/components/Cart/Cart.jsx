@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {useSelector, useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import { loadState, removeState } from "../../localStorage";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
@@ -12,28 +12,60 @@ import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {getAllCarts} from '../../redux/actions/getAllCarts'
+import { getAllCarts } from "../../redux/actions/getAllCarts";
+import { fusionCart } from "../../redux/actions/fusionCart";
+
+function auth(authentification, cartAll) {
+  let cartStorage = loadState();
+
+  if (authentification) {
+    let cart = cartAll;
+    return cart;
+  } else {
+    let cart = cartStorage;
+    return cart;
+  }
+}
 
 function Cart() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(0.5),
   }));
 
   const [remove, setRemove] = useState(false);
-  
-    useEffect(() => {
-      dispatch(getAllCarts("8186d90a521fdc29a93ec244"))
-    }, [dispatch])
+ 
 
-  const cart = useSelector(state => state.cartReducer.allCart)
-  const allCartBackEnd = useSelector(state => state.cartReducer.allCartBackEnd)
+  useEffect(() => {
+    dispatch(getAllCarts(userDetail._id));
+    dispatch(fusionCart(userDetail._id));
+  }, [dispatch, auth]);
 
-  console.log(cart, 'cart');
-  console.log(allCartBackEnd, 'allCartBackEnd');
+
   
-  
+
+  let cartAll = useSelector((state) => state.cartReducer.allCart);
+  let authentification = useSelector(
+    (state) => state.userReducer.isAuthenticated
+  );
+  const userDetail = useSelector((state) => state.userReducer.userDetail);
+  const cart = auth(authentification, cartAll);
+  console.log("CART", cart);
+
+  /* if (auth) {
+    let cartRender = cart;
+    return cartRender;
+  } else {
+    let cartRender = cartStorage;
+  } */
+
+  let price = []
+  cart.map(c => {
+    price.push(c.price)
+  })
+  let price2 = price.reduce((a,b) => a + b, 0)
+
 
   return (
     <div>
@@ -74,6 +106,7 @@ function Cart() {
                   /* <div> */
                   <Grid container direction="column" justifyContent="center">
                     {cart.map((course) => {
+                      
                       return (
                         <div key={course._id}>
                           <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -86,7 +119,7 @@ function Cart() {
                                 score={course.score}
                                 price={course.price}
                                 course={course}
-                              />
+                                />
                               <button
                                 onClick={() => {
                                   removeState(course);
@@ -128,7 +161,7 @@ function Cart() {
                   variant="h5"
                   color="text.primary"
                 >
-                  <b>Total:</b>
+                  <b>Total: {price2}</b>
                 </Typography>
               </Box>
             </Box>
@@ -141,3 +174,4 @@ function Cart() {
 }
 
 export default Cart;
+
