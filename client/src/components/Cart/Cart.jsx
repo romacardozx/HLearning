@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import { getAllCarts } from "../../redux/actions/getAllCarts";
 import { fusionCart } from "../../redux/actions/fusionCart";
 import { getUserInfo } from "../../redux/actions/userActions";
+import { actualizeCart } from "../../redux/actions/actualizeCart";
 
 function auth(authentification, cartAll) {
   let cartStorage = loadState();
@@ -39,7 +40,7 @@ function Cart() {
  
  
   useEffect(() => {
-   dispatch(fusionCart(userDetail._id));
+    if(userDetail._id) dispatch(fusionCart(userDetail._id));
    // dispatch(getAllCarts(userDetail._id));
   }, [dispatch, auth]);
   
@@ -120,14 +121,21 @@ function Cart() {
                                 price={course.price}
                                 course={course}
                                 />
-                              <button
+                              {authentification ?
+                            (<button
+                                onClick={() => {
+                                 dispatch(actualizeCart(cart , course._id, userDetail._id));
+                                
+                                }}
+                              > X </button>)
+                              :
+                              (<button
                                 onClick={() => {
                                   removeState(course);
                                   setRemove(!remove);
                                 }}
-                              >
-                                X
-                              </button>
+                              >  X  </button>)
+                              }
                               {/* <IconButton>
                                 <DeleteForeverIcon
                                   color="secondary"

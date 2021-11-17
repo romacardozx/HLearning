@@ -1,4 +1,4 @@
-import { GET_ALL_CART, GET_CART } from "../actions/constants.js";
+import { GET_ALL_CART, GET_CART, DELETE_CART } from "../actions/constants.js";
 
 const initialState = {
   allCart: [],
@@ -14,6 +14,12 @@ const cartReducer = (state = initialState, action) => {
       };
     }
     case GET_CART: {
+      return {
+        ...state,
+        allCart: action.payload,
+      };
+    }
+    case DELETE_CART: {
       return {
         ...state,
         allCart: action.payload,
