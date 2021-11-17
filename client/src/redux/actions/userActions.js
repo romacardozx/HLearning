@@ -2,6 +2,8 @@ import axios from "axios";
 import * as types from "../actions/constants";
 import swal from "sweetalert";
 
+
+
 export const postSignUp = (input) => {
   return async (dispatch) => {
     try {
@@ -66,7 +68,6 @@ export const getSignOut = () => {
       if (data) {
         dispatch({ type: types.SIGN_OUT_SUCCESS });
         window.localStorage.removeItem("user");
-        window.localStorage.clear();
         await swal(
           "Ha cerrado su sesión satisfactoriamente",
           "Presione para continuar",
@@ -81,6 +82,27 @@ export const getSignOut = () => {
     }
   };
 };
+
+
+export const postEditUser = (input, id) => {
+  return async (dispatch) => {
+    try {
+      dispatch({type: types.EDIT_USER_REQUEST})
+      const {data, request} = await axios.put("/users/updateuser/id", {
+        input,
+        id
+      })
+      if(request.status === 200){
+        dispatch({type: types.EDIT_USER_SUCCESS})
+        await swal("La información del usuario ha sido actualizada", "Presione para continuar", "success");
+      }
+    } catch (error) {
+      dispatch({type: types.EDIT_USER_FAILED})
+      console.log(error.message)
+      swal(`Algo salió mal`, "Presione para continuar", "error")
+    }
+  }
+}
 
 export const getUserInfo = () => {
   return async (dispatch) => {

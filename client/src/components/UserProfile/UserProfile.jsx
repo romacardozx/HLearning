@@ -59,7 +59,8 @@ export default function UserProfile() {
               <IconButton
                 color="primary"
                 aria-label="edit"
-                /* onClick={handleOpenProfile} */
+                component={Link}
+                to={`/editprofile`}
               >
                 <EditIcon />
               </IconButton>
