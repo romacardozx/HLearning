@@ -38,6 +38,7 @@ function Register() {
     name: "",
     email: "",
     password: "",
+    pictures: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -66,6 +67,7 @@ function Register() {
           name: "",
           email: "",
           password: "",
+          pictures: ""
         })
         history.push('/login')
     }
@@ -75,7 +77,7 @@ function Register() {
   <div>
    <Navbar/>
     <div className={s.cont}>
-      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)}>
+      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)} encType="multipart/form-data" >
         <h1>Registrate</h1>
         <div className={s.contenedor}>
           <div className={s.inputContenedor}>
@@ -139,6 +141,17 @@ function Register() {
           {errors.confirmPassword && (
             <p className={s.errors}>{errors.confirmPassword}</p>
           )}
+          <div className={s.inputContenedor}>
+            
+            <input
+              className={s.input}
+              type="file"
+              value={state.pictures}
+              name="pictures"
+              onChange={(e) => handleInputChange(e)}
+              
+            />
+          </div>
 
           <input className={s.button} type="submit" value="Registrate" />
           <div className={s.or}>o con</div>
