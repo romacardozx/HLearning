@@ -8,8 +8,8 @@ const router = Router();
 router.use(express.json());
 
 
-// TIENE QUE SER UN POST
-router.get("/:id", mercadoPago);
-router.get("/pagos/:id", pagos)
+// TIENE QUE SER UN POST 
+router.post("/:id", mercadoPago);
+router.post("/pagos/:id", pagos)
 
 module.exports = router;

@@ -1,14 +1,13 @@
 import axios from "axios";
 
-export function getAllCarts(id) { 
+export function getAllCarts(id) {
   return async function (dispatch) {
     try {
-      var json = await axios(`/cart?id=${id ? id : ""}`);
-      console.log(json, 'action de getall');
-      
+      const res = await axios(`/cart?id=${id}`);
+
       return dispatch({
-        type: "GET_CART",
-        payload: json.data
+        type: "GET_ALL_CART",
+        payload: res.data.courses,
       });
     } catch (error) {
       console.log("error", error);

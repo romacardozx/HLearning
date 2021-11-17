@@ -12,7 +12,7 @@ mercadopago.configure({
 module.exports = async (req, res, next) => {
     // console.log("ENTRO A PAYMENT");
 
-    console.log("REQUEST", req);
+    //console.log("REQUEST", req);
 
     const { 
         payment_id, 
