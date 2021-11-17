@@ -16,9 +16,11 @@ const courses = require("./src/utils/mockUps/coursesConObjectId.json");
 const Cart = require("./src/models/Cart");
 const carts = require("./src/utils/mockUps/cartsConObjectId.json")
 const morgan = require("morgan");
-
+const multer = require("multer");           
 const session = require("express-session");
 const passport = require("passport");
+const path = require("path")
+const exphbs = require("express-handlebars")
 
 require("./src/utils/auth/passport");
 
@@ -66,6 +68,16 @@ app.use(morgan("dev"));
 //Habilitar el parseo de los datos
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//Multer para guardar "imagenes"
+app.set('Register', path.join())
+const storage = multer.diskStorage({
+     destination: path.join(__dirname, 'cloudi/uploads'),
+     filename: (req, file, cb) => {
+         cb(null, new Date().getTime() + path.extname(file.originalname))  
+     }
+})
+app.use(multer({ storage }).single('pictures'))
 
 //Rutas de la server
 app.use("/", routers);
