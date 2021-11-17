@@ -37,22 +37,19 @@ function Cart() {
   }));
 
   const [remove, setRemove] = useState(false);
- 
- 
+
   useEffect(() => {
-    if(userDetail._id) dispatch(fusionCart(userDetail._id));
-   // dispatch(getAllCarts(userDetail._id));
+    if (userDetail._id) dispatch(fusionCart(userDetail._id));
+    // dispatch(getAllCarts(userDetail._id));
   }, [dispatch, auth]);
-  
 
   let cartAll = useSelector((state) => state.cartReducer.allCart);
-  let authentification = useSelector((state) => state.userReducer.isAuthenticated
+  let authentification = useSelector(
+    (state) => state.userReducer.isAuthenticated
   );
   const userDetail = useSelector((state) => state.userReducer.userDetail);
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
-
-
 
   /* if (auth) {
     let cartRender = cart;
@@ -61,12 +58,11 @@ function Cart() {
     let cartRender = cartStorage;
   } */
 
-  let price = []
-  cart.map(c => {
-    price.push(c.price)
-  })
-  let price2 = price.reduce((a,b) => a + b, 0)
-
+  let price = [];
+  cart.map((c) => {
+    price.push(c.price);
+  });
+  let price2 = price.reduce((a, b) => a + b, 0);
 
   return (
     <div>
@@ -96,18 +92,11 @@ function Cart() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  /*  background:
-                    "linear-gradient(82deg, rgba(2,0,36,1) 0%, rgba(9,73,121,0.9948354341736695) 76%, rgba(0,212,255,1) 100%)",
-                  p: 10,
-                  borderRadius: 3,
-                  gap: 2, */
                 }}
               >
                 {cart.length > 0 ? (
-                  /* <div> */
                   <Grid container direction="column" justifyContent="center">
                     {cart.map((course) => {
-                      
                       return (
                         <div key={course._id}>
                           <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -120,31 +109,33 @@ function Cart() {
                                 score={course.score}
                                 price={course.price}
                                 course={course}
-                                />
-                              {authentification ?
-                            (<button
-                                onClick={() => {
-                                 dispatch(actualizeCart(cart , course._id, userDetail._id));
-                                
-                                }}
-                              > X </button>)
-                              :
-                              (<button
-                                onClick={() => {
-                                  removeState(course);
-                                  setRemove(!remove);
-                                }}
-                              >  X  </button>)
-                              }
-                              {/* <IconButton>
-                                <DeleteForeverIcon
-                                  color="secondary"
-                                  onClick={() => {
-                                    removeState(course);
-                                    setRemove(!remove);
-                                  }}
-                                />
-                              </IconButton> */}
+                              />
+                              {authentification ? (
+                                <IconButton>
+                                  <DeleteForeverIcon
+                                    color="secondary"
+                                    onClick={() => {
+                                      dispatch(
+                                        actualizeCart(
+                                          cart,
+                                          course._id,
+                                          userDetail._id
+                                        )
+                                      );
+                                    }}
+                                  />
+                                </IconButton>
+                              ) : (
+                                <IconButton>
+                                  <DeleteForeverIcon
+                                    color="secondary"
+                                    onClick={() => {
+                                      removeState(course);
+                                      setRemove(!remove);
+                                    }}
+                                  />
+                                </IconButton>
+                              )}
                             </Item>
                           </Grid>
                         </div>
@@ -152,7 +143,6 @@ function Cart() {
                     })}
                   </Grid>
                 ) : (
-                  /*  </div> */
                   <h1>Empty Cart</h1>
                 )}
               </Box>
@@ -182,4 +172,3 @@ function Cart() {
 }
 
 export default Cart;
-
