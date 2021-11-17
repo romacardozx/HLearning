@@ -66,7 +66,6 @@ export const getSignOut = () => {
       if (data) {
         dispatch({ type: types.SIGN_OUT_SUCCESS });
         window.localStorage.removeItem("user");
-        window.localStorage.clear();
         await swal(
           "Ha cerrado su sesión satisfactoriamente",
           "Presione para continuar",
