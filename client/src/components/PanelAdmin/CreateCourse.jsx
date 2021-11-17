@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem, Select, OutlinedInput, InputLabel } from "@mui/material";
+import Footer from '../Footer/Footer';
 
 // const videoSchema = yup.object({
 //   name: yup.string().required(),
@@ -298,6 +299,8 @@ function CreateCourse() {
           </Container>
         )}
       </Formik>
+      <br/><br/><br/><br/>
+        <Footer/>
     </div>
   );
 }

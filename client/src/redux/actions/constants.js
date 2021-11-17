@@ -9,13 +9,6 @@ export const GET_USER = "GET_USER"
 export const GET_ORDER = "GET_ORDER"
 export const GET_CART = "GET_CART"
 export const GET_REVIEWS_BY_ID = "GET_REVIEWS_BY_ID"
-export const GET_ALL_COURSES = "GET_ALL_COURSES";
-export const GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES";
-export const GET_DETAIL_COURSES = "GET_DETAIL_COURSES";
-export const GET_COURSE_BY_NAME = "GET_COURSE_BY_NAME";
-export const GET_COURSES_SCORE = "GET_COURSES_SCORE";
-export const GET_USER = "GET_USER";
-export const GET_ORDER = "GET_ORDER";
 export const GET_ALL_CART = "GET_ALL_CART";
 
 // ORDES //

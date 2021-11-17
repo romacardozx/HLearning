@@ -6,6 +6,7 @@ import swal from 'sweetalert';
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import Footer from '../Footer/Footer';
 
 const schemaValidate = Yup.object().shape({
   name: Yup.string()
@@ -90,6 +91,8 @@ function CreateCategory() {
             </Box>
         )}
       </Formik>
+      <br/><br/><br/><br/>
+        <Footer/>
     </div>
   )
 }
