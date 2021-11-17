@@ -65,7 +65,7 @@ const getCourses = (state = initialState, action) => {
     case FILTER_BY_STARS: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        setAllCourses: action.payload,
       };
     }
 
