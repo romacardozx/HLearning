@@ -9,6 +9,8 @@ export const GET_USER = "GET_USER";
 export const GET_ORDER = "GET_ORDER";
 export const GET_ALL_CART = "GET_ALL_CART";
 export const GET_REVIEWS_BY_ID = "GET_REVIEWS_BY_ID"
+export const GET_CART = "GET_CART"
+export const DELETE_CART = "DELETE_CART"
 
 
 // ORDES //
@@ -27,13 +29,18 @@ export const FILTER_BY_DURATION = "FILTER_BY_DURATION";
 export const FILTER_BY_RANGE_PRICE = "FILTER_BY_RANGE_PRICE";
 export const FILTER_BY_STARS = "FILTER_BY_STARS";
 
-export const POST_SIGN_UP = "POST_SIGN_UP";
-export const POST_SIGN_IN = "POST_SIGN_IN";
-export const SIGN_OUT_SUCCESS = "SIGN_OUT_SUCCESS";
-export const SIGN_OUT_FAILED = "SIGN_OUT_FAILED";
-export const UPDATE_CART = "UPDATE_CART";
+// USERS
 
-// AUTENTIFICACION //
+export const POST_SIGN_UP = "POST_SIGN_UP"
+export const POST_SIGN_IN = "POST_SIGN_IN"
+export const EDIT_USER_REQUEST = "EDIT_USER_REQUEST"
+export const EDIT_USER_SUCCESS = "EDIT_USER_SUCCESS"
+export const EDIT_USER_FAILED = "EDIT_USER_FAILED"
+export const SIGN_OUT_SUCCESS = "SIGN_OUT_SUCCESS"
+export const SIGN_OUT_FAILED = "SIGN_OUT_FAILED"
+export const UPDATE_CART = "UPDATE_CART"
+
+// AUTHENTICATION
 export const USER_AUTH_REQUEST = "USER_AUTH_REQUEST";
 export const USER_AUTH_SUCCESS = "USER_AUTH_SUCCESS";
 export const USER_AUTH_FAILED = "USER_AUTH_FAILED";

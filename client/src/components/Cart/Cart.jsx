@@ -14,6 +14,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { getAllCarts } from "../../redux/actions/getAllCarts";
 import { fusionCart } from "../../redux/actions/fusionCart";
+import { getUserInfo } from "../../redux/actions/userActions";
+import { actualizeCart } from "../../redux/actions/actualizeCart";
 
 function auth(authentification, cartAll) {
   let cartStorage = loadState();
@@ -36,22 +38,21 @@ function Cart() {
 
   const [remove, setRemove] = useState(false);
  
-
+ 
   useEffect(() => {
-    dispatch(getAllCarts(userDetail._id));
-    dispatch(fusionCart(userDetail._id));
+    if(userDetail._id) dispatch(fusionCart(userDetail._id));
+   // dispatch(getAllCarts(userDetail._id));
   }, [dispatch, auth]);
-
-
   
 
   let cartAll = useSelector((state) => state.cartReducer.allCart);
-  let authentification = useSelector(
-    (state) => state.userReducer.isAuthenticated
+  let authentification = useSelector((state) => state.userReducer.isAuthenticated
   );
   const userDetail = useSelector((state) => state.userReducer.userDetail);
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
+
+
 
   /* if (auth) {
     let cartRender = cart;
@@ -120,14 +121,21 @@ function Cart() {
                                 price={course.price}
                                 course={course}
                                 />
-                              <button
+                              {authentification ?
+                            (<button
+                                onClick={() => {
+                                 dispatch(actualizeCart(cart , course._id, userDetail._id));
+                                
+                                }}
+                              > X </button>)
+                              :
+                              (<button
                                 onClick={() => {
                                   removeState(course);
                                   setRemove(!remove);
                                 }}
-                              >
-                                X
-                              </button>
+                              >  X  </button>)
+                              }
                               {/* <IconButton>
                                 <DeleteForeverIcon
                                   color="secondary"
