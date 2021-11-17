@@ -11,6 +11,8 @@ import Rating from "@mui/material/Rating";
 import { Box } from "@mui/system";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
+import calculeScore from "../../utils/calculeScore";
+import { CardContent } from "@material-ui/core";
 
 export default function CourseCard({
   id,
@@ -36,7 +38,9 @@ export default function CourseCard({
           image={image}
           alt="img video"
         />
-        <br />
+         <CardContent>
+           <Rating name="read-only" readOnly value={calculeScore(score)} />
+        </CardContent>
         <Typography
           textAlign="center"
           variant="h5"
