@@ -1,6 +1,7 @@
 const User = require("../../models/User");
 const Cart = require("../../models/Cart");
 const bcrypt = require("bcrypt");
+const cloudinary = require("cloudinary")
 
 // Crear User desde el front (solo hacemos una copia de lo que administra Auth0)
 
