@@ -6,7 +6,10 @@ import Navbar from "../NavBar/NavBar";
 import { postSignUp } from "../../redux/actions/userActions";
 import {useDispatch} from "react-redux";
 
-
+function esEmail (word) {
+  if(word.includes("@") && word.includes(".com")) return true;
+     else return false
+}
 
 function validate(state) {
   let errors = {};
@@ -14,10 +17,14 @@ function validate(state) {
     errors.name = "Ingresa tu nombre y apellido";
   } else if (!state.email) {
     errors.email = "Ingresa un email";
+  } else if (esEmail(state.email)===false) {
+    errors.email = "No es un email";
   } else if (!state.password) {
     errors.password = "Ingresa una constraseña";
+  } else if (state.password.length < 7) {
+    errors.password = "La contraseña debe superar los 8 caracteres";
   } else if (!state.confirmPassword) {
-    errors.confirmPassword = "Vuelve a escribir tu constraseña";
+    errors.confirmPassword = "Repita su constraseña";
   } else if (state.password !== state.confirmPassword) {
     errors.confirmPassword = "Las contraseñas no coinciden";
   }
@@ -31,6 +38,7 @@ function Register() {
     name: "",
     email: "",
     password: "",
+    pictures: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -59,6 +67,7 @@ function Register() {
           name: "",
           email: "",
           password: "",
+          pictures: ""
         })
         history.push('/login')
     }
@@ -68,7 +77,7 @@ function Register() {
   <div>
    <Navbar/>
     <div className={s.cont}>
-      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)}>
+      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)} encType="multipart/form-data" >
         <h1>Registrate</h1>
         <div className={s.contenedor}>
           <div className={s.inputContenedor}>
@@ -132,6 +141,17 @@ function Register() {
           {errors.confirmPassword && (
             <p className={s.errors}>{errors.confirmPassword}</p>
           )}
+          <div className={s.inputContenedor}>
+            
+            <input
+              className={s.input}
+              type="file"
+              value={state.pictures}
+              name="pictures"
+              onChange={(e) => handleInputChange(e)}
+              
+            />
+          </div>
 
           <input className={s.button} type="submit" value="Registrate" />
           <div className={s.or}>o con</div>

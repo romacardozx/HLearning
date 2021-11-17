@@ -9,16 +9,14 @@ import Paper from "@mui/material/Paper";
 import Loading from "../Loading/Loading";
 /* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
 /* import { orderByScore } from "../../redux/actions/orderByScore"; */
-import calculateScore from "../../utils/calculeScore";
+/* import calculateScore from "../../utils/calculeScore"; */
 import { filterByStars } from "../../redux/actions/filterByStars";
 import Card from "../Card/Card";
 
 export default function CoursesTop() {
   const dispatch = useDispatch();
-
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
-  const fourCourses = coursesTop.slice(1, 5); 
-
+  const fourCourses = coursesTop.slice(1, 5);
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(0.5),
