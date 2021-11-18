@@ -7,6 +7,7 @@ import { getDetailCourses } from "../../redux/actions/getDetailCourses";
 import { MultiSelect } from "react-multi-select-component";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import axios from "axios";
+import swal from "sweetalert";
 
 function validate(state) {
     let errors = {};
@@ -85,10 +86,18 @@ console.log("Curso Detallado", courseDetailed)
             return el?.value
         })
     })
-    const response = await axios.put(`/courses/update/${id}`, {
-        state,
-        selected
-    });
+    try {
+        const {data, request} = await axios.put(`/courses/update/${id}`, {
+            state,
+            selected
+        });
+        if(request.status === 200){
+            await swal("La información del curso ha sido actualizada", "Presione para continuar", "success");
+        }
+    } catch (error) {
+        console.log(error.message)
+        await swal(`Algo salió mal`, "Presione para continuar", "error")
+    }
   }
 
   const handleClick = (e) => {
