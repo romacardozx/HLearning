@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { loadState, /* removeState, */ saveState } from "../../localStorage";
+import { loadState,removeState,saveState } from "../../localStorage";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -16,8 +17,9 @@ import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { styled } from "@mui/material/styles";
-/* import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { BsCartPlus, BsCartCheckFill } from "react-icons/bs"; */
+ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useDispatch } from "react-redux";
+/*import { BsCartPlus, BsCartCheckFill } from "react-icons/bs"; */
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -30,6 +32,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
 export default function CourseCard({
   id,
   title,
@@ -39,20 +42,22 @@ export default function CourseCard({
   price,
   course,
 }) {
+
+  const dispatch = useDispatch();
+
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  /* const [remove, setRemove] = useState(); */
-  const cart = loadState();
-  const [, setAddCart] = useState();
+  let cart = loadState();
+
+  const [addCart, setAddCart] = useState(false);
 
   return (
     <Box p={1}>
       <Card
-        /*  sx={{ maxWidth: 270, minWidth: 100 }} */
         elevation={6}
       >
         <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
@@ -76,30 +81,26 @@ export default function CourseCard({
         >
           ${price}
         </Typography>
-        {cart.includes(JSON.stringify(course)) ? null : (
+        {cart.includes(course) ? null : (
           <CardActions>
             <IconButton
               onClick={() => {
                 saveState(course);
-                loadState();
-                setAddCart("Agregado al carrito");
-                alert("Agregado a tu carrito");
+                setAddCart(!addCart);
+                Swal.fire({
+                  position: "center",                
+                  title: "Agregado al carrito",
+                  icon: "info",
+                  showConfirmButton: false,
+                  timer: 1000
+                });
+                
               }}
             >
-              <AddShoppingCartIcon />
-              <Typography> Agregar al carrito</Typography>
+            <AddShoppingCartIcon />
+            <Typography > Agregar al carrito</Typography>
             </IconButton>
           </CardActions>
-          /*  <button
-            onClick={() => {
-              saveState(course);
-              loadState();
-              setAddCart("Agregado al carrito");
-              alert("Agregado a tu carrito");
-            }}
-          >
-            Agregar al <BsCartPlus />
-          </button> */
         )}
 
         <ExpandMore
@@ -130,23 +131,3 @@ export default function CourseCard({
     </Box>
   );
 }
-
-/* <IconButton>
-            <ShoppingCartIcon
-              onClick={() => {
-                removeState(course);
-                loadState();
-                setRemove("eliminado del carrito");
-                alert("Eliminado");
-              }}
-            />
-            <Typography> Agregado</Typography>
-          </IconButton> */
-/* <button
-            onClick={() => {
-              removeState(course);
-              setRemove(!remove);
-            }}
-          >
-            <BsCartCheckFill />
-          </button> */
