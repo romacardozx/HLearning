@@ -12,26 +12,28 @@ import { useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { Box } from "@mui/system";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 
 export default function AdmUsers() {
   const dispatch = useDispatch();
 
-  const  allUsers  = useSelector((state) => state.getUser.getAllUsers);
+  const allUsers = useSelector((state) => state.getUser.getAllUsers);
   // const  user  = useSelector((state) => ({
   //   user: state.getUser.userDetail,
   // }));
   console.log(allUsers)
-  
-  
 
 
-useEffect(() => {
+
+
+  useEffect(() => {
     dispatch(getAllUsers());
   }, [dispatch]);
 
 
-function handleDelete(id) {
+  function handleDelete(id) {
     Swal.fire({
       title: "Estas seguro?",
       text: "No podras revertir esto..",
@@ -55,13 +57,15 @@ function handleDelete(id) {
     });
   }
 
- 
+
 
 
   const columns = [
-    { field: 'id', 
-    headerName: 'ID',
-     width: 90 },
+    {
+      field: 'id',
+      headerName: 'ID',
+      width: 90
+    },
     {
       field: 'name',
       headerName: 'Nombre Completo',
@@ -90,10 +94,10 @@ function handleDelete(id) {
       align: "center",
       sortable: false,
       renderCell: (params) =>
-      allUsers?._id !== params.row._id ? (
+        allUsers?._id !== params.row._id ? (
           <Button
             variant="outlined"
-              // onClick={(e) => handleChangeStatus(e, params)}
+          // onClick={(e) => handleChangeStatus(e, params)}
           >
             ADMIN
           </Button>
@@ -106,7 +110,7 @@ function handleDelete(id) {
       align: "center",
       sortable: false,
       renderCell: (params) =>
-      allUsers?.id !== params.row.id ? (
+        allUsers?.id !== params.row.id ? (
           <Button
             variant="outlined"
             color="error"
@@ -127,26 +131,29 @@ function handleDelete(id) {
     isDeleted: e.status || null,
   }));
 
-    return (
-      <Box>
-        <NavBar />
-        <Container sx={{ height: 420, width: 850 }}>
-          <br/>
-          <h4>ACA ESTAN LOS USUARIOS</h4><br/>
-          {allUsers.length && (
-            // <DataGrid rowHeight={60} rows={rows} columns={columns} pageSize={5} />
-            <DataGrid
+  return (
+    <Box>
+      <NavBar />
+      <Container sx={{ height: 420, width: 850 }}>
+        <br />
+        <Grid item align="center">
+          <Typography sx={{ cursor: "pointer" }} variant="h5">
+            Administrar Usuarios
+          </Typography>
+        </Grid><br />
+        {allUsers.length && (
+          // <DataGrid rowHeight={60} rows={rows} columns={columns} pageSize={5} />
+          <DataGrid
             rows={rows}
             columns={columns}
             pageSize={5}
             rowsPerPageOptions={[5]}
           />
-          )}
-        </Container>
-        <br/><br/><br/><br/><br/>
-        <Footer />
-        </Box>
-      );
-    };
+        )}
+      </Container>
+      <br /><br /><br /><br /><br />
+      <Footer />
+    </Box>
+  );
+};
 
-    
