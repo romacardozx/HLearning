@@ -9,6 +9,11 @@ module.exports = async (req, res, next) => {
       error: "Insert an ID",
     });
   }
+  if(!email){
+    res.status(400).json({
+      error: "Insert an email",
+    });
+  }
   if (!name) {
     res.status(400).json({
       error: "Insert a name",
@@ -41,7 +46,8 @@ module.exports = async (req, res, next) => {
         email,
         password,
         pictures,
-      }
+      },
+      {new: true}
     )
       .populate("courses")
       .populate("reviews")

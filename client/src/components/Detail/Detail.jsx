@@ -17,6 +17,7 @@ import Loading from '../Loading/Loading'
 import Button from '@mui/material/Button';
 import calculeScore from '../../utils/calculeScore';
 import MercadoPago from "../../redux/actions/MercadoPago";
+import { Link } from "react-router-dom";
 
 
 const Img = styled("img")({
@@ -47,6 +48,9 @@ export default function CourseDetail(props) {
       <div className={styles.bkg}>
         <div>
           <NavBar />
+          <Link to={`/coursedetail/${id}`}>
+          <p>Link a editar</p>
+          </Link> 
           <br />
           <br />
           <br />
