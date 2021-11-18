@@ -20,9 +20,7 @@ export default function AdmUsers() {
   const dispatch = useDispatch();
 
   const allUsers = useSelector((state) => state.getUser.getAllUsers);
-  // const  user  = useSelector((state) => ({
-  //   user: state.getUser.userDetail,
-  // }));
+  const [currentId, setCurrentId] = useState(null);
   console.log(allUsers)
 
 
@@ -30,7 +28,7 @@ export default function AdmUsers() {
 
   useEffect(() => {
     dispatch(getAllUsers());
-  }, [dispatch]);
+  }, [dispatch, currentId]);
 
 
   function handleDelete(id) {
@@ -53,10 +51,10 @@ export default function AdmUsers() {
           imageHeight: 200,
           imageAlt: "Custom image",
         });
+        setCurrentId(id)
       }
     });
   }
-
 
 
 
@@ -88,33 +86,17 @@ export default function AdmUsers() {
         cell.value && <CheckCircleRoundedIcon color="success" />,
     },
     {
-      field: "toAdminAction",
-      headerName: "Change Status",
-      width: 150,
+      field: "deleteAction",
+      headerName: "Action",
+      width: 100,
       align: "center",
       sortable: false,
       renderCell: (params) =>
-        allUsers?._id !== params.row._id ? (
-          <Button
-            variant="outlined"
-          // onClick={(e) => handleChangeStatus(e, params)}
-          >
-            ADMIN
-          </Button>
-        ) : null,
-    },
-    {
-      field: "status",
-      headerName: "Delete User",
-      width: 150,
-      align: "center",
-      sortable: false,
-      renderCell: (params) =>
-        allUsers?.id !== params.row.id ? (
+      allUsers?.id !== params.row.id ? (
           <Button
             variant="outlined"
             color="error"
-            onClick={(e) => handleDelete(e, params)}
+            onClick={(e) => handleDelete(params.row.id)}
           >
             Delete
           </Button>
@@ -128,7 +110,7 @@ export default function AdmUsers() {
     name: e.name,
     email: e.email,
     isAdmin: e.isAdmin || null,
-    isDeleted: e.status || null,
+    isDeleted: e.isDeleted || null,
   }));
 
   return (
@@ -142,13 +124,13 @@ export default function AdmUsers() {
           </Typography>
         </Grid><br />
         {allUsers.length && (
-          // <DataGrid rowHeight={60} rows={rows} columns={columns} pageSize={5} />
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={5}
-            rowsPerPageOptions={[5]}
-          />
+          <DataGrid rowHeight={60} rows={rows} columns={columns} pageSize={5} />
+          // <DataGrid
+          //   rows={rows}
+          //   columns={columns}
+          //   pageSize={5}
+          //   rowsPerPageOptions={[5]}
+          // />
         )}
       </Container>
       <br /><br /><br /><br /><br />
