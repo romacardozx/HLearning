@@ -22,20 +22,51 @@ function validate(state) {
 }
 
 export default function EditProfile() {
-  const dispatch = useDispatch();
   const User = useSelector((state) => state.userReducer.userDetail);
-  const [disabledInput, setInputsDisabled] = useState(true);
-  const [passwordShown, setPasswordShown] = useState(false);
-  useEffect(() => {
-    dispatch(getUserInfo());
-  }, [dispatch]);
-
   const [state, setState] = useState({
     name: User?.name,
     email: User?.email,
     password: User?.password,
     pictures: User.pictures,
   });
+  
+  const cloud_name = 'dkkwjslk9';
+	const upload_preset = 'kzhe1mvq';
+
+	const [imageUrl, setImageUrl] = useState(User.pictures);
+
+	const handleCloud = (e) => {
+    e.preventDefault();
+		const { files } = document.querySelector('.app_uploadInput');
+		const formData = new FormData();
+		formData.append('file', files[0]);
+		formData.append('upload_preset', upload_preset);
+		const options = {
+			method: 'POST',
+			body: formData
+		};
+		return fetch(
+			`https://api.Cloudinary.com/v1_1/${cloud_name}/image/upload`,
+			options
+		)
+			.then((res) => res.json())
+			.then((res) => {
+				setImageUrl(res.secure_url); 
+        setState({
+          ...state, 
+          pictures: res.secure_url
+        })
+			})
+			.catch((err) => console.log(err));
+	};
+
+  const dispatch = useDispatch();
+  const [disabledInput, setInputsDisabled] = useState(true);
+  const [passwordShown, setPasswordShown] = useState(false);
+  useEffect(() => {
+    dispatch(getUserInfo());
+  }, [dispatch]);
+
 
 
   const [errors, setErrors] = useState({});
@@ -74,8 +105,7 @@ export default function EditProfile() {
       <div className={s.cont}>
         <form
           className={s.formulario}
-            onSubmit={(e)=>handleSubmit(e)}
-        >
+            onSubmit={(e)=>handleSubmit(e)}>
           <h1>Editar Perfil</h1>
           <div className={s.contenedor}>
             <button onClick={(e) => handleClick(e)}>Editar</button>
@@ -123,7 +153,15 @@ export default function EditProfile() {
               <button onClick={(e) => togglePassword(e)}>Show Password</button>
             </div>
 
-            <div className={s.inputContenedor}>
+            <div className="app">
+			      <input type="file" className="app_uploadInput" />
+			      <img src={imageUrl} className="app_uploadedImg" alt="" />
+			      <button className="app_uploadButton" onClick={(e)=>handleCloud(e)}>
+				    Cargar imagen
+			      </button>
+		        </div>
+
+            {/* <div className={s.inputContenedor}>
             <input
               className={s.input}
               type="text"
@@ -135,7 +173,7 @@ export default function EditProfile() {
               disabled={disabledInput}
             />
             {errors.pictures && <p>{errors.pictures}</p>}
-          </div>
+          </div> */}
             <input className={s.button} type="submit" value="Registrate" />
           </div>
         </form>
