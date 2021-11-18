@@ -12,12 +12,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem, Select, OutlinedInput, InputLabel } from "@mui/material";
-<<<<<<< HEAD
 import Navbar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-=======
-import Footer from '../Footer/Footer';
->>>>>>> a767729c96b89936925db740d3e5ffc770761816
 
 // const videoSchema = yup.object({
 //   name: yup.string().required(),
@@ -350,12 +346,8 @@ function CreateCourse() {
           </Container>
         )}
       </Formik>
-<<<<<<< HEAD
-      <Footer />
-=======
       <br/><br/><br/><br/>
         <Footer/>
->>>>>>> a767729c96b89936925db740d3e5ffc770761816
     </div>
   );
 }
