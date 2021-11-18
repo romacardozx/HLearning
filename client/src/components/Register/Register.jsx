@@ -3,6 +3,7 @@ import s from "./register.module.css";
 import {useHistory} from 'react-router-dom';
 import { useState } from "react";
 import Navbar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 import { postSignUp } from "../../redux/actions/userActions";
 import {useDispatch} from "react-redux";
 
@@ -204,7 +205,8 @@ function Register() {
         </div>
       </form>
     </div>
-    {console.log('este es el state', state)}
+    
+    
   </div>
   );
 }
