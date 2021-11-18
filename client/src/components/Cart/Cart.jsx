@@ -53,16 +53,6 @@ function Cart() {
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
 
-<<<<<<< HEAD
-=======
-  /* if (auth) {
-    let cartRender = cart;
-    return cartRender;
-  } else {
-    let cartRender = cartStorage;
-  } */
-
->>>>>>> 1ea5acc6f7a4caa67818d96859ae68e6b15337d3
   let price = [];
   cart.map((c) => {
     return price.push(c.price);
