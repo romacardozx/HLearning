@@ -5,7 +5,7 @@ export function getOrderById(id){
     
     return async function(dispatch){
         try {
-            var json = await axios(`/order/${id}`);
+            var json = await axios(`/orders/${id}`);
             return dispatch({
                 type: "GET_ORDER",
                 payload: json.data
