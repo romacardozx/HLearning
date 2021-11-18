@@ -41,17 +41,16 @@ module.exports = async (req, res, next) => {
         items: items_ml,  // Los items a comprar
         external_reference: id, // El id de la orden
         payment_methods: {
-          exluded_payment_types: [
+          excluded_payment_types: [
             {
-              id: ['atm', 'ticket'], // Se excluye el método de pago por cajero automático, LEER EN DOC COMO PASARLE DOS METODOS DE PAGO EXCLUIDOS
-              // Se saca estado pending, y que no puedan pagar por pago fácil o rapipago, que solamente sea débito o crédito
+              id: ['atm', 'ticket'], 
             }
           ],
           installments: 1,  // Solo se puede abonar en 1 pago (1 cuota)
         },
         binary_mode: true,
         back_urls: {
-          success: `http://localhost:3000/home`,
+          success: `http://localhost:9000/pagos/${id}`,
           failure: `http://localhost:3000/courses`,
         },
         auto_return: "approved"  // Para compras success, mercado pago redirije automáticamente al back_url de success, sin mostrar el botón, de forma automática
