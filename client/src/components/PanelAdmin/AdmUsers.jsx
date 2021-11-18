@@ -125,12 +125,6 @@ export default function AdmUsers() {
         </Grid><br />
         {allUsers.length && (
           <DataGrid rowHeight={60} rows={rows} columns={columns} pageSize={5} />
-          // <DataGrid
-          //   rows={rows}
-          //   columns={columns}
-          //   pageSize={5}
-          //   rowsPerPageOptions={[5]}
-          // />
         )}
       </Container>
       <br /><br /><br /><br /><br />
