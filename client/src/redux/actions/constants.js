@@ -13,7 +13,7 @@ export const GET_CART = "GET_CART"
 export const DELETE_CART = "DELETE_CART"
 
 
-// ORDES //
+// ORDER //
 
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_SCORE = "ORDER_BY_SCORE";
