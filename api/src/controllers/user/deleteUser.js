@@ -2,7 +2,6 @@ const User = require("../../models/User");
 
 module.exports = async (req, res, next) => {
     const { id } = req.params;
-    console.log("HOLIIIII LE PEGUE")
     try {
         let user = await User.findOneAndUpdate({_id:id}, {status: "Deleted"});
         if(user) {
