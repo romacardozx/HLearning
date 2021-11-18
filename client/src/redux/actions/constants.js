@@ -50,3 +50,7 @@ export const ADMIN_AUTH_SUCCESS = "ADMIN_AUTH_SUCCESS";
 //MERCADO PAGO //
 
 export const MERCADOPAGO = "MERCADOPAGO";
+
+//Orders
+
+export const CREATE_ORDER = 'CREATE_ORDER';
