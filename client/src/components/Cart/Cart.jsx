@@ -59,31 +59,26 @@ function Cart() {
   });
   let price2 = price.reduce((a, b) => a + b, 0);
 
-  console.log(cartAll,"yamila info")
-  let created;
-  console.log(userDetail,'user')
   const handleCreateorder = async () => {
     Object.keys(userDetail).length > 0
       ? dispatch(
           createOrder({ user: userDetail._id, courses: cartAll, price: price2 })
         )
       : window.location.replace("/login");
-
-    //Aca no entra por problemas de asyncronia???  
-    order &&
-      Swal.fire({
-        title: `Quieres abonar tu orden de $ ${price2} en nuestra plataforma de pago?`,
-        showDenyButton: true,
-        confirmButtonText: "Si",
-        denyButtonText: "No",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          dispatch(MercadoPago(order._id));
-        }
-      });
   };
   const order = useSelector((state) => state.getOrder.orderCreated);
-  console.log(order,'yamilaorder')
+
+  order &&
+    Swal.fire({
+      title: `Quieres abonar tu orden de $ ${price2} en nuestra plataforma de pago?`,
+      showDenyButton: true,
+      confirmButtonText: "Si",
+      denyButtonText: "No",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(MercadoPago(order._id));
+      }
+    });
 
   return (
     <div>
@@ -147,14 +142,12 @@ function Cart() {
                                 </IconButton>
                               ) : (
                                 <IconButton
-                                color="secondary"
-                                onClick={() => {
-                                  removeState(course);
-                                  setRemove(!remove);
-                                }}>
-
-                                  <DeleteForeverIcon
-                                  />
+                                  onClick={() => {
+                                    removeState(course);
+                                    setRemove(!remove);
+                                  }}
+                                >
+                                  <DeleteForeverIcon color="secondary" />
                                 </IconButton>
                               )}
                             </Item>

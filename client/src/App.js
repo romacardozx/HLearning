@@ -21,6 +21,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import AdminRoute from "./routes/AdminRoute"
 import CourseDetail from "./components/PanelAdmin/CourseDetail";
 import AdmUsers from "./components/PanelAdmin/AdmUsers";
+import PaymentDetail from "./components/PaymentDetail/PaymentDetail";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
       <Route exact path="/editprofile" component={EditProfile} />
       <Route exact path="/admusers" component={AdmUsers} />
       <Route exact path="/courseDetail/:id" component={CourseDetail}/>
+      <Route exact path="/mercadopago/pagos/:id" component={PaymentDetail}/>
     </div>
   );
 }
