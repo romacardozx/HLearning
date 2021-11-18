@@ -19,6 +19,7 @@ import Cart from "./components/Cart/Cart";
 import EditProfile from "./components/UserProfile/EditProfile"
 import PrivateRoute from "./routes/PrivateRoute";
 import AdminRoute from "./routes/AdminRoute"
+import CourseDetail from "./components/PanelAdmin/CourseDetail";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <Route exact path="/createcategory" component={CreateCategory} />
       <Route exact path="/cart" component={Cart} />
       <Route exact path="/editprofile" component={EditProfile} />
+      <Route exact path="/courseDetail/:id" component={CourseDetail}/>
     </div>
   );
 }
