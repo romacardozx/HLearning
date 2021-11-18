@@ -10,6 +10,8 @@ export const GET_ORDER = "GET_ORDER"
 export const GET_CART = "GET_CART"
 export const GET_REVIEWS_BY_ID = "GET_REVIEWS_BY_ID"
 export const GET_ALL_CART = "GET_ALL_CART";
+export const GET_ALL_USERS = "GET_ALL_USERS"
+export const GET_USER_DETAIL = "GET_USER_DETAIL"
 
 // ORDES //
 

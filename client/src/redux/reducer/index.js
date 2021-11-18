@@ -7,6 +7,7 @@ import getUser from "./getUser";
 import userReducer from "./userReducer";
 import cartReducer from "./cartReducer";
 import MercadoPago from "./MercadoPago";
+import getReviewsById from "./getReviewsById"
 
 export default combineReducers({
     userReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
     getOrder,    
     getUser,
     cartReducer,    
-    MercadoPago
+    MercadoPago,
+    getReviewsById
 })
