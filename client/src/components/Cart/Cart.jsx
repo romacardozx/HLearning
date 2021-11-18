@@ -4,7 +4,7 @@ import { loadState, removeState } from "../../localStorage";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
 import Card from "../Card/Card.jsx";
-import { Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
@@ -16,6 +16,9 @@ import { getAllCarts } from "../../redux/actions/getAllCarts";
 import { fusionCart } from "../../redux/actions/fusionCart";
 import { getUserInfo } from "../../redux/actions/userActions";
 import { actualizeCart } from "../../redux/actions/actualizeCart";
+import createOrder from "../../redux/actions/createOrder";
+import Swal from "sweetalert2";
+import MercadoPago from "../../redux/actions/MercadoPago";
 
 function auth(authentification, cartAll) {
   let cartStorage = loadState();
@@ -51,6 +54,8 @@ function Cart() {
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
 
+  const order = useSelector((state) => state.getOrder.orderCreated)
+
   /* if (auth) {
     let cartRender = cart;
     return cartRender;
@@ -63,6 +68,27 @@ function Cart() {
     price.push(c.price);
   });
   let price2 = price.reduce((a, b) => a + b, 0);
+ 
+  console.log(cartAll,"yamila info")
+  console.log(order,'yamilaorder')
+  console.log(userDetail,'user')
+  const handleCreateorder = () => {
+    Object.keys(userDetail).length>0?(dispatch(createOrder({user:userDetail._id, courses: cartAll, price:price2}))) : (window.location.replace('/login'))
+    if(order){
+      Swal.fire({
+        title: "Quieres finalizar tu compra?",
+        showDenyButton: true,
+        confirmButtonText: "Yes",
+        denyButtonText: "No",
+      }).then((result) => {
+        if (result.isConfirmed) {         
+          dispatch(MercadoPago(order.order._id));          
+        }
+      });
+    }
+
+
+  }
 
   return (
     <div>
@@ -161,6 +187,7 @@ function Cart() {
                 >
                   <b>Total: {price2}</b>
                 </Typography>
+                <Button variant="contained" color="primary" onClick={handleCreateorder}>Ordena tus Cursos</Button>
               </Box>
             </Box>
           </Box>
