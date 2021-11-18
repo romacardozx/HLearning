@@ -95,7 +95,7 @@ mongoose
 app.listen(port, async () => {
   console.log(`Server is running on port ${port}`);
 
-  // // Mock Ups
+  // Mock Ups
   // const data = await Category.insertMany(categories)
   
   // const data2 = await User.insertMany(users)
