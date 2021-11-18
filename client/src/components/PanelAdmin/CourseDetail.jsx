@@ -49,6 +49,36 @@ console.log("Curso Detallado", courseDetailed)
     duration: courseDetailed?.duration,
     img: courseDetailed?.img,
   });
+
+  const cloud_name = 'dkkwjslk9';
+	const upload_preset = 'kzhe1mvq';
+
+	const [imageUrl, setImageUrl] = useState(courseDetailed.img);
+
+	const handleCloud = (e) => {
+    e.preventDefault();
+		const { files } = document.querySelector('.app_uploadInput');
+		const formData = new FormData();
+		formData.append('file', files[0]);
+		formData.append('upload_preset', upload_preset);
+		const options = {
+			method: 'POST',
+			body: formData
+		};
+		return fetch(
+			`https://api.Cloudinary.com/v1_1/${cloud_name}/image/upload`,
+			options
+		)
+			.then((res) => res.json())
+			.then((res) => {
+				setImageUrl(res.secure_url); 
+        setState({
+          ...state, 
+          img: res.secure_url
+        })
+			})
+			.catch((err) => console.log(err));
+	};
   
   let initialOptions = courseDetailed.categories?.map(c => {
       return {
@@ -173,7 +203,14 @@ console.log("Curso Detallado", courseDetailed)
               />
               {errors.duration && <p>{errors.duration}</p>}
             </div>
-            <div className={s.inputContenedor}>
+            <div className="app">
+			      <input type="file" className="app_uploadInput" />
+			      <img src={imageUrl} width="600px" height="400px" className="app_uploadedImg" alt="" />
+			      <button className="app_uploadButton" onClick={(e)=>handleCloud(e)}>
+				     Cargar imagen
+			      </button>
+		        </div>
+            {/* <div className={s.inputContenedor}>
               <i className="fas fa-user icon"></i>
               <input
                 className={s.input}
@@ -185,7 +222,7 @@ console.log("Curso Detallado", courseDetailed)
                 required
                 disabled={disabledInput}
               />
-            </div>
+            </div> */}
             {
                 <MultiSelect 
                     options={options}
