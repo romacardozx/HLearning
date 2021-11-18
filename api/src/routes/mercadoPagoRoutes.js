@@ -8,7 +8,7 @@ const router = Router();
 router.use(express.json());
 
 
-// TIENE QUE SER UN POST 
+ 
 router.post("/:id", mercadoPago);
 router.get("/pagos/:id", pagos);
 
