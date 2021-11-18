@@ -17,7 +17,7 @@ export const DELETE_USER = "DELETE_USER"
 
 
 
-// ORDES //
+// ORDER //
 
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_SCORE = "ORDER_BY_SCORE";
@@ -54,3 +54,7 @@ export const ADMIN_AUTH_SUCCESS = "ADMIN_AUTH_SUCCESS";
 //MERCADO PAGO //
 
 export const MERCADOPAGO = "MERCADOPAGO";
+
+//Orders
+
+export const CREATE_ORDER = 'CREATE_ORDER';
