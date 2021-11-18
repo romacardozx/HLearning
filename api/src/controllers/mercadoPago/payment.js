@@ -1,34 +1,27 @@
 const Order = require('../../models/Order');
-const Courses = require('../../models/Course');
+// const Courses = require('../../models/Course');
+const Cart = require('../../models/Cart');
 const User = require('../../models/User');
-const mercadopago = require('mercadopago');  // SDK MP
+const mercadopago = require('mercadopago');
 
-// configure: método de mp
-// Agrego mis credenciales
+
 mercadopago.configure({
     access_token: 'TEST-6505707681491929-111123-261f99cf4196b91c0d51d3a1960446c0-1017363715'
 });
 
 module.exports = async (req, res, next) => {
-    // console.log("ENTRO A PAYMENT");
-
-    console.log("REQUEST", req);
 
     const { 
         payment_id, 
         status,
         external_reference,
-        merchant_order_id
         } = req.query;
-    
-    // console.log("PAYMENT ID", payment_id);
-    // console.log("STATUS", status);
-    // console.log("ORDER ID", external_reference);
-    // console.log("MERCHANT", merchant_order_id);
 
     try {
-        if(status === "approved") {
-            let ordenSuccess = await Order.findOneAndUpdate(
+        let order = await Order.findById({_id: external_reference});
+
+        if(status === "approved")
+            order = await Order.findOneAndUpdate(
                 {
                     _id: external_reference
                 }, 
@@ -37,41 +30,25 @@ module.exports = async (req, res, next) => {
                     paymentId: payment_id
                 }
             );
-            ordenSuccess = await Courses.populate(ordenSuccess, {path: "courses"});
-            ordenSuccess = await User.populate(ordenSuccess, {path: "user"})
             try {
                 let ordenModified = await Order.findById({_id: external_reference, payment: "Confirmed"});
-                ordenModified = await Courses.populate(ordenModified, {path: "courses"});
-                ordenModified = await User.populate(ordenModified, {path: "user"});
-                res.json(ordenModified)
+
+                let userCourses = await User.findOne({_id: ordenModified.user._id});
+
+                userCourses.courses = userCourses.courses.concat(ordenModified.courses);
+                await userCourses.save();
+
+                await Cart.findOneAndUpdate({_id: user._id}, {
+                    courses: []
+                });
+
+                res.json(ordenModified);
             } catch(err) {
                 console.log(err);
                 next(err);
             }
-        } else if(status === "failure") {
-            let ordenFailure = await Order.findOneAndUpdate(
-                {
-                    _id: external_reference
-                }, 
-                {
-                    payment: "Cancelled",
-                    paymentId: payment_id
-                }, 
-            );
-            ordenFailure = await Courses.populate(ordenFailure, {path: "courses"});
-            ordenFailure = await User.populate(ordenFailure, {path: "user"})
-            try {
-                let ordenModified = await Order.findById({_id: external_reference, payment: "Cancelled"});
-                ordenModified = await Courses.populate(ordenModified, {path: "courses"});
-                ordenModified = await User.populate(ordenModified, {path: "user"});
-                res.json(ordenModified)
-            } catch(err) {
-                console.log(err);
-                next(err);
-            }
-        }
         } catch(err) {
-        console.log(err);
-        next(err);
-    }
+            console.log(err);
+            next(err);
+        }
 };
