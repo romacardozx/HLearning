@@ -150,14 +150,13 @@ function Cart() {
                                   />
                                 </IconButton>
                               ) : (
-                                <IconButton>
-                                  <DeleteForeverIcon
-                                    color="secondary"
-                                    onClick={() => {
-                                      removeState(course);
-                                      setRemove(!remove);
-                                    }}
-                                  />
+                                <IconButton
+                                  onClick={() => {
+                                    removeState(course);
+                                    setRemove(!remove);
+                                  }}
+                                >
+                                  <DeleteForeverIcon color="secondary" />
                                 </IconButton>
                               )}
                             </Item>
