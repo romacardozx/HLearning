@@ -58,14 +58,16 @@ const getCourses = (state = initialState, action) => {
     case FILTER_BY_DURATION: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        setAllCourses: action.payload.data,
+        filteredString: action.payload.name,
       };
     }
 
     case FILTER_BY_STARS: {
       return {
         ...state,
-        setAllCourses: action.payload,
+        setAllCourses: action.payload.data,
+        filteredString: action.payload.name,
       };
     }
 
