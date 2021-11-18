@@ -125,8 +125,7 @@ console.log("Curso Detallado", courseDetailed)
             await swal("La información del curso ha sido actualizada", "Presione para continuar", "success");
         }
     } catch (error) {
-        console.log(error.message)
-        await swal(`Algo salió mal`, "Presione para continuar", "error")
+        await swal(`${error.response.data.error}`, "Presione para continuar", "error")
     }
   }
 

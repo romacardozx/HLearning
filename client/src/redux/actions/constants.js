@@ -55,6 +55,7 @@ export const ADMIN_AUTH_SUCCESS = "ADMIN_AUTH_SUCCESS";
 //MERCADO PAGO //
 
 export const MERCADOPAGO = "MERCADOPAGO";
+export const GET_PAYMENT_DETAIL = "GET_PAYMENT_DETAIL";
 
 //Orders
 

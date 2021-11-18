@@ -9,29 +9,28 @@ module.exports = async (req, res, next) => {
   try {
     const { name, password, email, pictures } = req.body;
 
-    
     if (!name) {
       return res.status(400).json({
-        error: "Please provide a name",
+        error: "Ingrese un nombre",
       });
     }
 
     if (!password) {
       return res.status(400).json({
-        error: "Please provide a password",
+        error: "Ingrese una contraseña",
       });
     }
 
     if (!email) {
       return res.status(400).json({
-        error: "Please provide an email",
+        error: "Ingrese un email",
       });
     }
 
     const isUserInDB = await User.findOne({ email: email });
     if (isUserInDB) {
       return res.status(400).json({
-        error: "The email is already in use",
+        error: "El email ya se encuentra en uso",
       });
     }
     
