@@ -12,6 +12,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { MenuItem, Select, OutlinedInput, InputLabel } from "@mui/material";
+import Navbar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
 // const videoSchema = yup.object({
 //   name: yup.string().required(),
@@ -38,7 +40,7 @@ const schemaValidate = yup.object().shape({
     .positive()
     .min(1000, "El precio debe ser mayor a $1000")
     .required("Requiere un precio"),
-  img: yup.string().required("Requiere una imagen"),
+  // img: yup.string().required("Requiere una imagen"),
   categories: yup.array().required("Eliga una categoria"),
   //  videos: yup.array().of()
 });
@@ -69,6 +71,35 @@ const categories = (allcategories) => {
 };
 
 function CreateCourse() {
+
+  const cloud_name = 'dkkwjslk9';
+	const upload_preset = 'kzhe1mvq';
+
+	const [imageUrl, setImageUrl] = useState(
+		'https://i.ytimg.com/vi/7TKY-jksHRQ/maxresdefault.jpg'
+	);
+
+	const handleClick = () => {
+		const { files } = document.querySelector('.app_uploadInput');
+		const formData = new FormData();
+		formData.append('file', files[0]);
+		formData.append('upload_preset', upload_preset);
+		const options = {
+			method: 'POST',
+			body: formData
+		};
+		return fetch(
+			`https://api.Cloudinary.com/v1_1/${cloud_name}/image/upload`,
+			options
+		)
+			.then((res) => res.json())
+			.then((res) => {
+				setImageUrl(res.secure_url); //url de la imagen
+				//console.log(res.secure_url);
+			})
+			.catch((err) => console.log(err));
+	};
+
   const dispatch = useDispatch();
   const getAllCategory = useSelector(
     (state) => state.getCategories.getAllCategories
@@ -85,17 +116,23 @@ function CreateCourse() {
     } = event;
     setCategoryName(typeof value === "string" ? value.split(",") : value);
   };
+
   useEffect(() => {
     dispatch(getAllCategories());
   }, [dispatch]);
 
   return (
     <div>
+      <Navbar/>
       <Formik
         initialValues={initValues}
         validationSchema={schemaValidate}
         onSubmit={async (values, { resetForm }) => {
-          values.categories = categoryName;          
+          values.categories = categoryName; 
+          values.img = imageUrl;
+
+          console.log(values, 'estos son los values')
+
           try {
             const response = await axios.post("/courses/createCourse", values);
             console.log(response);
@@ -189,7 +226,18 @@ function CreateCourse() {
                   helperText={errors.duration}
                   error={Boolean(touched.duration && errors.duration)}
                 />
-                <TextField
+                <Box>
+                <div className="app">
+			          <input type="file" className="app_uploadInput" />
+			          <img src={imageUrl} width="600px" height="400px" className="app_uploadedImg" alt="" />
+	          		<button 
+                className="app_uploadButton" 
+                onClick={handleClick}>
+			         	Cargar imagen
+		          	</button>
+	            	</div>
+                </Box>
+                {/* <TextField
                   type="text"
                   name="img"
                   placeholder="Inserte URL de la imagen"
@@ -198,7 +246,7 @@ function CreateCourse() {
                   onBlur={handleBlur}
                   helperText={errors.img}
                   error={Boolean(touched.img && errors.img)}
-                />
+                /> */}
                 <InputLabel>Categoria</InputLabel>
                 <Select
                   // labelId="multiple-categories-label"
@@ -298,6 +346,8 @@ function CreateCourse() {
           </Container>
         )}
       </Formik>
+      <br/><br/><br/><br/>
+        <Footer/>
     </div>
   );
 }

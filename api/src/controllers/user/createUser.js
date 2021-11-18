@@ -7,7 +7,9 @@ const cloudinary = require("cloudinary")
 
 module.exports = async (req, res, next) => {
   try {
-    const { name, password, email } = req.body;
+    const { name, password, email, pictures } = req.body;
+
+    
     if (!name) {
       return res.status(400).json({
         error: "Please provide a name",
@@ -32,12 +34,14 @@ module.exports = async (req, res, next) => {
         error: "The email is already in use",
       });
     }
+    
     // const hashedPassword = await bcrypt.hash(password, 10);
     let user = new User({
       name,
       // password: hashedPassword,
       password,
       email,
+      pictures,
     });
     
     //Aca se crea ya el carrito asociado a ese usuario!!

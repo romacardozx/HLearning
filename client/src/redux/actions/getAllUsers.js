@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export function getAllCart(id) {
+export function getAllUsers() {
   return async function (dispatch) {
-    try {      
-      var json = await axios(`/cart?id=${id ? id : ""}`);
+    try {
+      var json = await axios(`/users`);
       return dispatch({
-        type: "GET_CART",
+        type: "GET_ALL_USERS",
         payload: json.data,
       });
     } catch (error) {

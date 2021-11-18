@@ -5,14 +5,18 @@ import Navbar from '../NavBar/NavBar';
 import { postSignIn } from "../../redux/actions/userActions"
 import {useDispatch} from "react-redux";
 
-
+function esEmail (word) {
+  if(word.includes("@") && word.includes(".com")) return true;
+     else return false
+}
 
 function validate(state) {
   let errors = {};
   if (!state.email) {
     errors.email = "Ingresa un email"
-  }
-  else if (!state.password) {
+  } else if (esEmail(state.email)===false) {
+    errors.email = "No es un email";
+  } else if (!state.password) {
     errors.password = "Ingresa una constraseña"
   }
   return errors

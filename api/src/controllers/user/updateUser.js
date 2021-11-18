@@ -48,7 +48,10 @@ module.exports = async (req, res, next) => {
         pictures,
       },
       {new: true}
-    );
+    )
+      .populate("courses")
+      .populate("reviews")
+      .populate("cart");
     if (user) {
       res.status(200).json(user);
     } else {

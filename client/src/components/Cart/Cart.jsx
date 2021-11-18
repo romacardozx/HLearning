@@ -4,7 +4,7 @@ import { loadState, removeState } from "../../localStorage";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
 import Card from "../Card/Card.jsx";
-import { Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
@@ -14,6 +14,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { getAllCarts } from "../../redux/actions/getAllCarts";
 import { fusionCart } from "../../redux/actions/fusionCart";
+import { getUserInfo } from "../../redux/actions/userActions";
+import { actualizeCart } from "../../redux/actions/actualizeCart";
+import createOrder from "../../redux/actions/createOrder";
+import Swal from "sweetalert2";
+import MercadoPago from "../../redux/actions/MercadoPago";
 
 function auth(authentification, cartAll) {
   let cartStorage = loadState();
@@ -35,15 +40,11 @@ function Cart() {
   }));
 
   const [remove, setRemove] = useState(false);
- 
 
   useEffect(() => {
-    dispatch(getAllCarts(userDetail._id));
-    dispatch(fusionCart(userDetail._id));
+    if (userDetail._id) dispatch(fusionCart(userDetail._id));
+    // dispatch(getAllCarts(userDetail._id));
   }, [dispatch, auth]);
-
-
-  
 
   let cartAll = useSelector((state) => state.cartReducer.allCart);
   let authentification = useSelector(
@@ -53,6 +54,8 @@ function Cart() {
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
 
+  const order = useSelector((state) => state.getOrder.orderCreated)
+
   /* if (auth) {
     let cartRender = cart;
     return cartRender;
@@ -60,12 +63,32 @@ function Cart() {
     let cartRender = cartStorage;
   } */
 
-  let price = []
-  cart.map(c => {
-    price.push(c.price)
-  })
-  let price2 = price.reduce((a,b) => a + b, 0)
+  let price = [];
+  cart.map((c) => {
+    price.push(c.price);
+  });
+  let price2 = price.reduce((a, b) => a + b, 0);
+ 
+  console.log(cartAll,"yamila info")
+  console.log(order,'yamilaorder')
+  console.log(userDetail,'user')
+  const handleCreateorder = () => {
+    Object.keys(userDetail).length>0?(dispatch(createOrder({user:userDetail._id, courses: cartAll, price:price2}))) : (window.location.replace('/login'))
+    if(order){
+      Swal.fire({
+        title: "Quieres finalizar tu compra?",
+        showDenyButton: true,
+        confirmButtonText: "Yes",
+        denyButtonText: "No",
+      }).then((result) => {
+        if (result.isConfirmed) {         
+          dispatch(MercadoPago(order.order._id));          
+        }
+      });
+    }
 
+
+  }
 
   return (
     <div>
@@ -95,18 +118,11 @@ function Cart() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  /*  background:
-                    "linear-gradient(82deg, rgba(2,0,36,1) 0%, rgba(9,73,121,0.9948354341736695) 76%, rgba(0,212,255,1) 100%)",
-                  p: 10,
-                  borderRadius: 3,
-                  gap: 2, */
                 }}
               >
                 {cart.length > 0 ? (
-                  /* <div> */
                   <Grid container direction="column" justifyContent="center">
                     {cart.map((course) => {
-                      
                       return (
                         <div key={course._id}>
                           <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -119,24 +135,33 @@ function Cart() {
                                 score={course.score}
                                 price={course.price}
                                 course={course}
-                                />
-                              <button
-                                onClick={() => {
-                                  removeState(course);
-                                  setRemove(!remove);
-                                }}
-                              >
-                                X
-                              </button>
-                              {/* <IconButton>
-                                <DeleteForeverIcon
-                                  color="secondary"
-                                  onClick={() => {
-                                    removeState(course);
-                                    setRemove(!remove);
-                                  }}
-                                />
-                              </IconButton> */}
+                              />
+                              {authentification ? (
+                                <IconButton>
+                                  <DeleteForeverIcon
+                                    color="secondary"
+                                    onClick={() => {
+                                      dispatch(
+                                        actualizeCart(
+                                          cart,
+                                          course._id,
+                                          userDetail._id
+                                        )
+                                      );
+                                    }}
+                                  />
+                                </IconButton>
+                              ) : (
+                                <IconButton>
+                                  <DeleteForeverIcon
+                                    color="secondary"
+                                    onClick={() => {
+                                      removeState(course);
+                                      setRemove(!remove);
+                                    }}
+                                  />
+                                </IconButton>
+                              )}
                             </Item>
                           </Grid>
                         </div>
@@ -144,7 +169,6 @@ function Cart() {
                     })}
                   </Grid>
                 ) : (
-                  /*  </div> */
                   <h1>Empty Cart</h1>
                 )}
               </Box>
@@ -163,6 +187,7 @@ function Cart() {
                 >
                   <b>Total: {price2}</b>
                 </Typography>
+                <Button variant="contained" color="primary" onClick={handleCreateorder}>Ordena tus Cursos</Button>
               </Box>
             </Box>
           </Box>
@@ -174,4 +199,3 @@ function Cart() {
 }
 
 export default Cart;
-

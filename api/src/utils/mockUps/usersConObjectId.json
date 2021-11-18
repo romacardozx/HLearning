@@ -104,7 +104,7 @@
     "cart": "8186d90a521fdc29a93ec24f",   
     "courses": ["61873905d388093b9b14d4a5"],
     "reviews": ["618748fe521fdc29a93ec282"],
-    "email": "izanValle@hotmail.com"
+    "email": "izanvalle@hotmail.com"
   },
   {
     "_id": "6186d90a521fdc29a93ec250",
@@ -112,7 +112,7 @@
     "cart": "8186d90a521fdc29a93ec250", 
     "courses": ["61872119c3456d06a8569bcf"],
     "reviews": ["618748fe521fdc29a93ec283"],
-    "email": "barbaraRio@gmail.com"
+    "email": "barbarario@gmail.com"
   },
   {
     "_id": "6186d90a521fdc29a93ec251",
@@ -128,7 +128,7 @@
     "cart": "8186d90a521fdc29a93ec252",
     "courses": ["61872119c3456d06a8569bd1"],
     "reviews": ["618748fe521fdc29a93ec285"],
-    "email": "jairoAlvaro@gmail.com"
+    "email": "jairoalvaro@gmail.com"
   },
   {
     "_id": "6186d90a521fdc29a93ec253",
@@ -136,7 +136,7 @@
     "cart": "8186d90a521fdc29a93ec253",
     "courses": ["61872119c3456d06a8569bd2"],
     "reviews": ["618748fe521fdc29a93ec286"],
-    "email": "fernandoParedes@gmail.com"
+    "email": "fernandoparedes@gmail.com"
   },
   {
     "_id": "6186d90a521fdc29a93ec254",
@@ -144,7 +144,7 @@
     "cart": "8186d90a521fdc29a93ec254",
     "courses": ["61872119c3456d06a8569bd3"],
     "reviews": ["618748fe521fdc29a93ec287"],
-    "email": "ericaSampedro@gmail.com"
+    "email": "ericasampedro@gmail.com"
   },
   {
     "_id": "6186d90a521fdc29a93ec255",
@@ -152,7 +152,7 @@
     "cart": "8186d90a521fdc29a93ec255",
     "courses": ["61872119c3456d06a8569bd7"],
     "reviews": ["618748fe521fdc29a93ec288"],
-    "email": "mariaLaura@gmail.com"
+    "email": "marialaura@gmail.com"
   },
   {
     "_id": "6186d90a521fdc29a93ec256",
@@ -160,7 +160,7 @@
     "cart": "8186d90a521fdc29a93ec256",
     "courses": ["61872119c3456d06a8569bd8"],
     "reviews": ["618748fe521fdc29a93ec289"],
-    "email": "hugoArcos@gmail.com"
+    "email": "hugoarcos@gmail.com"
   },
   {
     "_id": "6186d90a521fdc29a93ec257",
@@ -168,6 +168,6 @@
     "cart": "8186d90a521fdc29a93ec257",
     "courses": ["61872119c3456d06a8569bd9"],
     "reviews": ["618748fe521fdc29a93ec28a"],
-    "email": "angelaCatalan@gmail.com"
+    "email": "angelacatalan@gmail.com"
   }
 ]

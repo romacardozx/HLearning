@@ -47,7 +47,7 @@ export default function ReviewCard(props){
 // return (
 //   <div>
 //     <div>
-//       {reviewsId.length ? (
+//       {Object.keys(reviewsId).length ? (
 //         <div>
 //           <Paper
 //             sx={{

@@ -1,13 +1,13 @@
 import axios from "axios";
 
 
-export function getReviewsById(id){
+export function getUserDetail(id){
     
     return async function(dispatch){
         try {
-            var json = await axios(`/mycourses/${id}`);
+            var json = await axios(`/users/${id}`);
             return dispatch({
-                type: "GET_REVIEWS_BY_ID",
+                type: "GET_USER_DETAIL",
                 payload: json.data
             });
         } catch (error) {

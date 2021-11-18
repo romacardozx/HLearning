@@ -1,17 +1,23 @@
 // GET //
 
-export const GET_ALL_COURSES = "GET_ALL_COURSES";
-export const GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES";
-export const GET_DETAIL_COURSES = "GET_DETAIL_COURSES";
-export const GET_COURSE_BY_NAME = "GET_COURSE_BY_NAME";
-export const GET_COURSES_SCORE = "GET_COURSES_SCORE";
-export const GET_USER = "GET_USER";
-export const GET_ORDER = "GET_ORDER";
-export const GET_ALL_CART = "GET_ALL_CART";
+export const GET_ALL_COURSES = "GET_ALL_COURSES"
+export const GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES"
+export const GET_DETAIL_COURSES = "GET_DETAIL_COURSES"
+export const GET_COURSE_BY_NAME = "GET_COURSE_BY_NAME"
+export const GET_COURSES_SCORE = "GET_COURSES_SCORE"
+export const GET_USER = "GET_USER"
+export const GET_ORDER = "GET_ORDER"
 export const GET_REVIEWS_BY_ID = "GET_REVIEWS_BY_ID"
+export const GET_ALL_CART = "GET_ALL_CART";
+export const GET_ALL_USERS = "GET_ALL_USERS"
+export const GET_USER_DETAIL = "GET_USER_DETAIL"
+export const GET_CART = "GET_CART"
+export const DELETE_CART = "DELETE_CART"
+export const DELETE_USER = "DELETE_USER"
 
 
-// ORDES //
+
+// ORDER //
 
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_SCORE = "ORDER_BY_SCORE";
@@ -48,3 +54,7 @@ export const ADMIN_AUTH_SUCCESS = "ADMIN_AUTH_SUCCESS";
 //MERCADO PAGO //
 
 export const MERCADOPAGO = "MERCADOPAGO";
+
+//Orders
+
+export const CREATE_ORDER = 'CREATE_ORDER';
