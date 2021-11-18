@@ -25,7 +25,7 @@ const exphbs = require("express-handlebars")
 require("./src/utils/auth/passport");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 
 //Crea el servidor
@@ -95,7 +95,7 @@ mongoose
 app.listen(port, async () => {
   console.log(`Server is running on port ${port}`);
 
-  // Mock Ups
+  // // Mock Ups
   // const data = await Category.insertMany(categories)
   
   // const data2 = await User.insertMany(users)
