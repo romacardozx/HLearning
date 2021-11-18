@@ -102,7 +102,6 @@ export default function CourseCard({
             </IconButton>
           </CardActions>
         )}
-
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
