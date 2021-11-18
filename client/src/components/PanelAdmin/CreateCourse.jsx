@@ -79,7 +79,8 @@ function CreateCourse() {
 		'https://i.ytimg.com/vi/7TKY-jksHRQ/maxresdefault.jpg'
 	);
 
-	const handleClick = () => {
+	const handleClick = (e) => {
+    e.preventDefault();
 		const { files } = document.querySelector('.app_uploadInput');
 		const formData = new FormData();
 		formData.append('file', files[0]);
@@ -232,7 +233,7 @@ function CreateCourse() {
 			          <img src={imageUrl} width="600px" height="400px" className="app_uploadedImg" alt="" />
 	          		<button 
                 className="app_uploadButton" 
-                onClick={handleClick}>
+                onClick={(e)=>handleClick(e)}>
 			         	Cargar imagen
 		          	</button>
 	            	</div>
