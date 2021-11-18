@@ -97,13 +97,12 @@ function Register() {
     e.preventDefault();
     if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
     else{
-
         dispatch(postSignUp(state))
-
         setState({
           name: "",
           email: "",
           password: "",
+          confirmPassword: "",
           pictures: ""
         })
         history.push('/login')
