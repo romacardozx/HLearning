@@ -20,7 +20,7 @@ export default function AdmUsers() {
   const dispatch = useDispatch();
 
   const allUsers = useSelector((state) => state.getUser.getAllUsers);
-  // const  user  = useSelector((state) => ({
+  // const { user } = useSelector((state) => ({
   //   user: state.getUser.userDetail,
   // }));
   console.log(allUsers)
@@ -57,6 +57,20 @@ export default function AdmUsers() {
     });
   }
 
+  // const handleChangeStatus = (e, params) => {
+  //   e.stopPropagation();
+  //   const { id } = params.row;
+  //   Swal.fire({
+  //     title: "Quieres cambiar el estado de este usuario?",
+  //     showDenyButton: true,
+  //     confirmButtonText: "Yes",
+  //     denyButtonText: "No",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       dispatch(setNewAdmin(id));
+  //     }
+  //   });
+  // };
 
 
 
@@ -104,13 +118,13 @@ export default function AdmUsers() {
         ) : null,
     },
     {
-      field: "status",
-      headerName: "Delete User",
-      width: 150,
+      field: "deleteAction",
+      headerName: "Action",
+      width: 100,
       align: "center",
       sortable: false,
       renderCell: (params) =>
-        allUsers?.id !== params.row.id ? (
+      allUsers?.id !== params.row.id ? (
           <Button
             variant="outlined"
             color="error"
@@ -128,7 +142,7 @@ export default function AdmUsers() {
     name: e.name,
     email: e.email,
     isAdmin: e.isAdmin || null,
-    isDeleted: e.status || null,
+    isDeleted: e.isDeleted || null,
   }));
 
   return (

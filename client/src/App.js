@@ -44,8 +44,8 @@ function App() {
       <Route exact path="/createcategory" component={CreateCategory} />
       <Route exact path="/cart" component={Cart} />
       <Route exact path="/editprofile" component={EditProfile} />
+      <Route exact path="/admusers" component={AdmUsers} />
       <Route exact path="/courseDetail/:id" component={CourseDetail}/>
-      <Route exact path="/prueba2" component={AdmUsers} />
     </div>
   );
 }
