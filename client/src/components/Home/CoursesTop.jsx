@@ -13,6 +13,7 @@ import Loading from "../Loading/Loading";
 import { filterByStars } from "../../redux/actions/filterByStars";
 import Card from "../Card/Card";
 
+
 export default function CoursesTop() {
   const dispatch = useDispatch();
   const coursesTop = useSelector((state) => state.getCourses.setAllCourses);
@@ -23,7 +24,7 @@ export default function CoursesTop() {
   }));
 
   useEffect(() => {
-    dispatch(filterByStars(5));
+    dispatch(filterByStars(5));    
   }, [dispatch]);
 
   return (

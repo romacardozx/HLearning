@@ -8,7 +8,7 @@ export function filterByStars(stars){
         var json = await axios(`/courses?scoreToFilter=${stars?stars:""}`);
         return dispatch({
           type: "FILTER_BY_STARS",
-          payload: json.data
+          payload: {data:json.data, name:stars}
         })
           
       } catch (error) {

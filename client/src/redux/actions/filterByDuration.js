@@ -8,7 +8,7 @@ function filterByDuration(category){
         var json = await axios(`/courses?category=${category?category:""}`);
         return dispatch({
           type: "FILTER_BY_DURATION",
-          payload: json.data
+          payload: {data:json.data, name:category}
         })
           
       } catch (error) {

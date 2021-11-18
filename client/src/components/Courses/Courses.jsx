@@ -12,6 +12,7 @@ import { Grid, Typography } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import { clearFilters } from "../../redux/actions/clearFilters";
 
 export default function Courses() {
   const dispatch = useDispatch();
@@ -27,17 +28,19 @@ export default function Courses() {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+ 
   useEffect(() => {
     dispatch(getAllCourses());
+    dispatch(clearFilters());
   }, [dispatch]);
 
   let Courses;
 
+   
   filterName === "Filter By"
     ? (Courses = allCourses)
     : (Courses = filteredCourses);
-  /*  console.log("COURSES", Courses); */
+  console.log("COURSES", Courses); 
   //Paginado:
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage /* setCoursesPerPage */] = useState(4);

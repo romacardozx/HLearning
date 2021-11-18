@@ -17,6 +17,9 @@ const Navbar = () => {
   let authentification = useSelector(
     (state) => state.userReducer.isAuthenticated
   );
+  let isAdmin = useSelector(
+    (state) => state.userReducer.isAdmin
+  );
   
   //Saque activeStyle que hacia warning rojo de los 3 NavLink
   return (
@@ -45,7 +48,7 @@ const Navbar = () => {
             <a></a> : <NavBtnLink to="/login">Iniciar Sesión</NavBtnLink>
           }
         </NavBtn>
-        { authentification ?
+        { isAdmin ?
         <NavLink to="/admin">
           <span className="material-icons-outlined">supervisor_account</span>
         </NavLink> : <a></a> }
