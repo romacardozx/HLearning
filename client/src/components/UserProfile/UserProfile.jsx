@@ -2,11 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-/* import { getUserById } from "../../redux/actions/getUserById"; */
 import { getSignOut } from "../../redux/actions/userActions";
 import { getUserInfo } from "../../redux/actions/userActions";
-/* import { getOrderById } from "../../redux/actions/getOrderById"; */
-/* import { getCourseByName } from "../../redux/actions/getCourseByName"; */
+
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import CardMedia from "@mui/material/CardMedia";
@@ -37,11 +35,6 @@ export default function UserProfile() {
     dispatch(getSignOut());
   };
 
-  /* const getOrderId = useSelector((state) => state.getOrder.getOrderId); */
-  /* const getCourseName = useSelector((state) => state.getCourses.getAllCourses); */
-  /* console.log("USER", User);*/
-  /*  console.log("COURSES", User.courses); */
-
   return (
     <div>
       <NavBar />
@@ -66,7 +59,8 @@ export default function UserProfile() {
               <IconButton
                 color="primary"
                 aria-label="edit"
-                /* onClick={handleOpenProfile} */
+                component={Link}
+                to={`/editprofile`}
               >
                 <EditIcon />
               </IconButton>

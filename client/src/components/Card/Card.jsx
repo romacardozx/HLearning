@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { loadState, removeState, saveState } from "../../localStorage";
+import { loadState, /* removeState, */ saveState } from "../../localStorage";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,7 +9,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Rating from "@mui/material/Rating";
-/* import Popover from "@mui/material/Popover"; */
 import { Box } from "@mui/system";
 import calculeScore from "../../utils/calculeScore";
 import Button from "@mui/material/Button";
@@ -17,8 +16,8 @@ import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { styled } from "@mui/material/styles";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { BsCartPlus, BsCartCheckFill } from "react-icons/bs";
+/* import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { BsCartPlus, BsCartCheckFill } from "react-icons/bs"; */
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -40,14 +39,6 @@ export default function CourseCard({
   price,
   course,
 }) {
-  /* const [anchorEl, setAnchorEl] = React.useState(null);
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
-  const open = Boolean(anchorEl); */
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -63,10 +54,6 @@ export default function CourseCard({
       <Card
         /*  sx={{ maxWidth: 270, minWidth: 100 }} */
         elevation={6}
-        /* aria-owns={open ? "mouse-over-popover" : undefined}
-        aria-haspopup="true"
-        onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose} */
       >
         <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
           {title}
@@ -79,7 +66,7 @@ export default function CourseCard({
           alt="img video"
         />
         <CardContent>
-           <Rating name="read-only" readOnly value={calculeScore(score)} />
+          <Rating name="read-only" readOnly value={calculeScore(score)} />
         </CardContent>
         <Typography
           textAlign="center"
@@ -89,33 +76,8 @@ export default function CourseCard({
         >
           ${price}
         </Typography>
-        {/* <Popover
-          style={{ width: 300 }}
-          id="mouse-over-popover"
-          sx={{
-            pointerEvents: "none",
-            minWidth: 200,
-            maxWidth: 350,
-          }}
-          open={open}
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "center",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "center",
-          }}
-          onClose={handlePopoverClose}
-          disableRestoreFocus
-        >
-          <Typography paragraph sx={{ p: 1 }}>
-            {description}
-          </Typography>
-        </Popover> */}
         {cart.includes(JSON.stringify(course)) ? null : (
-          /*  <CardActions>
+          <CardActions>
             <IconButton
               onClick={() => {
                 saveState(course);
@@ -127,8 +89,8 @@ export default function CourseCard({
               <AddShoppingCartIcon />
               <Typography> Agregar al carrito</Typography>
             </IconButton>
-          </CardActions> */
-          <button
+          </CardActions>
+          /*  <button
             onClick={() => {
               saveState(course);
               loadState();
@@ -137,7 +99,7 @@ export default function CourseCard({
             }}
           >
             Agregar al <BsCartPlus />
-          </button>
+          </button> */
         )}
 
         <ExpandMore

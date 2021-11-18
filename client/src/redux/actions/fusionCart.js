@@ -2,14 +2,13 @@ import axios from "axios";
 import { loadState } from "../../localStorage";
 
 export function fusionCart(id) {
-  return async function () {
+  return async function (dispatch) {
     try {
+
       let cartStorage = loadState();
 
       const json = await axios(`/cart?id=${id ? id : ""}`);
-
       const idCart = json.data._id;
-
       const cartFusioned = cartStorage.concat(json.data.courses);
 
       let cartMap = cartFusioned.map((item) => {
@@ -33,6 +32,15 @@ export function fusionCart(id) {
       };
 
       await axios.put("cart/" + idCart, obj);
+      var myItem = localStorage.getItem('user');
+      localStorage.clear();
+      localStorage.setItem('user',myItem);
+       
+
+      return dispatch({
+        type: "GET_CART",
+        payload: cartFinal,
+      });
     } catch (error) {
       console.log("error", error);
     }
