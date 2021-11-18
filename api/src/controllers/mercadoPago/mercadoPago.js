@@ -41,7 +41,7 @@ module.exports = async (req, res, next) => {
       },
       binary_mode: true, 
       back_urls: {
-        success: `http://localhost:3000/home`,
+        success: `http://localhost:9000/mercadopago/pagos/${id}`,
         failure: `http://localhost:9000/mercadopago/pagos/${id}`,
       },
       auto_return: "approved", 

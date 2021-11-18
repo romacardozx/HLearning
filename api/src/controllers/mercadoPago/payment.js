@@ -38,9 +38,9 @@ module.exports = async (req, res, next) => {
                 userCourses.courses = userCourses.courses.concat(ordenModified.courses);
                 await userCourses.save();
 
-                await Cart.findOneAndUpdate({_id: user._id}, {
+                await Cart.findOneAndUpdate({user: ordenModified.user._id}, {
                     courses: []
-                });
+                })
 
                 res.json(ordenModified);
             } catch(err) {
