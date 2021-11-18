@@ -54,7 +54,7 @@ function Cart() {
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
 
-  const order = useSelector((state) => state.getOrder.orderCreated)
+  const order = useSelector((state) => state.getOrder.orderCreated);
 
   /* if (auth) {
     let cartRender = cart;
@@ -68,27 +68,28 @@ function Cart() {
     price.push(c.price);
   });
   let price2 = price.reduce((a, b) => a + b, 0);
- 
+
   console.log(cartAll,"yamila info")
   console.log(order,'yamilaorder')
   console.log(userDetail,'user')
-  const handleCreateorder = () => {
-    Object.keys(userDetail).length>0?(dispatch(createOrder({user:userDetail._id, courses: cartAll, price:price2}))) : (window.location.replace('/login'))
-    if(order){
+  const handleCreateorder = async () => {
+    Object.keys(userDetail).length > 0
+      ? dispatch(
+          createOrder({ user: userDetail._id, courses: cartAll, price: price2 })
+        )
+      : window.location.replace("/login");
+    order &&
       Swal.fire({
-        title: "Quieres finalizar tu compra?",
+        title: `Quieres abonar tu orden de $ ${price2} en nuestra plataforma de pago?`,
         showDenyButton: true,
-        confirmButtonText: "Yes",
+        confirmButtonText: "Si",
         denyButtonText: "No",
       }).then((result) => {
-        if (result.isConfirmed) {         
-          dispatch(MercadoPago(order.order._id));          
+        if (result.isConfirmed) {
+          dispatch(MercadoPago(order._id));
         }
       });
-    }
-
-
-  }
+  };
 
   return (
     <div>
@@ -187,7 +188,13 @@ function Cart() {
                 >
                   <b>Total: {price2}</b>
                 </Typography>
-                <Button variant="contained" color="primary" onClick={handleCreateorder}>Ordena tus Cursos</Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleCreateorder}
+                >
+                  Ordena tus Cursos
+                </Button>
               </Box>
             </Box>
           </Box>
