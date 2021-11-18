@@ -12,7 +12,7 @@ mercadopago.configure({
 module.exports = async (req, res, next) => {
     // console.log("ENTRO A PAYMENT");
 
-    //console.log("REQUEST", req);
+    console.log("REQUEST", req);
 
     const { 
         payment_id, 
@@ -37,8 +37,8 @@ module.exports = async (req, res, next) => {
                     paymentId: payment_id
                 }
             );
-            // ordenSuccess = await Courses.populate(ordenSuccess, {path: "courses"});
-            // ordenSuccess = await User.populate(ordenSuccess, {path: "user"})
+            ordenSuccess = await Courses.populate(ordenSuccess, {path: "courses"});
+            ordenSuccess = await User.populate(ordenSuccess, {path: "user"})
             try {
                 let ordenModified = await Order.findById({_id: external_reference, payment: "Confirmed"});
                 ordenModified = await Courses.populate(ordenModified, {path: "courses"});
@@ -48,16 +48,23 @@ module.exports = async (req, res, next) => {
                 console.log(err);
                 next(err);
             }
-        } else {
-            try {
+        } else if(status === "failure") {
             let ordenFailure = await Order.findOneAndUpdate(
                 {
                     _id: external_reference
                 }, 
+                {
+                    payment: "Cancelled",
+                    paymentId: payment_id
+                }, 
             );
             ordenFailure = await Courses.populate(ordenFailure, {path: "courses"});
             ordenFailure = await User.populate(ordenFailure, {path: "user"})
-            res.json(ordenFailure);
+            try {
+                let ordenModified = await Order.findById({_id: external_reference, payment: "Cancelled"});
+                ordenModified = await Courses.populate(ordenModified, {path: "courses"});
+                ordenModified = await User.populate(ordenModified, {path: "user"});
+                res.json(ordenModified)
             } catch(err) {
                 console.log(err);
                 next(err);

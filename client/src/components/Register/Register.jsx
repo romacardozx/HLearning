@@ -32,9 +32,43 @@ function validate(state) {
 }
 
 function Register() {
+  const cloud_name = 'dkkwjslk9';
+	const upload_preset = 'kzhe1mvq';
+
+  const [imageUrl, setImageUrl] = useState(
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Cu_p6a8MSniSMOxJqIpZHSJjciAgHiRbaw&usqp=CAU'
+	);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+		const { files } = document.querySelector('.app_uploadInput');
+		const formData = new FormData();
+		formData.append('file', files[0]);
+		formData.append('upload_preset', upload_preset);
+		const options = {
+			method: 'POST',
+			body: formData
+		};
+		return fetch(
+			`https://api.Cloudinary.com/v1_1/${cloud_name}/image/upload`,
+			options
+		)
+			.then((res) => res.json())
+			.then((res) => {
+				setImageUrl(res.secure_url); //url de la imagen
+				console.log(res.secure_url);
+        setState({
+          ...state, 
+          pictures: res.secure_url
+        })
+			})
+			.catch((err) => console.log(err));
+	};
+
   const history = useHistory()
   const dispatch = useDispatch();
   const [state, setState] = useState({
+    confirmPassword: "",
     name: "",
     email: "",
     password: "",
@@ -48,6 +82,8 @@ function Register() {
       ...state,
       [e.target.name]: e.target.value,
     });
+    
+
     setErrors(
       validate({
         ...state,
@@ -141,17 +177,14 @@ function Register() {
           {errors.confirmPassword && (
             <p className={s.errors}>{errors.confirmPassword}</p>
           )}
-          <div className={s.inputContenedor}>
-            
-            <input
-              className={s.input}
-              type="file"
-              value={state.pictures}
-              name="pictures"
-              onChange={(e) => handleInputChange(e)}
-              
-            />
-          </div>
+
+          <div className="app">
+			    <input type="file" className="app_uploadInput" />
+			    <img src={imageUrl} className="app_uploadedImg" alt="" />
+			    <button className="app_uploadButton" onClick={(e)=>handleClick(e)}>
+				   Cargar imagen
+			    </button>
+		</div>
 
           <input className={s.button} type="submit" value="Registrate" />
           <div className={s.or}>o con</div>

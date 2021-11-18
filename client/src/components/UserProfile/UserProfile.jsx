@@ -35,7 +35,6 @@ export default function UserProfile() {
     dispatch(getSignOut());
   };
 
-
   return (
     <div>
       <NavBar />

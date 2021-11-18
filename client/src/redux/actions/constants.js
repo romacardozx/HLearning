@@ -10,9 +10,10 @@ export const GET_ORDER = "GET_ORDER";
 export const GET_ALL_CART = "GET_ALL_CART";
 export const GET_REVIEWS_BY_ID = "GET_REVIEWS_BY_ID"
 export const GET_CART = "GET_CART"
+export const DELETE_CART = "DELETE_CART"
 
 
-// ORDES //
+// ORDER //
 
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 export const ORDER_BY_SCORE = "ORDER_BY_SCORE";
@@ -49,3 +50,7 @@ export const ADMIN_AUTH_SUCCESS = "ADMIN_AUTH_SUCCESS";
 //MERCADO PAGO //
 
 export const MERCADOPAGO = "MERCADOPAGO";
+
+//Orders
+
+export const CREATE_ORDER = 'CREATE_ORDER';
