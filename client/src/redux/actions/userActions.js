@@ -32,7 +32,7 @@ export const postSignUp = (input) => {
         }
       }
     } catch (error) {
-      swal(`Algo salió mal`, "Presione para continuar", "error");
+      swal(`${error.response.data.error}`, "Presione para continuar", "error");
       console.log(error);
     }
   };
@@ -98,8 +98,8 @@ export const postEditUser = (input, id) => {
       }
     } catch (error) {
       dispatch({type: types.EDIT_USER_FAILED})
-      console.log(error.message)
-      swal(`Algo salió mal`, "Presione para continuar", "error")
+      console.log(error.response.data.error)
+      swal(`${error.response.data.error}`, "Presione para continuar", "error")
     }
   }
 }
