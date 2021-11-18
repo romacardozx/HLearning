@@ -54,8 +54,6 @@ function Cart() {
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
 
- 
-
   /* if (auth) {
     let cartRender = cart;
     return cartRender;
@@ -69,9 +67,9 @@ function Cart() {
   });
   let price2 = price.reduce((a, b) => a + b, 0);
 
-  console.log(cartAll,"yamila info")
+  console.log(cartAll, "yamila info");
   let created;
-  console.log(userDetail,'user')
+  console.log(userDetail, "user");
   const handleCreateorder = async () => {
     Object.keys(userDetail).length > 0
       ? dispatch(
@@ -79,7 +77,7 @@ function Cart() {
         )
       : window.location.replace("/login");
 
-    //Aca no entra por problemas de asyncronia???  
+    //Aca no entra por problemas de asyncronia???
     order &&
       Swal.fire({
         title: `Quieres abonar tu orden de $ ${price2} en nuestra plataforma de pago?`,
@@ -93,7 +91,7 @@ function Cart() {
       });
   };
   const order = useSelector((state) => state.getOrder.orderCreated);
-  console.log(order,'yamilaorder')
+  console.log(order, "yamilaorder");
 
   return (
     <div>
@@ -157,14 +155,13 @@ function Cart() {
                                   />
                                 </IconButton>
                               ) : (
-                                <IconButton>
-                                  <DeleteForeverIcon
-                                    color="secondary"
-                                    onClick={() => {
-                                      removeState(course);
-                                      setRemove(!remove);
-                                    }}
-                                  />
+                                <IconButton
+                                  onClick={() => {
+                                    removeState(course);
+                                    setRemove(!remove);
+                                  }}
+                                >
+                                  <DeleteForeverIcon color="secondary" />
                                 </IconButton>
                               )}
                             </Item>
