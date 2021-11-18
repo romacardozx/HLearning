@@ -9,7 +9,7 @@ function createOrder(order){
         var { data } = await axios.post(`/orders/createOrder`,order);
         return dispatch({
           type: "CREATE_ORDER",
-          payload: data
+          payload: data.order
         })
           
       } catch (error) {
