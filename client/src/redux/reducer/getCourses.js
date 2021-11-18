@@ -11,7 +11,8 @@ import {
   FILTER_BY_STARS,
   ORDER_BY_NAME_FILTER,
   ORDER_BY_PRICE_FILTER,
-  ORDER_BY_SCORE_FILTER
+  ORDER_BY_SCORE_FILTER,
+  CLEAR_DATA
 } from "../actions/constants.js";
 import calculeScore from "../../utils/calculeScore"
 
@@ -28,6 +29,15 @@ const getCourses = (state = initialState, action) => {
         ...state,
         getAllCourses: action.payload.allCourses,
         filteredString: action.payload.name,
+      };
+    }
+
+    case CLEAR_DATA: {
+      return {
+        ...state,
+        setAllCourses: action.payload.data,
+        filteredString: action.payload.name,
+        
       };
     }
 
@@ -58,14 +68,16 @@ const getCourses = (state = initialState, action) => {
     case FILTER_BY_DURATION: {
       return {
         ...state,
-        getAllCourses: action.payload,
+        setAllCourses: action.payload.data,
+        filteredString: action.payload.name,
       };
     }
 
     case FILTER_BY_STARS: {
       return {
         ...state,
-        setAllCourses: action.payload,
+        setAllCourses: action.payload.data,
+        filteredString: action.payload.name,
       };
     }
 

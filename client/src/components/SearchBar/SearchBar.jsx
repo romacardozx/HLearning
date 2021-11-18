@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchIcon from "@mui/icons-material/Search";
+import { clearFilters } from "../../redux/actions/clearFilters";
 /* import { Box } from "@mui/system"; */
 
 export default function SearchBar() {
@@ -26,7 +27,9 @@ export default function SearchBar() {
 
   const handleClick = (e) => {
     e.preventDefault();
+    
     dispatch(getAllCourses());
+    dispatch(clearFilters());
   };
 
   return (

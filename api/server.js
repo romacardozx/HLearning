@@ -25,7 +25,7 @@ const exphbs = require("express-handlebars")
 require("./src/utils/auth/passport");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
+  path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 
 //Crea el servidor
