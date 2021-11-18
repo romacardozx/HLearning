@@ -1,6 +1,6 @@
 const Cart = require("../../models/Cart");
 
-// Crear Cart de usuario. Cada usuario tiene 1 solo Cart
+// Crear Cart de usuario. Cada usuario tiene 1 solo Cart. Esta ruta no deberia usarse porque ya se crean junto al usuario
 module.exports = async (req, res, next) => {
   const data = req.body;
 
