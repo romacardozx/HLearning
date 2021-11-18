@@ -8,11 +8,16 @@ import {
   NavBtnLink,
 } from "./NavbarElements";
 import Logo from "../../images/Hlearning.png";
+import { useSelector } from "react-redux";
 /* import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"; */
 /* import Account from "./Account"; */
 /* import { Button } from "@mui/material"; */
 
 const Navbar = () => {
+  let authentification = useSelector(
+    (state) => state.userReducer.isAuthenticated
+  );
+  
   //Saque activeStyle que hacia warning rojo de los 3 NavLink
   return (
     <>
@@ -36,11 +41,14 @@ const Navbar = () => {
           </NavLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/login">Iniciar Sesión</NavBtnLink>
+          { authentification ? 
+            <a></a> : <NavBtnLink to="/login">Iniciar Sesión</NavBtnLink>
+          }
         </NavBtn>
+        { authentification ?
         <NavLink to="/admin">
           <span className="material-icons-outlined">supervisor_account</span>
-        </NavLink>
+        </NavLink> : <a></a> }
         {/*  <Account /> */}
       </Nav>
     </>
