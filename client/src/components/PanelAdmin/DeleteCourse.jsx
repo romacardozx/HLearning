@@ -109,7 +109,7 @@ export default function Courses() {
                               size="medium"
                               onClick={() => handleDelete(c._id)}
                             >
-                              Eliminar curso
+                              Dar de baja curso
                             </Button>
                           </Typography>
                         </Item>
