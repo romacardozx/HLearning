@@ -7,6 +7,7 @@ import {
 const initialState = {
 
     getCourseDetail: {},
+    getCourseYouBoughtDetail: {}
 
 };
 
@@ -23,7 +24,7 @@ const getDetails = (state = initialState, action) => {
         case GET_DETAIL_COURSES_YOU_BOUGHT: {
             return {
                 ...state,
-                getCourseDetail: action.payload
+                getCourseYouBoughtDetail: action.payload
             }
         }
 
