@@ -55,7 +55,7 @@ const initValues = {
   videos: [
     {
       name: "",
-      url: "",
+      link: "",
       duration: "",
     },
   ],
