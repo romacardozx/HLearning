@@ -187,10 +187,10 @@ function Register() {
 		</div>
 
           <input className={s.button} type="submit" value="Registrate" />
-          <div className={s.or}>o con</div>
+          {/* <div className={s.or}>o con</div>
           <a href="localhost:3001/google">
             <button className={s.button_google}> Google </button>
-          </a>
+          </a> */}
           <p>
             Al registrarte, aceptas nuestras Condiciones de uso y Política de
             privacidad.
