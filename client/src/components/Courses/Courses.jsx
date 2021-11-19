@@ -2,17 +2,23 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCourses } from "../../redux/actions/getAllCourses";
+import { clearFilters } from "../../redux/actions/clearFilters";
+import { Grid, Typography } from "@material-ui/core";
+import { experimentalStyled as styled } from "@mui/material/styles";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "../Card/Card";
 import Paginate from "../Paginate/Paginate";
 import Orders from "../Orders/Orders";
 import Filters from "../Filters/Filters";
-import { Grid, Typography } from "@material-ui/core";
 import SearchBar from "../SearchBar/SearchBar";
-import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import { clearFilters } from "../../redux/actions/clearFilters";
+
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(0.5),
+}));
 
 export default function Courses() {
   const dispatch = useDispatch();
@@ -36,6 +42,7 @@ export default function Courses() {
 
   let Courses;
 
+
    
   filterName === "Filter By"
     ? (Courses = allCourses)
@@ -50,11 +57,6 @@ export default function Courses() {
     Courses.length >= 0
       ? Courses.slice(indexOfFirstCourse, indexOfLastCourse)
       : Courses;
-
-  const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(0.5),
-  }));
 
   return (
     <div>
