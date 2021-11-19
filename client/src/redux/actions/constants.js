@@ -17,7 +17,6 @@ export const DELETE_CART = "DELETE_CART"
 export const DELETE_USER = "DELETE_USER"
 
 
-
 // ORDER //
 
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
@@ -58,6 +57,6 @@ export const ADMIN_AUTH_SUCCESS = "ADMIN_AUTH_SUCCESS";
 export const MERCADOPAGO = "MERCADOPAGO";
 export const GET_PAYMENT_DETAIL = "GET_PAYMENT_DETAIL";
 
-//Orders
+// ORDERS
 
 export const CREATE_ORDER = 'CREATE_ORDER';
