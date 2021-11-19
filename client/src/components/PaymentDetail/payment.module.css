@@ -1,0 +1,8 @@
+.bkg{
+    background-image: url('../../images/bk4.jpg');
+    background-size: cover;
+  }
+
+.link{
+    text-decoration: none;
+}

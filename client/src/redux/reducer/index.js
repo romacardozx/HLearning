@@ -4,12 +4,19 @@ import getCategories from "./getCategories";
 import getDetails from "./getDetails";
 import getOrder from "./getOrder";
 import getUser from "./getUser";
+import userReducer from "./userReducer";
+import cartReducer from "./cartReducer";
+import MercadoPago from "./MercadoPago";
+import getReviewsById from "./getReviewsById"
 
 export default combineReducers({
-
+    userReducer,
     getCourses,
     getCategories,
     getDetails,    
     getOrder,    
-    getUser    
+    getUser,
+    cartReducer,    
+    MercadoPago,
+    getReviewsById
 })

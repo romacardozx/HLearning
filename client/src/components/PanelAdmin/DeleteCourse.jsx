@@ -1,57 +1,3 @@
-// import React, { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { deleteCourse } from "../../redux/actions/deleteCourse"
-// import { getAllCourses } from "../../redux/actions/getAllCourses"
-
-
-// function DeleteCourse(){
-    
-//     const dispatch = useDispatch();
-
-//     const allCourses = useSelector((state) => state.getCourses.getAllCourses);
-
-//     function handleDelete(id){
-//        dispatch(deleteCourse(id))
-//     }
-
-//     useEffect(() =>{
-//         dispatch(getAllCourses())
-//     })
-
-//     console.log(allCourses)
-
-//     return (
-//         <div>
-//             <select>
-//             {
-//                 allCourses.map((c) => (
-
-//                     <option key={c}>
-//                         {c.name}
-//                     </option>
-                    
-//                 ))
-//             }
-//             </select>
-//             <div>
-//             {allCourses.map((e, i) => (
-
-//                 <div key={i}>
-
-//                     <p>{e}</p>
-//                     <button onClick={() => handleDelete(e)}>X</button>
-                    
-//                 </div>
-
-//             ))}
-//             </div>
-//         </div>
-//     )
-// }
-
-
-// export default DeleteCourse;
-
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -60,20 +6,23 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Card from "./CardDelete";
 import Paginate from "../Paginate/Paginate";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
+import Swal from "sweetalert2";
 
 import { Grid, Typography } from "@material-ui/core";
 
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import { deleteCourse } from "../../redux/actions/deleteCourse"
+import { deleteCourse } from "../../redux/actions/deleteCourse";
+import { maxWidth } from "@mui/system";
 
 export default function Courses() {
   const dispatch = useDispatch();
   const allCourses = useSelector((state) => state.getCourses.getAllCourses);
+  const [currentId, setCurrentId] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage /* setCoursesPerPage */] = useState(8);
+  const [coursesPerPage /* setCoursesPerPage */] = useState(6);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
   const currentCourses =
@@ -87,12 +36,37 @@ export default function Courses() {
 
   useEffect(() => {
     dispatch(getAllCourses());
-  }, [dispatch]);
+  }, [dispatch, currentId]);
 
+  // function handleDelete(id){
+  //          dispatch(deleteCourse(id))
+  //          setCurrentId(id)
+  //       }
 
-  function handleDelete(id){
-           dispatch(deleteCourse(id))
-        }  
+  function handleDelete(id) {
+    Swal.fire({
+      title: "Estas seguro?",
+      text: "No podras revertir esto..",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borralo!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteCourse(id));
+        Swal.fire({
+          title: "Borrado!",
+          text: `El curso ha sido borrado.`,
+          imageUrl: "https://i.gifer.com/7efs.gif",
+          imageWidth: 250,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+        });
+        setCurrentId(id);
+      }
+    });
+  }
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -101,17 +75,21 @@ export default function Courses() {
 
   return (
     <div>
-      <div>
-        <NavBar />
-      </div>
-      <br />
-      <br />
+      <NavBar />
       <div>
         <Grid container direction="column" alignItems="center">
           <br />
           <div>
-          <Typography variant="h4"  align='center'>CURSOS ACTUALES</Typography><br/>
-            <Grid container>
+            <Typography variant="h4" align="center">
+              CURSOS ACTUALES
+            </Typography>
+            <br />
+            <Grid
+              container
+              direction="row"
+              alignItems="center"
+              justify="center"
+            >
               {currentCourses.length >= 0 ? (
                 <>
                   {currentCourses?.map((c, i) => (
@@ -126,16 +104,22 @@ export default function Courses() {
                             score={c.score}
                           />
                           <Typography>
-                          <Button variant="contained" size="medium" onClick={() => handleDelete(i)}>
-                           Eliminar curso
-                          </Button>
+                            <Button
+                              variant="contained"
+                              size="medium"
+                              onClick={() => handleDelete(c._id)}
+                            >
+                              Dar de baja curso
+                            </Button>
                           </Typography>
                         </Item>
                       </Grid>
                     </div>
                   ))}
                 </>
-              ) : <p>Loading...</p>}
+              ) : (
+                <p>Loading...</p>
+              )}
             </Grid>
             <Paginate
               coursesPerPage={coursesPerPage}
@@ -145,9 +129,6 @@ export default function Courses() {
           </div>
         </Grid>
       </div>
-      <br />
-      <br />
-      <br />
       <Footer />
     </div>
   );

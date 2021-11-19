@@ -18,14 +18,18 @@ const OrderSchema = new Schema({
   },
   status: {
     type: String,
-    enum: ["Confirmed", "Cancel"],
+    enum: ["Confirmed", "Deleted"],
     default: "Confirmed"
-},
+  },
   payment: {
-    type: Boolean,
-    required: true,
-    default:false 
-  }  
+    type: String,
+    enum: ["Created", "Confirmed", "Processing", "Cancelled"],
+    default: "Created"
+  },
+  paymentId: {
+    type: String,
+    default: "0"
+  }
 });
 
 module.exports = mongoose.model("Order", OrderSchema);

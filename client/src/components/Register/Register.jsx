@@ -1,19 +1,31 @@
 import React from "react";
 import s from "./register.module.css";
+import {useHistory} from 'react-router-dom';
 import { useState } from "react";
 import Navbar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
+import { postSignUp } from "../../redux/actions/userActions";
+import {useDispatch} from "react-redux";
 
+function esEmail (word) {
+  if(word.includes("@") && word.includes(".com")) return true;
+     else return false
+}
 
 function validate(state) {
   let errors = {};
-  if (!state.fullName) {
-    errors.fullName = "Ingresa tu nombre y apellido";
+  if (!state.name) {
+    errors.name = "Ingresa tu nombre y apellido";
   } else if (!state.email) {
     errors.email = "Ingresa un email";
+  } else if (esEmail(state.email)===false) {
+    errors.email = "No es un email";
   } else if (!state.password) {
     errors.password = "Ingresa una constraseña";
+  } else if (state.password.length < 7) {
+    errors.password = "La contraseña debe superar los 8 caracteres";
   } else if (!state.confirmPassword) {
-    errors.confirmPassword = "Vuelve a escribir tu constraseña";
+    errors.confirmPassword = "Repita su constraseña";
   } else if (state.password !== state.confirmPassword) {
     errors.confirmPassword = "Las contraseñas no coinciden";
   }
@@ -21,10 +33,47 @@ function validate(state) {
 }
 
 function Register() {
+  const cloud_name = 'dkkwjslk9';
+	const upload_preset = 'kzhe1mvq';
+
+  const [imageUrl, setImageUrl] = useState(
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Cu_p6a8MSniSMOxJqIpZHSJjciAgHiRbaw&usqp=CAU'
+	);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+		const { files } = document.querySelector('.app_uploadInput');
+		const formData = new FormData();
+		formData.append('file', files[0]);
+		formData.append('upload_preset', upload_preset);
+		const options = {
+			method: 'POST',
+			body: formData
+		};
+		return fetch(
+			`https://api.Cloudinary.com/v1_1/${cloud_name}/image/upload`,
+			options
+		)
+			.then((res) => res.json())
+			.then((res) => {
+				setImageUrl(res.secure_url); //url de la imagen
+				console.log(res.secure_url);
+        setState({
+          ...state, 
+          pictures: res.secure_url
+        })
+			})
+			.catch((err) => console.log(err));
+	};
+
+  const history = useHistory()
+  const dispatch = useDispatch();
   const [state, setState] = useState({
-    fullName: "",
+    confirmPassword: "",
+    name: "",
     email: "",
     password: "",
+    pictures: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -34,6 +83,8 @@ function Register() {
       ...state,
       [e.target.name]: e.target.value,
     });
+    
+
     setErrors(
       validate({
         ...state,
@@ -41,30 +92,47 @@ function Register() {
       })
     );
   }
+
+  function handleSubmit(e){
+    e.preventDefault();
+    if(Object.values(errors).length > 0) alert ("Aun hay campos sin terminar")
+    else{
+        dispatch(postSignUp(state))
+        setState({
+          name: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+          pictures: ""
+        })
+        history.push('/login')
+    }
+  }
+
   return (
   <div>
    <Navbar/>
     <div className={s.cont}>
-      <form className={s.formulario} onSubmit>
+      <form className={s.formulario} onSubmit={(e)=>handleSubmit(e)} encType="multipart/form-data" >
         <h1>Registrate</h1>
         <div className={s.contenedor}>
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-user icon"></i>*/}
+            
             <input
               className={s.input}
               type="text"
-              value={state.fullName}
-              name="fullName"
+              value={state.name}
+              name="name"
               placeholder="Nombre Completo"
               onChange={(e) => handleInputChange(e)}
               required
             />
           </div>
 
-          {errors.fullName && <p className={s.errors}>{errors.fullName}</p>}
+          {errors.name && <p className={s.errors}>{errors.name}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-envelope icon"></i>*/}
+            
             <input
               className={s.input}
               type="email"
@@ -79,7 +147,7 @@ function Register() {
           {errors.email && <p className={s.errors}>{errors.email}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-key icon"></i>*/}
+            
             <input
               className={s.input}
               type="password"
@@ -94,7 +162,7 @@ function Register() {
           {errors.password && <p className={s.errors}>{errors.password}</p>}
 
           <div className={s.inputContenedor}>
-            {/*<i class="fas fa-key icon"></i>*/}
+            
             <input
               className={s.input}
               type="password"
@@ -109,6 +177,14 @@ function Register() {
           {errors.confirmPassword && (
             <p className={s.errors}>{errors.confirmPassword}</p>
           )}
+
+          <div className="app">
+			    <input type="file" className="app_uploadInput" />
+			    <img src={imageUrl} className="app_uploadedImg" alt="" />
+			    <button className="app_uploadButton" onClick={(e)=>handleClick(e)}>
+				   Cargar imagen
+			    </button>
+		</div>
 
           <input className={s.button} type="submit" value="Registrate" />
           <div className={s.or}>o con</div>
@@ -128,6 +204,8 @@ function Register() {
         </div>
       </form>
     </div>
+    
+    
   </div>
   );
 }

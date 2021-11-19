@@ -1,52 +1,59 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CourseSchema = new Schema({
-    title: {
-        type: String,
-        unique:true,
-        required: true
+  title: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  img: {
+    type: String,
+  },
+  score: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review",
     },
-    description: {
-        type: String,
-        required: true
+  ],
+  duration: {
+    type: String,
+  },
+  categories: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
     },
-    img: {
-        type: String
+  ],
+  price: {
+    type: Number,
+  },
+  videos: {
+    type: Array,
+    default: [
+      {
+        name: String,
+        link: String,
+        duration: String,
+      },
+    ],
+  },
+  students: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
-    score: [{
-        type:Schema.Types.ObjectId,
-        ref: 'Review'
-    }],
-    duration: {
-        type: String,  
-    },
-    categories: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Category',
-        required: true
-    }],
-    price: {
-        type: Number
-    },
-    videos: {
-        type: Array,
-        default: [{
-            name: String,
-            link: String,
-            duration: String
-        }]
-    },
-    students: [{
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    }],
-    status: {
-        type: String,
-        enum: ["Confirmed", "In course", "Deleted"],
-        default: "Confirmed"
-    }
-})
+  ],
+  status: {
+    type: String,
+    enum: ["Confirmed", "In course", "Deleted"],
+    default: "Confirmed",
+  },
+});
 
-module.exports = CourseModel = mongoose.model('Course', CourseSchema) 
+module.exports = CourseModel = mongoose.model("Course", CourseSchema);

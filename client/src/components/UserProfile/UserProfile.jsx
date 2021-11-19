@@ -1,28 +1,39 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { getSignOut } from "../../redux/actions/userActions";
+import { getUserInfo } from "../../redux/actions/userActions"
+import Paper from "@mui/material/Paper";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-//import { Link } from "react-router-dom";
+import CardMedia from "@mui/material/CardMedia";
+import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import EditIcon from "@mui/icons-material/Edit";
 import Avatar from "@mui/material/Avatar";
-//import Button from "@mui/material/Button";
+import Button from "@mui/material/Button";
+import EditIcon from "@mui/icons-material/Edit";
+import IconButton from "@mui/material/IconButton";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
-  const { id } = useParams();
-  /* const purchasedCourse = useSelector((state) => state.getOrders.getOrders); */
+  const User = useSelector((state) => state.userReducer.userDetail);
+  const isAuthenticated = useSelector(
+    (state) => state.userReducer.isAuthenticated
+  );
+  console.log(User, "user")
+  useEffect(() => {
+    dispatch(getUserInfo());
+  }, [dispatch]);
 
-  /* useEffect(() => {
-    dispatch(getOrderById(id));
-    eslint - disable - next - line;
-  }, [dispatch]); */
+  const signOutHandler = (e) => {
+    e.preventDefault();
+    dispatch(getSignOut());
+  };
+
+
   return (
     <div>
       <NavBar />
@@ -33,25 +44,36 @@ export default function UserProfile() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              m:3
             }}
           >
             <Typography
-              textAlign="left"
-              variant="h5"
+              textAlign="center"
+              variant="h4"
               color="text.primary"
-              m={5}
+              m={3}
             >
-              <b>Información</b>
+             <b> Bienvenido a HLearning !</b>
+             <br>
+             </br>
+             <b> {User.name} </b>
             </Typography>
-            {/* <Box display="flex" justifyContent="flex-end" width="100%" mr={15}>
+            <Box 
+              display="flex" 
+              justifyContent="flex-end" 
+              width="100%" 
+              mr={15}
+            >
               <IconButton
                 color="primary"
                 aria-label="edit"
-                onClick={handleOpenProfile}
-              >
-                <EditIcon />
+                component={Link}
+                to={`/editprofile`}
+              > 
+              Edit profile
+              <EditIcon />
               </IconButton>
-            </Box> */}
+            </Box>
             <Box
               sx={{
                 display: "flex",
@@ -63,12 +85,12 @@ export default function UserProfile() {
             >
               <Box
                 sx={{
-                  display: "flex",
+                  display: "colums",
                   width: "90%",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 5,
-                  m: 5,
+                  m: -5,
                 }}
               >
                 <Box
@@ -83,9 +105,9 @@ export default function UserProfile() {
                   }}
                 >
                   <Avatar
-                    sx={{ width: 200, height: 200 }}
-                    /* src={user.profilePicture}
-                    alt={user.username} */
+                    sx={{ width: 200, height: 200, marginLeft: 3 }}
+                    src={User.pictures}
+                    alt={User.name}
                   />
                   <Typography
                     sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
@@ -93,38 +115,43 @@ export default function UserProfile() {
                     variant="body1"
                     color="text.primary"
                   >
-                    <b> Nombre:</b> {/* {user.name} {user.lastName} */}
+                    <b> Nombre: {User.name}</b>
                   </Typography>
-                  {/* <Typography
-                    sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Username: </b> {user.username}
-                  </Typography> */}
                   <Typography
                     sx={{ p: 1.5, borderRadius: 3, bgcolor: "white" }}
                     border="1px solid gray"
                     variant="body1"
                     color="text.primary"
                   >
-                    <b>Email:</b>
-                    {/*  {user.email} */}
+                    <b>Email: {User.email}</b>
                   </Typography>
+                  {isAuthenticated ? (
+                    <Button
+                      variant="contained"
+                      size="medium"
+                      // endIcon={<AddIcon size="large" />}
+                      onClick={(e) => signOutHandler(e)}
+                    >
+                      Cerrar sesion
+                    </Button>
+                  ) : (
+                    null
+                  )}
                 </Box>
 
                 <Box
                   sx={{
                     display: "flex",
+                    flexWarp:"wrap",
                     flexDirection: "column",
-                    gap: 2,
+                    gap: 5,
                     width: 450,
                   }}
                 >
                   <Typography
+
                     textAlign="center"
-                    variant="h5"
+                    variant="h4"
                     color="text.primary"
                   >
                     <b>Mis cursos:</b>
@@ -133,85 +160,55 @@ export default function UserProfile() {
                     display="flex"
                     flexWrap="wrap"
                     justifyContent="center"
-                    gap={5}
+                    gap={1}
                     mb={5}
-                  >
-                    {/* {ownerHouses?.length ? (
-                  ownerHouses.map((house, idx) => (
-                    <HouseCard
-                      key={idx}
-                      house={house}
-                      handleOpen={handleOpenHouse}
-                      handleClose={handleCloseHouse}
-                      handleCurrentHouse={setCurrentHouse}
-                    />
-                  ))
-                ) : (
-                  <Button
-                    component={Link}
-                    to="/announcement"
-                    variant="outlined"
-                  >
-                    Post your home!
-                  </Button>
-                )} */}
+                  >                   
+                    {User.courses?.length ? (
+                      User.courses.map((c, index) => (
+                        <Card
+                          key={index}
+                          sx={{ maxWidth: 270, minWidth: 100 }}
+                          elevation={6}
+                          align="center"
+                        >
+                          <Typography
+                            sx={{ mb: 1 }}
+                            paddingLeft={1}
+                            variant="h6"
+                          >
+                            {c.title}
+                          </Typography>
+                          <CardMedia
+                            component="img"
+                            height="180"
+                            image={c.img}
+                            alt="img video"
+                          />
+                          <Button
+                            variant="contained"
+                            size="medium"
+                            component={Link}
+                            to={`/mycourses/${c._id}`}
+                            // endIcon={<AddIcon size="large" />}
+                          >
+                            VER MIS VIDEOS
+                          </Button>
+                          </Card>
+                      ))
+                    ) : (
+                      <Typography
+                        textAlign="center"
+                        variant="h6"
+                        component="div"
+                        noWrap={true}
+                      >
+                        NO HAS COMPRANDO NINGUN CURSO
+                      </Typography>
+                    )}
                   </Box>
-                  {/* <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b>Description:</b> {user.description}
-                  </Typography>
-
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Date of Birth:</b> {user.dateOfBirth}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> E-Mail:</b>
-                     {user.email}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Phone Number:</b>
-                     {user.phoneNumber}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Languages Spoken:</b>{" "}
-                    {user.languagesSpoken?.join(", ")}
-                  </Typography>
-                  <Typography
-                    sx={{ p: 1.5, borderRadius: 3 }}
-                    border="1px solid gray"
-                    variant="body1"
-                    color="text.primary"
-                  >
-                    <b> Points: </b>
-                     {user.points}
-                  </Typography> */}
                 </Box>
               </Box>
-              <hr style={{ width: "90%" }} />
+              <hr style={{ width: "50%" }} />
             </Box>
           </Box>
         </Paper>

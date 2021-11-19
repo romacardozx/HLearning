@@ -6,7 +6,7 @@ export function getAllCourses() {
       var json = await axios(`/courses`);
       return dispatch({
         type: "GET_ALL_COURSES",
-        payload: json.data,
+        payload: { allCourses: json.data, name: "Filter By" },
       });
     } catch (error) {
       console.log("error", error);

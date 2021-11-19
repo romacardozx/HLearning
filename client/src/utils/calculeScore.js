@@ -1,9 +1,9 @@
-
-
 const calculeScore = (arrayScores) => {
   let sumScore = 0;
-  arrayScores.map((r) => {
 
+  if(arrayScores.length === 0) return 0
+  
+  arrayScores.map((r) => {
     sumScore = sumScore + parseInt(r.score);
   });
 

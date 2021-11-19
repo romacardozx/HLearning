@@ -5,20 +5,13 @@ import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-/* import Divider from "@mui/material/Divider"; */
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-/* import PostAddIcon from "@mui/icons-material/PostAdd"; */
-import PersonIcon from "@mui/icons-material/Person";
-import LoyaltyIcon from "@mui/icons-material/Loyalty";
+import AddchartIcon from "@mui/icons-material/Addchart";
+import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 
-import BookIcon from "@mui/icons-material/Book";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-
-/* import { signOut } from "../../redux/actions/userActions"; */
 import { Link } from "react-router-dom";
 import { blue } from "@mui/material/colors";
 
@@ -27,8 +20,6 @@ export default function Account() {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-
-  /* const { isAdmin } = useSelector((state) => state.userReducer); */
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -81,35 +72,20 @@ export default function Account() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem component={Link} to="/user">
-          <PersonIcon sx={{ mr: 1 }} />
-          My Perfil
+        <MenuItem component={Link} to="/admusers">
+          <AssignmentIndIcon sx={{ mr: 1 }} />
+          Administrar Usuarios
         </MenuItem>
-        <MenuItem component={Link} to="/favorites">
-          <LoyaltyIcon sx={{ mr: 1 }} />
-          Mis Favoritos
+        <MenuItem component={Link} to="/admcourses">
+          <AssignmentIcon sx={{ mr: 1 }} />
+          Administrar Cursos
         </MenuItem>
-        <MenuItem component={Link} /* to="/mercadopago" */>
-          <ShoppingCartIcon sx={{ mr: 1 }} /> Mi carro de compras
+        <MenuItem component={Link} to="/createcourse">
+          <AddToPhotosIcon sx={{ mr: 1 }} /> Crear Curso
         </MenuItem>
-        {/* <MenuItem component={Link} to="/my-bookings">
-          <BookIcon sx={{ mr: 1 }} />
-          My Bookings
-        </MenuItem>
-        <MenuItem component={Link} to="/announcement">
-          <PostAddIcon sx={{ mr: 1 }} /> Post your Home
-        </MenuItem> */}
-        {/*  {isAdmin && (
-          <MenuItem component={Link} to="/admin">
-            <AdminPanelSettingsIcon sx={{ mr: 1 }} /> Admin Panel
-          </MenuItem>
-        )} */}
-        {/* <Divider /> */}
-        <MenuItem /* onClick={() => dispatch(signOut())} */>
-          <ListItemIcon>
-            <ExitToAppIcon sx={{ mr: 1 }} />
-          </ListItemIcon>
-          Cerrar sesión
+        <MenuItem component={Link} to="/createcategory">
+          <AddchartIcon sx={{ mr: 1 }} />
+          Crear Categoría
         </MenuItem>
       </Menu>
     </React.Fragment>
