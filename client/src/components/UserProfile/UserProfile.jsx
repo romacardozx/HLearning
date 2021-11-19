@@ -3,19 +3,17 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getSignOut } from "../../redux/actions/userActions";
-import { getUserInfo } from "../../redux/actions/userActions";
-
+import { getUserInfo } from "../../redux/actions/userActions"
+import Paper from "@mui/material/Paper";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 
@@ -25,7 +23,7 @@ export default function UserProfile() {
   const isAuthenticated = useSelector(
     (state) => state.userReducer.isAuthenticated
   );
-
+  console.log(User, "user")
   useEffect(() => {
     dispatch(getUserInfo());
   }, [dispatch]);
@@ -34,6 +32,7 @@ export default function UserProfile() {
     e.preventDefault();
     dispatch(getSignOut());
   };
+
 
   return (
     <div>
@@ -45,24 +44,34 @@ export default function UserProfile() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              m:3
             }}
           >
             <Typography
-              textAlign="left"
-              variant="h5"
+              textAlign="center"
+              variant="h4"
               color="text.primary"
-              m={5}
+              m={3}
             >
-              <b>Información</b>
+             <b> Bienvenido a HLearning !</b>
+             <br>
+             </br>
+             <b> {User.name} </b>
             </Typography>
-            <Box display="flex" justifyContent="flex-end" width="100%" mr={15}>
+            <Box 
+              display="flex" 
+              justifyContent="flex-end" 
+              width="100%" 
+              mr={15}
+            >
               <IconButton
                 color="primary"
                 aria-label="edit"
                 component={Link}
                 to={`/editprofile`}
-              >
-                <EditIcon />
+              > 
+              Edit profile
+              <EditIcon />
               </IconButton>
             </Box>
             <Box
@@ -76,12 +85,12 @@ export default function UserProfile() {
             >
               <Box
                 sx={{
-                  display: "flex",
+                  display: "colums",
                   width: "90%",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 5,
-                  m: 1,
+                  m: -5,
                 }}
               >
                 <Box
@@ -120,27 +129,29 @@ export default function UserProfile() {
                     <Button
                       variant="contained"
                       size="medium"
-                      endIcon={<AddIcon size="large" />}
+                      // endIcon={<AddIcon size="large" />}
                       onClick={(e) => signOutHandler(e)}
                     >
-                      SIGN OUT
+                      Cerrar sesion
                     </Button>
                   ) : (
-                    ""
+                    null
                   )}
                 </Box>
 
                 <Box
                   sx={{
                     display: "flex",
+                    flexWarp:"wrap",
                     flexDirection: "column",
-                    gap: 2,
+                    gap: 5,
                     width: 450,
                   }}
                 >
                   <Typography
+
                     textAlign="center"
-                    variant="h5"
+                    variant="h4"
                     color="text.primary"
                   >
                     <b>Mis cursos:</b>
@@ -149,9 +160,9 @@ export default function UserProfile() {
                     display="flex"
                     flexWrap="wrap"
                     justifyContent="center"
-                    gap={5}
+                    gap={1}
                     mb={5}
-                  >
+                  >                   
                     {User.courses?.length ? (
                       User.courses.map((c, index) => (
                         <Card
@@ -178,11 +189,11 @@ export default function UserProfile() {
                             size="medium"
                             component={Link}
                             to={`/mycourses/${c._id}`}
-                            endIcon={<AddIcon size="large" />}
+                            // endIcon={<AddIcon size="large" />}
                           >
                             VER MIS VIDEOS
                           </Button>
-                        </Card>
+                          </Card>
                       ))
                     ) : (
                       <Typography

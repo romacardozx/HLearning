@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
 import { getDetailCourses } from "../../redux/actions/getDetailCourses";
+import { getDetailCoursesYouBought } from "../../redux/actions/getDetailCoursesYouBought";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Loading from "../Loading/Loading";
@@ -27,9 +28,8 @@ export default function CourseDetail(props) {
     (state) => state.getDetails.getCourseDetail
   );
   console.log(courseDetailed);
-
   useEffect(() => {
-    dispatch(getDetailCourses(id)); // eslint-disable-next-line
+    dispatch(getDetailCoursesYouBought(id)); // eslint-disable-next-line
   }, [dispatch]);
 
   return (
