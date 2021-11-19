@@ -6,34 +6,29 @@ module.exports = async (req, res, next) => {
 
   if (!id) {
     res.status(400).json({
-      error: "Insert an ID",
+      error: "Ingresar un ID",
     });
   }
   if(!email){
     res.status(400).json({
-      error: "Insert an email",
+      error: "Ingresar un email",
     });
   }
   if (!name) {
     res.status(400).json({
-      error: "Insert a name",
+      error: "Ingresar un nombre",
     });
   }
   if (!password) {
     res.status(400).json({
-      error: "Insert the password",
-    });
-  }
-  if (!pictures) {
-    res.status(400).json({
-      error: "Insert an image",
+      error: "Ingresar una contraseña",
     });
   }
   const isEmailInDB = await User.findOne({ email: email });
   if (isEmailInDB) {
     if (isEmailInDB.id !== id) {
       return res.status(400).json({
-        error: "The email is already in use",
+        error: "El email ya se encuentra en uso por otra persona",
       });
     }
   }

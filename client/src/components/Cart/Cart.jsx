@@ -1,29 +1,27 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { fusionCart } from "../../redux/actions/fusionCart";
+import { actualizeCart } from "../../redux/actions/actualizeCart";
 import { loadState, removeState } from "../../localStorage";
+import { Button, Grid } from "@material-ui/core";
+import { experimentalStyled as styled } from "@mui/material/styles";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
 import Card from "../Card/Card.jsx";
-import { Button, Grid } from "@material-ui/core";
-import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { getAllCarts } from "../../redux/actions/getAllCarts";
-import { fusionCart } from "../../redux/actions/fusionCart";
-import { getUserInfo } from "../../redux/actions/userActions";
-import { actualizeCart } from "../../redux/actions/actualizeCart";
 import createOrder from "../../redux/actions/createOrder";
 import Swal from "sweetalert2";
 import MercadoPago from "../../redux/actions/MercadoPago";
 
 function auth(authentification, cartAll) {
   let cartStorage = loadState();
-
-  if (authentification) {
+if (authentification) {
     let cart = cartAll;
     return cart;
   } else {
@@ -42,8 +40,9 @@ function Cart() {
   const [remove, setRemove] = useState(false);
 
   useEffect(() => {
+
     if (userDetail._id) dispatch(fusionCart(userDetail._id));
-    // dispatch(getAllCarts(userDetail._id));
+
   }, [dispatch, auth]);
 
   let cartAll = useSelector((state) => state.cartReducer.allCart);
@@ -54,16 +53,9 @@ function Cart() {
   const cart = auth(authentification, cartAll);
   console.log("CART", cart);
 
-  /* if (auth) {
-    let cartRender = cart;
-    return cartRender;
-  } else {
-    let cartRender = cartStorage;
-  } */
-
   let price = [];
   cart.map((c) => {
-    price.push(c.price);
+    return price.push(c.price);
   });
   let price2 = price.reduce((a, b) => a + b, 0);
 
@@ -124,7 +116,7 @@ function Cart() {
                       return (
                         <div key={course._id}>
                           <Grid item xs={12} sm={6} md={3} lg={3}>
-                            <Item sx={{ minWidth: 500 /* , maxWidth: 300 */ }}>
+                            <Item sx={{ minWidth: 500 }}>
                               <Card
                                 id={course._id}
                                 title={course.title}
@@ -135,9 +127,8 @@ function Cart() {
                                 course={course}
                               />
                               {authentification ? (
-                                <IconButton>
-                                  <DeleteForeverIcon
-                                    color="secondary"
+                                <IconButton
+                                  color="secondary"
                                     onClick={() => {
                                       dispatch(
                                         actualizeCart(
@@ -146,8 +137,8 @@ function Cart() {
                                           userDetail._id
                                         )
                                       );
-                                    }}
-                                  />
+                                    }}  >
+                                  <DeleteForeverIcon/>
                                 </IconButton>
                               ) : (
                                 <IconButton
@@ -196,7 +187,7 @@ function Cart() {
           </Box>
         </Paper>
       </Container>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

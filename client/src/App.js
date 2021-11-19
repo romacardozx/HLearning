@@ -47,7 +47,8 @@ function App() {
       <Route exact path="/editprofile" component={EditProfile} />
       <Route exact path="/admusers" component={AdmUsers} />
       <Route exact path="/courseDetail/:id" component={CourseDetail}/>
-      <Route exact path="/mercadopago/pagos/:id" component={PaymentDetail}/>
+      <Route exact path="/orders/:id" component={PaymentDetail}/>
+      {/* <Route exact path="/mercadopago/pagos/:id" component={PaymentDetail}/> */}
     </div>
   );
 }
