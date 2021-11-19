@@ -22,6 +22,7 @@ import AdminRoute from "./routes/AdminRoute"
 import CourseDetail from "./components/PanelAdmin/CourseDetail";
 import AdmUsers from "./components/PanelAdmin/AdmUsers";
 import PaymentDetail from "./components/PaymentDetail/PaymentDetail";
+import PaymentFailure from "./components/PaymentDetail/PaymentFailure";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
       <Route exact path="/courseDetail/:id" component={CourseDetail}/>
       <Route exact path="/orders/:id" component={PaymentDetail}/>
       {/* <Route exact path="/mercadopago/pagos/:id" component={PaymentDetail}/> */}
+      <Route exact path="/prueba" component={PaymentFailure}/>
     </div>
   );
 }
