@@ -17,6 +17,9 @@ module.exports = async (req, res, next) => {
         external_reference,
         } = req.query;
 
+        console.log( "EL PAYMENT ID:" + payment_id)
+        console.log("EL STATUS:" + status)
+        console.log("LA EXTERNAR REFERENCE:" + external_reference)
     try {
         let order = await Order.findById({_id: external_reference});
 
@@ -33,16 +36,18 @@ module.exports = async (req, res, next) => {
             try {
                 let ordenModified = await Order.findById({_id: external_reference, payment: "Confirmed"});
 
-                let userCourses = await User.findOne({_id: ordenModified.user._id});
-
+                let userCourses = await User.findOne({_id: ordenModified.user._id})
+                
                 userCourses.courses = userCourses.courses.concat(ordenModified.courses);
                 await userCourses.save();
-
+                
                 await Cart.findOneAndUpdate({user: ordenModified.user._id}, {
                     courses: []
                 })
-
-                res.json(ordenModified);
+                //  .then(() => {
+                //     return res.redirect(`http://localhost:3000/mercadopago/pagos/${external_reference}`)
+                // });
+                res.redirect(`http://localhost:3000/orders/${external_reference}`);
             } catch(err) {
                 console.log(err);
                 next(err);
