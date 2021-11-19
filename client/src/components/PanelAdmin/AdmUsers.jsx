@@ -62,25 +62,25 @@ export default function AdmUsers() {
     {
       field: 'id',
       headerName: 'ID',
-      width: 90
+      width: 120
     },
     {
       field: 'name',
       headerName: 'Nombre Completo',
-      width: 200,
-      editable: true,
+      width: 180,
+      editable: false,
     },
     {
       field: 'email',
       headerName: 'eMail',
       type: 'number',
-      width: 110,
-      editable: true,
+      width: 220,
+      editable: false,
     },
     {
       field: "isAdmin",
       headerName: "Admin",
-      width: 80,
+      width: 100,
       align: "center",
       renderCell: (cell) =>
         cell.value && <CheckCircleRoundedIcon color="success" />,
@@ -88,7 +88,7 @@ export default function AdmUsers() {
     {
       field: "deleteAction",
       headerName: "Action",
-      width: 100,
+      width: 150,
       align: "center",
       sortable: false,
       renderCell: (params) =>
@@ -125,12 +125,6 @@ export default function AdmUsers() {
         </Grid><br />
         {allUsers.length && (
           <DataGrid rowHeight={60} rows={rows} columns={columns} pageSize={5} />
-          // <DataGrid
-          //   rows={rows}
-          //   columns={columns}
-          //   pageSize={5}
-          //   rowsPerPageOptions={[5]}
-          // />
         )}
       </Container>
       <br /><br /><br /><br /><br />
