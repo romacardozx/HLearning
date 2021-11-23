@@ -180,7 +180,7 @@ function Register() {
 
           <div className="app">
 			    <input type="file" className="app_uploadInput" />
-			    <img src={imageUrl} className="app_uploadedImg" alt="" />
+			    <img src={imageUrl} className={s.img} alt="" />
 			    <button className="app_uploadButton" onClick={(e)=>handleClick(e)}>
 				   Cargar imagen
 			    </button>
