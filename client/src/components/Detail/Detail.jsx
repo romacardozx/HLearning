@@ -39,10 +39,9 @@ export default function CourseDetail(props) {
   const courseDetailed = useSelector(
     (state) => state.getDetails.getCourseDetail
   );
-  console.log(courseDetailed);
 
   useEffect(() => {
-    dispatch(getDetailCourses(id)); // eslint-disable-next-line
+    dispatch(getDetailCourses(id)); 
     dispatch(getUserInfo());
   }, [dispatch]);
 
@@ -166,7 +165,3 @@ export default function CourseDetail(props) {
     </div>
   );
 }
-
-// sx={{ width: 128, height: 128 }}
-//? EJEMPLO DE ONCLICK DE MERCADO PAGO
-//!  onClick={() => dispatch(MercadoPago("id"))}>

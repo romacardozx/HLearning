@@ -22,13 +22,6 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Cart",    
   },
-  // orders: [
-  //   {
-  //     type: Schema.Types.ObjectId,  Ver mas adelante!!!
-  //     ref: "Order",
-  //     default:[]
-  //   },
-  // ],
   pictures: {
     type: String,
     default:

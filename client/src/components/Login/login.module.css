@@ -7,7 +7,6 @@
       height: 91vh;
       align-items: center;
       justify-content: center; 
-      /* background-color: red; */
   }
 
   * {
@@ -17,7 +16,6 @@
   .contenedor {
       width: 100%;
       padding: 15px;
-      /* background-color: greenyellow; */
   }
 
   .formulario {
@@ -29,7 +27,6 @@
       background: rgb(255, 255, 255);
       padding: 3px;
       border-radius: 2%;
-      /* background-color: blue; */
   }
 
   h1 {
@@ -56,16 +53,6 @@
       color: #999;
   }
 
-  /* .button{
-    border: none;
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    background:  #1a2537;
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-} */
   .button {
       border: none;
       width: 100%;
@@ -133,7 +120,7 @@
 
   .errors {
       color: red;
-  } /*EL BACK ESTUVO AQUI*/
+  } 
 
   @media(max-width:768px) {
       .formulario {

@@ -37,10 +37,9 @@ export default function CourseDetail() {
   );
   const [disabledInput, setInputsDisabled] = useState(true);
   const [errors, setErrors] = useState({});
-  console.log("Curso Detallado", courseDetailed);
 
   useEffect(() => {
-    dispatch(getDetailCourses(id)); // eslint-disable-next-line
+    dispatch(getDetailCourses(id)); 
     dispatch(getAllCategories());
   }, [dispatch]);
 

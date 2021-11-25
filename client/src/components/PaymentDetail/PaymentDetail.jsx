@@ -21,7 +21,6 @@ export default function PaymentDetail() {
   const { id } = useParams();
 
   const paymentDetail = useSelector((state) => state.getOrder.getOrderId)
-  console.log(paymentDetail);
 
   useEffect(() => {
     dispatch(getOrderById(id))

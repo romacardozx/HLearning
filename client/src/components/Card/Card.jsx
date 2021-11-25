@@ -18,9 +18,7 @@ import AddIcon from "@mui/icons-material/Add";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Collapse from "@mui/material/Collapse";
 import { styled } from "@mui/material/styles";
-//  import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-/*import { BsCartPlus, BsCartCheckFill } from "react-icons/bs"; */
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;

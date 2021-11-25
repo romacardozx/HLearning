@@ -55,7 +55,6 @@ module.exports = async (req, res, next) => {
         .json({ msg: "The user that you're trying to edit doesn't exist" });
     }
   } catch (err) {
-    console.log(err);
     next(err);
   }
 };

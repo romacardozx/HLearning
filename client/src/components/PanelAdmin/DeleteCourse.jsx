@@ -38,11 +38,6 @@ export default function Courses() {
     dispatch(getAllCourses());
   }, [dispatch, currentId]);
 
-  // function handleDelete(id){
-  //          dispatch(deleteCourse(id))
-  //          setCurrentId(id)
-  //       }
-
   function handleDelete(id) {
     Swal.fire({
       title: "Estas seguro?",

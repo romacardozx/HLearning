@@ -59,7 +59,6 @@ function Register() {
 			.then((res) => res.json())
 			.then((res) => {
 				setImageUrl(res.secure_url); //url de la imagen
-				console.log(res.secure_url);
         setState({
           ...state, 
           pictures: res.secure_url
@@ -187,12 +186,7 @@ function Register() {
 				   Cargar imagen
 			    </button>
 		</div>
-
           <input className={s.button} type="submit" value="Registrate" />
-          {/* <div className={s.or}>o con</div>
-          <a href="localhost:3001/google">
-            <button className={s.button_google}> Google </button>
-          </a> */}
           <p>
             Al registrarte, aceptas nuestras Condiciones de uso y Política de
             privacidad.
@@ -206,8 +200,6 @@ function Register() {
         </div>
       </form>
     </div>
-    
-    
   </div>
   );
 }

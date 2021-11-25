@@ -20,7 +20,6 @@
 }
 
 .header-container {
-  /* border: 3px solid red; */
   display: flex;
   flex-flow: column;
 }
@@ -29,30 +28,24 @@
   height: 100vh;
 }
 .topBar-container {
-  /* border: 3px solid rgb(0, 255, 128); */
-  /* height: 70px; */
   background-color: #f2f4f6;
 }
 
 .carousel-container {
-  /* border: 3px solid rgb(185, 46, 104); */
   height: 100%;
   z-index: -1;
 }
 .body-container {
-  /* border: 3px solid rgb(187, 161, 17); */
   height: 100%;
   display: flex;
 }
 .filter-container {
-  /* border: 3px solid rgb(29, 110, 9); */
   width: 25%;
   float: left;
   height: 100%;
   padding: 30px;
 }
 .content-container {
-  /* border: 3px solid rgb(109, 76, 76); */
   float: left;
   height: 100%;
   width: 100%;
@@ -82,7 +75,6 @@
 }
 
 .map-container {
-  /* border: 3px solid rgb(185, 46, 104); */
   height: 38rem;
 }
 

@@ -8,7 +8,6 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import SearchIcon from "@mui/icons-material/Search";
 import { clearFilters } from "../../redux/actions/clearFilters";
-/* import { Box } from "@mui/system"; */
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -34,12 +33,10 @@ export default function SearchBar() {
 
   return (
     <div>
-      {/* <Box sx={{ alignContent: "center" }}> */}
       <Stack direction="row" spacing={14}>
         <form onSubmit={(e) => handleSubmit(e)}>
           <Stack direction="row" spacing={0.5}>
             <TextField
-              /* sx={{ maxWidth: 150 }} */
               size="small"
               id="outlined-basic"
               label="Buscar"
@@ -65,7 +62,6 @@ export default function SearchBar() {
           Ver Todos
         </Button>
       </Stack>
-      {/* </Box> */}
     </div>
   );
 }

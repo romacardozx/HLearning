@@ -35,7 +35,6 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
-//Ruta para pedir datos de un usuario logeado con seguridad bearer. Mandan el token y envia los datos del usuario dueño de ese token
 router.get(
   "/user",
   passport.authenticate("bearer", { session: false }),
@@ -53,7 +52,6 @@ router.get(
   }
 );
 
-// Deslogear al usuario
 router.get("/logout", (req, res, next) => {
   req.logOut();
   req.session = null;
@@ -75,7 +73,7 @@ router.post("/admin", async (req, res, next) => {
       res.status(401).json(false)
     }
   } catch (error) {
-    console.log(error.message)
+    next(error.message);
   }
 })
 

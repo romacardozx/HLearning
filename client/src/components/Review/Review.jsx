@@ -85,7 +85,6 @@ function Review(userObj, courseObj) {
         </div>
       </form>
     </div>
-      {console.log('este es el state', state)}
   </div>
   );
 }

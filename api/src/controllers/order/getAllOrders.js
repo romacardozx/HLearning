@@ -3,7 +3,6 @@ const User = require("../../models/User");
 const Course = require("../../models/Course");
 const Review = require("../../models/Review");
 
-//REVISADA...ANDA TODO OK!! REVISADO POPULADO YAMILA
 module.exports = async (_req, res, next) => {
   try {
     const allOrders = await Order.find({ status: "Confirmed" })

@@ -23,7 +23,7 @@ export default function UserProfile() {
   const isAuthenticated = useSelector(
     (state) => state.userReducer.isAuthenticated
   );
-  console.log(User, "user")
+
   useEffect(() => {
     dispatch(getUserInfo());
   }, [dispatch]);
@@ -129,7 +129,6 @@ export default function UserProfile() {
                     <Button
                       variant="contained"
                       size="medium"
-                      // endIcon={<AddIcon size="large" />}
                       onClick={(e) => signOutHandler(e)}
                     >
                       Cerrar sesion
@@ -189,7 +188,6 @@ export default function UserProfile() {
                             size="medium"
                             component={Link}
                             to={`/mycourses/${c._id}`}
-                            // endIcon={<AddIcon size="large" />}
                           >
                             VER MIS VIDEOS
                           </Button>

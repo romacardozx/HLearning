@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-/* import { useDispatch useSelector  } from "react-redux"; */
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
@@ -16,7 +15,6 @@ import { Link } from "react-router-dom";
 import { blue } from "@mui/material/colors";
 
 export default function Account() {
-  /*  const dispatch = useDispatch(); */
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);

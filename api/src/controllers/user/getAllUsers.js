@@ -3,7 +3,6 @@ const Course = require("../../models/Course");
 const Review = require("../../models/Review");
 const Category = require("../../models/Category");
 
-//Todo populado al maximo!
 module.exports = async (_req, res, next) => {
   try {
     let users = await User.find({ status: "Confirmed" })
@@ -16,7 +15,6 @@ module.exports = async (_req, res, next) => {
       res.json({ msg: "There're any user registred" });
     }
   } catch (err) {
-    console.log(err);
     next(err);
   }
 };

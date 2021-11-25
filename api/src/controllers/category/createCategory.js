@@ -1,6 +1,5 @@
 const Category = require('../../models/Category');
 
-// Crear categorías de cursos
 module.exports = async (req, res, next) => {
     const { name } = req.body
     try {
@@ -10,7 +9,6 @@ module.exports = async (req, res, next) => {
         await category.save();
         res.json({msg: "Category created", category});
     } catch(err) {
-        console.log(err)
         next(err)
     }
 }

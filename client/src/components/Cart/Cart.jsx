@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fusionCart } from "../../redux/actions/fusionCart";
@@ -51,7 +50,6 @@ function Cart() {
   );
   const userDetail = useSelector((state) => state.userReducer.userDetail);
   const cart = auth(authentification, cartAll);
-  console.log("CART", cart);
 
   let price = [];
   cart.map((c) => {

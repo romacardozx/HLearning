@@ -19,11 +19,9 @@ export default function ReviewCard(props){
   const { id } = useParams();
 
   const reviewsId = useSelector((state) => state.getReviews)
-  console.log(reviewsId)
-
 
   useEffect(() => {
-    dispatch(getReviewsById(id)) // eslint-disable-next-line
+    dispatch(getReviewsById(id)) 
   }, [dispatch]);
 
     return (
@@ -44,41 +42,3 @@ export default function ReviewCard(props){
   
   );
 };
-// return (
-//   <div>
-//     <div>
-//       {Object.keys(reviewsId).length ? (
-//         <div>
-//           <Paper
-//             sx={{
-//               p: 2,
-//               margin: "auto",
-//               maxWidth: 1200,
-//               elevation: 24,
-//               flexGrow: 50,
-//               bottom: 0,
-//             }}
-//           >
-//             <Grid container spacing={1}>
-//               <Grid item xs={12} sm container>
-//                 <Grid item xs container direction="column" spacing={2}>
-//                   <Grid item xs>
-//                     <Rating name="read-only" readOnly value={calculeScore(reviewsId.score)} />
-//                     <Typography gutterBottom variant="h4" component="div">
-//                       {reviewsId.course}
-//                     </Typography>
-//                     <Typography variant="h6" gutterBottom>
-//                       {reviewsId.description}
-//                     </Typography>
-//                   </Grid>
-//                 </Grid>
-//               </Grid>
-//             </Grid>
-//           </Paper>
-//         </div>) : <Loading />
-//       }
-//     </div>
-//   </div>
-// );
-// }
-

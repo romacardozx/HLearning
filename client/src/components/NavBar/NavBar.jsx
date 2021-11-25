@@ -15,16 +15,6 @@ import Account from "./Account";
 import Avatar from "@mui/material/Avatar";
 import { blue } from "@mui/material/colors";
 
-/* const initialUser = (authentification, User) => {
-  if (authentification !== null) {
-    let nameUser = User.name;
-    let initial = nameUser.charAt(0);
-    return initial;
-  } else {
-    console.log("");
-  }
-}; */
-
 const Navbar = () => {
   const dispatch = useDispatch();
 
@@ -38,7 +28,6 @@ const Navbar = () => {
   );
   let isAdmin = useSelector((state) => state.userReducer.isAdmin);
 
-  //Saque activeStyle que hacia warning rojo de los 3 NavLink
   return (
     <>
       <Nav>
@@ -54,13 +43,6 @@ const Navbar = () => {
           <NavLink to="/cart">
             <span className="material-icons-outlined">shopping_cart</span>
           </NavLink>
-          {/*  {authentification ? (
-            <Avatar sx={{ bgcolor: blue[700] }} aria-label="recipe">
-              {initialUser(authentification, User)}
-            </Avatar>
-          ) : (
-            <></>
-          )} */}
         </NavMenu>
         <NavBtn>
           {authentification ? (
@@ -76,11 +58,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-/* {isAdmin ? (
-  <NavLink to="/admin">
-    <span className="material-icons-outlined">supervisor_account</span>
-  </NavLink>
-) : (
-  <a></a>
-)} */

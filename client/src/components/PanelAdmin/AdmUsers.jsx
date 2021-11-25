@@ -21,7 +21,6 @@ export default function AdmUsers() {
 
   const allUsers = useSelector((state) => state.getUser.getAllUsers);
   const [currentId, setCurrentId] = useState(null);
-  console.log(allUsers)
 
 
 
@@ -44,7 +43,6 @@ export default function AdmUsers() {
       if (result.isConfirmed) {
         dispatch(deleteUser(id));
         Swal.fire({
-          // title: "Borrado!",
           text: `El usuario ha sido eliminado`,
           imageUrl: "https://i.gifer.com/7efs.gif",
           imageWidth: 250,

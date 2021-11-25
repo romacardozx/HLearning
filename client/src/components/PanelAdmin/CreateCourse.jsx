@@ -15,12 +15,6 @@ import { MenuItem, Select, OutlinedInput, InputLabel } from "@mui/material";
 import Navbar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 
-// const videoSchema = yup.object({
-//   name: yup.string().required(),
-//   url: yup.string().required(),
-//   duration: yup.number().required()
-// })
-
 const schemaValidate = yup.object().shape({
   title: yup
     .string()
@@ -40,9 +34,7 @@ const schemaValidate = yup.object().shape({
     .positive()
     .min(1000, "El precio debe ser mayor a $1000")
     .required("Requiere un precio"),
-  // img: yup.string().required("Requiere una imagen"),
   categories: yup.array().required("Eliga una categoria"),
-  //  videos: yup.array().of()
 });
 
 const initValues = {
@@ -64,7 +56,6 @@ const initValues = {
 const categories = (allcategories) => {
   const datos = allcategories.map((c) => {
     const data = { label: c.name, value: c._id };
-    console.log(data, "Datos de DB categorias");
     return data;
   });
   return datos;
@@ -97,8 +88,7 @@ function CreateCourse() {
 		)
 			.then((res) => res.json())
 			.then((res) => {
-				setImageUrl(res.secure_url); //url de la imagen
-				//console.log(res.secure_url);
+				setImageUrl(res.secure_url);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -111,7 +101,6 @@ function CreateCourse() {
   let currencies = categories(getAllCategory);
 
   const [categoryName, setCategoryName] = useState([]);
-  console.log(categoryName, "cat");
 
   const handleSelect = (event) => {
     const {
@@ -134,11 +123,8 @@ function CreateCourse() {
           values.categories = categoryName; 
           values.img = imageUrl;
 
-          console.log(values, 'estos son los values')
-
           try {
             const response = await axios.post("/courses/createCourse", values);
-            console.log(response);
             swal("Curso Creado!", "Presione para continuar", "success");
             resetForm();
           } catch (error) {
@@ -240,27 +226,14 @@ function CreateCourse() {
 		          	</button>
 	            	</div>
                 </Box>
-                {/* <TextField
-                  type="text"
-                  name="img"
-                  placeholder="Inserte URL de la imagen"
-                  onChange={handleChange("img")}
-                  value={values.img}
-                  onBlur={handleBlur}
-                  helperText={errors.img}
-                  error={Boolean(touched.img && errors.img)}
-                /> */}
                 <InputLabel>Categoria</InputLabel>
                 <Select
-                  // labelId="multiple-categories-label"
-                  // id="multiple-label"
                   multiple
                   name="categories"
                   label="Categories"
                   value={categoryName}
                   onChange={handleSelect}
                   onBlur={handleBlur}
-                  // helperText={errors.categories}
                   error={Boolean(touched.categories && errors.categories)}
                   input={<OutlinedInput label="Categories" />}
                 >

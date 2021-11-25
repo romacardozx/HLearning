@@ -1,5 +1,3 @@
-
-
 export const sumPricesCourses = (arrayCourses) => {
    let totalPrice = 0
 

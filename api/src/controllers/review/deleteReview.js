@@ -10,7 +10,6 @@ module.exports = async (req, res, next) => {
             res.json({msg: "The review that you're trying to delete doesn't exist"})
         }
     } catch(err) {
-        console.log(err);
         next(err);
     }
 }

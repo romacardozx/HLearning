@@ -1,11 +1,8 @@
 import { Fragment } from "react";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
-//import EmailIcon from "@material-ui/icons/Email";
 import WorkIcon from "@material-ui/icons/Work"
-//import Facebook from "@material-ui/icons/Facebook";
 import Instagram from "@material-ui/icons/Instagram";
 import VerifiedUser from "@material-ui/icons/VerifiedUser";
-//import Help from "@material-ui/icons/Help"
 import logo from "../../images/Logo-Blanco.png";
 import style from "./Footer.module.css"
 

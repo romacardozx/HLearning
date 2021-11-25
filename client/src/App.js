@@ -10,7 +10,6 @@ import Register from "./components/Register/Register";
 import PruebaAdm from "./components/PanelAdmin/PruebaAdm"
 import UserProfile from "./components/UserProfile/UserProfile";
 import DeleteCourse from "./components/PanelAdmin/DeleteCourse";
-// import Cart from "./components/UserProfile/Cart";
 import DetailUser from "./components/Detail/DetailUser";
 import Review from "./components/Review/Review"
 import CreateCourse from "./components/PanelAdmin/CreateCourse";
@@ -39,7 +38,6 @@ function App() {
       <Route exact path="/courses/:id" component={Detail} />
       <AdminRoute exact path="/admin" component={PruebaAdm} />
       <Route exact path="/admcourses" component={DeleteCourse} />
-      {/* <Route exact path="/Cart" component={Cart} /> */}
       <Route exact path="/mycourses/:id" component={DetailUser} />
       <Route exact path="/createcourse" component={CreateCourse} />
       <Route exact path="/review" component={Review} />
@@ -49,7 +47,6 @@ function App() {
       <Route exact path="/admusers" component={AdmUsers} />
       <Route exact path="/courseDetail/:id" component={CourseDetail}/>
       <Route exact path="/orders/:id" component={PaymentDetail}/>
-      {/* <Route exact path="/mercadopago/pagos/:id" component={PaymentDetail}/> */}
       <Route exact path="/prueba" component={PaymentFailure}/>
     </div>
   );

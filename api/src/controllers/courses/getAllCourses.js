@@ -2,8 +2,6 @@ const Course = require("../../models/Course");
 const Category = require("../../models/Category");
 const Review = require("../../models/Review");
 const User = require("../../models/User");
-// filterdata
-
 
 const calculeScore = (arrayScores) => {
   let sumScore = 0;
@@ -182,7 +180,6 @@ module.exports = async (req, res, next) => {
 
     res.json(courses);
   } catch (err) {
-    console.log(err);
     next(err);
   }
 };

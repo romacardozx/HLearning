@@ -44,18 +44,6 @@ export default function SwipeableTextMobileStepper() {
 
   return (
     <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
-      {/* <Paper
-        square
-        elevation={2}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}>
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper> */}
       <br />
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}

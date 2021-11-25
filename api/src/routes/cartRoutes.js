@@ -4,8 +4,6 @@ const getCart = require('../controllers/cart/getCart');
 const createCart = require('../controllers/cart/createCart');
 const updateCart = require('../controllers/cart/updateCart');
 
-
-
 const router = Router();
 router.use(express.json());
 

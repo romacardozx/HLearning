@@ -29,7 +29,6 @@ export default function Courses() {
   const filterName = useSelector((state) => state.getCourses.filteredString);
   const userDetail = useSelector((state) => state.userReducer.userDetail);
   const auth = useSelector((state) => state.userReducer.isAuthenticated);
-  console.log("userdetail", userDetail);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -47,7 +46,7 @@ export default function Courses() {
   filterName === "Filter By"
     ? (Courses = allCourses)
     : (Courses = filteredCourses);
-  console.log("COURSES", Courses); 
+
   //Paginado:
   const [currentPage, setCurrentPage] = useState(1);
   const [coursesPerPage /* setCoursesPerPage */] = useState(4);
@@ -110,27 +109,9 @@ export default function Courses() {
               </>
             ) : (
               <Grid item>
-                {/* <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br /> */}
                 <Typography variant="h2" color="initial">
                   No se encontraron cursos con esa busqueda
                 </Typography>
-                {/* <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br /> */}
               </Grid>
             )}
           </Grid>

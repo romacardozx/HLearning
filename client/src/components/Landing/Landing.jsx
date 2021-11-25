@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar, Collapse, Link} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Hlearning from "../../images/Hlearning.png";
-//import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   root: {

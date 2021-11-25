@@ -46,13 +46,3 @@ export function fusionCart(id) {
     }
   };
 }
-
-// traemos los cursos del localStorage
-
-// traemos el array de cursos de ese uruario (id)
-
-// if user tiene cursos en su cart en db (json.data.length > 0):
-
-// comparamos ese array con el localStorage y dejamos los cursos que no se repitan
-// sumamos el precio total de todos esos cursos
-// mandamos a la db ese carrito (nuevo array mezclado) completo y ese precio total (update)

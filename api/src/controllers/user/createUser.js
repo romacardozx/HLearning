@@ -3,8 +3,6 @@ const Cart = require("../../models/Cart");
 const bcrypt = require("bcrypt");
 const cloudinary = require("cloudinary")
 
-// Crear User desde el front (solo hacemos una copia de lo que administra Auth0)
-
 module.exports = async (req, res, next) => {
   try {
     const { name, password, email, pictures } = req.body;
@@ -34,16 +32,13 @@ module.exports = async (req, res, next) => {
       });
     }
     
-    // const hashedPassword = await bcrypt.hash(password, 10);
     let user = new User({
       name,
-      // password: hashedPassword,
       password,
       email,
       pictures,
     });
     
-    //Aca se crea ya el carrito asociado a ese usuario!!
     const cart = new Cart({ user: user._id });
     await cart.save();
 

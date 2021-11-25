@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/getAllCategories";
 import { filterByCategories } from "../../redux/actions/filterByCategories";
 import { filterRangeByPrice } from "../../redux/actions/filterRangeByPrice";
-/* import { getAllCourses } from "../../redux/actions/getAllCourses"; */
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";

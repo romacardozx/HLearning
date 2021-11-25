@@ -27,8 +27,7 @@ function CreateCategory() {
         onSubmit={ async (values, {resetForm}) => {
           try {
 
-            const response = await axios.post('/categories/createCategory', values)
-            console.log(response);            
+            const response = await axios.post('/categories/createCategory', values)           
             swal("Categoria Creada!", "Presione para continuar", "success");
             resetForm();
 

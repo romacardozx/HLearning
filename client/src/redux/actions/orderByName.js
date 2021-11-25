@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export function orderByName(name, filterdata) {
-  console.log(filterdata, "data que llega!!!");
   return async function (dispatch) {
     try {
       if (!filterdata) {

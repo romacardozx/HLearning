@@ -55,7 +55,6 @@ function Login() {
           email: "",
           password: "",
         })
-        // history.push('/user')
     }
   }
 
@@ -81,9 +80,6 @@ function Login() {
             <input type="submit" value="Login" className={s.button} />
           </form>
           <hr />
-          {/* <div>
-            <button type="none" className={s.button_google}> Google </button>
-          </div> */}
           <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
           <p>¿No tienes una cuenta? <a className={s.link} href="/Register">Registrate </a></p>
           <p>¿Olvidaste tu contraseña? <span className={s.link}>Recuperarla</span></p>

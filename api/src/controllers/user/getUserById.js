@@ -2,7 +2,6 @@ const User = require("../../models/User");
 const Course = require("../../models/Course");
 const Review = require("../../models/Review");
 
-//Todo populado al maximo!
 module.exports = async (req, res, next) => {
   const { id } = req.params;
   try {
@@ -16,7 +15,6 @@ module.exports = async (req, res, next) => {
       res.json({ msg: "There's any user with that id" });
     }
   } catch (err) {
-    console.log(err);
     next(err);
   }
 };

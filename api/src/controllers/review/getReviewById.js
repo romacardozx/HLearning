@@ -14,7 +14,6 @@ module.exports = async (req, res, next) => {
             res.json({msg: "There's any review with that id"});
         }
     } catch(err) {
-        console.log(err);
         next(err);
     }
 }

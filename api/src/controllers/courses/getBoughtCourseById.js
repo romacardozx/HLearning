@@ -17,7 +17,6 @@ module.exports = async (req, res, next) => {
       res.json({ msg: "There's any course with that id" });
     }
   } catch (err) {
-    console.log(err);
     next(err);
   }
 };

@@ -1,11 +1,9 @@
 const Order = require('../../models/Order');
-// const Courses = require('../../models/Course');
 const Cart = require('../../models/Cart');
 const User = require('../../models/User');
 const mercadopago = require('mercadopago');
 require("dotenv").config();
 const { MP_TOKEN,CLIENT_URL } = process.env;
-
 
 mercadopago.configure({
     access_token: MP_TOKEN
@@ -19,9 +17,6 @@ module.exports = async (req, res, next) => {
         external_reference,
         } = req.query;
 
-        console.log( "EL PAYMENT ID:" + payment_id)
-        console.log("EL STATUS:" + status)
-        console.log("LA EXTERNAR REFERENCE:" + external_reference)
     try {
         let order = await Order.findById({_id: external_reference});
 
@@ -48,11 +43,9 @@ module.exports = async (req, res, next) => {
                 })
                 res.redirect(`${CLIENT_URL}/orders/${external_reference}`);
             } catch(err) {
-                console.log(err);
                 next(err);
             }
         } catch(err) {
-            console.log(err);
             next(err);
         }
 };

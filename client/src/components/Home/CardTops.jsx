@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-/* import CardContent from "@mui/material/CardContent"; */
 import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -18,14 +17,12 @@ export default function CourseCard({
   id,
   title,
   image,
-  // description,
   score,
   price,
 }) {
   return (
     <Box p={1}>
       <Card sx={{ maxWidth: 270, minWidth: 100 }} elevation={6}>
-        {/* <CardActionArea component={Link} to={`/courses/${id}`}> */}
         <Typography sx={{ mb: 1 }} paddingLeft={1} variant="h6">
           {title}
         </Typography>
@@ -50,7 +47,6 @@ export default function CourseCard({
           ${price}
         </Typography>
         <br />
-        {/*  </CardActionArea> */}
         <CardActions>
           <IconButton
             onClick={() => {

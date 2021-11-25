@@ -13,7 +13,6 @@ module.exports = async (_req, res, next) => {
             res.json({msg: "There're any review available"});
         }
     } catch(err) {
-        console.log(err);
         next(err);
     }
 }

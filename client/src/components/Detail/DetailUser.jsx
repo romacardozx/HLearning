@@ -30,10 +30,9 @@ export default function CourseDetail(props) {
   const courseDetailed = useSelector(
     (state) => state.getDetails.getCourseYouBoughtDetail
   );
-  console.log(courseDetailed);
-  console.log("Object Keys:", Object.keys(courseDetailed))
+
   useEffect(() => {
-    dispatch(getDetailCoursesYouBought(id)); // eslint-disable-next-line
+    dispatch(getDetailCoursesYouBought(id));
   }, [dispatch]);
 
   return (
@@ -111,21 +110,6 @@ export default function CourseDetail(props) {
         ) : (
           <Loading />
         )}
-        {/* <Grid align="center">
-          <Card sx={{ maxWidth: 345 }}>
-            <CardContent>
-              <Avatar sx={{ width: 100, height: 100 }} />
-              <Typography gutterBottom variant="h5" component="div">
-
-              </Typography>
-              <Rating name="read-only" readOnly value={3} />
-              <Typography variant="body2" color="text.secondary">
-                No siento que tenga las herramientas para poder aplicar
-                Material UI por mi cuenta en un proyecto individual
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid> */}
         <ReviewCard />
         <br />
         <br />

@@ -93,9 +93,10 @@ app.listen(port, async () => {
   console.log(`Server is running on port ${port}`);
 
   // Mock Ups
-  // const data = await Category.insertMany(categories)
+
+  //  const data = await Category.insertMany(categories)
   
-  // const data2 = await User.insertMany(users)
+  //  const data2 = await User.insertMany(users)
   
   //  const data3 = await Review.insertMany(reviews)
   
@@ -103,6 +104,6 @@ app.listen(port, async () => {
  
   //  const data5 = await Course.insertMany(courses)
   
-  // const data6 = await Cart.insertMany(carts)
-  //  console.log(data6,"q me devuelve")
+  //  const data6 = await Cart.insertMany(carts)
+
 });

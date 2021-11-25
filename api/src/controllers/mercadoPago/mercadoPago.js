@@ -4,7 +4,6 @@ const mercadopago = require("mercadopago");
 require("dotenv").config();
 const { MP_TOKEN, API_URL } = process.env;
 
-
 mercadopago.configure({
   access_token: MP_TOKEN    
 });
@@ -57,10 +56,9 @@ module.exports = async (req, res, next) => {
       
       })
       .catch(function (err) {
-        console.log(err);
+        next(err);
       });
   } catch (err) {
-    console.log(err);
     next(err);
   }
 };
