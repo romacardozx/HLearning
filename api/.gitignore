@@ -1,5 +1,5 @@
 /node_modules
 package-lock.json
-.env.development
-.env.production
 mercadopago.txt
+users.json
+.env

@@ -19,14 +19,11 @@ const morgan = require("morgan");
 const multer = require("multer");           
 const session = require("express-session");
 const passport = require("passport");
-const path = require("path")
-const exphbs = require("express-handlebars")
-
+const path = require("path");
 require("./src/utils/auth/passport");
+require("dotenv").config();
+const { DB_URL, PORT, SECRET_KEY } = process.env;
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV || "production"}`,
-});
 
 //Crea el servidor
 const app = express();
@@ -42,7 +39,7 @@ app.use(
 app.use(passport.initialize());
 app.use(
   session({
-    secret: "miclavesecreta",
+    secret:SECRET_KEY,
     saveUninitialized: false,
     resave: false,
   })
@@ -83,8 +80,8 @@ app.use(multer({ storage }).single('pictures'))
 app.use("/", routers);
 
 // DB Config
-const db = process.env.MONGO_URI;
-const port = process.env.PORT || 7070;
+const db =  DB_URL
+const port = PORT || 9000
 
 // Connect to MongoDB
 mongoose

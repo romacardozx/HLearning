@@ -3,10 +3,12 @@ const Order = require('../../models/Order');
 const Cart = require('../../models/Cart');
 const User = require('../../models/User');
 const mercadopago = require('mercadopago');
+require("dotenv").config();
+const { MP_TOKEN,CLIENT_URL } = process.env;
 
 
 mercadopago.configure({
-    access_token: 'TEST-6505707681491929-111123-261f99cf4196b91c0d51d3a1960446c0-1017363715'
+    access_token: MP_TOKEN
 });
 
 module.exports = async (req, res, next) => {
@@ -44,10 +46,7 @@ module.exports = async (req, res, next) => {
                 await Cart.findOneAndUpdate({user: ordenModified.user._id}, {
                     courses: []
                 })
-                //  .then(() => {
-                //     return res.redirect(`http://localhost:3000/mercadopago/pagos/${external_reference}`)
-                // });
-                res.redirect(`http://localhost:3000/orders/${external_reference}`);
+                res.redirect(`${CLIENT_URL}/orders/${external_reference}`);
             } catch(err) {
                 console.log(err);
                 next(err);
