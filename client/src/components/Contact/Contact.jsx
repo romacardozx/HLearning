@@ -5,6 +5,11 @@ import s from "./contact.module.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 
+const { REACT_APP_EMAIL_TEMPLATE  } = process.env ;
+const { REACT_APP_EMAIL_USER } = process.env ;
+const template = REACT_APP_EMAIL_TEMPLATE ;
+const user = REACT_APP_EMAIL_USER ;
+
 const Result = () => {
   return (
     <p>
@@ -20,9 +25,9 @@ export default function Contact() {
     emailjs
       .sendForm(
         "gmail",
-        "template_or9mjrn",
+        template,
         e.target,
-        "user_GdBu7T9DTHFnIo5cvAyNk"
+        user
       )
       .then(
         (result) => {
