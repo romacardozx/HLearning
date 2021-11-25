@@ -210,20 +210,7 @@ console.log("Curso Detallado", courseDetailed)
 			      <button className="app_uploadButton" onClick={(e)=>handleCloud(e)}>
 				     Cargar imagen
 			      </button>
-		        </div>
-            {/* <div className={s.inputContenedor}>
-              <i className="fas fa-user icon"></i>
-              <input
-                className={s.input}
-                type="text"
-                value={state.img}
-                name="img"
-                placeholder="Inserte URL de la imagen"
-                onChange={(e) => handleInputChange(e)}
-                required
-                disabled={disabledInput}
-              />
-            </div> */}
+		        </div>            
             {
                 <MultiSelect 
                     options={options}
@@ -232,28 +219,8 @@ console.log("Curso Detallado", courseDetailed)
                     labelledBy="Select"
                 />
             }
-            {/* {
-                courseDetailed.videos ? 
-                courseDetailed.videos.map(v => {
-                    return (
-                        <div className={s.inputContenedor}>
-              <i className="fas fa-user icon"></i>
-              <input
-                className={s.input}
-                type="text"
-                value={state.videos.duration}
-                name="img"
-                placeholder="Inserte URL de la imagen"
-                onChange={(e) => handleInputChange(e)}
-                required
-                disabled={disabledInput}
-              />
-            </div>
-                    )
-                }) : ""
-            } */}
-
-            <input className={s.button} type="submit" value="Registrate" />
+            
+            <input className={s.button} type="submit" value="Editar" />
           </div>
         </form>
       </div>
