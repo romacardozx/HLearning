@@ -1,11 +1,12 @@
 const Order = require("../../models/Order");
 const Course = require("../../models/Course");
-const mercadopago = require("mercadopago"); // SDK MP
+const mercadopago = require("mercadopago"); 
+require("dotenv").config();
+const { MP_TOKEN, API_URL } = process.env;
 
 
 mercadopago.configure({
-  access_token:
-    "TEST-6505707681491929-111123-261f99cf4196b91c0d51d3a1960446c0-1017363715",
+  access_token: MP_TOKEN    
 });
 
 module.exports = async (req, res, next) => {
@@ -41,8 +42,8 @@ module.exports = async (req, res, next) => {
       },
       binary_mode: true, 
       back_urls: {
-        success: `http://localhost:9000/mercadopago/pagos/${id}`,
-        failure: `http://localhost:9000/mercadopago/pagos/${id}`,
+        success: `${API_URL}/mercadopago/pagos/${id}`,
+        failure: `${API_URL}/mercadopago/pagos/${id}`,
       },
       auto_return: "approved", 
     };

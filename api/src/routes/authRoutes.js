@@ -5,6 +5,8 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const Course = require("../models/Course");
 const Review = require("../models/Review");
+require("dotenv").config();
+const { SECRET_KEY } = process.env;
 
 const router = Router();
 router.use(express.json());
@@ -21,7 +23,7 @@ router.post("/login", (req, res, next) => {
           email: user.email,
           isAdmin: user.isAdmin,
         },
-        "miclavesecreta",
+        SECRET_KEY,
         { expiresIn: "24hr" }
       );
       return res.status(200).json({
@@ -61,7 +63,7 @@ router.get("/logout", (req, res, next) => {
 router.post("/admin", async (req, res, next) => {
   const {token} = req.body;
   try {
-    let email = jwt.verify(token, "miclavesecreta").email.toLowerCase();
+    let email = jwt.verify(token, SECRET_KEY).email.toLowerCase();
     const isAdmin = await User.findOne({
       email: email, 
       isAdmin: true,
