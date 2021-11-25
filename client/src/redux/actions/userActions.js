@@ -2,8 +2,6 @@ import axios from "axios";
 import * as types from "../actions/constants";
 import swal from "sweetalert";
 
-
-
 export const postSignUp = (input) => {
   return async (dispatch) => {
     try {
@@ -83,26 +81,29 @@ export const getSignOut = () => {
   };
 };
 
-
 export const postEditUser = (input, id) => {
   return async (dispatch) => {
     try {
-      dispatch({type: types.EDIT_USER_REQUEST})
-      const {data, request} = await axios.put("/users/updateuser/id", {
+      dispatch({ type: types.EDIT_USER_REQUEST });
+      const { data, request } = await axios.put("/users/updateuser/id", {
         input,
-        id
-      })
-      if(request.status === 200){
-        dispatch({type: types.EDIT_USER_SUCCESS})
-        await swal("La información del usuario ha sido actualizada", "Presione para continuar", "success");
+        id,
+      });
+      if (request.status === 200) {
+        dispatch({ type: types.EDIT_USER_SUCCESS });
+        await swal(
+          "La información del usuario ha sido actualizada",
+          "Presione para continuar",
+          "success"
+        ).then((res) => (window.location.href = "/user"));
       }
     } catch (error) {
-      dispatch({type: types.EDIT_USER_FAILED})
-      console.log(error.response.data.error)
-      swal(`${error.response.data.error}`, "Presione para continuar", "error")
+      dispatch({ type: types.EDIT_USER_FAILED });
+      console.log(error.response.data.error);
+      swal(`${error.response.data.error}`, "Presione para continuar", "error");
     }
-  }
-}
+  };
+};
 
 export const getUserInfo = () => {
   return async (dispatch) => {
