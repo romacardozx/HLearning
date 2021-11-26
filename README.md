@@ -1,4 +1,4 @@
-<img src="/Users/gudy/HLearning/client/src/images/Logo.png" width="550px">
+<img src="client/src/images/Logo.png" width="550px">
 
 #
 
@@ -17,10 +17,10 @@
 
 #### Api:
 ```
-DB_URL=mongodb+srv://admin:admin12345@cluster0.hbndf.mongodb.net/hLearning?retryWrites=true&w=majority
+DB_URL=mongodb+srv: Cloud Atlas link
 PORT = 9000
-SECRET_KEY = miclavesecreta
-MP_TOKEN = TEST-6505707681491929-111123-261f99cf4196b91c0d51d3a1960446c0-1017363715
+SECRET_KEY = secret key
+MP_TOKEN = token test
 API_URL = https://hlearning.herokuapp.com
 CLIENT_URL=https://hl-earning.vercel.app/
 ```
@@ -40,11 +40,31 @@ REACT_APP_EMAIL_USER = user_GdBu7T9DTHFnIo5cvAyNk
 
 #### Algunas imagenes de la app: 
 
-<img src="/Users/gudy/HLearning/client/src/images/0.png" width="550px">
-<img src="/Users/gudy/HLearning/client/src/images/6.png" width="550px">
-<img src="/Users/gudy/HLearning/client/src/images/1.png" width="550px">
-<img src="/Users/gudy/HLearning/client/src/images/3.png" width="550px">
-<img src="/Users/gudy/HLearning/client/src/images/5.png" width="550px">
-<img src="/Users/gudy/HLearning/client/src/images/7.png" width="550px">
-<img src="/Users/gudy/HLearning/client/src/images/4.png" width="550px">
-<img src="/Users/gudy/HLearning/client/src/images/2.png" width="550px">
+<img src="client/src/images/0.png" width="550px">
+<img src="client/src/images/6.png" width="550px">
+<img src="client/src/images/1.png" width="550px">
+<img src="client/src/images/3.png" width="550px">
+<img src="client/src/images/5.png" width="550px">
+<img src="client/src/images/7.png" width="550px">
+<img src="client/src/images/4.png" width="550px">
+<img src="client/src/images/2.png" width="550px">
+
+#
+
+#### Developers: 
+
+##### Cecilia Woitasen | [Linkedin](https://www.linkedin.com/in/cecilia-woitasen-dev/) | [Github](https://github.com/CeciliaWoi)
+##### Micaela Fossati | [Linkedin](https://www.linkedin.com/in/v-micaela-fossati/) | [Github](https://github.com/MFOSS13)
+##### Yamila Paez | [Linkedin](https://www.linkedin.com/in/yamila-paez-70b7587b/) | [Github](https://github.com/Bellantra)
+##### Andrés Benvenuto | [Linkedin](https://www.linkedin.com/in/andr%C3%A9s-benvenuto-a2b38a15a/) | [Github](https://github.com/andresbenve)
+##### Gonzalo Galdame | [Linkedin](https://www.linkedin.com/in/gonzalo-galdame-dev/) | [Github](https://github.com/gonzalohlh)
+##### Joaquin Caubarrere | [Linkedin](https://www.linkedin.com/in/joaquin-caubarrere/) | [Github](https://github.com/joacocoba)
+##### Roman Cardozo | [Linkedin](https://www.linkedin.com/in/romancardozo-fullstackdeveloper/) | [Github](https://github.com/romacardozx)
+##### Lihue Lautaro Maidana Avaca  | [Linkedin](https://www.linkedin.com/in/lihue-maidana-avaca/) | [Github](https://github.com/LihueMaidanaAvaca)
+##### Maximiliano Requena  | [Linkedin](https://www.linkedin.com/in/maximilianorequena/) | [Github](https://github.com/maxxrequena)
+
+#
+
+#### TL Proyect (by Henry) :
+##### Daniel Maers  | [Linkedin](https://www.linkedin.com/in/danielmaers//) | [Github](https://github.com/danielmaers)
+

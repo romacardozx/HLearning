@@ -9,16 +9,18 @@ import Footer from "../Footer/Footer";
 import styles from "./detail.module.css";
 import Rating from "@mui/material/Rating";
 import { useParams } from "react-router-dom";
-import { getDetailCourses } from '../../redux/actions/getDetailCourses';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { getDetailCourses } from "../../redux/actions/getDetailCourses";
+import { getUserInfo } from "../../redux/actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import Loading from '../Loading/Loading'
-import Button from '@mui/material/Button';
-import calculeScore from '../../utils/calculeScore';
+import Loading from "../Loading/Loading";
+import Button from "@mui/material/Button";
+import calculeScore from "../../utils/calculeScore";
 import MercadoPago from "../../redux/actions/MercadoPago";
 import { Link } from "react-router-dom";
-
+import EditIcon from "@mui/icons-material/Edit";
+import IconButton from "@mui/material/IconButton";
 
 const Img = styled("img")({
   margin: "auto",
@@ -28,17 +30,20 @@ const Img = styled("img")({
 });
 
 export default function CourseDetail(props) {
-
   const dispatch = useDispatch();
   const { id } = useParams();
   const history = useHistory();
 
-  const courseDetailed = useSelector((state) => state.getDetails.getCourseDetail)
-  console.log(courseDetailed)
+  const isAdmin = useSelector((state) => state.userReducer.isAdmin);
 
+  const courseDetailed = useSelector(
+    (state) => state.getDetails.getCourseDetail
+  );
+  console.log(courseDetailed);
 
   useEffect(() => {
-    dispatch(getDetailCourses(id)) // eslint-disable-next-line
+    dispatch(getDetailCourses(id)); // eslint-disable-next-line
+    dispatch(getUserInfo());
   }, [dispatch]);
 
   const handleBuy = () => history.push("/checkout");
@@ -48,9 +53,21 @@ export default function CourseDetail(props) {
       <div className={styles.bkg}>
         <div>
           <NavBar />
-          <Link to={`/coursedetail/${id}`}>
-          <p>Link a editar</p>
-          </Link> 
+          {isAdmin ? (
+          <IconButton
+                color="primary"
+                aria-label="edit"
+                component={Link}
+                to={`/coursedetail/${id}`}
+              > 
+              Edit course
+              <EditIcon />
+              </IconButton>
+            
+          ) : (
+            ""
+          )}
+
           <br />
           <br />
           <br />
@@ -81,17 +98,30 @@ export default function CourseDetail(props) {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Rating name="read-only" readOnly value={calculeScore(courseDetailed.score)} />
+                      <Rating
+                        name="read-only"
+                        readOnly
+                        value={calculeScore(courseDetailed.score)}
+                      />
                       <Typography gutterBottom variant="h4" component="div">
                         {courseDetailed.title}
                       </Typography>
-                      <Typography variant="body2" align='left' color="text.secondary">
-                        {courseDetailed.categories.map(el => el.name + (' '))}
-                      </Typography><br />
+                      <Typography
+                        variant="body2"
+                        align="left"
+                        color="text.secondary"
+                      >
+                        {courseDetailed.categories.map((el) => el.name + " ")}
+                      </Typography>
+                      <br />
                       <Typography variant="h6" gutterBottom>
                         {courseDetailed.description}
                       </Typography>
-                      <Typography variant="body2" align='left' color="text.secondary">
+                      <Typography
+                        variant="body2"
+                        align="left"
+                        color="text.secondary"
+                      >
                         Duracion:{" " + courseDetailed.duration}
                       </Typography>
                       <br />
@@ -99,12 +129,17 @@ export default function CourseDetail(props) {
                         variant="body2"
                         color="text.secondary"
                         align="left"
-                      >
-                      </Typography>
+                      ></Typography>
                     </Grid>
                     <Grid item align="left">
                       <Typography sx={{ cursor: "pointer" }} variant="body2">
-                        <Button variant="contained" size="medium" onClick={() => dispatch(MercadoPago("6192bc7ccaeaefa81437d425"))}>
+                        <Button
+                          variant="contained"
+                          size="medium"
+                          onClick={() =>
+                            dispatch(MercadoPago("6192bc7ccaeaefa81437d425"))
+                          }
+                        >
                           Comprar ahora!
                         </Button>
                       </Typography>
@@ -122,8 +157,10 @@ export default function CourseDetail(props) {
             <br />
             <br />
             <br />
-          </div>) : <Loading />
-        }
+          </div>
+        ) : (
+          <Loading />
+        )}
         <Footer />
       </div>
     </div>
