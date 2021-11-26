@@ -108,6 +108,13 @@ p {
 .errors {
     color: red;
 } /*EL BACK ESTUVO AQUI*/
+.img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
 
 .img {
     vertical-align: middle;
